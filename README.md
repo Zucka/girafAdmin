@@ -9,9 +9,9 @@ Made by:
 
 [Zucka](https://github.com/Zucka)
 
-[asdf]()
+[Fruitdrops](https://github.com/Fruitdrops)
 
-[asdff]()
+[Jlauri10](https://github.com/jlauri10)
 
 
 License
