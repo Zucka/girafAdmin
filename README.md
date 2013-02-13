@@ -6,9 +6,13 @@ Admin module for GIRAF@AAU
 Made by:
 
 [ZFirE](https://github.com/zfire)
+
 [Zucka](https://github.com/Zucka)
+
 [asdf]()
+
 [asdff]()
+
 
 License
 ==========
