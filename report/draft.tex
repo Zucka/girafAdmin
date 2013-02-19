@@ -10,7 +10,7 @@
 	
 	\lstset{frameround=tttt, escapeinside={\%}{\%}}
 	
-	\includepdf{layout/frontpage}
+	\input{layout/frontpage.tex}
 	\addtocounter{page}{1}
 	\input{layout/emptypage.tex}
 	\setcounter{page}{2}
@@ -41,7 +41,7 @@
 	\addcontentsline{toc}{chapter}{Bibliography}
 	\newpage
 	\appendix
-		\addtocounter{page}{-1}	%Sætter pagecounter til at passe med det reelle sidetal!
+		\addtocounter{page}{-1}	%Sï¿½tter pagecounter til at passe med det reelle sidetal!
 	\input{layout/emptypage.tex}
 
 \end{document}
