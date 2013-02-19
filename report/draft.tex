@@ -1,0 +1,47 @@
+ %	Skriv folgende ind som en custom Quick Build (F1)
+%pdflatex -interaction=nonstopmode %.tex|bibtex %|pdflatex -interaction=nonstopmode %.tex|pdflatex -interaction=nonstopmode %.tex
+
+\input{layout/preamble_P4_draft.tex}
+\newenvironment{boenumerate}
+  {\begin{enumerate}\renewcommand\labelenumi{\textbf\theenumi}}
+  {\end{enumerate}}
+
+\begin{document}
+	
+	\lstset{frameround=tttt, escapeinside={\%}{\%}}
+	
+	\includepdf{layout/frontpage}
+	\addtocounter{page}{1}
+	\input{layout/emptypage.tex}
+	\setcounter{page}{2}
+	\input{layout/titelblad.tex}
+	\input{layout/signatures.tex}
+	\tableofcontents	
+	\addcontentsline{toc}{chapter}{Contents}
+	\newpage
+	\input{text/introduction.tex}
+	\input{text/problemstatement.tex}
+	\input{text/problemformulation.tex}
+	
+	% Part Analysis
+	\part{Analysis}
+	
+	% Part Solution
+	\part{Solution}
+	
+
+	%Part Perspective
+	\part{Perspective}
+	
+	\part{Appendix}
+	\appendix{}
+
+	\bibliographystyle{plain}
+	\bibliography{kilder}
+	\addcontentsline{toc}{chapter}{Bibliography}
+	\newpage
+	\appendix
+		\addtocounter{page}{-1}	%Sætter pagecounter til at passe med det reelle sidetal!
+	\input{layout/emptypage.tex}
+
+\end{document}
