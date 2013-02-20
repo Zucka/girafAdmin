@@ -1,34 +1,38 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1092" measuredH="546" mockupW="450" mockupH="400">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1370" measuredH="680" mockupW="1024" mockupH="639">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="642" y="146" w="-1" h="-1" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>GIRAF%20-%20Admin%0Ahttp%3A//giraf.dk/</text>
-      </controlProperties>
+    <control controlID="8" controlTypeID="__group__" x="723" y="234" w="270" h="253" measuredW="270" measuredH="253" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="270" h="253" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="8">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="97" y="193" w="77" h="38" measuredW="54" measuredH="27" zOrder="1" locked="false" isInGroup="8">
+          <controlProperties>
+            <text>Login</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="88" w="225" h="-1" measuredW="76" measuredH="27" zOrder="2" locked="false" isInGroup="8">
+          <controlProperties>
+            <text>Username</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="134" w="227" h="-1" measuredW="70" measuredH="27" zOrder="3" locked="false" isInGroup="8">
+          <controlProperties>
+            <text>Password</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Image" x="98" y="9" w="75" h="71" measuredW="461" measuredH="435" zOrder="4" locked="false" isInGroup="8">
+          <controlProperties>
+            <src>../gfx/icons/png/girafAdminLogo.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
     </control>
-    <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="831" y="407" w="-1" h="-1" measuredW="54" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Component" x="346" y="41" w="1024" h="639" measuredW="1024" measuredH="639" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Login</text>
-      </controlProperties>
-    </control>
-    <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="763" y="271" w="190" h="178" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1">
-      <controlProperties>
-        <borderStyle>roundedSolid</borderStyle>
-      </controlProperties>
-    </control>
-    <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="778" y="333" w="158" h="-1" measuredW="76" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Username</text>
-      </controlProperties>
-    </control>
-    <control controlID="4" controlTypeID="com.balsamiq.mockups::TextInput" x="778" y="365" w="160" h="-1" measuredW="70" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Password</text>
-      </controlProperties>
-    </control>
-    <control controlID="6" controlTypeID="com.balsamiq.mockups::Image" x="832" y="277" w="53" h="50" measuredW="461" measuredH="435" zOrder="5" locked="false" isInGroup="-1">
-      <controlProperties>
-        <src>../gfx/icons/png/girafAdminLogo.png</src>
-        <text/>
+        <src>./assets/symbols.bmml#Chrome</src>
       </controlProperties>
     </control>
   </controls>
