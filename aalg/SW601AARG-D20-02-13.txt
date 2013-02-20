@@ -1,0 +1,38 @@
+Grp Number: 601
+Grp room: 5.1.12
+
+Solution to number 1:
+We will implement a Floyd Warshal Algorithm, where we make 2 changes.
+
+1. In the initilization we set all fields to -infinite instead of postivie infinite.
+2. On the check for shorter distance we reverse to take greater distance instead.
+
+The changes to the algorirthm should not perform any changes to the computation time. 
+So the computation time is still O(V^3)
+
+
+Soultion to number 2:
+We have two different possible solutions for this, but we are not certain they compute the real optimal Bitonic euclidean solution.
+
+Soultion 1:
+We sort the set of nodes by the X-cordinate, with the smallest first.
+Then we start the solution with the node that has the smallest X-cordinate, we call this S. (And remove it from the array)
+We start creating the left path by the 'new' smallest X-cordiante in the array and connect that to S. (And remove it from the array)
+We start creating the right path by the 'new' smallest X-cordiante in the array and connect that to S. (And remove it from the array)
+We then precede to switch between left and right, untill there is no more nodes, connecting them to their predecesor in the left or right chain.
+When there is no more nodes, we connect the left and right path by the last nodes in the chains.
+
+This algorithm should have a supposed running time of O(n log n) if we use an optimal sorting algorithm like heap-sort
+as we have to traverse the whole array once, so the sorting algorithm sets the upper bound.
+
+Solution 2:
+We start by finding the two coordinates furthest away from eachother, and make a line between them.
+Next we make two arrays, one with the coordiantes on the left side of the line and one with those on the right.
+We then sort these two arrays by their X-cordinate. Smallest to biggest.
+We then compute the left chain by connecting the ones in the left-side-array, starting from the lowest working our way to the biggest.
+We do the same with the right one.
+To finish we connect the two lowest on the X-axis from the two chains.
+And we do the same for the two biggest on the X-axis.
+
+This algorithm should have a supposed running time of O(n log n) if we use an optimal sorting algorithm like heap-sort
+as we have to traverse the whole array once, so the sorting algorithm sets the upper bound.
