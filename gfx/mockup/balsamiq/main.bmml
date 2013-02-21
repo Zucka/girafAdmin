@@ -2,7 +2,7 @@
   <controls>
     <control controlID="6" controlTypeID="com.balsamiq.mockups::Image" x="407" y="566" w="75" h="71" measuredW="461" measuredH="435" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
-        <src>../gfx/icons/png/girafAdminLogo.png</src>
+        <src>../../design/icons/png/girafAdminLogo.png</src>
         <text/>
       </controlProperties>
     </control>
