@@ -1,39 +1,41 @@
 <mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1370" measuredH="680" mockupW="1024" mockupH="639">
   <controls>
-    <control controlID="8" controlTypeID="__group__" x="723" y="234" w="270" h="253" measuredW="270" measuredH="253" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Component" x="346" y="41" w="1024" h="639" measuredW="1024" measuredH="639" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Chrome</src>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Button" x="820" y="427" w="77" h="38" measuredW="54" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>main%26bm%3Bmain.bmml%26bm%3Bmain.bmml%26bm%3Bmain.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22474%2C386%2C551%2C424%22%20href%3D%22main.bmml%22%20alt%3D%22main%22%20id%3D%2211%22/%3E</map>
+        <text>Login</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="__group__" x="723" y="234" w="270" h="253" measuredW="270" measuredH="253" zOrder="1" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
-        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="270" h="253" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="8">
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="270" h="253" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="15">
           <controlProperties>
             <borderStyle>roundedSolid</borderStyle>
           </controlProperties>
         </control>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="97" y="193" w="77" h="38" measuredW="54" measuredH="27" zOrder="1" locked="false" isInGroup="8">
-          <controlProperties>
-            <text>Login</text>
-          </controlProperties>
-        </control>
-        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="88" w="225" h="-1" measuredW="76" measuredH="27" zOrder="2" locked="false" isInGroup="8">
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="88" w="225" h="-1" measuredW="76" measuredH="27" zOrder="1" locked="false" isInGroup="15">
           <controlProperties>
             <text>Username</text>
           </controlProperties>
         </control>
-        <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="134" w="227" h="-1" measuredW="70" measuredH="27" zOrder="3" locked="false" isInGroup="8">
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="134" w="227" h="-1" measuredW="70" measuredH="27" zOrder="2" locked="false" isInGroup="15">
           <controlProperties>
             <text>Password</text>
           </controlProperties>
         </control>
-        <control controlID="4" controlTypeID="com.balsamiq.mockups::Image" x="98" y="9" w="75" h="71" measuredW="461" measuredH="435" zOrder="4" locked="false" isInGroup="8">
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="98" y="9" w="75" h="71" measuredW="461" measuredH="435" zOrder="3" locked="false" isInGroup="15">
           <controlProperties>
             <src>../gfx/icons/png/girafAdminLogo.png</src>
             <text/>
           </controlProperties>
         </control>
       </groupChildrenDescriptors>
-    </control>
-    <control controlID="9" controlTypeID="com.balsamiq.mockups::Component" x="346" y="41" w="1024" h="639" measuredW="1024" measuredH="639" zOrder="0" locked="false" isInGroup="-1">
-      <controlProperties>
-        <src>./assets/symbols.bmml#Chrome</src>
-      </controlProperties>
     </control>
   </controls>
 </mockup>
