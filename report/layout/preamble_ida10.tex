@@ -1,0 +1,240 @@
+\documentclass[a4paper,11pt,fleqn,twoside,openright,oldfontcommands]{memoir} % Brug openright hvis chapters skal starte på højresider; openany, oneside
+
+%%%% PACKAGES %%%%
+\usepackage{pageslts}
+\usepackage[]{algorithm2e}
+% ¤¤ Oversættelse og tegnsætning ¤¤ %
+\usepackage[utf8x]{inputenc}					% Gør det muligt at bruge æ, ø og å i sine .tex-filer
+\usepackage[english,danish]{babel}							% Dansk sporg, f.eks. tabel, figur og kapitel
+\usepackage[T1]{fontenc}								% Hjælper med orddeling ved æ, ø og å. Sætter fontene til at være ps-fonte, i stedet for bmp					
+\usepackage{latexsym}										% LaTeX symboler
+\usepackage{xcolor,ragged2e,fix-cm}			% Justering af elementer
+\usepackage{pdfpages}										% Gør det muligt at inkludere pdf-dokumenter med kommandoen \includepdf[pages={x-y}]{fil.pdf}	
+\pretolerance=2500 											% Gør det muligt at justre afstanden med ord (højt tal, mindre orddeling og mere space mellem ord)
+\usepackage{ulem}                       % Gennemstregning af ord med koden \sout{}
+\usepackage{fixltx2e}										% Retter forskellige bugs i LaTeX-kernen
+\usepackage[shortlabels]{enumitem}			% Muliggør enkelt konfiguration af lister
+																			
+% ¤¤ Figurer og tabeller – floats  ¤¤ %
+\usepackage{flafter}										% Sørger for at dine floats ikke optræder i teksten før de er sat ind.
+\usepackage{multirow}                		% Fletning af rækker
+\usepackage{hhline}                   	% Dobbelte horisontale linier
+\usepackage{multicol}         	        % Fletning af kolonner
+\usepackage{colortbl} 									% Muligøre farver i tabeller
+\usepackage{booktabs}										% Professionelt udseende tabeller med \toprule, \midrule og \bottomrule 
+\usepackage{rotating}										% Muliggør rotation af tekst i tabeller med \begin{sideways}...\end{sideways}
+\usepackage{wrapfig}										% Indsættelse af figurer omsvøbt af tekst. \begin{wrapfigure}{Placering}{Størrelse}
+\usepackage{graphicx} 									% Pakke til jpeg/png billeder
+\usepackage[section] {placeins}
+\pdfoptionpdfminorversion=6							% Muliggør inkludering af pdf dokumenter, af version 1.6 og højere
+\usepackage{rotating}	
+
+% ¤¤ Matematiske formler og maskinkode ¤¤
+\usepackage{amsmath,amssymb,stmaryrd,amsthm} 	% Bedre matematik og ekstra fonte
+\usepackage{textcomp}                 	% Adgang til tekstsymboler
+\usepackage{mathtools}									% Udvidelse af amsmath-pakken. 
+\usepackage{eso-pic}										% Tilføj billedekommandoer på hver side
+\usepackage{lipsum}											% Dummy text \lipsum[..]
+\usepackage{siunitx}										% Flot og konsistent præsentation af tal og enheder med \SI{tal}{enhed}
+\sisetup{decimalsymbol=comma}						% Opsætning af \SI
+%\usepackage{rsphrase}										% Kemi-pakke til RS-sætninger, f.eks. \rsphrase{R1}
+\usepackage[version=3]{mhchem} 					% Kemi-pakke til flot og let notation af formler, f.eks. \ce{Fe2O3}
+\usepackage{listings}
+\usepackage{color}
+
+% ¤¤ Referencer, bibtex og url'er ¤¤ %
+\usepackage{url}												% Til at sætte urler op med. Virker sammen med hyperref
+\usepackage[danish]{varioref}						% Giver flere bedre mulighed for at lave krydshenvisninger
+\usepackage{natbib}											% Litteraturliste med forfatter-år og nummerede referencer
+\usepackage{xr}													% Referencer til eksternt dokument med \externaldocument{<NAVN>}
+
+% ¤¤ Floats ¤¤ %
+\let\newfloat\relax 										% Memoir har allerede defineret denne, men det gør float pakken også
+\usepackage{float}
+
+\usepackage[footnote,draft,danish,silent,nomargin]{fixme}		% Indsæt rettelser og lignende med \fixme{...} Med final i stedet for draft, udløses en error 																															for hver fixme, der ikke er slettet, når rapporten bygges.
+
+%%%% CUSTOM SETTINGS %%%%
+
+% ¤¤ Code Inserting ¤¤ %
+
+\usepackage{listings}
+\lstset{
+language=C,                     % choose the language of the code
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it's 1 each line 
+                                % will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,	                  % adds a frame around the code
+tabsize=2,	                    % sets default tabsize to 2 spaces
+captionpos=b,                   % sets the caption-position to bottom
+breaklines=true,                % sets automatic line breaking
+breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                % also try caption instead of title
+escapeinside={(*@}{@*)},         % if you want to add a comment within your code
+%morekeywords={*,...}            % if you want to add more keywords to the set
+inputencoding=utf8x,
+extendedchars=\true
+}
+
+
+
+% ¤¤ Marginer ¤¤ %
+\setlrmarginsandblock{3.5cm}{2.5cm}{*}	% \setlrmarginsandblock{Indbinding}{Kant}{Ratio}
+\setulmarginsandblock{2.5cm}{3.0cm}{*}	% \setulmarginsandblock{Top}{Bund}{Ratio}
+\checkandfixthelayout 									% Laver forskellige beregninger og sætter de almindelige længder op til brug ikke memoir pakker
+
+%	¤¤ Afsnitsformatering ¤¤ %
+\setlength{\parindent}{0mm}           	% Størrelse af indryk
+\setlength{\parskip}{4mm}          			% Afstand mellem afsnit ved brug af double Enter
+\linespread{1,1}												% Linie afstand
+
+% ¤¤ Litteraturlisten ¤¤ %
+\bibpunct[,]{[}{]}{;}{a}{,}{,} 					% Definerer de 6 parametre ved Harvard henvisning (bl.a. parantestype og seperatortegn)
+\bibliographystyle{bibtex/harvard}			% Udseende af litteraturlisten. Ligner dk-apali - mvh Klein
+
+% ¤¤ Indholdsfortegnelse ¤¤ %
+\renewcommand\contentsname{Table of Contents}
+\setsecnumdepth{subsection}		 					% Dybden af nummerede overkrifter (part/chapter/section/subsection)
+\maxsecnumdepth{subsection}							% Ændring af dokumentklassens grænse for nummereringsdybde
+\settocdepth{subsection} 								% Dybden af indholdsfortegnelsen
+
+% ¤¤ Lister ¤¤ %
+\setlist{
+  topsep=0pt,														% Vertikal afstand mellem tekst og listen
+  itemsep=-1ex,													% Vertikal afstand mellem items
+} 
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{eksempel}{Eksempel}
+
+% ¤¤ Visuelle referencer ¤¤ %
+\usepackage[colorlinks]{hyperref}			 	% Giver mulighed for at ens referencer bliver til klikbare hyperlinks. .. [colorlinks]{..}
+\hypersetup{pdfborder = 0}							% Fjerner ramme omkring links i fx indholsfotegnelsen og ved kildehenvisninger ¤¤
+\hypersetup{														%	Opsætning af farvede hyperlinks
+    colorlinks = false,
+    linkcolor = black,
+    anchorcolor = black,
+    citecolor = black
+}
+
+\definecolor{gray}{gray}{0.80}					% Definerer farven grå
+
+
+% Opsætning af autoref%
+\def\sectionautorefname{Section}
+%\def\figureautorefname{Figur}
+%\def\tableautorefname{Tabel}
+%\def\chapterautorefname{Kapitel}
+%\def\sectionautorefname{Afsnit}
+%\def\subsectionautorefname{Afsnit}
+\def\lstnumberautorefname{line}
+
+% ¤¤ Opsætning af figur- og tabeltekst ¤¤ %
+ 	\captionnamefont{
+ 		\small\bfseries\itshape}						% Opsætning af tekstdelen ("Figur" eller "Tabel")
+  \captiontitlefont{\small}							% Opsætning af nummerering
+  \captiondelim{. }											% Seperator mellem nummerering og figurtekst
+  \hangcaption													%	Venstrejusterer flere-liniers figurtekst under hinanden
+  \captionwidth{\linewidth}							% Bredden af figurteksten
+	\setlength{\belowcaptionskip}{10pt}		% Afstand under figurteksten
+		
+% ¤¤ Navngivning ¤¤ %
+%\addto\captionsdanish{
+%	\renewcommand\appendixname{Bilag}
+%	\renewcommand\contentsname{Indholdsfortegnelse}	
+%	\renewcommand\appendixpagename{Bilag}
+%	\renewcommand\cftchaptername{\chaptername~}				% Skriver "Kapitel" foran kapitlerne i indholdsfortegnelsen
+%	\renewcommand\cftappendixname{\appendixname~}			% Skriver "Bilag" foran bilagene i indholdsfortegnelsen
+%	\renewcommand\appendixtocname{Bilag}
+%}
+
+% ¤¤ Kapiteludssende ¤¤ %
+\definecolor{numbercolor}{gray}{0.7}			% Definerer en farve til brug til kapiteludseende
+\newif\ifchapternonum
+
+\makechapterstyle{jenor}{									% Definerer kapiteludseende -->
+  \renewcommand\printchaptername{}
+  \renewcommand\printchapternum{}
+  \renewcommand\printchapternonum{\chapternonumtrue}
+  \renewcommand\chaptitlefont{\fontfamily{pbk}\fontseries{db}\fontshape{n}\fontsize{25}{35}\selectfont\raggedleft}
+  \renewcommand\chapnumfont{\fontfamily{pbk}\fontseries{m}\fontshape{n}\fontsize{1in}{0in}\selectfont\color{numbercolor}}
+  \renewcommand\printchaptertitle[1]{%
+    \noindent
+    \ifchapternonum
+    \begin{tabularx}{\textwidth}{X}
+    {\let\\\newline\chaptitlefont ##1\par} 
+    \end{tabularx}
+    \par\vskip-2.5mm\hrule
+    \else
+    \begin{tabularx}{\textwidth}{Xl}
+    {\parbox[b]{\linewidth}{\chaptitlefont ##1}} & \raisebox{-15pt}{\chapnumfont \thechapter}
+    \end{tabularx}
+    \par\vskip2mm\hrule
+    \fi
+  }
+}																						% <--
+
+\chapterstyle{jenor}												% Valg af kapiteludseende - dette kan udskiftes efter ønske
+
+% ¤¤ Sidehoved ¤¤ %
+
+%\makepagestyle{custom}																				% Definerer sidehoved og sidefod - kan modificeres efter ønske -->
+%\makepsmarks{custom}{																						
+%\def\chaptermark##1{\markboth{\itshape\thechapter. ##1}{}}		% Henter kapitlet den pågældende side hører under med kommandoen \leftmark. \itshape gør teksten kursiv
+%\def\sectionmark##1{\markright{\thesection. ##1}{}}					% Henter afsnittet den pågældende side hører under med kommandoen \rightmark
+%}																														% Sidetallet skrives med kommandoen \thepage	
+%\makeevenhead{custom}{Gruppe B130}{}{\leftmark}							% Definerer lige siders sidehoved efter modellen \makeevenhead{Navn}{Venstre}{Center}{Højre}
+%\makeoddhead{custom}{\rightmark}{}{Aalborg Universitet}			% Definerer ulige siders sidehoved efter modellen \makeoddhead{Navn}{Venstre}{Center}{Højre}
+%\makeevenfoot{custom}{\thepage}{}{}													% Definerer lige siders sidefod efter modellen \makeevenfoot{Navn}{Venstre}{Center}{Højre}
+%\makeoddfoot{custom}{}{}{\thepage}														% Definerer ulige siders sidefod efter modellen \makeoddfoot{Navn}{Venstre}{Center}{Højre}		
+%\makeheadrule{custom}{\textwidth}{0.5pt}											% Tilføjer en streg under sidehovedets indhold
+%\makefootrule{custom}{\textwidth}{0.5pt}{1mm}								% Tilføjer en streg under sidefodens indhold
+
+%\copypagestyle{nychapter}{custom}														% Følgende linier sørger for, at sidefoden bibeholdes på kapitlets første side
+%\makeoddhead{nychapter}{}{}{}
+%\makeevenhead{nychapter}{}{}{}
+%\makeheadrule{nychapter}{\textwidth}{0pt}
+%\aliaspagestyle{chapter}{nychapter}													% <--
+
+\pagestyle{plain}																							% Valg af sidehoved og sidefod
+
+
+%%%% CUSTOM COMMANDS %%%%
+
+% ¤¤ Billede hack ¤¤ %
+\newcommand{\figur}[4]{
+		\begin{figure}[H] \centering
+			\includegraphics[width=#1\textwidth]{billeder/#2}
+			\caption{#3}\label{#4}
+		\end{figure} 
+}
+
+% ¤¤ Specielle tegn ¤¤ %
+\newcommand{\grader}{^{\circ}\text{C}}
+\newcommand{\gr}{^{\circ}}
+\newcommand{\g}{\cdot}
+
+% ¤¤ Promille-hack (\promille) ¤¤ %
+\newcommand{\promille}{%
+  \relax\ifmmode\promillezeichen
+        \else\leavevmode\(\mathsurround=0pt\promillezeichen\)\fi}
+\newcommand{\promillezeichen}{%
+  \kern-.05em%
+  \raise.5ex\hbox{\the\scriptfont0 0}%
+  \kern-.15em/\kern-.15em%
+  \lower.25ex\hbox{\the\scriptfont0 00}}
+
+%%%% ORDDELING %%%%
+
+\hyphenation{hvad hvem hvor MPa kon-se-kvens e-le-ment tem-pera-tur fjer-nes fjer-ner var-me gen-nem sys-tem kanal af-stand}
+
