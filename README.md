@@ -3,15 +3,15 @@ girafAdmin
 
 Admin module for GIRAF@AAU
 
-Group:  SW601F13
+Group:  SW601F13<br />
 Office: 5.1.12
 
 Authors:
 
-[ZFirE](https://github.com/zfire)
-[Zucka](https://github.com/Zucka)
-[Fruitdrops](https://github.com/Fruitdrops)
-[Jlauri10](https://github.com/jlauri10)
+[Tommy Knudsen](https://github.com/zfire)<br />
+[Johan Sørensen](https://github.com/Zucka)<br />
+[Lars Chr. Pedersen](https://github.com/Fruitdrops)<br />
+[Jens Mikkel Lauridsen](https://github.com/jlauri10)<br />
 
 
 License
