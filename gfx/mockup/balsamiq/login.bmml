@@ -31,7 +31,7 @@
         </control>
         <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="98" y="9" w="75" h="71" measuredW="461" measuredH="435" zOrder="3" locked="false" isInGroup="15">
           <controlProperties>
-            <src>../gfx/icons/png/girafAdminLogo.png</src>
+            <src>../../design/icons/png/girafAdminLogo.png</src>
             <text/>
           </controlProperties>
         </control>
