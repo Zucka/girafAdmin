@@ -1,0 +1,271 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1393" measuredH="723" mockupW="1024" mockupH="639">
+  <controls>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::Component" x="369" y="84" w="1024" h="639" measuredW="1024" measuredH="639" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="1024" h="639"/>
+        <override controlID="1" x="3" y="72" w="206" h="539"/>
+        <override controlID="0:4:0" x="0" y="0" w="1024" h="65"/>
+        <override controlID="1:1:1" x="21" y="0" w="171" h="340"/>
+        <override controlID="0:4:12" x="108" y="41" w="883" h="23"/>
+        <override controlID="1:1:0:3" x="1" y="77" w="20" h="24"/>
+        <override controlID="0:4:13" x="130" y="42" w="117" h="-1"/>
+        <override controlID="0:3:2" x="1008" y="13" w="12" h="11"/>
+        <override controlID="1:2" x="196" y="0" w="-1" h="539"/>
+        <override controlID="0:4:3:4" x="204" y="4" w="10" h="-1"/>
+        <override controlID="1:1:0:1:0" x="0" y="2" w="20" h="20"/>
+        <override controlID="0:2" x="0" y="67" w="1021" h="556">
+          <borderStyle>square</borderStyle>
+        </override>
+        <override controlID="0:4:3:3" x="29" y="5" w="134" h="-1"/>
+        <override controlID="1:1:1:1" x="0" y="235" w="170" h="78"/>
+        <override controlID="0:3:1" x="1003" y="9" w="12" h="11"/>
+        <override controlID="0:4:3:2:2" x="4" y="0" w="12" h="-1"/>
+        <override controlID="1:1:0:2:0" x="0" y="2" w="20" h="20"/>
+        <override controlID="1:1" x="0" y="0" w="192" h="524"/>
+        <override controlID="1:1:0:5:1" x="4" y="0" w="12" h="-1"/>
+        <override controlID="0:3" x="0" y="611" w="1024" h="28"/>
+        <override controlID="0:4:2" x="293" y="10" w="20" h="20"/>
+        <override controlID="0:4:6" x="48" y="10" w="10" h="10"/>
+        <override controlID="1:1:0:0" x="58" y="450" w="75" h="71"/>
+        <override controlID="0:4:9" x="56" y="46" w="-1" h="-1"/>
+        <override controlID="0:3:0" x="0" y="0" w="1024" h="28"/>
+        <override controlID="0:1" x="999" y="67" w="25" h="572"/>
+        <override controlID="0:4:5" x="28" y="10" w="10" h="10"/>
+        <override controlID="0:4:3:1" x="0" y="28" w="222" h="10"/>
+        <override controlID="1:1:1:0" x="0" y="0" w="170" h="27"/>
+        <override controlID="1:1:0:2" x="0" y="24" w="20" h="24"/>
+        <override controlID="0:4:7" x="6" y="46" w="-1" h="-1"/>
+        <override controlID="0:4:14" x="112" y="46" w="-1" h="-1"/>
+        <override controlID="-1"/>
+        <override controlID="0:4" x="0" y="0" w="1024" h="72"/>
+        <override controlID="1:1:0:3:1" x="2" y="0" w="16" h="-1"/>
+        <override controlID="0:4:10" x="81" y="46" w="-1" h="-1"/>
+        <override controlID="0:4:1" x="0" y="35" w="1024" h="37"/>
+        <override controlID="1:1:0" x="0" y="3" w="133" h="521"/>
+        <override controlID="1:1:0:4:1" x="4" y="0" w="12" h="-1"/>
+        <override controlID="1:1:0:1" x="0" y="0" w="20" h="24"/>
+        <override controlID="1:1:0:1:1" x="4" y="0" w="12" h="-1"/>
+        <override controlID="1:1:1:4" x="0" y="313" w="170" h="27"/>
+        <override controlID="1:1:0:5" x="0" y="311" w="20" h="24"/>
+        <override controlID="1:1:0:5:0" x="0" y="2" w="20" h="20"/>
+        <override controlID="0:4:15" x="970" y="44" w="15" h="15"/>
+        <override controlID="1:1:1:2" x="1" y="78" w="170" h="157"/>
+        <override controlID="1:1:1:3" x="0" y="27" w="170" h="56">
+          <text>Profiler%0A%3E%20Tilf%F8j%20relation</text>
+        </override>
+        <override controlID="0:4:3:2:0" x="0" y="3" w="20" h="20"/>
+        <override controlID="1:1:0:4" x="0" y="232" w="20" h="24"/>
+        <override controlID="0:4:4" x="8" y="10" w="10" h="10"/>
+        <override controlID="1:1:0:2:1" x="4" y="0" w="12" h="-1"/>
+        <override controlID="0:4:8" x="31" y="46" w="-1" h="-1"/>
+        <override controlID="0:4:11" x="999" y="46" w="-1" h="-1"/>
+        <override controlID="0:4:2:1" x="2" y="3" w="-1" h="-1"/>
+        <override controlID="0:4:2:0" x="0" y="0" w="20" h="20"/>
+        <override controlID="0:4:3" x="67" y="8" w="222" h="38"/>
+        <override controlID="0:0" x="0" y="67" w="25" h="572"/>
+        <override controlID="0:4:3:0" x="2" y="0" w="219" h="34"/>
+        <override controlID="0:4:3:2" x="7" y="3" w="20" h="24"/>
+        <override controlID="1:1:0:3:0" x="0" y="2" w="20" h="20"/>
+        <override controlID="1:1:0:4:0" x="0" y="2" w="20" h="20"/>
+        <src>./assets/symbols.bmml#layout</src>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::Accordion" x="606" y="202" w="150" h="467" measuredW="150" measuredH="240" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>B%F8rn%0A-%20Marie%0A-%20Jens%0A-%20Hans%0A-%20Morten%0A-%20Anne</text>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::CheckBox" x="720" y="234" w="-1" h="-1" measuredW="20" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>selected</state>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::CheckBox" x="720" y="261" w="-1" h="-1" measuredW="20" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>selected</state>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::CheckBox" x="720" y="288" w="-1" h="-1" measuredW="20" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::CheckBox" x="720" y="315" w="-1" h="-1" measuredW="20" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::CheckBox" x="720" y="343" w="-1" h="-1" measuredW="20" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::CheckBox" x="720" y="206" w="18" h="22" measuredW="20" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::Label" x="673" y="208" w="-1" h="-1" measuredW="44" measuredH="18" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>V%E6lg%20Alle</text>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::FieldSet" x="781" y="194" w="585" h="475" measuredW="200" measuredH="170" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Apps</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::IconLabel" x="798" y="224" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="10" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>Bunny</text>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::IconLabel" x="992" y="224" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+        <text>Deer</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::IconLabel" x="1292" y="224" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="12" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>Tiger</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::IconLabel" x="1092" y="224" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="13" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>Lion</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::IconLabel" x="1192" y="224" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+        <text>Moss</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::IconLabel" x="798" y="309" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="15" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>Parrot</text>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::IconLabel" x="898" y="309" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <color>40463</color>
+        <text>Buffalo</text>
+      </controlProperties>
+    </control>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::IconLabel" x="992" y="309" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="17" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>Ant</text>
+      </controlProperties>
+    </control>
+    <control controlID="62" controlTypeID="com.balsamiq.mockups::IconLabel" x="1092" y="309" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="18" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>Duck</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::RoundButton" x="796" y="219" w="28" h="31" measuredW="32" measuredH="32" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::RoundButton" x="1090" y="219" w="28" h="31" measuredW="32" measuredH="32" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::RoundButton" x="796" y="299" w="28" h="31" measuredW="32" measuredH="32" zOrder="21" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::RoundButton" x="1290" y="219" w="28" h="31" measuredW="32" measuredH="32" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::RoundButton" x="1092" y="299" w="28" h="31" measuredW="32" measuredH="32" zOrder="23" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::RoundButton" x="992" y="299" w="28" h="31" measuredW="32" measuredH="32" zOrder="24" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::Label" x="1301" y="224" w="10" h="-1" measuredW="10" measuredH="21" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1</text>
+      </controlProperties>
+    </control>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::Label" x="1101" y="304" w="-1" h="-1" measuredW="10" measuredH="21" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1</text>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::Label" x="1001" y="304" w="-1" h="-1" measuredW="10" measuredH="21" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1</text>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::Label" x="805" y="224" w="-1" h="-1" measuredW="10" measuredH="21" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2</text>
+      </controlProperties>
+    </control>
+    <control controlID="75" controlTypeID="com.balsamiq.mockups::Label" x="1099" y="224" w="-1" h="-1" measuredW="10" measuredH="21" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2</text>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::Label" x="805" y="304" w="-1" h="-1" measuredW="10" measuredH="21" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2</text>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::IconLabel" x="898" y="224" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+        <text>Cow</text>
+      </controlProperties>
+    </control>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::FieldSet" x="781" y="528" w="585" h="141" measuredW="200" measuredH="170" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buffalo</text>
+      </controlProperties>
+    </control>
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="1350" y="202" w="-1" h="333" measuredW="16" measuredH="100" zOrder="33" locked="false" isInGroup="-1"/>
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::Button" x="1078" y="627" w="-1" h="-1" measuredW="52" measuredH="27" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+        <text>Fjern</text>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::Button" x="1001" y="627" w="-1" h="-1" measuredW="54" measuredH="27" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Tildel</text>
+      </controlProperties>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::Label" x="796" y="550" w="-1" h="-1" measuredW="489" measuredH="21" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buffalo%20er%20et%20sjovt%20og%20underholdene%20spil%20for%20b%F8rn%20med%20vansklighed%20inden%20for%20krafter%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Icon" x="1290" y="611" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>DownTriangleIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::Icon" x="1290" y="548" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>UpTriangleIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
