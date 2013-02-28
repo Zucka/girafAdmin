@@ -1,18 +1,107 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1343" measuredH="691" mockupW="1024" mockupH="639">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1363" measuredH="698" mockupW="1024" mockupH="639">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::Component" x="319" y="52" w="1024" h="639" measuredW="1024" measuredH="639" zOrder="0" locked="false" isInGroup="-1">
-      <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2224%2C75%2C194%2C100%22%20href%3D%22egenProfil.bmml%22%20alt%3D%22egenProfil%22%20id%3D%220%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2224%2C75%2C194%2C100%22%20href%3D%22egenProfil.bmml%22%20alt%3D%22egenProfil%22%20id%3D%220%22/%3E%0A</map>
-        <override controlID="1:1:1:0">
-          <hrefs>egenProfil%26bm%3BegenProfil.bmml%26bm%3BegenProfil.bmml%26bm%3BegenProfil.bmml</hrefs>
-          <selectedIndex>0</selectedIndex>
-          <verticalScrollbar>false</verticalScrollbar>
-        </override>
-        <override controlID="1:1:1:2">
-          <text>Pics%20Manager%0A%3E%20Opret%0A%3E%20Tildel%0A%3E%20Fjern%0A%3E%20Edit%0A%3E%20Slet</text>
-        </override>
-        <src>./assets/symbols.bmml#layout</src>
-      </controlProperties>
+    <control controlID="6" controlTypeID="__group__" x="339" y="59" w="1024" h="639" measuredW="1024" measuredH="639" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Component" x="0" y="0" w="1024" h="639" measuredW="1024" measuredH="639" zOrder="0" locked="true" isInGroup="6">
+          <controlProperties>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2224%2C75%2C194%2C100%22%20href%3D%22egenProfil.bmml%22%20alt%3D%22egenProfil%22%20id%3D%220%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2224%2C75%2C194%2C100%22%20href%3D%22egenProfil.bmml%22%20alt%3D%22egenProfil%22%20id%3D%220%22/%3E%0A</map>
+            <override controlID="1:1:1:2">
+              <text>Pics%20Manager%0A%3E%20Opret%0A%3E%20Tildel%0A%3E%20Fjern%0A%3E%20Edit%0A%3E%20Slet</text>
+            </override>
+            <override controlID="1:1:1:0">
+              <hrefs>egenProfil%26bm%3BegenProfil.bmml%26bm%3BegenProfil.bmml%26bm%3BegenProfil.bmml</hrefs>
+              <selectedIndex>0</selectedIndex>
+              <verticalScrollbar>false</verticalScrollbar>
+            </override>
+            <src>./assets/symbols.bmml#layout</src>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="230" y="118" w="194" h="28" measuredW="194" measuredH="28" zOrder="1" locked="false" isInGroup="6">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="194" h="-1" measuredW="178" measuredH="28" zOrder="0" locked="false" isInGroup="1">
+              <controlProperties>
+                <size>20</size>
+                <text>Navn%3A%20Hans%20Hansen</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="230" y="153" w="147" h="-1" measuredW="131" measuredH="28" zOrder="2" locked="false" isInGroup="6">
+          <controlProperties>
+            <size>20</size>
+            <text>Tlf%3A%2048768598</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="230" y="187" w="-1" h="-1" measuredW="153" measuredH="28" zOrder="3" locked="false" isInGroup="6">
+          <controlProperties>
+            <size>20</size>
+            <text>Mobil%3A%2032980298</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="230" y="224" w="-1" h="-1" measuredW="322" measuredH="28" zOrder="4" locked="false" isInGroup="6">
+          <controlProperties>
+            <size>20</size>
+            <text>Adresse%3A%20Bredgade%201%2C%209000%20Aalborg</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="230" y="261" w="-1" h="-1" measuredW="156" measuredH="28" zOrder="5" locked="false" isInGroup="6">
+          <controlProperties>
+            <size>20</size>
+            <text>Afdeling%3A%20Bj%E6lken</text>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::DataGrid" x="230" y="345" w="251" h="115" measuredW="209" measuredH="111" zOrder="6" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>Navn%20%5Ev%2C%20Alder%20%5Ev%2C%20%C6ndre%0AKim%20Larsen%2C%2036%2C%0AJette%20Berg%2C%2034%2C%0AMarianne%20Holm%2C%2024%2C%0A%7B65%2C%200%2C%2035%7D</text>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="231" y="311" w="-1" h="-1" measuredW="41" measuredH="28" zOrder="7" locked="false" isInGroup="6">
+          <controlProperties>
+            <size>20</size>
+            <text>B%F8rn</text>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::Button" x="413" y="366" w="-1" h="-1" measuredW="61" measuredH="27" zOrder="8" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>%C6ndre</text>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::Button" x="413" y="395" w="-1" h="-1" measuredW="61" measuredH="27" zOrder="9" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>%C6ndre</text>
+          </controlProperties>
+        </control>
+        <control controlID="12" controlTypeID="com.balsamiq.mockups::Button" x="413" y="427" w="-1" h="-1" measuredW="61" measuredH="27" zOrder="10" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>%C6ndre</text>
+          </controlProperties>
+        </control>
+        <control controlID="13" controlTypeID="com.balsamiq.mockups::Webcam" x="792" y="118" w="-1" h="-1" measuredW="177" measuredH="146" zOrder="11" locked="false" isInGroup="6"/>
+        <control controlID="14" controlTypeID="com.balsamiq.mockups::Button" x="817" y="267" w="116" h="39" measuredW="81" measuredH="28" zOrder="12" locked="false" isInGroup="6">
+          <controlProperties>
+            <size>20</size>
+            <text>%C6ndre</text>
+          </controlProperties>
+        </control>
+        <control controlID="15" controlTypeID="com.balsamiq.mockups::Label" x="590" y="311" w="-1" h="-1" measuredW="132" measuredH="40" zOrder="13" locked="false" isInGroup="6">
+          <controlProperties>
+            <size>32</size>
+            <text>QR%20Kode</text>
+          </controlProperties>
+        </control>
+        <control controlID="17" controlTypeID="com.balsamiq.mockups::Image" x="564" y="345" w="226" h="213" measuredW="200" measuredH="200" zOrder="14" locked="false" isInGroup="6">
+          <controlProperties>
+            <src>../../../../../../Downloads/qrcode.11876817.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="18" controlTypeID="com.balsamiq.mockups::Button" x="601" y="541" w="-1" h="-1" measuredW="153" measuredH="28" zOrder="15" locked="false" isInGroup="6">
+          <controlProperties>
+            <size>20</size>
+            <text>Print%20QR%20Kode</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
     </control>
   </controls>
 </mockup>
