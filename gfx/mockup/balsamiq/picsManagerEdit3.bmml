@@ -1,0 +1,45 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1084" measuredH="659" mockupW="1024" mockupH="639">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Component" x="60" y="20" w="1024" h="639" measuredW="1024" measuredH="639" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#layout</src>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Paragraph" x="564" y="97" w="243" h="23" measuredW="200" measuredH="80" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>V%E6lg%20Pic%20%3E%20Edit%20%3E%20%26Edit%20for%26%20%3E%20Confirm</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::FieldSet" x="564" y="145" w="200" h="62" measuredW="200" measuredH="170" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Taget%20Fra</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::FieldSet" x="564" y="267" w="200" h="349" measuredW="200" measuredH="170" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ret%20For</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::DataGrid" x="566" y="282" w="196" h="344" measuredW="106" measuredH="231" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Navn%20%5Ev%2CV%E6lg%0AMads%2C%5Bx%5D%0AMikkel%2C%5B%5D%0AFrederik%2C%5Bx%5D%0AMaria%2C%5B%5D%0AMette%2C%5B%5D%0ALotte%2C%5Bx%5D%0AGustav%2C%5B%5D</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::DataGrid" x="566" y="155" w="196" h="52" measuredW="106" measuredH="231" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Navn%20%5Ev%2CV%E6lg%0AMads%2C%5Bx%5D%0AMikkel%2C%5B%5D%0AFrederik%2C%5Bx%5D%0AMaria%2C%5B%5D%0AMette%2C%5B%5D%0ALotte%2C%5Bx%5D%0AGustav%2C%5B%5D</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Button" x="860" y="565" w="-1" h="-1" measuredW="122" measuredH="36" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>Confirm</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::CheckBox" x="835" y="226" w="-1" h="-1" measuredW="172" measuredH="22" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Department%20wise%20Change</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
