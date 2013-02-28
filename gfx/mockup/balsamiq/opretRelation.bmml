@@ -23,16 +23,16 @@
         <text>V%E6lg%20Guardian/For%E6ldre</text>
       </controlProperties>
     </control>
-    <control controlID="4" controlTypeID="com.balsamiq.mockups::DataGrid" x="557" y="233" w="221" h="205" measuredW="221" measuredH="122" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::DataGrid" x="557" y="233" w="221" h="205" measuredW="191" measuredH="122" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <size>24</size>
-        <text>Navn%20%5Ev%2C%20Valgt%0ALille%20Lotte%2C%20%5B%5D%0ARasmus%20Holt%2C%5Bx%5D%0AKnud%20Top%2C%5Bx%5D%0A%7B70%2C30%7D</text>
+        <text>Navn%20%5Ev%2C%20Valgt%0ALille%20Lotte%2C%20%5B%5D%0AHans%2C%5B%5D%0APeter%2C%5Bx%5D%0A%7B70%2C30%7D</text>
       </controlProperties>
     </control>
     <control controlID="5" controlTypeID="com.balsamiq.mockups::DataGrid" x="918" y="233" w="221" h="205" measuredW="221" measuredH="122" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
         <size>24</size>
-        <text>Navn%20%5Ev%2C%20Valgt%0ALille%20Lotte%2C%20%5B%5D%0ARasmus%20Holt%2C%5Bx%5D%0AKnud%20Top%2C%5Bx%5D%0A%7B70%2C30%7D</text>
+        <text>Navn%20%5Ev%2C%20Valgt%0AAnders%2C%20%5B%5D%0ARasmus%20Holt%2C%5Bx%5D%0AKnud%20Top%2C%5Bx%5D%0A%7B70%2C30%7D</text>
       </controlProperties>
     </control>
     <control controlID="6" controlTypeID="com.balsamiq.mockups::Button" x="795" y="495" w="-1" h="-1" measuredW="93" measuredH="40" zOrder="6" locked="false" isInGroup="-1">
