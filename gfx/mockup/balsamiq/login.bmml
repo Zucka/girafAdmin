@@ -5,10 +5,11 @@
         <src>./assets/symbols.bmml#Chrome</src>
       </controlProperties>
     </control>
-    <control controlID="11" controlTypeID="com.balsamiq.mockups::Button" x="820" y="427" w="77" h="38" measuredW="54" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Button" x="820" y="422" w="77" h="38" measuredW="73" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <href>egenProfil%26bm%3BegenProfil.bmml%26bm%3BegenProfil.bmml%26bm%3BegenProfil.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22474%2C386%2C551%2C424%22%20href%3D%22egenProfil.bmml%22%20alt%3D%22egenProfil%22%20id%3D%2211%22/%3E</map>
+        <icon>CheckMarkIcon%7Cxsmall</icon>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22474%2C381%2C551%2C419%22%20href%3D%22egenProfil.bmml%22%20alt%3D%22egenProfil%22%20id%3D%2211%22/%3E</map>
         <text>Login</text>
       </controlProperties>
     </control>
@@ -19,17 +20,17 @@
             <borderStyle>roundedSolid</borderStyle>
           </controlProperties>
         </control>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="88" w="225" h="-1" measuredW="76" measuredH="27" zOrder="1" locked="false" isInGroup="15">
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="96" w="225" h="-1" measuredW="76" measuredH="27" zOrder="1" locked="false" isInGroup="15">
           <controlProperties>
             <text>Username</text>
           </controlProperties>
         </control>
-        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="134" w="227" h="-1" measuredW="70" measuredH="27" zOrder="2" locked="false" isInGroup="15">
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="136" w="227" h="-1" measuredW="70" measuredH="27" zOrder="2" locked="false" isInGroup="15">
           <controlProperties>
             <text>Password</text>
           </controlProperties>
         </control>
-        <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="98" y="9" w="75" h="71" measuredW="461" measuredH="435" zOrder="3" locked="false" isInGroup="15">
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="98" y="13" w="75" h="71" measuredW="461" measuredH="435" zOrder="3" locked="false" isInGroup="15">
           <controlProperties>
             <src>../../design/icons/png/girafAdminLogo.png</src>
             <text/>
