@@ -630,6 +630,11 @@
             <control controlID="2" controlTypeID="com.balsamiq.mockups::VRule" x="196" y="0" w="-1" h="539" measuredW="10" measuredH="100" zOrder="1" locked="false" isInGroup="1"/>
           </groupChildrenDescriptors>
         </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::MultilineButton" x="51" y="479" w="93" h="36" measuredW="139" measuredH="66" zOrder="2" locked="false" isInGroup="1">
+          <controlProperties>
+            <text>Log%20ud</text>
+          </controlProperties>
+        </control>
       </groupChildrenDescriptors>
     </control>
   </controls>

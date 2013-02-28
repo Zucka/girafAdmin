@@ -20,17 +20,17 @@
             <borderStyle>roundedSolid</borderStyle>
           </controlProperties>
         </control>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="96" w="225" h="-1" measuredW="76" measuredH="27" zOrder="1" locked="false" isInGroup="15">
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="100" w="225" h="-1" measuredW="76" measuredH="27" zOrder="1" locked="false" isInGroup="15">
           <controlProperties>
             <text>Username</text>
           </controlProperties>
         </control>
-        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="136" w="227" h="-1" measuredW="70" measuredH="27" zOrder="2" locked="false" isInGroup="15">
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="21" y="140" w="227" h="-1" measuredW="70" measuredH="27" zOrder="2" locked="false" isInGroup="15">
           <controlProperties>
             <text>Password</text>
           </controlProperties>
         </control>
-        <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="98" y="13" w="75" h="71" measuredW="461" measuredH="435" zOrder="3" locked="false" isInGroup="15">
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="98" y="15" w="75" h="71" measuredW="461" measuredH="435" zOrder="3" locked="false" isInGroup="15">
           <controlProperties>
             <src>../../design/icons/png/girafAdminLogo.png</src>
             <text/>
