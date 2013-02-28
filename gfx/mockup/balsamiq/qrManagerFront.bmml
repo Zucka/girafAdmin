@@ -1,0 +1,33 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1205" measuredH="642" mockupW="1024" mockupH="639">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Component" x="181" y="3" w="1024" h="639" measuredW="1024" measuredH="639" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#layout</src>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="470" y="175" w="-1" h="-1" measuredW="285" measuredH="40" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>32</size>
+        <text>Ret%20QR%20P%E5%20Bruger</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="470" y="247" w="-1" h="-1" measuredW="276" measuredH="40" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>32</size>
+        <text>V%E6lg%20QR%20Til%20Print</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="470" y="319" w="-1" h="-1" measuredW="211" measuredH="40" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>32</size>
+        <text>Print%20Alle%20QR</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="665" y="85" w="-1" h="-1" measuredW="233" measuredH="48" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>40</size>
+        <text>QR%20Manager</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
