@@ -1,0 +1,52 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1084" measuredH="659" mockupW="1024" mockupH="639">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Component" x="60" y="20" w="1024" h="639" measuredW="1024" measuredH="639" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#layout</src>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="273" y="101" w="796" h="523" measuredW="200" measuredH="182" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kat1%0AKat2%0AKat3%0AKat4</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::VRule" x="379" y="101" w="-1" h="523" measuredW="10" measuredH="100" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="325" y="116" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ImageIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Icon" x="325" y="163" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>AIMIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Icon" x="325" y="211" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>FlickrIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Icon" x="325" y="258" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>VolumeIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="325" y="313" w="-1" h="-1" measuredW="48" measuredH="32" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>Text</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::SearchBox" x="273" y="91" w="-1" h="-1" measuredW="120" measuredH="25" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Component" x="593" y="138" w="86" h="98" measuredW="86" measuredH="98" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Pictogram</src>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::Component" x="457" y="140" w="86" h="98" measuredW="86" measuredH="98" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Tomt-Pictogram</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
