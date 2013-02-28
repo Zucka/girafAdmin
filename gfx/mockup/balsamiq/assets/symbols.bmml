@@ -595,7 +595,7 @@
                         <hasHeader>false</hasHeader>
                         <rowHeight>25</rowHeight>
                         <size>14</size>
-                        <text>Pics%20Manager%0A%3E%20Tilf%F8j%0A%3E%20Tildel%0A%3E%20Fjern%0A%3E%20Edit%0A%3E%20Slet</text>
+                        <text>Pics%20Manager%0A%3E%20Opret%0A%3E%20Tildel%0A%3E%20Fjern%0A%3E%20Edit%0A%3E%20Slet</text>
                         <verticalScrollbar>false</verticalScrollbar>
                       </controlProperties>
                     </control>
