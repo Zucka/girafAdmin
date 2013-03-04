@@ -48,5 +48,11 @@
         <src>./assets/symbols.bmml#Tomt-Pictogram</src>
       </controlProperties>
     </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Button" x="956" y="580" w="-1" h="-1" measuredW="105" measuredH="36" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>N%E6ste</text>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>
