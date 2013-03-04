@@ -439,9 +439,9 @@
             <text>%C6ndre</text>
           </controlProperties>
         </control>
-        <control controlID="17" controlTypeID="com.balsamiq.mockups::DataGrid" x="234" y="308" w="251" h="115" measuredW="158" measuredH="111" zOrder="7" locked="false" isInGroup="0">
+        <control controlID="17" controlTypeID="com.balsamiq.mockups::DataGrid" x="234" y="308" w="289" h="129" measuredW="203" measuredH="111" zOrder="7" locked="false" isInGroup="0">
           <controlProperties>
-            <text>Navn%20%5Ev%2C%20Alder%20%5Ev%0AKim%20Larsen%2C%2036%0AJette%20Berg%2C%2034%0AMarianne%20Holm%2C%2024%0A%7B65%2C%2020%7D</text>
+            <text>Navn%20%5Ev%2C%20Kontakt%20B%F8rn%20%5Ev%0AKim%20Larsen%2C%20Jens%20Sejr%0AJette%20Berg%2C%20Poul%20Bjerg%0AMarianne%20Holm%2C%20Hans%20Hansen%0A%7B40%2C%2060%7D</text>
           </controlProperties>
         </control>
         <control controlID="18" controlTypeID="com.balsamiq.mockups::Label" x="235" y="274" w="-1" h="-1" measuredW="93" measuredH="28" zOrder="8" locked="false" isInGroup="0">

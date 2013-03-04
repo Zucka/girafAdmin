@@ -407,43 +407,19 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="433" y="196" w="-1" h="-1" measuredW="65" measuredH="40" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="521" y="197" w="-1" h="-1" measuredW="312" measuredH="40" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
         <size>32</size>
-        <text>B%F8rn</text>
+        <text>Oversigt%20over%20profiler</text>
       </controlProperties>
     </control>
-    <control controlID="2" controlTypeID="com.balsamiq.mockups::DataGrid" x="291" y="245" w="349" h="183" measuredW="223" measuredH="148" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::DataGrid" x="346" y="245" w="682" h="273" measuredW="496" measuredH="148" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <size>20</size>
-        <text>Navn%20%5Ev%2C%20Alder%20%5Ev%0AKim%20Larsen%2C%2015%0AHolly%20Hansen%2C%206%0AJens%20S%F8rensen%2C%207%0APoul%20Ravn%2C%2010%0A%7B65%2C35%7D</text>
+        <text>Barn%20%5Ev%2C%20For%E6ldre%20%5Ev%2C%20Guardian%20%5Ev%0AKim%20Larsen%2C%20Ren%E9%20Poulsen%2C%20Anna%20Sejer%0AHolly%20Hansen%2C%20Inge%20Karp%2C%20Henriette%20Nielsen%0AJens%20S%F8rensen%2C%20Gurli%20Hansen%2C%20Carsten%20Karstensen%0APoul%20Ravn%2C%20Mark%20S%F8rensen%2C%20Morten%20Mathiasen%0A%7B33%2C33%2C33%7D</text>
       </controlProperties>
     </control>
-    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="775" y="196" w="-1" h="-1" measuredW="149" measuredH="40" zOrder="3" locked="false" isInGroup="-1">
-      <controlProperties>
-        <size>32</size>
-        <text>Guardians</text>
-      </controlProperties>
-    </control>
-    <control controlID="4" controlTypeID="com.balsamiq.mockups::DataGrid" x="675" y="245" w="349" h="183" measuredW="223" measuredH="148" zOrder="4" locked="false" isInGroup="-1">
-      <controlProperties>
-        <size>20</size>
-        <text>Navn%20%5Ev%2C%20Alder%20%5Ev%0AKim%20Larsen%2C%2015%0AHolly%20Hansen%2C%206%0AJens%20S%F8rensen%2C%207%0APoul%20Ravn%2C%2010%0A%7B65%2C35%7D</text>
-      </controlProperties>
-    </control>
-    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="786" y="452" w="-1" h="-1" measuredW="127" measuredH="40" zOrder="5" locked="false" isInGroup="-1">
-      <controlProperties>
-        <size>32</size>
-        <text>For%E6ldre</text>
-      </controlProperties>
-    </control>
-    <control controlID="6" controlTypeID="com.balsamiq.mockups::DataGrid" x="675" y="498" w="349" h="183" measuredW="223" measuredH="148" zOrder="6" locked="false" isInGroup="-1">
-      <controlProperties>
-        <size>20</size>
-        <text>Navn%20%5Ev%2C%20Alder%20%5Ev%0AKim%20Larsen%2C%2015%0AHolly%20Hansen%2C%206%0AJens%20S%F8rensen%2C%207%0APoul%20Ravn%2C%2010%0A%7B65%2C35%7D</text>
-      </controlProperties>
-    </control>
-    <control controlID="7" controlTypeID="com.balsamiq.mockups::Button" x="360" y="554" w="-1" h="-1" measuredW="210" measuredH="36" zOrder="7" locked="false" isInGroup="-1">
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Button" x="582" y="546" w="-1" h="-1" measuredW="210" measuredH="36" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <size>28</size>
         <text>Opret%20Ny%20Profil</text>
