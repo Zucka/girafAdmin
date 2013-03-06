@@ -73,9 +73,10 @@
 							'.$errorStartPassword.'
 							<input type="password" name="password" class="input-block-level" placeholder="'.$LOGIN_STRINGS["formPassword"].'">
 							'.$errorEndPassword.'
+							<!-- Outcommented until implementation
 							<label class="checkbox">
 								<input type="checkbox" value="remember-me"> '.$LOGIN_STRINGS["formRememberMe"].'
-							</label>
+							</label> -->
 							<button class="btn btn-large btn-primary" type="submit">'.$LOGIN_STRINGS["formSignIn"].'</button>
 						</form>
 					</div> <!-- /container -->
