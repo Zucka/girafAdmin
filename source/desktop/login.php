@@ -80,7 +80,7 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 						<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 						<link rel="shortcut icon" href="../assets/ico/favicon.png">
 					</head>
-					<body>
+					<body class="login">
 					<div class="container">
 						<form class="form-signin" action="?action=login" method="post">
 							<img class="logo" src="assets/img/girafAdminLogo-01.svg" width="104" height="142">
