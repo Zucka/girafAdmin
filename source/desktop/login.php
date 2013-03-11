@@ -91,7 +91,7 @@
 		if (isset($_POST['username'])) {$username = $connection->real_escape_string($_POST['username']);} else {header('location:login.php');}
 		if (isset($_POST['password'])) {$password = $connection->real_escape_string($_POST['password']);} else {header('location:login.php');}
 
-		$result = $connection->query("SELECT * FROM authusers WHERE username='".$username."' LIMIT 1");
+		$result = $connection->query("SELECT * FROM AuthUsers WHERE username='".$username."' LIMIT 1");
 		if ($result->num_rows == 0)
 		{
 			header('location:login.php?error=1'); //Error: Username not found
