@@ -5,12 +5,12 @@
         <src>./assets/symbols.bmml#layout</src>
       </controlProperties>
     </control>
-    <control controlID="2" controlTypeID="com.balsamiq.mockups::Paragraph" x="577" y="106" w="215" h="23" measuredW="200" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Paragraph" x="575" y="116" w="215" h="23" measuredW="200" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <text>V%E6lg%20barn%20%3E%20%26V%E6lg%20Pics%26%20%3E%20Confirm</text>
       </controlProperties>
     </control>
-    <control controlID="21" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="270" y="101" w="796" h="523" measuredW="200" measuredH="182" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="270" y="112" w="796" h="512" measuredW="200" measuredH="182" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Kat1%0AKat2%0AKat3%0AKat4</text>
       </controlProperties>
@@ -57,6 +57,11 @@
       <controlProperties>
         <size>28</size>
         <text>N%E6ste</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::Label" x="661" y="91" w="-1" h="-1" measuredW="30" measuredH="21" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Fjern</text>
       </controlProperties>
     </control>
   </controls>

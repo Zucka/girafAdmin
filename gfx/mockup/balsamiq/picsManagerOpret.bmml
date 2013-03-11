@@ -74,7 +74,7 @@
         <text>Slet</text>
       </controlProperties>
     </control>
-    <control controlID="22" controlTypeID="com.balsamiq.mockups::Button" x="355" y="507" w="132" h="58" measuredW="56" measuredH="27" zOrder="18" locked="false" isInGroup="-1">
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::Button" x="355" y="591" w="132" h="37" measuredW="56" measuredH="27" zOrder="18" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Opret</text>
       </controlProperties>
@@ -114,6 +114,31 @@
     <control controlID="30" controlTypeID="com.balsamiq.mockups::Image" x="790" y="422" w="131" h="78" measuredW="1600" measuredH="1311" zOrder="25" locked="false" isInGroup="-1">
       <controlProperties>
         <src>./assets/horse%2520step%25204.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Label" x="359" y="478" w="-1" h="-1" measuredW="29" measuredH="21" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tags</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::TextInput" x="431" y="478" w="-1" h="-1" measuredW="114" measuredH="27" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>hest%2C%20heste%2C%20rider</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Label" x="355" y="523" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Katagori</text>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::ComboBox" x="431" y="523" w="93" h="-1" measuredW="66" measuredH="62" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Heste%0AMad%0AMorgenmad</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::Label" x="605" y="102" w="-1" h="-1" measuredW="97" measuredH="21" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Opret%20Pictogram</text>
       </controlProperties>
     </control>
   </controls>

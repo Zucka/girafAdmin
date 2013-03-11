@@ -459,5 +459,10 @@
         </control>
       </groupChildrenDescriptors>
     </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="868" y="155" w="-1" h="-1" measuredW="90" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Afdelings%20Profil</text>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>

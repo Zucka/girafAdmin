@@ -7,7 +7,7 @@
     </control>
     <control controlID="1" controlTypeID="com.balsamiq.mockups::Paragraph" x="564" y="97" w="243" h="23" measuredW="200" measuredH="80" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>V%E6lg%20Pic%20%3E%20Edit%20%3E%20%26Edit%20for%26%20%3E%20Confirm</text>
+        <text>V%E6lg%20Pic%20%3E%20Ret%20%3E%20%26Ret%20for%26%20%3E%20Confirm</text>
       </controlProperties>
     </control>
     <control controlID="2" controlTypeID="com.balsamiq.mockups::FieldSet" x="564" y="145" w="200" h="62" measuredW="200" measuredH="170" zOrder="2" locked="false" isInGroup="-1">

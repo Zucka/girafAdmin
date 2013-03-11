@@ -90,11 +90,16 @@
         <icon>FlickrIcon%7Cxsmall</icon>
       </controlProperties>
     </control>
-    <control controlID="31" controlTypeID="com.balsamiq.mockups::CallOut" x="838" y="173" w="35" h="28" measuredW="37" measuredH="39" zOrder="17" locked="false" isInGroup="-1"/>
-    <control controlID="32" controlTypeID="com.balsamiq.mockups::CallOut" x="838" y="233" w="35" h="28" measuredW="45" measuredH="40" zOrder="18" locked="false" isInGroup="-1"/>
-    <control controlID="33" controlTypeID="com.balsamiq.mockups::CallOut" x="832" y="325" w="35" h="28" measuredW="39" measuredH="39" zOrder="19" locked="false" isInGroup="-1">
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::CallOut" x="838" y="173" w="35" h="28" measuredW="45" measuredH="40" zOrder="17" locked="false" isInGroup="-1"/>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::CallOut" x="838" y="233" w="35" h="28" measuredW="37" measuredH="39" zOrder="18" locked="false" isInGroup="-1"/>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::CallOut" x="832" y="325" w="35" h="28" measuredW="36" measuredH="43" zOrder="19" locked="false" isInGroup="-1">
       <controlProperties>
         <text>2</text>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::Label" x="627" y="101" w="-1" h="-1" measuredW="30" measuredH="21" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Fjern</text>
       </controlProperties>
     </control>
   </controls>
