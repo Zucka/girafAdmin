@@ -1,0 +1,46 @@
+body{
+  /* IE10 Consumer Preview */ 
+  background-image: -ms-linear-gradient(top, #FFD96E 0%, #FFBB55 100%);
+
+  /* Mozilla Firefox */ 
+  background-image: -moz-linear-gradient(top, #FFD96E 0%, #FFBB55 100%);
+
+  /* Opera */ 
+  background-image: -o-linear-gradient(top, #FFD96E 0%, #FFBB55 100%);
+
+  /* Webkit (Safari/Chrome 10) */ 
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFD96E), color-stop(1, #FFBB55));
+
+  /* Webkit (Chrome 11+) */ 
+  background-image: -webkit-linear-gradient(top, #FFD96E 0%, #FFBB55 100%);
+
+  /* W3C Markup, IE10 Release Preview */ 
+  background-image: linear-gradient(to bottom, #FFD96E 0%, #FFBB55 100%);
+
+  background-attachment: fixed;
+}
+
+.form-signin {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 10% auto 20px;
+  background-color: #fff;
+  border: 2px solid rgb(100,96,96);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  background-color:rgba(255,255,255,0.7);
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+.logo {
+  margin: 0 28% 5%;
+}
