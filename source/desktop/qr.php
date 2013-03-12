@@ -1,0 +1,10 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<?php
+	include('qrtest.php')
+?>
+</body>
+</html>
