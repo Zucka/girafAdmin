@@ -107,7 +107,7 @@ body {
 }
 
 
-/* MENU BAR CSS */
+/* Navigation CSS */
 
 #menuBar{
   border-right:2px solid #9e6435;
@@ -202,5 +202,12 @@ a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLin
   margin-right:auto;
 }
 
+#content{
+	float:right;
+	width:83%;
+	height:auto;
+	min-height:100%;
+	border:2px solid black;
+}
 
-/* END OF MENU BAR CSS */
+/* END OF Navigation CSS */

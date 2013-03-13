@@ -17,3 +17,9 @@ function resizeMe(){
 	}
 	$("body").css("font-size", newFontSize);
 }
+
+window.onhashchange = function(){
+    var what_to_do = location.hash;    
+	alert("test"+what_to_do);
+	$("content").innerHTML = what_to_do;
+}
