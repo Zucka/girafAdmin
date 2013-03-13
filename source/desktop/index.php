@@ -7,10 +7,43 @@ if ($_SESSION['session_id'] != session_id())
 	header('location:login.php');
 } 
 ?>
+
 <html>
 	<head>
+	<?php include "include/headInclude.php" ?>
 	</head>
 	<body>
-		<a href="logout.php">Log out</a>
+		<div id="menuBar">
+			<a href="#" class="menuLink menuLastLink"><strong>E</strong>gen Profil</a>
+				<hr class="menuLinkSplitter">
+			<a href="#" class="menuLink deptOnly"><strong>P</strong>rofiler</a>
+				<hr class="menuSubLinkSplitter">
+			<a href="#" class="menuLink menuSubLink deptOnly menuLastLink">Tilføj Relation</a>
+				<hr class="menuLinkSplitter">
+			<a href="#" class="menuLink"><strong>P</strong>ics Manager</a>
+				<hr class="menuSubLinkSplitter">
+			<a href="#" class="menuLink menuSubLink">Opret</a>
+				<hr class="menuSubLinkSplitter">
+			<a href="#" class="menuLink menuSubLink">Tildel</a>
+				<hr class="menuSubLinkSplitter">
+			<a href="#" class="menuLink menuSubLink">Fjern Lokalt</a>
+				<hr class="menuSubLinkSplitter">
+			<a href="#" class="menuLink menuSubLink">Ret</a>
+				<hr class="menuSubLinkSplitter">
+			<a href="#" class="menuLink menuSubLink menuLastLink">Slet Permanent</a>
+				<hr class="menuLinkSplitter">
+			<a href="#" class="menuLink deptOnly"><strong>D</strong>ep. Manager</a>
+				<hr class="menuSubLinkSplitter">
+			<a href="#" class="menuLink menuSubLink deptOnly">Dep. Information</a>
+				<hr class="menuSubLinkSplitter">
+			<a href="#" class="menuLink menuSubLink deptOnly menuLastLink">QR Manager</a>
+				<hr class="menuLinkSplitter">
+			<a href="#" class="menuLink menuLastLink"><strong>A</strong>pp Manager</a>
+				<hr class="menuLinkSplitter">
+			
+			<a href="logout.php"><button id="menuLogOutButton" class="btn">Log out</button></a>
+			
+			<img id="menuLogo" src="assets/img/girafAdminLogo-01.svg">
+		</div>
 	</body>
 </html>

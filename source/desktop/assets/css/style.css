@@ -107,14 +107,100 @@ body {
 }
 
 
+/* MENU BAR CSS */
+
+#menuBar{
+  border-right:2px solid #9e6435;
+
+  position:relative;
+  width:16%;
+  min-width:150px;
+  height:auto;
+  min-height:100%;
+  
+  background-color:#ffbb55;
+  
+  float:left;
+}
+
+a.menuLink:link, a.menuLink:visited{
+  display:block;
+  width:95%;
+  border:0px;
+  background-color:#ffbb55;
+  
+  font-size:1em;
+  font-family:Verdana,Arial,sans-serif;
+  color:#ffffff;
+  text-align:left;
+  text-decoration:none;
+  
+  padding-left:5%;
+  padding-top:3%;
+  padding-bottom:3%;
+  
+}
+
+a.menuLink:hover,a.menuLink:active{
+  background-color:#dd9639;
+}
+
+a.menuSubLink:link, a.menuSubLink:visited, a.menuSubLink:hover, a.menuSubLink:active{
+  padding-left:25%;
+  width:75%;
+}
+
+a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLink:active{
+}
+
+.menuLinkSplitter{
+  width:85%;
+  margin-top:0px;
+  margin-bottom:0px;
+  margin-left:auto;
+  margin-right:auto;
+  
+  border-color:#9e6435;
+  
+  background-color:#ffbb55;
+}
+
+.menuSubLinkSplitter{
+  width:68%;
+  margin-top:0px;
+  margin-bottom:0px;
+  margin-left:24.5%;
+  margin-right:7.5%;
+  
+  border-color:#9e6435;
+  
+  background-color:#ffbb55;
+}
+
+#menuBar strong{
+  font-size:1.5em;
+}
+
+#menuLogOutButton{
+  display:block;
+  
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width:40%;
+  min-width:75px;
+  
+  margin-left:auto;
+  margin-right:auto;
+  
+  text-decoration:none;
+}
+
+#menuLogo{
+  display:block;
+  width:60%;
+  margin-left:auto;
+  margin-right:auto;
+}
 
 
-
-
-
-
-
-
-
-
-
+/* END OF MENU BAR CSS */
