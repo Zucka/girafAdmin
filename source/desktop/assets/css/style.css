@@ -64,3 +64,62 @@ body {
   background-color: #fff;
   
 }
+
+/* MENU BAR CSS */
+
+#menuBar{
+	position:relative;
+	width:150px;
+	height:100%;
+	
+	border-right:2px solid black;
+	
+	float:left;
+}
+
+a.menuLink:link, a.menuLink:visited{
+	display:block;
+	width:100%;
+	border:0px solid #0086DB;
+	background-color:#0086DB;
+	
+	font-family:Verdana,Arial,sans-serif;
+	color:#ffffff;
+	text-align:left;
+	text-decoration:none;
+	
+	padding-left:5%;
+	padding-top:5%;
+	padding-bottom:5%;
+	
+	-moz-box-shadow: inset 0px 5px 25px -5px #000000;
+	-webkit-box-shadow: inset 0px 5px 25px -5px #000000;
+	box-shadow: inset 0px 5px 25px -5px #000000;
+}
+
+a.menuLink:hover,a.menuLink:active{
+	background-color:#BABABA;
+}
+
+a.menuSubLink:link, a.menuSubLink:visited, a.menuSubLink:hover, a.menuSubLink:active{
+	padding-left:25%;
+}
+
+#menuLogOutButton{
+	display:block;
+	
+	margin-top: 1%;
+	margin-bottom: 1%;
+	
+	margin-left:auto;
+	margin-right:auto;
+	
+	text-decoration:none;
+}
+
+#menuLogo{
+	width:150px;
+}
+
+
+/* END OF MENU BAR CSS */
