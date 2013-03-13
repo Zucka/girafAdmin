@@ -68,17 +68,17 @@ body {
 /* MENU BAR CSS */
 
 #menuBar{
+	border-right:2px solid #9e6435;
+
 	position:relative;
 	width:16%;
-	min-width:145px;
-	height:100%;
+	min-width:150px;
+	height:auto;
+	min-height:100%;
 	
 	background-color:#ffbb55;
-	border-right:2px solid #9e6435;
 	
 	float:left;
-	
-	overflow:auto;
 }
 
 a.menuLink:link, a.menuLink:visited{
@@ -94,8 +94,8 @@ a.menuLink:link, a.menuLink:visited{
 	text-decoration:none;
 	
 	padding-left:5%;
-	padding-top:5%;
-	padding-bottom:5%;
+	padding-top:3%;
+	padding-bottom:3%;
 	
 }
 
@@ -113,10 +113,22 @@ a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLin
 
 .menuLinkSplitter{
 	width:85%;
-	margin-top:5px;
-	margin-bottom:5px;
+	margin-top:0px;
+	margin-bottom:0px;
 	margin-left:auto;
 	margin-right:auto;
+	
+	border-color:#9e6435;
+	
+	background-color:#ffbb55;
+}
+
+.menuSubLinkSplitter{
+	width:68%;
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:24.5%;
+	margin-right:7.5%;
 	
 	border-color:#9e6435;
 	

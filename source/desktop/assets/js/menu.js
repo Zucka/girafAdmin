@@ -11,7 +11,7 @@ function resizeMe(){
 
 	var displayHeight = $(window).width();
 	var percentage = displayHeight / preferredHeight;
-	var newFontSize = Math.floor(10 * percentage) - 1;
+	var newFontSize = Math.floor(9 * percentage) - 1;
 	if(newFontSize < 10){
 		newFontSize = 10;
 	}
