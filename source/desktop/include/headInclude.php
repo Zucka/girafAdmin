@@ -1,5 +1,19 @@
 <?php
-	//Denne fil inkludere alle de væsentlige sider og scripts der hører til i Head
+	//This file includes every important script, or other file in the headder.
+	
+	if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'en';}
+	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
+	switch ($lang) {
+		case 'en':
+			include('assets/lang/navigation/navigation.en.php');
+			break;
+		case 'dk':
+			include('assets/lang/navigation/navigation.dk.php');
+			break;
+		default:
+			include('assets/lang/navigation/navigation.en.php');
+			break;
+	}
 ?>
 	<html lang="en">
 	<meta charset="utf-8">
