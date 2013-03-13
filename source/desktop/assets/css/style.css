@@ -52,8 +52,9 @@ body {
 }
 
 .profile_picture {
-  padding: 19px 29px 29px;
-  margin: 10% auto 20px;
+  display: block;
+  padding: 5px;
+  margin: auto auto auto auto;
   border: 2px solid rgb(100,96,96);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -62,5 +63,58 @@ body {
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
   box-shadow: 0 1px 2px rgba(0,0,0,.05);
   background-color: #fff;
-  
+  text-align: center;
+  width: 60%;
 }
+
+.profile-qr {
+  display: block;
+  padding: 5px;
+  margin: 5% auto auto auto;
+  border: 2px solid rgb(100,96,96);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  background-color: #fff;
+  text-align: center;
+  width: 40%;
+}
+
+.table-profile {
+  font-size: medium;
+}
+
+.breadcrump {
+  text-align: center;
+  padding: 10px;
+}
+
+.profile-btn {
+  display: block;
+  margin: 1% auto auto auto;
+}
+
+.profile-btn-qr {
+  text-align: center;
+}
+
+.profile-btn-qr > .btn {
+  display: inline-block;
+  margin: 1% 2% 5% 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
