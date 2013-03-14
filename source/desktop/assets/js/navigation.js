@@ -19,7 +19,78 @@ function resizeMe(){
 }
 
 window.onhashchange = function(){
-    var what_to_do = location.hash;    
-	alert("test"+what_to_do);
-	$("content").innerHTML = what_to_do;
+    var hashInfo = location.hash;    
+	var hashArray = hashInfo.split("/");
+	var destination = hashArray[0];
+	var info = hashArray[1];
+	var destinationPath = "";
+	
+	switch(destination)
+	{
+		case "":
+		case "#ownProfile":
+			destinationPath = "sites/own_profile.html";
+		break;
+		
+		case "#profiles":
+			destinationPath = "";
+		break;
+		
+		case "#addRelation":
+			destinationPath = "";
+		break;
+		
+		case "#picsManager":
+			destinationPath = "";
+		break;
+		
+		case "#makePic":
+			destinationPath = "";
+		break;
+		
+		case "#addPic":
+			destinationPath = "";
+		break;
+		
+		case "#removePic":
+			destinationPath = "";
+		break;
+		
+		case "#editPic":
+			destinationPath = "";
+		break;
+		
+		case "#deletePic":
+			destinationPath = "";
+		break;
+		
+		case "#depManager":
+			destinationPath = "";
+		break;
+		
+		case "#depInfo":
+			destinationPath = "";
+		break;
+		
+		case "#qrManager":
+			destinationPath = "";
+		break;
+		
+		case "#appManager":
+			destinationPath = "";
+		break;
+		
+		default:
+			destinationPath = "404";
+	}
+	
+	$.ajax({
+		type: "POST",
+		url: destinationPath,
+		data: "",
+		success: function(result) { // result is the content that the php file 'ECHO's.
+			//var obj = jQuery.parseJSON(result); // Parsing JSON for easy Data Acces
+			$("#content").html(result);
+		}
+	});
 }

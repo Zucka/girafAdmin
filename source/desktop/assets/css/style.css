@@ -207,7 +207,7 @@ a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLin
 	width:83%;
 	height:auto;
 	min-height:100%;
-	border:2px solid black;
+	border:0px solid black;
 }
 
 /* END OF Navigation CSS */
