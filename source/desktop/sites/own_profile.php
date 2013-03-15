@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <!--
 This file is part of GIRAF.
 
@@ -28,8 +29,15 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 			include('assets/lang/own_profile/own_profile.en.php');
 			break;
 	}
+
+	require_once("db/db.php");
+	$userName = $_SESSION['username'];
+	$result = $connection->query("SELECT * FROM Profile WHERE idProfile = $userName ");
+	if ($result->num_rows > 0)
+	{
+		$row = $result->fetch_assoc();
+	}
 echo '
-<!DOCTYPE HTML>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -49,6 +57,9 @@ echo '
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+
+	<!-- JavaScript -->
+	<script src="assets/js/profileEdit.js"></script>
 </head>
 
 <body>
