@@ -34,14 +34,26 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+	
+	<!-- JavaScript -->
+	<script src="assets/js/profileEdit.js"></script>
 </head>
+
+<?php
+	require_once("db/db.php");
+	$userName = $_SESSION['username'];
+	$result = $connection->query("SELECT * FROM Profile WHERE idProfile = $userName ");
+	if ($result->num_rows > 0)
+	{
+		$row = $result->fetch_assoc();
+	}
+?>
+
 <body>
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<!--<div class="span2" style="min-height:100%;" >
 				hej
-			</div>
-			<div class="span10 sub">
 			</div>-->
 			<div class="span10">
 				<div class="sub">
@@ -55,27 +67,27 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 										<tr>
 											<td>Navn :</td>
 											<td>Jens Lauritsen</td>
-											<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i> Ret</button></td>
+											<td><button class="btn btn-mini" type="button" id="buttonName" onclick="editProfileInfo(this)"><i class="icon-wrench"></i> Ret</button></td>
 										</tr>
 										<tr>
 											<td>Tlf :</td>
 											<td>29 69 59 49</td>
-											<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i> Ret</button></td>
+											<td><button class="btn btn-mini" type="button" id="buttonPhone" onclick="editProfileInfo(this)"><i class="icon-wrench"></i> Ret</button></td>
 										</tr>
 										<tr>
 											<td>Mob :</td>
 											<td>99 69 59 49</td>
-											<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i> Ret</button></td>
+											<td><button class="btn btn-mini" type="button" id="buttonMobile" onclick="editProfileInfo(this)"><i class="icon-wrench"></i> Ret</button></td>
 										</tr>
 										<tr>
 											<td>Adresse :</td>
 											<td>Bredgade 1, 9000 Aalborg</td>
-											<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i> Ret</button></td>
+											<td><button class="btn btn-mini" type="button" id="buttonAdress" onclick="editProfileInfo(this)"><i class="icon-wrench"></i> Ret</button></td>
 										</tr>
 										<tr>
 											<td>Afdeling :</td>
 											<td>Bjælken</td>
-											<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i> Ret</button></td>
+											<td><button class="btn btn-mini" type="button" id="buttonDepartment" onclick="editProfileInfo(this)"><i class="icon-wrench"></i> Ret</button></td>
 										</tr>
 									</table>
 									<h3>Tilknyttede Børn:</h3>

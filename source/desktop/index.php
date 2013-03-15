@@ -46,7 +46,7 @@ if ($_SESSION['session_id'] != session_id())
 			<img id="menuLogo" src="assets/img/girafAdminLogo-01.svg">
 		</div>
 		<div id="content">
-			<?php include "sites/own_profile.html"?>
+			<?php include "sites/own_profile_lars.php"?>
 		</div>
 	</body>
 </html>

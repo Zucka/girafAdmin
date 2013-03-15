@@ -87,6 +87,7 @@ window.onhashchange = function(){
 			destinationPath = "";
 		break;
 		
+		case "#404":
 		default:
 			destinationPath = "404";
 	}
