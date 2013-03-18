@@ -21,17 +21,17 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
 	switch ($lang) {
 		case 'en':
-			include('assets/lang/own_profile/own_profile.en.php');
+			include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/own_profile/own_profile.en.php');
 			break;
 		case 'dk':
-			include('assets/lang/own_profile/own_profile.dk.php');
+			include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/own_profile/own_profile.dk.php');
 			break;
 		default:
-			include('assets/lang/own_profile/own_profile.en.php');
+			include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/own_profile/own_profile.en.php');
 			break;
 	}
 
-	require_once("db/db.php");
+	require_once($_SERVER['DOCUMENT_ROOT']."/db/db.php");
 	$userName = $_SESSION['username'];
 	$result = $connection->query("SELECT * FROM Profile WHERE idProfile = '$userName' ");
 	if ($result->num_rows > 0)

@@ -30,4 +30,4 @@
 	<script src="assets/js/navigation.js"></script>
 	
 	
-	<link rel="shortcut icon" href="../assets/ico/favicon.png">
+	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
