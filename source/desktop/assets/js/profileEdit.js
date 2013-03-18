@@ -1,12 +1,16 @@
-function editProfileInfo(buttonElement){
-	alert(buttonElement);
+function editProfileInfo(element){
+	//alert(element);
 	//Edit Button and textField
-	buttonElement.onclick = submitEditProfileInfo(buttonElement);
+	//buttonElement.onclick = submitEditProfileInfo(buttonElement);
 	//TODO: Remmember to add Language Specific
-	buttonElement.html = "<i class=\"icon-hdd\"></i> Gem";
-	var originalTextElement = buttonElement.parentNode.previousSibling;
-	var originalText = originalTextElement.html;
-	originalTextElement.html = '<input type="text">'+originalText+'</input>';
+	alert("Fuck!");
+	
+	document.getElementById("test").val = 'Gem';
+	$("test").button( "refresh" );
+	alert(document.getElementById("test").val );
+	//var originalTextElement = buttonElement.parentNode.previousSibling;
+	//var originalText = originalTextElement.html;
+	//originalTextElement.html = '<input type="text">'+originalText+'</input>';
 }
 
 function submitEditProfileInfo(){
