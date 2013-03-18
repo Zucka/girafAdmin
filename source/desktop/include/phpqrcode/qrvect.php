@@ -128,7 +128,7 @@
             if ($filename === false) {
                 header("Content-Type: image/svg+xml");
                 header('Content-Disposition: filename="qrcode.svg"');
-                return $vect;
+                echo $vect;
             } else {
                 if($saveandprint===TRUE){
                     QRtools::save($vect, $filename);
@@ -152,28 +152,28 @@
             $imgH = $h + 2*$outerFrame;
             
             
+            /*
             $output = 
-            '<?xml version="1.0" encoding="utf-8"?>'."\n".
-            '<svg version="1.1" baseProfile="full"  width="'.$imgW * $pixelPerPoint.'" height="'.$imgH * $pixelPerPoint.'" viewBox="0 0 '.$imgW * $pixelPerPoint.' '.$imgH * $pixelPerPoint.'"
-             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">'."\n".
+            '<?xml version="1.0" encoding="utf-8" standalone="no"?>'."\n".
+            '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">'."\n".
+            '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" width="'.$imgW * $pixelPerPoint.'px" height="'.$imgH * $pixelPerPoint.'px" viewBox="0 0 '.$imgW * $pixelPerPoint.' '.$imgH * $pixelPerPoint.'">'."\n".
             '<desc></desc>'."\n";
+            */
 
             $output = 
-            '<?xml version="1.0" encoding="utf-8"?>'."\n".
-            '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">'."\n".
-            '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" width="'.$imgW * $pixelPerPoint.'" height="'.$imgH * $pixelPerPoint.'" viewBox="0 0 '.$imgW * $pixelPerPoint.' '.$imgH * $pixelPerPoint.'">'."\n".
+            '<?xml version="1.0" encoding="utf-8" standalone="no"?>'."\n".
+            '<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" viewBox="0 0 '.$imgW * $pixelPerPoint.' '.$imgH * $pixelPerPoint.'" preserveAspectRatio="xMidYMid meet">'."\n".
             '<desc></desc>'."\n";
                 
             if(!empty($back_color)) {
                 $backgroundcolor = dechex($back_color);
-                $output .= '<rect width="'.$imgW * $pixelPerPoint.'" height="'.$imgH * $pixelPerPoint.'" fill="#'.$backgroundcolor.'" cx="0" cy="0" />'."\n";
-            }
-                
+                $output .= '<rect width="'.$imgW * $pixelPerPoint.'" height="'.$imgH * $pixelPerPoint.'" fill="#'.$backgroundcolor.'" rx="0" ry="0" />'."\n";
+            }  
             $output .= 
             '<defs>'."\n".
             '<rect id="p" width="'.$pixelPerPoint.'" height="'.$pixelPerPoint.'" />'."\n".
             '</defs>'."\n".
-            '<g fill="#'.dechex($fore_color).'">'."\n";
+            '<g fill="#000">'."\n";
                 
                 
             // Convert the matrix into pixels
