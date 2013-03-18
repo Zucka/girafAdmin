@@ -1,24 +1,36 @@
 function editProfileInfo(element){
-	alert(element);
-	//Edit Button and textField
-	//buttonElement.onclick = submitEditProfileInfo(buttonElement);
+	//Edit Button
 	//TODO: Remmember to add Language Specific
 	element.html('<i class=\"icon-hdd\"></i> Gem');
-	var originalTextElement = buttonElement.parentNode.previousSibling;
-	var originalText = originalTextElement.html;
-	originalTextElement.html = '<input type="text">'+originalText+'</input>';
+	element.unbind(); //Clear Event Handler
+	element.click(function () {  //Set new Event Handler
+		submitEditProfileInfo(element);
+	});
+	
+	//Edit Text Area
+	var originalTextElement = element.parent().prev();
+	var originalText = originalTextElement.html();
+	originalTextElement.html('<input type="text" value=\"'+originalText+'\" />');
 }
+$(window).load(function() {
+	$(".buttonEdit").click(function () {
+		editProfileInfo($(this));
+	});
+});
 
-function submitEditProfileInfo(){
+function submitEditProfileInfo(element){
 	//Edit Button
-	//buttonElement.onclick = editProfileInfo(buttonElement);
+	element.unbind(); //Clear Event Handler
+	element.click(function () { //Set new Event Handler
+		editProfileInfo(element);
+	});
 	//TODO: Remmember to add Language Specific
-	buttonElement.html = "<i class=\"icon-wrench\"></i> Ret";
-	var textElement = buttonElement.parentNode.previousSibling;
-	var newText = textElement.child.html;
+	element.html("<i class=\"icon-wrench\"></i> Ret");
+	var textElement = element.parent().prev();
+	var newText = textElement.children().val();
 	
 	//Do AJAX call to submit data 
 	
 	//Edit textField back to normal
-	textElement.html = newText;
+	textElement.html(newText);
 }

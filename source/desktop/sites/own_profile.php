@@ -16,6 +16,7 @@ You should have received a copy of the GNU General Public License
 along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <?php
+
 	if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'en';}
 	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
 	switch ($lang) {
@@ -32,7 +33,7 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 
 	require_once("db/db.php");
 	$userName = $_SESSION['username'];
-	$result = $connection->query("SELECT * FROM Profile WHERE idProfile = $userName ");
+	$result = $connection->query("SELECT * FROM Profile WHERE idProfile = '$userName' ");
 	if ($result->num_rows > 0)
 	{
 		$row = $result->fetch_assoc();
@@ -80,27 +81,27 @@ echo '
 											<tr>
 												<td>'.$PROFILE_STRINGS["name"].'</td>
 												<td>Jens Lauritsen</td>
-												<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["btnEdit"].'</button></td>
+												<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["btnEdit"].'</button></td>
 											</tr>
 											<tr>
 												<td>'.$PROFILE_STRINGS["phoneNr"].'</td>
 												<td>29 69 59 49</td>
-												<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["btnEdit"].'</button></td>
+												<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["btnEdit"].'</button></td>
 											</tr>
 											<tr>
 												<td>'.$PROFILE_STRINGS["mobilePhoneNr"].'</td>
 												<td>99 69 59 49</td>
-												<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["btnEdit"].'</button></td>
+												<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["btnEdit"].'</button></td>
 											</tr>
 											<tr>
 												<td>'.$PROFILE_STRINGS["address"].'</td>
 												<td>Bredgade 1, 9000 Aalborg</td>
-												<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["btnEdit"].'</button></td>
+												<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["btnEdit"].'</button></td>
 											</tr>
 											<tr>
 												<td>'.$PROFILE_STRINGS["department"].'</td>
 												<td>Bjælken</td>
-												<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["btnEdit"].'</button></td>
+												<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["btnEdit"].'</button></td>
 											</tr>
 										</table>
 										<h3>'.$PROFILE_STRINGS["h_attachedChildren"].'</h3>
