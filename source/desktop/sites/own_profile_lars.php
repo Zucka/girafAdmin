@@ -15,14 +15,14 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<html lang="en">
+<!--<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>Profile page &middot; GIRAF</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="GIRAF">
-
+-->
 	<!-- Stylesheets -->
 	<link href="../assets/css/bootstrap.css" rel="stylesheet">
 	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -37,7 +37,7 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 	
 	<!-- JavaScript -->
 	<script src="assets/js/profileEdit.js"></script>
-</head>
+<!--</head>-->
 
 <?php
 	require_once("db/db.php");
@@ -67,7 +67,10 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 										<tr>
 											<td>Navn :</td>
 											<td>Jens Lauritsen</td>
-											<td><button class="btn btn-mini" type="button" id="buttonName" onclick="editProfileInfo(this)"><i class="icon-wrench"></i> Ret</button></td>
+											<td><button class="btn btn-mini" type="button" id="buttonName" onclick="editProfileInfo(this)"><i class="icon-wrench"></i> Ret</button>
+												<input type="button" id="test" value="Test">
+											
+											</td>
 										</tr>
 										<tr>
 											<td>Tlf :</td>

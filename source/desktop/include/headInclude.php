@@ -1,6 +1,5 @@
 <?php
 	//This file includes every important script, or other file in the headder.
-	
 	if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'en';}
 	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
 	switch ($lang) {
@@ -24,9 +23,11 @@
 	<link href="assets/css/style.css" rel="stylesheet">
 	
 	<!-- JavaScript -->
+	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/bootstrap.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/jquery.min.js"></script>
+	
 	<script src="assets/js/navigation.js"></script>
 	
-	<link rel="shortcut icon" href="../assets/ico/favicon.png">
+	
+	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
