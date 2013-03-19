@@ -595,7 +595,7 @@
                         <hasHeader>false</hasHeader>
                         <rowHeight>25</rowHeight>
                         <size>14</size>
-                        <text>Pics%20Manager%0A%3E%20Opret%0A%3E%20Tildel%0A%3E%20Fjern%0A%3E%20Edit%0A%3E%20Slet</text>
+                        <text>Pics%20Manager%0A%3E%20Opret%0A%3E%20Tildel%0A%3E%20Fjern%20Lokalt%0A%3E%20Ret%0A%3E%20Slet%20Permanent</text>
                         <verticalScrollbar>false</verticalScrollbar>
                       </controlProperties>
                     </control>
@@ -630,7 +630,7 @@
             <control controlID="2" controlTypeID="com.balsamiq.mockups::VRule" x="196" y="0" w="-1" h="539" measuredW="10" measuredH="100" zOrder="1" locked="false" isInGroup="1"/>
           </groupChildrenDescriptors>
         </control>
-        <control controlID="3" controlTypeID="com.balsamiq.mockups::MultilineButton" x="51" y="479" w="93" h="36" measuredW="139" measuredH="66" zOrder="2" locked="false" isInGroup="1">
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::MultilineButton" x="51" y="479" w="93" h="36" measuredW="79" measuredH="66" zOrder="2" locked="false" isInGroup="1">
           <controlProperties>
             <text>Log%20ud</text>
           </controlProperties>

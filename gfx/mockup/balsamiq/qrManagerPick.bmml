@@ -35,10 +35,10 @@
         <text>Navn%20%5Ev%2CV%E6lg%0AMarianne%2C%5B%5D%0ANiels%2C%5Bx%5D%0AKathrine%2C%5B%5D%0AVictor%2C%5B%5D</text>
       </controlProperties>
     </control>
-    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="1077" y="238" w="-1" h="-1" measuredW="130" measuredH="36" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="1077" y="238" w="-1" h="-1" measuredW="112" measuredH="36" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <size>28</size>
-        <text>Guardians</text>
+        <text>Pedagog</text>
       </controlProperties>
     </control>
     <control controlID="7" controlTypeID="com.balsamiq.mockups::DataGrid" x="1077" y="283" w="-1" h="-1" measuredW="130" measuredH="146" zOrder="7" locked="false" isInGroup="-1">

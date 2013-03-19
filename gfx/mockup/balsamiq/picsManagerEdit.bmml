@@ -48,21 +48,21 @@
     </control>
     <control controlID="9" controlTypeID="com.balsamiq.mockups::Paragraph" x="577" y="106" w="243" h="23" measuredW="200" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>%26V%E6lg%20Pic%26%20%3E%20Edit%20%3E%20Edit%20for%20%3E%20Confirm</text>
+        <text>%26V%E6lg%20Pic%26%20%3E%20Ret%20%3E%20Ret%20for%20%3E%20Confirm</text>
       </controlProperties>
     </control>
     <control controlID="10" controlTypeID="com.balsamiq.mockups::VRule" x="380" y="101" w="-1" h="523" measuredW="10" measuredH="100" zOrder="10" locked="false" isInGroup="-1"/>
     <control controlID="11" controlTypeID="com.balsamiq.mockups::SearchBox" x="270" y="91" w="-1" h="-1" measuredW="120" measuredH="25" zOrder="11" locked="false" isInGroup="-1"/>
-    <control controlID="12" controlTypeID="com.balsamiq.mockups::Button" x="595" y="211" w="76" h="21" measuredW="44" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Button" x="595" y="211" w="76" h="21" measuredW="42" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
       <controlProperties>
         <size>12</size>
-        <text>Edit</text>
+        <text>Ret</text>
       </controlProperties>
     </control>
-    <control controlID="13" controlTypeID="com.balsamiq.mockups::Button" x="459" y="211" w="76" h="21" measuredW="44" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Button" x="459" y="211" w="76" h="21" measuredW="42" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
         <size>12</size>
-        <text>Edit</text>
+        <text>Ret</text>
       </controlProperties>
     </control>
   </controls>

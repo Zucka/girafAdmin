@@ -5,7 +5,7 @@
         <src>./assets/symbols.bmml#layout</src>
       </controlProperties>
     </control>
-    <control controlID="2" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="273" y="101" w="796" h="523" measuredW="200" measuredH="182" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="273" y="109" w="796" h="515" measuredW="200" measuredH="182" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Kat1%0AKat2%0AKat3%0AKat4</text>
       </controlProperties>
@@ -46,6 +46,17 @@
     <control controlID="37" controlTypeID="com.balsamiq.mockups::Component" x="457" y="140" w="86" h="98" measuredW="86" measuredH="98" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <src>./assets/symbols.bmml#Tomt-Pictogram</src>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Button" x="956" y="580" w="-1" h="-1" measuredW="105" measuredH="36" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>N%E6ste</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Label" x="650" y="90" w="-1" h="-1" measuredW="32" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tildel</text>
       </controlProperties>
     </control>
   </controls>

@@ -21,9 +21,14 @@
         <text>N%E6ste</text>
       </controlProperties>
     </control>
-    <control controlID="6" controlTypeID="com.balsamiq.mockups::Paragraph" x="557" y="104" w="215" h="23" measuredW="200" measuredH="80" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Paragraph" x="557" y="122" w="215" h="23" measuredW="200" measuredH="80" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <text>%26V%E6lg%20barn%26%20%3E%20V%E6lg%20Pics%20%3E%20Confirm</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="642" y="94" w="-1" h="-1" measuredW="30" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Fjern</text>
       </controlProperties>
     </control>
   </controls>

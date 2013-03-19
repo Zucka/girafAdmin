@@ -69,7 +69,7 @@
         <icon>VolumeIcon%7Cxsmall</icon>
       </controlProperties>
     </control>
-    <control controlID="19" controlTypeID="com.balsamiq.mockups::Label" x="399" y="197" w="20" h="21" measuredW="22" measuredH="18" zOrder="7" locked="false" isInGroup="-1">
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Label" x="399" y="197" w="20" h="-1" measuredW="22" measuredH="18" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
         <size>10</size>
         <text>Hest</text>
@@ -88,6 +88,11 @@
     <control controlID="22" controlTypeID="com.balsamiq.mockups::Icon" x="428" y="182" w="16" h="16" measuredW="16" measuredH="16" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
         <icon>FlickrIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Label" x="622" y="106" w="-1" h="-1" measuredW="32" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tildel</text>
       </controlProperties>
     </control>
   </controls>

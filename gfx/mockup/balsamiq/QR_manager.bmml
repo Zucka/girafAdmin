@@ -32,11 +32,11 @@
         <text>Print%20QR</text>
       </controlProperties>
     </control>
-    <control controlID="8" controlTypeID="com.balsamiq.mockups::Image" x="1244" y="391" w="85" h="85" measuredW="200" measuredH="200" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Image" x="1244" y="391" w="85" h="85" measuredW="153" measuredH="153" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <bold>true</bold>
         <italic>true</italic>
-        <src>../../../../qrcode.11876817.png</src>
+        <src>./assets/32pAVhb.png</src>
         <text/>
       </controlProperties>
     </control>
@@ -52,6 +52,11 @@
       <controlProperties>
         <borderColor>16777215</borderColor>
         <text>Besk%E6ftigelse%3A%20Barn%0ABop%E6l%3A%20Herningvej%20121%0AAddresse%3A%209000%20Aalborg%0AAlder%3A%2012%20%E5r</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="933" y="169" w="-1" h="-1" measuredW="76" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>QR%20Manager</text>
       </controlProperties>
     </control>
   </controls>

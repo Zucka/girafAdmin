@@ -1,67 +1,100 @@
 <mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1084" measuredH="659" mockupW="1024" mockupH="639">
   <controls>
-    <control controlID="1" controlTypeID="com.balsamiq.mockups::Component" x="60" y="20" w="1024" h="639" measuredW="1024" measuredH="639" zOrder="0" locked="false" isInGroup="-1">
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Component" x="60" y="20" w="1024" h="639" measuredW="1024" measuredH="639" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
         <src>./assets/symbols.bmml#layout</src>
       </controlProperties>
     </control>
-    <control controlID="2" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="270" y="101" w="796" h="523" measuredW="200" measuredH="182" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::FieldSet" x="363" y="138" w="200" h="359" measuredW="200" measuredH="170" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Kat1%0AKat2%0AKat3%0AKat4</text>
+        <text>Pictogrammer</text>
       </controlProperties>
     </control>
-    <control controlID="3" controlTypeID="com.balsamiq.mockups::Icon" x="322" y="116" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::FieldSet" x="755" y="138" w="200" h="359" measuredW="200" measuredH="170" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
-        <icon>ImageIcon%7Clarge</icon>
+        <text>B%F8rn</text>
       </controlProperties>
     </control>
-    <control controlID="4" controlTypeID="com.balsamiq.mockups::Icon" x="322" y="163" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="532" y="538" w="230" h="48" measuredW="219" measuredH="36" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
-        <icon>AIMIcon%7Clarge</icon>
-      </controlProperties>
-    </control>
-    <control controlID="5" controlTypeID="com.balsamiq.mockups::Icon" x="322" y="211" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="4" locked="false" isInGroup="-1">
-      <controlProperties>
-        <icon>FlickrIcon%7Clarge</icon>
-      </controlProperties>
-    </control>
-    <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="322" y="258" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="5" locked="false" isInGroup="-1">
-      <controlProperties>
-        <icon>VolumeIcon%7Clarge</icon>
-      </controlProperties>
-    </control>
-    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="322" y="313" w="-1" h="-1" measuredW="48" measuredH="32" zOrder="6" locked="false" isInGroup="-1">
-      <controlProperties>
-        <size>24</size>
-        <text>Text</text>
-      </controlProperties>
-    </control>
-    <control controlID="8" controlTypeID="com.balsamiq.mockups::Component" x="454" y="140" w="86" h="98" measuredW="86" measuredH="98" zOrder="7" locked="false" isInGroup="-1">
-      <controlProperties>
-        <src>./assets/symbols.bmml#Tomt-Pictogram</src>
-      </controlProperties>
-    </control>
-    <control controlID="9" controlTypeID="com.balsamiq.mockups::Component" x="590" y="138" w="86" h="98" measuredW="86" measuredH="98" zOrder="8" locked="false" isInGroup="-1">
-      <controlProperties>
-        <src>./assets/symbols.bmml#Pictogram</src>
-      </controlProperties>
-    </control>
-    <control controlID="10" controlTypeID="com.balsamiq.mockups::Paragraph" x="577" y="106" w="215" h="23" measuredW="200" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>%26V%E6lg%20Pictogramer%26%20%3E%20Tryk%20%3E%20Confirm</text>
-      </controlProperties>
-    </control>
-    <control controlID="11" controlTypeID="com.balsamiq.mockups::VRule" x="380" y="101" w="-1" h="523" measuredW="10" measuredH="100" zOrder="10" locked="false" isInGroup="-1"/>
-    <control controlID="12" controlTypeID="com.balsamiq.mockups::SearchBox" x="270" y="91" w="-1" h="-1" measuredW="120" measuredH="25" zOrder="11" locked="false" isInGroup="-1"/>
-    <control controlID="13" controlTypeID="com.balsamiq.mockups::Button" x="926" y="575" w="146" h="49" measuredW="135" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
-      <controlProperties>
-        <size>16</size>
+        <size>28</size>
         <text>Slet%20Permanent</text>
       </controlProperties>
     </control>
-    <control controlID="14" controlTypeID="com.balsamiq.mockups::Alert" x="590" y="259" w="357" h="167" measuredW="200" measuredH="180" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::DataGrid" x="759" y="153" w="196" h="344" measuredW="106" measuredH="231" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Alert%0ADu%20er%20ved%20at%20slette%203%20pictogrammer%20fra%20Mads%20og%20Lotte.%20Du%20er%20ved%20at%20slette%202%20pictogrammer%20fra%20Mette%20og%20Mie.%20Forts%E6t%3F%0ANo%2C%20Yes</text>
+        <text>Navn%20%5Ev%2CV%E6lg%0AMads%2C%5Bx%5D%0AMikkel%2C%5B%5D%0AFrederik%2C%5Bx%5D%0AMaria%2C%5B%5D%0AMette%2C%5B%5D%0ALotte%2C%5Bx%5D%0AGustav%2C%5B%5D</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Image" x="378" y="162" w="61" h="50" measuredW="337" measuredH="282" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <src>./assets/Horse2.gif</src>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="428" y="198" w="16" h="16" measuredW="16" measuredH="16" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>VolumeIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="399" y="197" w="20" h="-1" measuredW="22" measuredH="18" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Hest</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Icon" x="428" y="162" w="16" h="16" measuredW="16" measuredH="16" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ImageIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Icon" x="428" y="171" w="16" h="16" measuredW="16" measuredH="16" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>AIMIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Icon" x="428" y="182" w="16" h="16" measuredW="16" measuredH="16" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>FlickrIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Canvas" x="481" y="161" w="63" h="51" measuredW="100" measuredH="70" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.5</backgroundAlpha>
+        <color>10066329</color>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Icon" x="532" y="197" w="16" h="16" measuredW="16" measuredH="16" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>VolumeIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Label" x="496" y="196" w="27" h="-1" measuredW="22" measuredH="18" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Hest</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Icon" x="532" y="160" w="16" h="16" measuredW="16" measuredH="16" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ImageIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Icon" x="532" y="169" w="16" h="16" measuredW="16" measuredH="16" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>AIMIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Icon" x="532" y="181" w="16" h="16" measuredW="16" measuredH="16" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>FlickrIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::CallOut" x="838" y="173" w="35" h="28" measuredW="45" measuredH="40" zOrder="17" locked="false" isInGroup="-1"/>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::CallOut" x="838" y="233" w="35" h="28" measuredW="36" measuredH="39" zOrder="18" locked="false" isInGroup="-1"/>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::CallOut" x="832" y="325" w="35" h="28" measuredW="35" measuredH="39" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2</text>
       </controlProperties>
     </control>
   </controls>

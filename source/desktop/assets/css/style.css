@@ -1,0 +1,217 @@
+body {
+    /* IE10 Consumer Preview */ 
+  background-image: -ms-linear-gradient(top, #FFD96E 0%, #FFBB55 100%);
+
+  /* Mozilla Firefox */ 
+  background-image: -moz-linear-gradient(top, #FFD96E 0%, #FFBB55 100%);
+
+  /* Opera */ 
+  background-image: -o-linear-gradient(top, #FFD96E 0%, #FFBB55 100%);
+
+  /* Webkit (Safari/Chrome 10) */ 
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFD96E), color-stop(1, #FFBB55));
+
+  /* Webkit (Chrome 11+) */ 
+  background-image: -webkit-linear-gradient(top, #FFD96E 0%, #FFBB55 100%);
+
+  /* W3C Markup, IE10 Release Preview */ 
+  background-image: linear-gradient(to bottom, #FFD96E 0%, #FFBB55 100%);
+
+  background-attachment: fixed;
+}
+
+.sub {
+  background-color: #fff;
+  background-color:rgba(255,255,255,0.7);
+  min-height:100%;
+}
+
+.form-signin {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 10% auto 20px;
+  background-color: #fff;
+  border: 2px solid rgb(100,96,96);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  background-color:rgba(255,255,255,0.7);
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+.logo {
+  margin: 0 28% 5%;
+}
+
+.profile_picture {
+  display: block;
+  padding: 5px;
+  margin: auto auto auto auto;
+  border: 2px solid rgb(100,96,96);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  background-color: #fff;
+  text-align: center;
+  width: 50%;
+  height: 50%;
+}
+
+.profile-qr {
+  display: block;
+  padding: 5px;
+  margin: 5% auto auto auto;
+  border: 2px solid rgb(100,96,96);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  background-color: #fff;
+  text-align: center;
+  width: 50%;
+  height: 40%;
+}
+
+.table-profile {
+  font-size: medium;
+}
+
+.breadcrump {
+  text-align: center;
+  padding: 10px;
+}
+
+.profile-btn {
+  display: block;
+  margin: 1% auto auto auto;
+}
+
+.profile-btn-qr {
+  text-align: center;
+}
+
+.profile-btn-qr > .btn {
+  display: inline-block;
+  margin: 1% 2% 5% 2%;
+}
+
+
+/* Navigation CSS */
+
+#menuBar{
+  border-right:2px solid #9e6435;
+
+  position:relative;
+  width:16%;
+  min-width:150px;
+  height:auto;
+  min-height:100%;
+  
+  background-color:#ffbb55;
+  
+  float:left;
+}
+
+a.menuLink:link, a.menuLink:visited{
+  display:block;
+  width:95%;
+  border:0px;
+  background-color:#ffbb55;
+  
+  font-size:1em;
+  font-family:Verdana,Arial,sans-serif;
+  color:#ffffff;
+  text-align:left;
+  text-decoration:none;
+  
+  padding-left:5%;
+  padding-top:3%;
+  padding-bottom:3%;
+  
+}
+
+a.menuLink:hover,a.menuLink:active{
+  background-color:#dd9639;
+}
+
+a.menuSubLink:link, a.menuSubLink:visited, a.menuSubLink:hover, a.menuSubLink:active{
+  padding-left:25%;
+  width:75%;
+}
+
+a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLink:active{
+}
+
+.menuLinkSplitter{
+  width:85%;
+  margin-top:0px;
+  margin-bottom:0px;
+  margin-left:auto;
+  margin-right:auto;
+  
+  border-color:#9e6435;
+  
+  background-color:#ffbb55;
+}
+
+.menuSubLinkSplitter{
+  width:68%;
+  margin-top:0px;
+  margin-bottom:0px;
+  margin-left:24.5%;
+  margin-right:7.5%;
+  
+  border-color:#9e6435;
+  
+  background-color:#ffbb55;
+}
+
+#menuBar strong{
+  font-size:1.5em;
+}
+
+#menuLogOutButton{
+  display:block;
+  
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width:40%;
+  min-width:75px;
+  
+  margin-left:auto;
+  margin-right:auto;
+  
+  text-decoration:none;
+}
+
+#menuLogo{
+  display:block;
+  width:60%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#content{
+	float:right;
+	width:83%;
+	height:auto;
+	min-height:100%;
+	border:0px solid black;
+  background-color: #fff;
+  background-color:rgba(255,255,255,0.7);
+}
+
+/* END OF Navigation CSS */
