@@ -36,55 +36,55 @@ window.onhashchange = function(){
 	{
 		case "":
 		case "#ownProfile":
-			destinationPath = "sites/own_profile.html";
+			destinationPath = "sites/own_profile.php";
 		break;
 		
 		case "#profiles":
-			destinationPath = "";
+			destinationPath = "sites/placeholder.html";
 		break;
 		
 		case "#addRelation":
-			destinationPath = "";
+			destinationPath = "sites/placeholder.html";
 		break;
 		
 		case "#picsManager":
-			destinationPath = "";
+			destinationPath = "sites/placeholder.html";
 		break;
 		
 		case "#makePic":
-			destinationPath = "";
+			destinationPath = "sites/placeholder.html";
 		break;
 		
 		case "#addPic":
-			destinationPath = "";
+			destinationPath = "sites/placeholder.html";
 		break;
 		
 		case "#removePic":
-			destinationPath = "";
+			destinationPath = "sites/placeholder.html";
 		break;
 		
 		case "#editPic":
-			destinationPath = "";
+			destinationPath = "sites/placeholder.html";
 		break;
 		
 		case "#deletePic":
-			destinationPath = "";
+			destinationPath = "sites/placeholder.html";
 		break;
 		
 		case "#depManager":
-			destinationPath = "";
+			destinationPath = "sites/placeholder.html";
 		break;
 		
 		case "#depInfo":
-			destinationPath = "";
+			destinationPath = "sites/placeholder.html";
 		break;
 		
 		case "#qrManager":
-			destinationPath = "";
+			destinationPath = "sites/placeholder.html";
 		break;
 		
 		case "#appManager":
-			destinationPath = "";
+			destinationPath = "sites/placeholder.html";
 		break;
 		
 		case "#404":
