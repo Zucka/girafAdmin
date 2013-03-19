@@ -65,7 +65,7 @@ body {
   background-color: #fff;
   text-align: center;
   width: 50%;
-  height: 50%;
+  max-width: 50%;
 }
 
 .profile-qr {
@@ -82,7 +82,7 @@ body {
   background-color: #fff;
   text-align: center;
   width: 50%;
-  height: 40%;
+  max-width: 50%;
 }
 
 .table-profile {
@@ -113,16 +113,15 @@ body {
 
 #menuBar{
   border-right:2px solid #9e6435;
+  background-color:#ffbb55;
 
-  position:relative;
+/*  position:relative;
   width:16%;
   min-width:150px;
+  float:left;*/
+
   height:auto;
   min-height:100%;
-  
-  background-color:#ffbb55;
-  
-  float:left;
 }
 
 a.menuLink:link, a.menuLink:visited{
@@ -205,8 +204,9 @@ a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLin
 }
 
 #content{
-	float:right;
-	width:83%;
+/*	float:right;
+	width:83%;*/
+  margin: 0% 0% 0% 0% ;
 	height:auto;
 	min-height:100%;
 	border:0px solid black;
