@@ -1,13 +1,15 @@
 function editProfileInfo(element){
+	//Edit Button
+	//TODO: Remmember to add Language Specific
 	element.html('<i class=\"icon-hdd\"></i> Gem');
-	element.unbind();
-	element.click(function () { 
-			submitEditProfileInfo(element);
-		});
+	element.unbind(); //Clear Event Handler
+	element.click(function () {  //Set new Event Handler
+		submitEditProfileInfo(element);
+	});
 	
+	//Edit Text Area
 	var originalTextElement = element.parent().prev();
 	var originalText = originalTextElement.html();
-	alert(originalText);
 	originalTextElement.html('<input type="text" value=\"'+originalText+'\" />');
 }
 $(window).load(function() {
@@ -18,17 +20,14 @@ $(window).load(function() {
 
 function submitEditProfileInfo(element){
 	//Edit Button
-	element.unbind();
-	element.click(function () { 
-			editProfileInfo(element);
-		});
+	element.unbind(); //Clear Event Handler
+	element.click(function () { //Set new Event Handler
+		editProfileInfo(element);
+	});
 	//TODO: Remmember to add Language Specific
 	element.html("<i class=\"icon-wrench\"></i> Ret");
 	var textElement = element.parent().prev();
 	var newText = textElement.children().val();
-	
-	alert(newText);
-	
 	
 	//Do AJAX call to submit data 
 	
