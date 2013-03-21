@@ -40,7 +40,7 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 	}
 echo '
 <html lang="en">
-<head>
+<!--<head>-->
 	<meta charset="utf-8">
 	<title>'.$PROFILE_STRINGS["headerTitle"].'</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,6 +51,7 @@ echo '
 	<link href="../assets/css/bootstrap.css" rel="stylesheet">
 	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="../assets/css/style.css" rel="stylesheet">
+	<link href="../assets/css/style-lars.css" rel="stylesheet">
 
 	<!-- Fav and touch icons -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
@@ -61,9 +62,9 @@ echo '
 
 	<!-- JavaScript -->
 	<script src="assets/js/profileEdit.js"></script>
-</head>
+<!--</head>-->
 
-<body>
+<!--<body>-->
 	<div class="container-fluid">
 		<div class="breadcrump">'.$PROFILE_STRINGS["breadCrump"].'</div>
 		<div class="row">
@@ -130,7 +131,7 @@ echo '
 			<div class="span6">
 				<div>
 					<img class="profile_picture" src="../assets/img/girafAdminLogo-01.svg">
-					<button class="btn profile-btn" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["pictureEdit"].'</button>
+					<button class="btn profile-btn" type="button" onclick="changeProfilePicturePopup()"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["pictureEdit"].'</button>
 				</div>
 				<div>
 					<div class="profile-qr">
@@ -148,8 +149,8 @@ echo '
 
 	<script src="../assets/js/jquery.min.js"></script>
 	<script src="../assets/js/bootstrap.min.js"></script>
-</body>
-</html>
+<!--</body>
+</html>-->
 ';
 ?>
 
