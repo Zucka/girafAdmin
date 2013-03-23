@@ -1,0 +1,27 @@
+button.qrmanager-buttons {
+	width: 60%;
+	height: 15%;
+	margin-bottom: 3em;
+}
+button.qrmanager-btnEdit{
+	margin-left: 35%;
+}
+
+table.qrmanager-tableEdit{
+	border-color: #000;
+}
+.qrmanager-tableEdit tbody{
+	border-color: #000;
+}
+.table-bordered td {
+	border-color: #000;
+}
+div.qrmanager-qrcode{
+	height:50%;
+	width:70%;
+	border: 2px solid #000;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	margin-left: -5%;
+}
