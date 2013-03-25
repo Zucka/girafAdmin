@@ -16,7 +16,7 @@
 ?>
 	<html lang="en">
 	<meta charset="utf-8">
-	
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- Force document mode to IE9 standards -->
 	<!-- Style Sheets -->
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
 	<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">

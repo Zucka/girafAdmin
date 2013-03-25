@@ -17,6 +17,9 @@ body {
   /* W3C Markup, IE10 Release Preview */ 
   background-image: linear-gradient(to bottom, #FFD96E 0%, #FFBB55 100%);
 
+  /* IE6,IE7,IE8,IE9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFD96E', endColorstr='#FFBB55',GradientType=0 );
+
   background-attachment: fixed;
 }
 
@@ -34,9 +37,11 @@ body {
   border: 2px solid rgb(100,96,96);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
   border-radius: 10px;
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -ms-box-shadow: 0 1px 2px rgba(0,0,0,.05);
   box-shadow: 0 1px 2px rgba(0,0,0,.05);
   background-color:rgba(255,255,255,0.7);
 }
@@ -48,7 +53,9 @@ body {
   padding: 7px 9px;
 }
 .logo {
-  margin: 0 28% 5%;
+  margin: -5% 13% 0%;
+  height: 17em;
+  width: 15em;
 }
 
 .profile_picture {
