@@ -17,11 +17,8 @@ body {
   /* W3C Markup, IE10 Release Preview */ 
   background-image: linear-gradient(to bottom, #FFD96E 0%, #FFBB55 100%);
 
-  /* IE6,IE7 */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFD96E', EndColorStr='#FFBB55');
-
-   /* IE8 */
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFD96E', EndColorStr='#FFBB55')";
+  /* IE6,IE7,IE8,IE9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFD96E', endColorstr='#FFBB55',GradientType=0 );
 
   background-attachment: fixed;
 }
@@ -56,7 +53,9 @@ body {
   padding: 7px 9px;
 }
 .logo {
-  margin: 0 28% 5%;
+  margin: -5% 13% 0%;
+  height: 17em;
+  width: 15em;
 }
 
 .profile_picture {

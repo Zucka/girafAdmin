@@ -135,7 +135,7 @@ echo '
 				</div>
 				<div>
 					<div class="profile-qr">
-						<object data="../qrgen.php" type="image/svg+xml" />
+						<object data="../qrgen.php" height="100%" width="100%" type="image/svg+xml"> </object>
 					</div>
 					<div class="profile-btn-qr">
 						<button class="btn profile-btn" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["qrGenerateNew"].'</button>
