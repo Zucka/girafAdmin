@@ -28,6 +28,7 @@
 	<script src="assets/js/bootstrap.min.js"></script>
 	
 	<script src="assets/js/navigation.js"></script>
+	<script src="assets/js/modal.js"></script>
 	
 	
 	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
