@@ -40,45 +40,14 @@ function submitEditProfileInfo(element){
 	textElement.html(newText);
 }
 
-function closeModal(){
-	$('.modalFadeWindow').fadeOut(500,"linear");
-	$('.modalContainer').fadeOut(500,"linear");
-	$('.realModal').fadeOut(500,"linear");
-}
-
 function changeProfilePicturePopup(){
-	//Make background
-	$('body').append('<div class="modalFadeWindow"></div>');
-	
-	//Make modal window
 	//Request picture
-	$('body').append('<div class="modalContainer">'+
-						'<div class="realModal">'+
-							'<div class="modalHeader">'+
-								'<button type="button" class="close" onclick="closeModal()">&times;</button>'+
-								'<h3>Change Profile Picture</h3>'+
-							'</div>'+
-							'<div class="modalBody">'+
-								'<form id="profilePictureUpload" method="post" enctype="multipart/form-data" action="profilePicTempUpload.php">'+
-									'Select image-file: <input type="file" name="newProfilePic" id="newProfilePic" />'+
-								'</form>'+
-							'</div>'+
-							'<div class="modalFooter">'+
-								'<button type="button" class="btn" onclick="closeModal()">Close</a>'+
-							'</div>'+
-							'<div id="profilePic"></div>'+
-						'</div>'+
-					'</div>');
+	changeModalInner('Change Profile Picture',
+					'<form id="profilePictureUpload" method="post" enctype="multipart/form-data" action="profilePicTempUpload.php">'+
+						'Select image-file: <input type="file" name="newProfilePic" id="newProfilePic" />'+
+					'</form>');
+	openModal();
 	
-	$('.modalFadeWindow').animate({
-		opacity: 0.4
-	}, { duration: 500, queue: false });
-	$('.modalContainer').animate({
-		opacity:1
-	}, { duration: 500, queue: false });
-	$('.realModal').animate({
-		opacity:1
-	}, { duration: 500, queue: false });
 	//On upload file
 	//Call function to change to next modal window
 	$('#newProfilePic').on('change', function(){
@@ -91,10 +60,21 @@ function changeProfilePicture(){
 	//Change Modal window to contain the Requested picture
 	$("#preview").html('');
 	$("#preview").html('<img src="loader.gif" alt="Uploading...."/>');
-	$("#imageform").ajaxForm(
-	{
-		target: '#preview'
-	}).submit();
+	$("#imageform").submit(function(event){
+		$.ajax({  
+			type: "POST", 
+			contentType:attr( "enctype", "multipart/form-data" ),
+			url: "script/profilePicTempUpload.php",  
+			data: dados,  
+			success: function( data )  
+			{  
+				alert( data );  
+			}  
+		});  
+  
+		return false;  
+	});
+	
 	//Display picture only in certain height and width, but remmember real height and width
 	//Wait for rezise cutting
 	

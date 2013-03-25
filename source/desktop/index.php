@@ -13,6 +13,24 @@ if ($_SESSION['session_id'] != session_id())
 	<?php include "include/headInclude.php" ?>
 </head>
 <body>
+
+	<div class="modalFadeWindow" onclick="closeModal()"></div>
+	<div class="modalContainer">
+		<div class="realModal">
+			<div class="modalHeader">
+				<button type="button" class="close" onclick="closeModal()">&times;</button>
+				<h3>Modal Window</h3>
+			</div>
+			<div class="modalBody">
+				
+			</div>
+			<div class="modalFooter">
+				<button type="button" class="btn" onclick="closeModal()">Close</button>
+			</div>
+		</div>
+	</div>
+	
+	
 	<div class="row-fluid">
 		<div class="span2">
 			<div id="menuBar">
