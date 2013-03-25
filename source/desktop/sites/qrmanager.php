@@ -35,7 +35,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/db/db.php");
 $userName = $_SESSION['username'];
 $result = $connection->query("SELECT * FROM Profile WHERE idProfile = '$userName' ");
 if ($result->num_rows > 0)
-{
+{ 
 	$row = $result->fetch_assoc();
 }
 if (isset($_GET["action"])) {$action = $_GET["action"];} else {$action = '';}
@@ -53,7 +53,7 @@ echo '
 	<link href="../assets/css/bootstrap.css" rel="stylesheet">
 	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="../assets/css/style.css" rel="stylesheet">
-	<link href="tempstyle.css" rel="stylesheet">
+	<link href="../sites/tempstyle.css" rel="stylesheet">
 
 	<!-- Fav and touch icons -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">

@@ -80,7 +80,7 @@ window.onhashchange = function(){
 		break;
 		
 		case "#qrManager":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "sites/qrmanager.php";
 		break;
 		
 		case "#appManager":
