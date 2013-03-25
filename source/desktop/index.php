@@ -32,7 +32,7 @@ if ($_SESSION['session_id'] != session_id())
 	
 	
 	<div class="row-fluid">
-		<div class="span2">
+		<div class="span2" id="menuBarOuter">
 			<div id="menuBar">
 				<a href="#ownProfile" class="menuLink menuLastLink"><?php echo $NAVIGATION_STRINGS['ownProfile'];?></a>
 					<hr class="menuLinkSplitter">
