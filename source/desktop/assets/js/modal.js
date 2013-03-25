@@ -7,11 +7,11 @@ function closeModal(){
 	}, { duration: 500, queue: false });
 	$('.realModal').animate({
 		opacity:0
-	}, { duration: 500, queue: false });
-	
-	$('.modalFadeWindow').css('z-index','-10');
-	$('.modalContainer').css('z-index','-10');
-	$('.realModal').css('z-index','-10');
+	}, 500,function(){
+		$('.modalFadeWindow').css('z-index','-10');
+		$('.modalContainer').css('z-index','-10');
+		$('.realModal').css('z-index','-10');
+	});
 }
 
 function openModal(){
@@ -25,9 +25,9 @@ function openModal(){
 		opacity:1
 	}, { duration: 500, queue: false });
 	
-	$('.modalFadeWindow').css('z-index','101');
-	$('.modalContainer').css('z-index','102');
-	$('.realModal').css('z-index','103');
+	$('.modalFadeWindow').css('z-index','1001');
+	$('.modalContainer').css('z-index','1002');
+	$('.realModal').css('z-index','1003');
 }
 
 function changeModalInner(header,bodyString){
