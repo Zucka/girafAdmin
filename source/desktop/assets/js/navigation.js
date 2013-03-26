@@ -3,7 +3,8 @@ $(function() {
     {
         resizeMe();
         }).trigger('resize');
-    });
+	$(window).trigger('hashchange');
+});
 	
 function resizeMe(){
 	//Standard height, for which the body font size is correct
@@ -95,7 +96,7 @@ window.onhashchange = function(){
 	$.ajax({
 		type: "POST",
 		url: destinationPath,
-		data: "",
+		data: info,
 		success: function(result) { // result is the content that the php file 'ECHO's.
 			//var obj = jQuery.parseJSON(result); // Parsing JSON for easy Data Acces
 			$("#content").html(result);
