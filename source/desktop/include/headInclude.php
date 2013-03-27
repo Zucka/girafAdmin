@@ -31,9 +31,9 @@
 	<script src="assets/js/modal.js"></script>
 	
 	<!--- Picture Uploading Scripts --->
-	<link rel="stylesheet" type="text/css" href="jquery.imgareaselect-0.9.8/css/imgareaselect-default.css" />
-	<script type="text/javascript" src="jquery.imgareaselect-0.9.8/scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="jquery.imgareaselect-0.9.8/scripts/jquery.imgareaselect.pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="include/jquery.imgareaselect-0.9.8/css/imgareaselect-default.css" />
+	<script type="text/javascript" src="include/jquery.imgareaselect-0.9.8/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="include/jquery.imgareaselect-0.9.8/scripts/jquery.imgareaselect.pack.js"></script>
 	
 	
 	<link rel="shortcut icon" href="../assets/ico/favicon.ico">

@@ -86,7 +86,7 @@ function readURL(input) {
 			
 			$('img#profileCropImage').imgAreaSelect({
 				handles: true,
-				aspectRatio: 4:4,
+				aspectRatio: "4:4",
 				onSelectEnd: function (img, selection) {
 					document.getElementById("x1").value = selection.x1;
 					document.getElementById("y1").value = selection.y1;
