@@ -38,7 +38,7 @@ if ($result->num_rows > 0)
 { 
 	$row = $result->fetch_assoc();
 }
-if (isset($_GET["action"])) {$action = $_GET["action"];} else {$action = '';}
+if (isset($_POST["action"])) {$action = $_POST["action"];} else {$action = '';}
 $content = getContentFromAction($action);
 echo '
 <html lang="en">
@@ -87,6 +87,10 @@ function getContentFromAction($action)
 			return editContent();
 		case 'editSubmit':
 			return editSubmitContent();
+		case 'choosePrint':
+			return choosePrintContent();
+		case 'printAll':
+			return printAllContent();
 		default:
 			return mainContent();
 	}
@@ -100,13 +104,19 @@ function mainContent()
 		<div class="span3"> </div>
 		<div class="span6">
 			<div class="row">
-				<button class="btn qrmanager-buttons">Ret QR på bruger</button>
+				<form action="index.php#qrManager/action=edit">
+					<button class="btn qrmanager-buttons" type="submit">Ret QR på bruger</button>
+				</form>
 			</div>
 			<div class="row">
-				<button class="btn qrmanager-buttons">Vælg QR til print</button>
+				<form action="index.php#qrManager/action=choosePrint">
+					<button class="btn qrmanager-buttons">Vælg QR til print</button>
+				</form>
 			</div>
 			<div class="row">
-				<button class="btn qrmanager-buttons">Print Alle QR</button>
+				<form action="index.php#qrManager/action=printAll">
+					<button class="btn qrmanager-buttons">Print Alle QR</button>
+				</form>
 			</div>
 		</div>
 		<div class="span3"> </div>
@@ -120,57 +130,95 @@ function editContent()
 	$content = '
 	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpEdit"].'</div>
 	<div class="row">
-		<div class="span4">
+		<div class="span1"></div>
+		<div class="span3">
 			<h4 class="text-center">Børn</h4>
-			<table class="table table-bordered table-striped qrmanager-tableEdit">
+			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
-					<td><button class="btn btn-mini qrmanager-btnEdit"><i class="icon-wrench"></i>Ret</td>
+					<td>
+						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+						</form>
+					</td>
 				</tr>
 				<tr>
 					<td>Helly Hansen</td>
-					<td><button class="btn btn-mini qrmanager-btnEdit"><i class="icon-wrench"></i>Ret</td>
+					<td>
+						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+						</form>
+					</td>
 				</tr>
 				<tr>
 					<td>Helly Hansen</td>
-					<td><button class="btn btn-mini qrmanager-btnEdit"><i class="icon-wrench"></i>Ret</td>
+					<td>
+						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+						</form>
+					</td>
 				</tr>	
 			</table>
 		</div>
-		<div class="span4">
+		<div class="span3">
 			<h4 class="text-center">Pædagog</h4>
-			<table class="table table-bordered table-striped qrmanager-tableEdit">
+			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
-					<td><button class="btn btn-mini qrmanager-btnEdit"><i class="icon-wrench"></i>Ret</td>
+					<td>
+						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+						</form>
+					</td>
 				</tr>
 				<tr>
 					<td>Helly Hansen</td>
-					<td><button class="btn btn-mini qrmanager-btnEdit"><i class="icon-wrench"></i>Ret</td>
+					<td>
+						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+						</form>
+					</td>
 				</tr>
 				<tr>
 					<td>Helly Hansen</td>
-					<td><button class="btn btn-mini qrmanager-btnEdit"><i class="icon-wrench"></i>Ret</td>
+					<td>
+						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+						</form>
+					</td>
 				</tr>	
 			</table>
 		</div>
-		<div class="span4">
+		<div class="span3">
 			<h4 class="text-center">Forældre</h4>
-			<table class="table table-bordered table-striped qrmanager-tableEdit">
+			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
-					<td><button class="btn btn-mini qrmanager-btnEdit"><i class="icon-wrench"></i>Ret</td>
+					<td>
+						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+						</form>
+					</td>
 				</tr>
 				<tr>
 					<td>Helly Hansen</td>
-					<td><button class="btn btn-mini qrmanager-btnEdit"><i class="icon-wrench"></i>Ret</td>
+					<td>
+						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+						</form>
+					</td>
 				</tr>
 				<tr>
 					<td>Helly Hansen</td>
-					<td><button class="btn btn-mini qrmanager-btnEdit"><i class="icon-wrench"></i>Ret</td>
+					<td>
+						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+						</form>
+					</td>
 				</tr>	
 			</table>
 		</div>
+		<div class="span1"> </div>
 	</div>
 	';
 
@@ -189,13 +237,73 @@ function editSubmitContent()
 	<div class="row">
 		<div class="span5"> </div>
 		<div class="span4">
-			<div class="qrmanager-qrcode">
+			<div class="qrManagerQrCode">
 
 			</div>
 		</div>
 		<div class="span3"> </div>
 	</div>
 
+	';
+
+	return $content;
+}
+
+function choosePrintContent()
+{
+	$content = '
+	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpChoosePrint"].'</div>
+	<div class="row">
+		<div class="span12">
+			<p class="lead text-center">Vælg QR-koder at printe</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span1"></div>
+		<div class="span3">
+			<h4 class="text-center">Børn</h4>
+			<table class="table table-bordered table-striped qrmanager-table">
+				<tr>
+					<td>Helly Hansen</td>
+				</tr>
+				<tr>
+					<td>Helly Hansen</td>
+				</tr>
+				<tr>
+					<td>Helly Hansen</td>
+				</tr>
+			</table>
+		</div>
+		<div class="span3">
+			<h4 class="text-center">Forældre</h4>
+			<table class="table table-bordered table-striped qrmanager-table">
+				<tr>
+					<td>Helly Hansen</td>
+				</tr>
+				<tr>
+					<td>Helly Hansen</td>
+				</tr>
+				<tr>
+					<td>Helly Hansen</td>
+				</tr>
+			</table>
+		</div>
+		<div class="span3">
+			<h4 class="text-center">Pædagog</h4>
+			<table class="table table-bordered table-striped qrmanager-table">
+				<tr>
+					<td>Helly Hansen</td>
+				</tr>
+				<tr>
+					<td>Helly Hansen</td>
+				</tr>
+				<tr>
+					<td>Helly Hansen</td>
+				</tr>
+			</table>
+		</div>
+		<div class="span1"></div>
+	</div>
 	';
 
 	return $content;

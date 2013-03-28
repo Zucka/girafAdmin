@@ -7,21 +7,25 @@ button.qrmanager-btnEdit{
 	margin-left: 35%;
 }
 
-table.qrmanager-tableEdit{
+table.qrmanager-table{
 	border-color: #000;
 }
-.qrmanager-tableEdit tbody{
+.qrmanager-table tbody{
 	border-color: #000;
 }
 .table-bordered td {
 	border-color: #000;
 }
-div.qrmanager-qrcode{
-	height:50%;
-	width:70%;
+div.qrManagerQrCode{
+	height:20em;
+	width:20em;
 	border: 2px solid #000;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	margin-left: -5%;
+	margin-left: -15%;
+}
+
+.qrManagerInlineForm {
+	margin: 0;
 }
