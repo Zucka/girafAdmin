@@ -45,35 +45,22 @@ function changeProfilePicturePopup(){
 	changeModalInner('Change Profile Picture',
 					'<form id="profilePictureUpload" method="post" enctype="multipart/form-data" action="profilePicTempUpload.php">'+
 						'Select image-file: <input type="file" name="newProfilePic" id="newProfilePic" />'+
-					'</form>');
+					'</form>'+
+					'<image src="" alt="Waiting for upload" id="profileCropImage">');
 	openModal();
 	
 	//On upload file
 	//Call function to change to next modal window
 	$('#newProfilePic').on('change', function(){
-		changeProfilePicture();
+		readURL(this);
+		
 	});
 	
 }
 
 function changeProfilePicture(){
 	//Change Modal window to contain the Requested picture
-	$("#preview").html('');
-	$("#preview").html('<img src="loader.gif" alt="Uploading...."/>');
-	$("#imageform").submit(function(event){
-		$.ajax({  
-			type: "POST", 
-			contentType:attr( "enctype", "multipart/form-data" ),
-			url: "script/profilePicTempUpload.php",  
-			data: dados,  
-			success: function( data )  
-			{  
-				alert( data );  
-			}  
-		});  
-  
-		return false;  
-	});
+
 	
 	//Display picture only in certain height and width, but remmember real height and width
 	//Wait for rezise cutting
@@ -86,3 +73,30 @@ function changeProfilePicture(){
 	
 	//Close modal window and background
 }
+
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#profileCropImage').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+			
+			$('img#profileCropImage').imgAreaSelect({
+				handles: true,
+				aspectRatio: "4:4",
+				onSelectEnd: function (img, selection) {
+					document.getElementById("x1").value = selection.x1;
+					document.getElementById("y1").value = selection.y1;
+					document.getElementById("x2").value = selection.x2;
+					document.getElementById("y2").value = selection.y2;
+				}
+			});
+			
+			var editPic = $('img#profileCropImage').imgAreaSelect({ instance: true });
+			editPic.setSelection(0,0,100,100, true);
+			editPic.update();
+        }
+    }

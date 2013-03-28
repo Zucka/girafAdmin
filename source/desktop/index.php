@@ -68,7 +68,7 @@ if ($_SESSION['session_id'] != session_id())
 		</div>
 		<div class="span10" id="content">
 			<div >
-				<?php include "sites/own_profile.php" ?>
+				
 			</div>
 		</div>
 	</div>
