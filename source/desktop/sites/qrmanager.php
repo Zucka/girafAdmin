@@ -32,6 +32,7 @@ switch ($lang) {
 }
 
 require_once($_SERVER['DOCUMENT_ROOT']."/db/db.php");
+require_once($_SERVER['DOCUMENT_ROOT'].'/include/phpqrcode/qrlib.php');
 $userName = $_SESSION['username'];
 $result = $connection->query("SELECT * FROM Profile WHERE idProfile = '$userName' ");
 if ($result->num_rows > 0)
@@ -89,6 +90,8 @@ function getContentFromAction($action)
 			return editSubmitContent();
 		case 'choosePrint':
 			return choosePrintContent();
+		case 'choosePrintSubmit':
+			return choosePrintSubmitContent();
 		case 'printAll':
 			return printAllContent();
 		default:
@@ -258,6 +261,7 @@ function choosePrintContent()
 			<p class="lead text-center">Vælg QR-koder at printe</p>
 		</div>
 	</div>
+	<form action="#qrManger/action=choosePrintSubmit" method="post">
 	<div class="row">
 		<div class="span1"></div>
 		<div class="span3">
@@ -265,12 +269,15 @@ function choosePrintContent()
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
+					<td><input type="checkbox" name="ids[]" value="id here"></td>
 				</tr>
 				<tr>
 					<td>Helly Hansen</td>
+					<td><input type="checkbox" name="ids[]" value="id here"></td>
 				</tr>
 				<tr>
 					<td>Helly Hansen</td>
+					<td><input type="checkbox" name="ids[]" value="id here"></td>
 				</tr>
 			</table>
 		</div>
@@ -279,12 +286,15 @@ function choosePrintContent()
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
+					<td><input type="checkbox" name="ids[]" value="id here"></td>
 				</tr>
 				<tr>
 					<td>Helly Hansen</td>
+					<td><input type="checkbox" name="ids[]" value="id here"></td>
 				</tr>
 				<tr>
 					<td>Helly Hansen</td>
+					<td><input type="checkbox" name="ids[]" value="id here"></td>
 				</tr>
 			</table>
 		</div>
@@ -293,16 +303,74 @@ function choosePrintContent()
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
+					<td><input type="checkbox" name="ids[]" value="id here"></td>
 				</tr>
 				<tr>
 					<td>Helly Hansen</td>
+					<td><input type="checkbox" name="ids[]" value="id here"></td>
 				</tr>
 				<tr>
 					<td>Helly Hansen</td>
+					<td><input type="checkbox" name="ids[]" value="id here"></td>
 				</tr>
 			</table>
 		</div>
 		<div class="span1"></div>
+	</div>
+	<div class="row">
+		<div class="span12">
+			<input clas="btn-primary btn-large text-center" type="submit" value="Vælg">
+		</div>
+	</div>
+	</form>
+	';
+
+	return $content;
+}
+
+function choosePrintSubmitContent()
+{
+	$content = '
+	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpChoosePrintSubmit"].'</div>
+	<div class="row">
+		<div class="span12">
+			<p class="lead text-center">'.count($_POST['ids']).' brugere er blevet markeret til print</p>
+		</div>
+	</div>
+	';
+	$query = "SELECT certificate FROM AuthUsers WHERE idUser IN (";
+	foreach ($_POST['ids'] as $id) {
+		$query .= $connection->real_escape_string($id).',';
+	}
+	$query = substr($query,0,strlen($query)-1);
+	$query .= ')';
+	$result = $connection->query($query);
+	$i = 0;
+	$inRow = false;
+	while ($row = $result->fetch_assoc())
+	{
+		if ($i % 3 == 0)
+		{
+			if ($inRow)
+			{
+				$content .= '<div class="span1"></div></div>';
+			}
+			$content .= '<div class="row">\n <div class="span1"></div>';
+			$inRow == true;
+		}
+		$content .= '
+		<div class="span3">
+			'.QRcode::svg($row['certificate'],false,4,4,false,0xFFFFFF,0x000000).'
+		</div>
+		';
+	}
+	if ($inRow)
+	{
+		$content .= '<div class="span1"></div></div>';
+	}
+	$content .= '
+	<div class="row">
+		<button class="btn-primary btn-large text-center">Print</button>
 	</div>
 	';
 

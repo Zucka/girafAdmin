@@ -128,7 +128,7 @@
             if ($filename === false) {
                 header("Content-Type: image/svg+xml");
                 header('Content-Disposition: filename="qrcode.svg"');
-                echo $vect;
+                return $vect;
             } else {
                 if($saveandprint===TRUE){
                     QRtools::save($vect, $filename);
