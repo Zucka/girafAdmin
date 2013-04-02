@@ -13,6 +13,13 @@
 			include('assets/lang/navigation/navigation.en.php');
 			break;
 	}
+	echo "<script>
+		var postArray = new Array();
+		";
+		foreach($_POST as $key => $value) {
+			echo "postArray['$key'] = '$value'";
+		}
+	echo "</script>";
 ?>
 	<html lang="en">
 	<meta charset="utf-8">

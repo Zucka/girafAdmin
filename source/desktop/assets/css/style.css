@@ -133,7 +133,7 @@ body {
 .modalContainer{
     position: absolute;
     width: 80%;
-	height: 95%;
+	height: 9.5%;
     margin-top:20px;
 	margin-right:10%;
 	margin-left:10%;
@@ -143,7 +143,7 @@ body {
 }
 
 .realModal{
-	max-height:94%;
+	max-height:940%;
 	overflow:auto;
     background-color: white;
     border: solid 4px black; 
@@ -293,6 +293,10 @@ font-size:medium;
 width:25%;
 border:1px dotted black;
 padding: 1%;
+}
+
+#profileCropImage{
+	max-height:60%;
 }
 
 /* END OF Profiles CSS */
