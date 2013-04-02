@@ -39,7 +39,7 @@ if ($result->num_rows > 0)
 { 
 	$row = $result->fetch_assoc();
 }
-if (isset($_POST["action"])) {$action = $_POST["action"];} else {$action = '';}
+if (isset($_GET["action"])) {$action = $_GET["action"];} else {$action = '';}
 $content = getContentFromAction($action);
 echo '
 <html lang="en">
