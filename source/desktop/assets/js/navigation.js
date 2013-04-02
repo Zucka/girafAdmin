@@ -19,14 +19,6 @@ function resizeMe(){
 	$("body").css("font-size", newFontSize);
 }
 
-function appendPost(appendString){
-	for(var key in postArray){
-		appendString += "&"+key+"="+postArray[key];
-	}
-
-	return appendString;
-}
-
 window.onhashchange = function(){
 	/* This is the site-switch, it takes care of switching the content from the menu.
 	 * Beware of the syntax of links when you add them. Every new hashlink has to be of the form: "#link"/"extraInformation=1&extraInformation=2"
@@ -39,7 +31,6 @@ window.onhashchange = function(){
 	var hashArray = hashInfo.split("/");
 	var destination = hashArray[0];
 	var info = hashArray[1];
-	info = appendPost(info);
 	var destinationPath = "";
 	
 	switch(destination)
@@ -102,10 +93,16 @@ window.onhashchange = function(){
 			destinationPath = "404";
 	}
 	
+	destinationPath += "?"+info;
+	if(!postData){
+		postData = "";
+	}
+	
+	
 	$.ajax({
 		type: "POST",
 		url: destinationPath,
-		data: info,
+		data: postData,
 		success: function(result) { // result is the content that the php file 'ECHO's.
 			//var obj = jQuery.parseJSON(result); // Parsing JSON for easy Data Acces
 			$("#content").html(result);

@@ -14,11 +14,10 @@
 			break;
 	}
 	echo "<script>
-		var postArray = new Array();
-		";
-		foreach($_POST as $key => $value) {
-			echo "postArray['$key'] = '$value'";
-		}
+		var postData = ";
+		
+			echo json_encode($_POST);
+		
 	echo "</script>";
 ?>
 	<html lang="en">
