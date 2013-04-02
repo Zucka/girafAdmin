@@ -29,3 +29,6 @@ div.qrManagerQrCode{
 .qrManagerInlineForm {
 	margin: 0;
 }
+.btn-choosePrintSubmit {
+	margin-left: 43%;
+}

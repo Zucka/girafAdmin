@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <?php
-
+session_start();
 if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'en';}
 //INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
 switch ($lang) {
@@ -32,7 +32,7 @@ switch ($lang) {
 }
 
 require_once($_SERVER['DOCUMENT_ROOT']."/db/db.php");
-require_once($_SERVER['DOCUMENT_ROOT'].'/include/phpqrcode/qrlib.php');
+require_once($_SERVER['DOCUMENT_ROOT']."/include/phpqrcode/qrlib.php");
 $userName = $_SESSION['username'];
 $result = $connection->query("SELECT * FROM Profile WHERE idProfile = '$userName' ");
 if ($result->num_rows > 0)
@@ -246,7 +246,6 @@ function editSubmitContent()
 		</div>
 		<div class="span3"> </div>
 	</div>
-
 	';
 
 	return $content;
@@ -261,7 +260,7 @@ function choosePrintContent()
 			<p class="lead text-center">Vælg QR-koder at printe</p>
 		</div>
 	</div>
-	<form action="#qrManger/action=choosePrintSubmit" method="post">
+	<form action="#qrManager/action=choosePrintSubmit" method="post">
 	<div class="row">
 		<div class="span1"></div>
 		<div class="span3">
@@ -319,7 +318,7 @@ function choosePrintContent()
 	</div>
 	<div class="row">
 		<div class="span12">
-			<input clas="btn-primary btn-large text-center" type="submit" value="Vælg">
+			<input class="btn-primary btn-large btn-choosePrintSubmit" type="submit" value="Vælg">
 		</div>
 	</div>
 	</form>
