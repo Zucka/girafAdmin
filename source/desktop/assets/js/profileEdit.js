@@ -79,29 +79,28 @@ function changeProfilePicture(){
 }
 
 function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
 
-            reader.onload = function (e) {
-                $('#profileCropImage').attr('src', e.target.result);
-            }
+		reader.onload = function (e) {
+			$('#profileCropImage').attr('src', e.target.result);
+		}
 
-            reader.readAsDataURL(input.files[0]);
-			
-			$('img#profileCropImage').imgAreaSelect({
-				handles: true,
-				aspectRatio: '4:3',
-				onSelectEnd: function (img, selection) {
-					/*document.getElementById("x1").value = selection.x1;
-					document.getElementById("y1").value = selection.y1;
-					document.getElementById("x2").value = selection.x2;
-					document.getElementById("y2").value = selection.y2;*/
-					alert('test');
-				}
-			});
-			
-			/*var editPic = $('img#profileCropImage').imgAreaSelect({ instance: true });
-			editPic.setSelection(0,0,100,100, true);
-			editPic.update();*/
-        }
-    }
+		reader.readAsDataURL(input.files[0]);
+		
+		$('img#profileCropImage').imgAreaSelect({
+			handles: true,
+			aspectRatio: '4:3',
+			onSelectEnd: function (img, selection) {
+				document.getElementById("x1").value = selection.x1;
+				document.getElementById("y1").value = selection.y1;
+				document.getElementById("x2").value = selection.x2;
+				document.getElementById("y2").value = selection.y2;
+			}
+		});
+		
+		var editPic = $('img#profileCropImage').imgAreaSelect({ instance: true });
+		editPic.setSelection(0,0,100,100, true);
+		editPic.update();
+	}
+}
