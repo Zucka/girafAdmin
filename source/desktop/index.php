@@ -14,18 +14,18 @@ if ($_SESSION['session_id'] != session_id())
 </head>
 <body>
 
-	<div class="modalFadeWindow" onclick="closeModal()"></div>
+	<div class="modalFadeWindow"></div>
 	<div class="modalContainer">
 		<div class="realModal">
 			<div class="modalHeader">
-				<button type="button" class="close" onclick="closeModal()">&times;</button>
+				<button type="button" class="close modalClose">&times;</button>
 				<h3>Modal Window</h3>
 			</div>
 			<div class="modalBody">
 				
 			</div>
 			<div class="modalFooter">
-				<button type="button" class="btn" onclick="closeModal()">Close</button>
+				<button type="button" class="btn modalClose">Close</button>
 			</div>
 		</div>
 	</div>

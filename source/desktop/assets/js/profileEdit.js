@@ -6,7 +6,44 @@ $(window).load(function() {
 	$(".profilePictureButton").click(function(){
 		changeProfilePicturePopup();
 	});
+	//Make sure to close the ImageAreaSelect fields
+	$('.modalFadeWindow').click(function(){
+		closeModal();
+		closeimageAreaSelect();
+	});
+	$('.modalClose').click(function(){
+		closeModal();
+		closeimageAreaSelect();
+	});
 });
+
+function closeimageAreaSelect(){
+	$('.imgareaselect-outer').animate({
+		opacity: 0
+	}, { duration: 500, queue: false });
+	$('.imgareaselect-selection').animate({
+		opacity:0
+	}, { duration: 500, queue: false });
+	$('.imgareaselect-border1').animate({
+		opacity:0
+	}, { duration: 500, queue: false });
+	$('.imgareaselect-border2').animate({
+		opacity:0
+	}, { duration: 500, queue: false });
+	$('.imgareaselect-border3').animate({
+		opacity:0
+	}, { duration: 500, queue: false });
+	$('.imgareaselect-border4').animate({
+		opacity:0
+	}, { duration: 500, queue: false });
+	$('.imgareaselect-handle').animate({
+		opacity:0
+	}, 500,function(){
+		$('.modalFadeWindow').css('z-index','-10');
+		$('.modalContainer').css('z-index','-10');
+		$('.realModal').css('z-index','-10');
+	});
+}
 
 function editProfileInfo(element){
 	//Edit Button

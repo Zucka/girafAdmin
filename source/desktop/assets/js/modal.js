@@ -1,3 +1,12 @@
+$(window).load(function(){
+	$('.modalFadeWindow').click(function(){
+		closeModal();
+	});
+	$('.modalClose').click(function(){
+		closeModal();
+	});
+});
+
 function closeModal(){
 	$('.modalFadeWindow').animate({
 		opacity: 0
