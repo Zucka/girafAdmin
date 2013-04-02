@@ -17,6 +17,18 @@
 	<html lang="en">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- Force document mode to IE9 standards -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="GIRAF">
+	
+	<!-- Fav and touch icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+	
+	
 	<!-- Style Sheets -->
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
 	<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -30,10 +42,4 @@
 	<script src="assets/js/navigation.js"></script>
 	<script src="assets/js/modal.js"></script>
 	
-	<!--- Picture Uploading Scripts --->
-	<link rel="stylesheet" type="text/css" href="include/jquery.imgareaselect-0.9.8/css/imgareaselect-default.css" />
-	<script type="text/javascript" src="include/jquery.imgareaselect-0.9.8/scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="include/jquery.imgareaselect-0.9.8/scripts/jquery.imgareaselect.pack.js"></script>
 	
-	
-	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
