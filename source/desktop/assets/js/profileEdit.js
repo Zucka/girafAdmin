@@ -1,4 +1,4 @@
-$(window).load(function() {
+$(window).ready(function() {
 	$(".buttonEdit").click(function () {
 		editProfileInfo($(this));
 	});
@@ -9,15 +9,15 @@ $(window).load(function() {
 	//Make sure to close the ImageAreaSelect fields
 	$('.modalFadeWindow').click(function(){
 		closeModal();
-		closeimageAreaSelect();
+		closeImageAreaSelect();
 	});
 	$('.modalClose').click(function(){
 		closeModal();
-		closeimageAreaSelect();
+		closeImageAreaSelect();
 	});
 });
 
-function closeimageAreaSelect(){
+function closeImageAreaSelect(){
 	$('.imgareaselect-outer').animate({
 		opacity: 0
 	}, { duration: 500, queue: false });
@@ -39,9 +39,14 @@ function closeimageAreaSelect(){
 	$('.imgareaselect-handle').animate({
 		opacity:0
 	}, 500,function(){
-		$('.modalFadeWindow').css('z-index','-10');
-		$('.modalContainer').css('z-index','-10');
-		$('.realModal').css('z-index','-10');
+		$('.imgareaselect-outer').remove();
+		$('.imgareaselect-selection').parent().remove();
+		$('.imgareaselect-selection').remove();
+		$('.imgareaselect-border1').remove();
+		$('.imgareaselect-border2').remove();
+		$('.imgareaselect-border3').remove();
+		$('.imgareaselect-border4').remove();
+		$('.imgareaselect-handle').remove();
 	});
 }
 
