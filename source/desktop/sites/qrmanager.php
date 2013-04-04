@@ -108,17 +108,17 @@ function mainContent()
 		<div class="span6">
 			<div class="row">
 				<form action="index.php#qrManager/action=edit">
-					<button class="btn qrmanager-buttons" type="submit">Ret QR på bruger</button>
+					<button class="btn qrmanager-buttons" type="submit">'.$QRMANAGER_STRINGS["mainButtonEditQr"].'</button>
 				</form>
 			</div>
 			<div class="row">
 				<form action="index.php#qrManager/action=choosePrint">
-					<button class="btn qrmanager-buttons">Vælg QR til print</button>
+					<button class="btn qrmanager-buttons">'.$QRMANAGER_STRINGS["mainButtonChooseQr"].'</button>
 				</form>
 			</div>
 			<div class="row">
 				<form action="index.php#qrManager/action=printAll">
-					<button class="btn qrmanager-buttons">Print Alle QR</button>
+					<button class="btn qrmanager-buttons">'.$QRMANAGER_STRINGS["mainButtonPrintAllQr"].'</button>
 				</form>
 			</div>
 		</div>
@@ -135,13 +135,13 @@ function editContent()
 	<div class="row">
 		<div class="span1"></div>
 		<div class="span3">
-			<h4 class="text-center">Børn</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrChildren"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
 					<td>
 						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
-							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>'.$QRMANAGER_STRINGS["editQrButtonEdit"].'</button>
 						</form>
 					</td>
 				</tr>
@@ -149,7 +149,7 @@ function editContent()
 					<td>Helly Hansen</td>
 					<td>
 						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
-							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>'.$QRMANAGER_STRINGS["editQrButtonEdit"].'</button>
 						</form>
 					</td>
 				</tr>
@@ -157,20 +157,20 @@ function editContent()
 					<td>Helly Hansen</td>
 					<td>
 						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
-							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>'.$QRMANAGER_STRINGS["editQrButtonEdit"].'</button>
 						</form>
 					</td>
 				</tr>	
 			</table>
 		</div>
 		<div class="span3">
-			<h4 class="text-center">Pædagog</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrGuardians"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
 					<td>
 						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
-							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>'.$QRMANAGER_STRINGS["editQrButtonEdit"].'</button>
 						</form>
 					</td>
 				</tr>
@@ -178,7 +178,7 @@ function editContent()
 					<td>Helly Hansen</td>
 					<td>
 						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
-							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>'.$QRMANAGER_STRINGS["editQrButtonEdit"].'</button>
 						</form>
 					</td>
 				</tr>
@@ -186,20 +186,20 @@ function editContent()
 					<td>Helly Hansen</td>
 					<td>
 						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
-							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>'.$QRMANAGER_STRINGS["editQrButtonEdit"].'</button>
 						</form>
 					</td>
 				</tr>	
 			</table>
 		</div>
 		<div class="span3">
-			<h4 class="text-center">Forældre</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrParents"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
 					<td>
 						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
-							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>'.$QRMANAGER_STRINGS["editQrButtonEdit"].'</button>
 						</form>
 					</td>
 				</tr>
@@ -207,7 +207,7 @@ function editContent()
 					<td>Helly Hansen</td>
 					<td>
 						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
-							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>'.$QRMANAGER_STRINGS["editQrButtonEdit"].'</button>
 						</form>
 					</td>
 				</tr>
@@ -215,7 +215,7 @@ function editContent()
 					<td>Helly Hansen</td>
 					<td>
 						<form class="qrManagerInlineForm" action="#qrManager/action=editSubmit">
-							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>Ret</button>
+							<button class="btn btn-mini qrmanager-btnEdit" type="submit"><i class="icon-wrench"></i>'.$QRMANAGER_STRINGS["editQrButtonEdit"].'</button>
 						</form>
 					</td>
 				</tr>	
@@ -230,11 +230,12 @@ function editContent()
 
 function editSubmitContent()
 {
+	$leadInfoMessage = str_replace('%N','Helly Hansen',$QRMANAGER_STRINGS["editSubmitLeadInfoMessage"]);
 	$content = '
 	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpEditSubmit"].'</div>
 	<div class="row">
 		<div class="span12">
-			<p class="lead text-center">Helly Hansen har fået en ny QR-kode, en mail er sendt til Helly Hansen om dette</p>
+			<p class="lead text-center">'.$leadInfoMessage.'</p>
 		</div>
 	</div>
 	<div class="row">
@@ -257,14 +258,14 @@ function choosePrintContent()
 	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpChoosePrint"].'</div>
 	<div class="row">
 		<div class="span12">
-			<p class="lead text-center">Vælg QR-koder at printe</p>
+			<p class="lead text-center">'.$QRMANAGER_STRINGS["choosePrintLeadInfoMessage"].'</p>
 		</div>
 	</div>
 	<form action="#qrManager/action=choosePrintSubmit" method="post">
 	<div class="row">
 		<div class="span1"></div>
 		<div class="span3">
-			<h4 class="text-center">Børn</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrChildren"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -281,7 +282,7 @@ function choosePrintContent()
 			</table>
 		</div>
 		<div class="span3">
-			<h4 class="text-center">Forældre</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrGuardians"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -298,7 +299,7 @@ function choosePrintContent()
 			</table>
 		</div>
 		<div class="span3">
-			<h4 class="text-center">Pædagog</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrParents"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -318,7 +319,7 @@ function choosePrintContent()
 	</div>
 	<div class="row">
 		<div class="span12">
-			<input class="btn-primary btn-large btn-choosePrintSubmit" type="submit" value="Vælg">
+			<input class="btn-primary btn-large btn-choosePrintSubmit" type="submit" value="'.$QRMANAGER_STRINGS["choosePrintSubmitText"].'">
 		</div>
 	</div>
 	</form>
@@ -333,7 +334,7 @@ function choosePrintSubmitContent()
 	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpChoosePrintSubmit"].'</div>
 	<div class="row">
 		<div class="span12">
-			<p class="lead text-center">'.count($_POST['ids']).' brugere er blevet markeret til print</p>
+			<p class="lead text-center">'.count($_POST['ids']).$QRMANAGER_STRINGS["choosePrintSubmitLeadInfoMessage"].'</p>
 		</div>
 	</div>
 	';
@@ -369,10 +370,19 @@ function choosePrintSubmitContent()
 	}
 	$content .= '
 	<div class="row">
-		<button class="btn-primary btn-large text-center">Print</button>
+		<button class="btn-primary btn-large text-center">'.$QRMANAGER_STRINGS["choosePrintSubmitButtonSubmit"].'</button>
 	</div>
 	';
 
+	return $content;
+}
+
+function printAllContent()
+{
+	$content = '
+
+
+	';
 	return $content;
 }
 ?>
