@@ -1,5 +1,5 @@
 <?php
-$db_api_url = '';
+$db_api_url = ''; //URL to the db api
 
 /* 
 	$json should be the json to be sent NOT ENCODED, i.e. it should be an associative array
@@ -7,7 +7,7 @@ $db_api_url = '';
  */
 function db_query($json)
 {
-
+	global $db_api_url;
     $content = json_encode($json);
 
     $curl = curl_init($db_api_url);
