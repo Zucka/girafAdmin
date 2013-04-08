@@ -44,6 +44,7 @@ echo '
 
 	<!-- JavaScript -->
 	<script src="assets/js/profileEdit.js"></script>
+	<script src="assets/js/print.js"></script>
 	
 	<!--- Picture Uploading Scripts --->
 	<link rel="stylesheet" type="text/css" href="include/jquery.imgareaselect-0.9.10/css/imgareaselect-default.css" />
