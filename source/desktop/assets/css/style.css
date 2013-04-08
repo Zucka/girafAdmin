@@ -155,6 +155,7 @@ body {
 	filter: Alpha(Opacity=0); -moz-opacity:0; opacity: 0;
 }
 
+
 /* END OF MODAL CSS */
 
 
@@ -296,7 +297,8 @@ padding: 1%;
 }
 
 #profileCropImage{
-	max-height:600%;
+	width:700px; /* This is important, to make sure we keep the right ratio in the upload script */
+	margin-bottom:10px;
 }
 
 /* END OF Profiles CSS */

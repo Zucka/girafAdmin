@@ -85,20 +85,31 @@ function submitEditProfileInfo(element){
 function changeProfilePicturePopup(){
 	//Request picture
 	changeModalInner('Change Profile Picture',
-					'<form id="profilePictureUpload" method="post" enctype="multipart/form-data" action="profilePicTempUpload.php">'+
+					'<form id="profilePictureUpload" method="post" enctype="multipart/form-data" action="#profilePicUpload">'+
 						'Select image-file: <input type="file" name="newProfilePic" id="newProfilePic" />'+
 						'<input name="x1" id="x1" type="hidden" value="NULL">'+
 						'<input name="y1" id="y1" type="hidden" value="NULL">'+
 						'<input name="x2" id="x2" type="hidden" value="NULL">'+
 						'<input name="y2" id="y2" type="hidden" value="NULL">'+
-					'</form>'+
-					'<img src="#" alt="Editorial Profile Picture" id="profileCropImage">');
+						'<input name="currentWidth" id="currentWidth" type="hidden" value="NULL">'+
+						'<center><img src="#" alt="Waiting for file select" id="profileCropImage"></center>'+
+						'<input type="submit" name="submit" value="Change" class="btn">'+
+					'</form>'
+					);
 	openModal();
 	
 	//On upload file
-	//Call function to change to next modal window
 	$('#newProfilePic').on('change', function(){
 		readURL(this);
+		
+		$('img#profileCropImage').imgAreaSelect({
+			onInit: function(img, selection){
+				var editPic = $('img#profileCropImage').imgAreaSelect({ instance: true });
+				editPic.setSelection(100,100,200,200, true);
+				editPic.setOptions({ show: true });
+				editPic.update();
+			}
+		});
 		
 	});
 	
@@ -132,17 +143,14 @@ function readURL(input) {
 		
 		$('img#profileCropImage').imgAreaSelect({
 			handles: true,
-			aspectRatio: '4:3',
+			aspectRatio: '1:1',
 			onSelectEnd: function (img, selection) {
 				document.getElementById("x1").value = selection.x1;
 				document.getElementById("y1").value = selection.y1;
 				document.getElementById("x2").value = selection.x2;
 				document.getElementById("y2").value = selection.y2;
+				document.getElementById("currentWidth").value = $("#profileCropImage").width();
 			}
-		});
-		
-		var editPic = $('img#profileCropImage').imgAreaSelect({ instance: true });
-		editPic.setSelection(0,0,100,100, true);
-		editPic.update();
+		});		
 	}
 }

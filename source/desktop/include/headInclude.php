@@ -15,7 +15,7 @@
 	}
 	echo "<script>
 		var postData = ";
-		
+			$_POST['fileTransfer'] = $_FILES;
 			echo json_encode($_POST);
 		
 	echo "</script>";

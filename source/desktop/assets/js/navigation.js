@@ -44,6 +44,10 @@ window.onhashchange = function(){
 			destinationPath = "sites/placeholder.html";
 		break;
 		
+		case "#profilePicUpload":
+			destinationPath = "script/profilePicUpload.php";
+		break;
+		
 		case "#addRelation":
 			destinationPath = "sites/placeholder.html";
 		break;
