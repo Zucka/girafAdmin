@@ -3,7 +3,8 @@ $(function() {
     {
         resizeMe();
         }).trigger('resize');
-    });
+	$(window).trigger('hashchange');
+});
 	
 function resizeMe(){
 	//Standard height, for which the body font size is correct
@@ -80,7 +81,7 @@ window.onhashchange = function(){
 		break;
 		
 		case "#qrManager":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "sites/qrmanager.php";
 		break;
 		
 		case "#appManager":
@@ -92,10 +93,16 @@ window.onhashchange = function(){
 			destinationPath = "404";
 	}
 	
+	destinationPath += "?"+info;
+	if(!postData){
+		postData = "";
+	}
+	
+	
 	$.ajax({
 		type: "POST",
 		url: destinationPath,
-		data: "",
+		data: postData,
 		success: function(result) { // result is the content that the php file 'ECHO's.
 			//var obj = jQuery.parseJSON(result); // Parsing JSON for easy Data Acces
 			$("#content").html(result);

@@ -17,6 +17,9 @@ body {
   /* W3C Markup, IE10 Release Preview */ 
   background-image: linear-gradient(to bottom, #FFD96E 0%, #FFBB55 100%);
 
+  /* IE6,IE7,IE8,IE9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFD96E', endColorstr='#FFBB55',GradientType=0 );
+
   background-attachment: fixed;
 }
 
@@ -34,9 +37,11 @@ body {
   border: 2px solid rgb(100,96,96);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
   border-radius: 10px;
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -ms-box-shadow: 0 1px 2px rgba(0,0,0,.05);
   box-shadow: 0 1px 2px rgba(0,0,0,.05);
   background-color:rgba(255,255,255,0.7);
 }
@@ -48,7 +53,9 @@ body {
   padding: 7px 9px;
 }
 .logo {
-  margin: 0 28% 5%;
+  margin: -5% 13% 0%;
+  height: 17em;
+  width: 15em;
 }
 
 .profile_picture {
@@ -64,8 +71,7 @@ body {
   box-shadow: 0 1px 2px rgba(0,0,0,.05);
   background-color: #fff;
   text-align: center;
-  width: 50%;
-  height: 50%;
+  width: 20em;
 }
 
 .profile-qr {
@@ -81,8 +87,8 @@ body {
   box-shadow: 0 1px 2px rgba(0,0,0,.05);
   background-color: #fff;
   text-align: center;
-  width: 50%;
-  height: 40%;
+  width: 20em;
+  height:20em;
 }
 
 .table-profile {
@@ -108,21 +114,67 @@ body {
   margin: 1% 2% 5% 2%;
 }
 
+/* MODAL CSS */
+
+.modalFadeWindow{
+    filter: Alpha(Opacity=0); -moz-opacity:0; opacity: 0;
+    width: 100%; 
+	height: 100%; 
+	
+	background-color: #999999;
+    
+	position: absolute;
+    top: 0px; 
+	left: 0px;
+	
+	z-index: -10;
+}
+
+.modalContainer{
+    position: absolute;
+    width: 80%;
+	height: 9.5%;
+    margin-top:20px;
+	margin-right:10%;
+	margin-left:10%;
+    z-index: -10;
+	
+	filter: Alpha(Opacity=0); -moz-opacity:0; opacity: 0;
+}
+
+.realModal{
+	max-height:940%;
+	overflow:auto;
+    background-color: white;
+    border: solid 4px black; 
+
+    z-index: -10;
+
+    padding: 2%;
+	
+	filter: Alpha(Opacity=0); -moz-opacity:0; opacity: 0;
+}
+
+/* END OF MODAL CSS */
+
 
 /* Navigation CSS */
 
 #menuBar{
   border-right:2px solid #9e6435;
+  background-color:#ffbb55;
 
-  position:relative;
+/*  position:relative;
   width:16%;
   min-width:150px;
+  float:left;*/
+
   height:auto;
   min-height:100%;
-  
-  background-color:#ffbb55;
-  
-  float:left;
+}
+
+#menuBarOuter {
+  width:15%;
 }
 
 a.menuLink:link, a.menuLink:visited{
@@ -205,8 +257,9 @@ a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLin
 }
 
 #content{
-	float:right;
-	width:83%;
+/*	float:right; */
+	width:85%;
+  margin: 0% 0% 0% 0% ;
 	height:auto;
 	min-height:100%;
 	border:0px solid black;
@@ -215,3 +268,35 @@ a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLin
 }
 
 /* END OF Navigation CSS */
+
+/* Start OF Profiles CSS */
+
+.tableStyle{
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	border:1px solid black;
+}
+
+.tableStyle tr{
+border:1px solid black;
+}
+
+.tableStyle th{
+font-size:large;
+border:1px dotted black;
+background-color:#dd9639
+}
+
+.tableStyle td{
+font-size:medium;
+width:25%;
+border:1px dotted black;
+padding: 1%;
+}
+
+#profileCropImage{
+	max-height:600%;
+}
+
+/* END OF Profiles CSS */

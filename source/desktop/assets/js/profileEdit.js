@@ -1,3 +1,55 @@
+$(window).ready(function() {
+	$(".buttonEdit").click(function () {
+		editProfileInfo($(this));
+	});
+	
+	$(".profilePictureButton").click(function(){
+		changeProfilePicturePopup();
+	});
+	//Make sure to close the ImageAreaSelect fields
+	$('.modalFadeWindow').click(function(){
+		closeModal();
+		closeImageAreaSelect();
+	});
+	$('.modalClose').click(function(){
+		closeModal();
+		closeImageAreaSelect();
+	});
+});
+
+function closeImageAreaSelect(){
+	$('.imgareaselect-outer').animate({
+		opacity: 0
+	}, { duration: 500, queue: false });
+	$('.imgareaselect-selection').animate({
+		opacity:0
+	}, { duration: 500, queue: false });
+	$('.imgareaselect-border1').animate({
+		opacity:0
+	}, { duration: 500, queue: false });
+	$('.imgareaselect-border2').animate({
+		opacity:0
+	}, { duration: 500, queue: false });
+	$('.imgareaselect-border3').animate({
+		opacity:0
+	}, { duration: 500, queue: false });
+	$('.imgareaselect-border4').animate({
+		opacity:0
+	}, { duration: 500, queue: false });
+	$('.imgareaselect-handle').animate({
+		opacity:0
+	}, 500,function(){
+		$('.imgareaselect-outer').remove();
+		$('.imgareaselect-selection').parent().remove();
+		$('.imgareaselect-selection').remove();
+		$('.imgareaselect-border1').remove();
+		$('.imgareaselect-border2').remove();
+		$('.imgareaselect-border3').remove();
+		$('.imgareaselect-border4').remove();
+		$('.imgareaselect-handle').remove();
+	});
+}
+
 function editProfileInfo(element){
 	//Edit Button
 	//TODO: Remmember to add Language Specific
@@ -12,11 +64,6 @@ function editProfileInfo(element){
 	var originalText = originalTextElement.html();
 	originalTextElement.html('<input type="text" value=\"'+originalText+'\" />');
 }
-$(window).load(function() {
-	$(".buttonEdit").click(function () {
-		editProfileInfo($(this));
-	});
-});
 
 function submitEditProfileInfo(element){
 	//Edit Button
@@ -33,4 +80,69 @@ function submitEditProfileInfo(element){
 	
 	//Edit textField back to normal
 	textElement.html(newText);
+}
+
+function changeProfilePicturePopup(){
+	//Request picture
+	changeModalInner('Change Profile Picture',
+					'<form id="profilePictureUpload" method="post" enctype="multipart/form-data" action="profilePicTempUpload.php">'+
+						'Select image-file: <input type="file" name="newProfilePic" id="newProfilePic" />'+
+						'<input name="x1" id="x1" type="hidden" value="NULL">'+
+						'<input name="y1" id="y1" type="hidden" value="NULL">'+
+						'<input name="x2" id="x2" type="hidden" value="NULL">'+
+						'<input name="y2" id="y2" type="hidden" value="NULL">'+
+					'</form>'+
+					'<img src="#" alt="Editorial Profile Picture" id="profileCropImage">');
+	openModal();
+	
+	//On upload file
+	//Call function to change to next modal window
+	$('#newProfilePic').on('change', function(){
+		readURL(this);
+		
+	});
+	
+}
+
+function changeProfilePicture(){
+	//Change Modal window to contain the Requested picture
+
+	
+	//Display picture only in certain height and width, but remmember real height and width
+	//Wait for rezise cutting
+	
+	//Calculate the real cutting values
+	
+	//Cut and store profile picture
+	
+	//Change profile picture on site to new profilepicture
+	
+	//Close modal window and background
+}
+
+function readURL(input) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+
+		reader.onload = function (e) {
+			$('#profileCropImage').attr('src', e.target.result);
+		}
+
+		reader.readAsDataURL(input.files[0]);
+		
+		$('img#profileCropImage').imgAreaSelect({
+			handles: true,
+			aspectRatio: '4:3',
+			onSelectEnd: function (img, selection) {
+				document.getElementById("x1").value = selection.x1;
+				document.getElementById("y1").value = selection.y1;
+				document.getElementById("x2").value = selection.x2;
+				document.getElementById("y2").value = selection.y2;
+			}
+		});
+		
+		var editPic = $('img#profileCropImage').imgAreaSelect({ instance: true });
+		editPic.setSelection(0,0,100,100, true);
+		editPic.update();
+	}
 }

@@ -13,9 +13,27 @@
 			include('assets/lang/navigation/navigation.en.php');
 			break;
 	}
+	echo "<script>
+		var postData = ";
+		
+			echo json_encode($_POST);
+		
+	echo "</script>";
 ?>
 	<html lang="en">
 	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- Force document mode to IE9 standards -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="GIRAF">
+	
+	<!-- Fav and touch icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+	
 	
 	<!-- Style Sheets -->
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -28,6 +46,6 @@
 	<script src="assets/js/bootstrap.min.js"></script>
 	
 	<script src="assets/js/navigation.js"></script>
+	<script src="assets/js/modal.js"></script>
 	
 	
-	<link rel="shortcut icon" href="../assets/ico/favicon.ico">

@@ -1,20 +1,3 @@
-<!--
-This file is part of GIRAF.
-
-GIRAF is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-GIRAF is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
--->
-
 <?php
 	session_start();
 	require_once('db/db.php');
@@ -65,6 +48,7 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 				    	<meta charset="utf-8">
 				    	<title>'.$LOGIN_STRINGS["headerTitle"].'</title>
 				    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				    	 <meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- Force document mode to IE9 standards -->
 				    	<meta name="description" content="">
 				    	<meta name="author" content="">
 
@@ -78,12 +62,14 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 						<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
 						<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
 						<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-						<link rel="shortcut icon" href="../assets/ico/favicon.png">
+						<link rel="shortcut icon" href="../assets/ico/favicon.ico">
 					</head>
-					<body class="login">
+					<body>
 					<div class="container">
 						<form class="form-signin" action="?action=login" method="post">
-							<img class="logo" src="assets/img/girafAdminLogo-01.svg" width="104" height="142">
+							<div class="logo">
+								<object width="100%" height="100%" data="assets/img/girafAdminLogo-01.svg" type="image/svg+xml"> </object>
+							</div>
 							'.$errorStartUsername.'
 							<input type="text" name="username" class="input-block-level" placeholder="'.$LOGIN_STRINGS["formUsername"].'">
 							'.$errorEndUsername.'
