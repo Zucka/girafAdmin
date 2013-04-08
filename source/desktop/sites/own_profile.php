@@ -124,12 +124,14 @@ echo '
 					</div>
 					<div class="profile-btn-qr">
 						<button class="btn profile-btn" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["qrGenerateNew"].'</button>
-						<button class="btn profile-btn" type="button"><i class="icon-print"></i>'.$PROFILE_STRINGS["qrPrint"].'</button>
+						<button class="btn profile-btn" id="btn-print" type="button"><i class="icon-print"></i>'.$PROFILE_STRINGS["qrPrint"].'</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<iframe name="print_frame" id="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
 ';
 ?>
 
