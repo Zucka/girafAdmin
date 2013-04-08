@@ -330,6 +330,7 @@ function choosePrintContent()
 
 function choosePrintSubmitContent()
 {
+	global $connection;
 	$content = '
 	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpChoosePrintSubmit"].'</div>
 	<div class="row">
@@ -347,22 +348,25 @@ function choosePrintSubmitContent()
 	$result = $connection->query($query);
 	$i = 0;
 	$inRow = false;
-	while ($row = $result->fetch_assoc())
+	if ($result->num_rows != 0)
 	{
-		if ($i % 3 == 0)
+		while ($row = $result->fetch_assoc())
 		{
-			if ($inRow)
+			if ($i % 3 == 0)
 			{
-				$content .= '<div class="span1"></div></div>';
+				if ($inRow)
+				{
+					$content .= '<div class="span1"></div></div>';
+				}
+				$content .= '<div class="row">\n <div class="span1"></div>';
+				$inRow == true;
 			}
-			$content .= '<div class="row">\n <div class="span1"></div>';
-			$inRow == true;
+			$content .= '
+			<div class="span3">
+				'.QRcode::svg($row['certificate'],false,4,4,false,0xFFFFFF,0x000000).'
+			</div>
+			';
 		}
-		$content .= '
-		<div class="span3">
-			'.QRcode::svg($row['certificate'],false,4,4,false,0xFFFFFF,0x000000).'
-		</div>
-		';
 	}
 	if ($inRow)
 	{
@@ -370,7 +374,7 @@ function choosePrintSubmitContent()
 	}
 	$content .= '
 	<div class="row">
-		<button class="btn-primary btn-large text-center">'.$QRMANAGER_STRINGS["choosePrintSubmitButtonSubmit"].'</button>
+		<button class="btn-primary btn-large btn-choosePrintSubmit">'.$QRMANAGER_STRINGS["choosePrintSubmitButtonSubmit"].'</button>
 	</div>
 	';
 
