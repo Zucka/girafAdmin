@@ -15,7 +15,11 @@
 	}
 	echo "<script>
 		var postData = ";
-			$_POST['fileTransfer'] = $_FILES;
+			if(isset($_FILES['newProfilePic']['tmp_name'])){
+				//Append the image to POST if needed.
+				$image_data = file_get_contents($_FILES['newProfilePic']['tmp_name']);
+				$_POST['profileImage'] = base64_encode($image_data);
+			}
 			echo json_encode($_POST);
 		
 	echo "</script>";

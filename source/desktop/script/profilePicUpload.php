@@ -1,17 +1,28 @@
 <?php
 	if(!empty($_POST['x1'])){
 		require_once "../include/SimpleImage.php";
-	
+		
+		$finalWidth = 400;
+		$finalHeight = 400;
 		$x1 = $_POST['x1'];
 		$x2 = $_POST['x2'];
 		$y1 = $_POST['y1'];
 		$y2 = $_POST['y2'];
 		$currentWidth = $_POST['currentWidth'];
-		$_FILES = $_POST['fileTransfer'];
-		$finalWidth = 400;
-		$finalHeight = 400;
+		$base64Image = $_POST['profileImage'];
+		$data = base64_decode($base64Image);
+
+		$image = imagecreatefromstring($data);
+		header('Content-Type: image/png');
+		imagepng($image,"../tempTest/temp.png");
 		
-		echo "<br><br>Lars tester<br>".getimagesize($_FILES['newProfilePic']['tmp_name'])."<br>Slut<br><br>";
+		
+		
+		
+		//header('Content-Type: image/png');
+		echo "<br><br>image data: ".$image."<br><br>";
+		
+		echo "<br><br>Lars tester<br>".getimagesize($image)."<br>Slut<br><br>";
 		
 		// make an error handler which will be used if the upload fails
 		function error($error){
@@ -43,13 +54,13 @@
 			or error('the upload form is neaded');
 		
 		// check at least one file was uploaded
-		isset($_FILES['newProfilePic']['size'])
+		/*isset($_FILES['newProfilePic']['size'])
 			or error('No files were uploaded');
 					
 		// check for standard uploading errors
 		($_FILES['newProfilePic']['error'] == 0)
 				or error($_FILES['newProfilePic']['tmp_name'].': '.$errors[$_FILES['newProfilePic']['error']]);
-		
+		*/
 				
 		// check that the file we are working on really was an HTTP upload
 		/*	@is_uploaded_file($_FILES['newProfilePic']['tmp_name'])
@@ -57,8 +68,8 @@
 				
 		// validation... since this is an image upload script we
 		// should run a check to make sure the upload is an image
-		/*	@getimagesize($_FILES['newProfilePic']['tmp_name'])
-				or error($_FILES['newProfilePic']['tmp_name'].' not an image');*/
+		/*	@getimagesize($image)
+				or error(' not an image');
 
 		// now let's move the file to its final and allocate it with the new filename
 
@@ -68,7 +79,7 @@
 			
 		//Crop picture
 		$image = new SimpleImage();
-		$image->load($_FILES['newProfilePic']['tmp_name']);
+		$image->loadFromString($image);
 		
 		//Find ratio between original and Script Resize
 		$ratio = ($image->getWidth())/$currentWidth;
