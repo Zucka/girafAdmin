@@ -121,4 +121,43 @@ function db_getCertificatesFromIds($session,$ids)
 
 	return $result;
 }
+/*
+	Inserts a new qr code for a user
+
+	--Inputs--
+	$session should be a valid DB session
+	$userId should be the user to be updated
+	$newQr should be a 512 character unique string 
+
+*/
+function db_insertNewQrCode($session,$userId,$newQr)
+{
+	$data = array(
+		'auth' => array(
+			'session' => $session
+		),
+		'action' => 'update',
+		'data' => array(
+			'type' => 'user',
+			'values' => array(
+				array(
+					'id' => $userId,
+					'value' => array(
+						'certificate' => $newQr
+					)
+				)
+			)
+		)
+	);
+
+	$result = db_query($data);
+	if ($result['status'] != 'OK')
+	{
+		return FALSE;
+	}
+	else
+	{
+		return TRUE;
+	}
+}
 ?>

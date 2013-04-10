@@ -133,6 +133,22 @@ echo '
 
 	<iframe name="print_frame" id="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
 ';
+
+/* 
+	Generate new QR code
+
+	returns a 512 character string 
+*/
+function generateNewQr()
+{
+	$qr = "";
+	for ($i=0; $i < 4; $i++) { 
+		$time = microtime();
+		$qr .= hash("sha512",$time);
+		usleep(100); // sleep for 100 microseconds (0.1 milliseconds) to get a different time from microtime
+	}
+	return $qr;
+}
 ?>
 
 
