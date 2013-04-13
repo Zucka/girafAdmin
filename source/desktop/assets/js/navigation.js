@@ -45,7 +45,7 @@ window.onhashchange = function(){
 		break;
 		
 		case "#profilePicUpload":
-			destinationPath = "script/profilePicUpload.php";
+			destinationPath = "";
 		break;
 		
 		case "#addRelation":

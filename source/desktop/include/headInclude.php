@@ -15,14 +15,16 @@
 	}
 	echo "<script>
 		var postData = ";
-			if(isset($_FILES['newProfilePic']['tmp_name'])){
-				//Append the image to POST if needed.
-				$image_data = file_get_contents($_FILES['newProfilePic']['tmp_name']);
-				$_POST['profileImage'] = base64_encode($image_data);
-			}
 			echo json_encode($_POST);
 		
 	echo "</script>";
+	
+	if(isset($_FILES['newProfilePic']['tmp_name'])){
+		//Call croping and upload script
+		require "script/profilePicUpload.php";
+		/*$image_data = file_get_contents($_FILES['newProfilePic']['tmp_name']);
+		$_POST['profileImage'] = base64_encode($image_data);*/
+	}
 ?>
 	<html lang="en">
 	<meta charset="utf-8">

@@ -1,6 +1,6 @@
 <?php
 	if(!empty($_POST['x1'])){
-		require_once "../include/SimpleImage.php";
+		include_once "include/SimpleImage.php";
 		
 		$finalWidth = 400;
 		$finalHeight = 400;
@@ -9,12 +9,6 @@
 		$y1 = $_POST['y1'];
 		$y2 = $_POST['y2'];
 		$currentWidth = $_POST['currentWidth'];
-		$base64Image = $_POST['profileImage'];
-		$data = base64_decode($base64Image);
-
-		$image = imagecreatefromstring($data);
-		header('Content-Type: image/png');
-		imagepng($image,"../tempTest/temp.png");
 		
 		// make an error handler which will be used if the upload fails
 		function error($error){
@@ -55,28 +49,18 @@
 				
 		// validation... since this is an image upload script we
 		// should run a check to make sure the upload is an image
-			if(!$image)
-				error(' not an image');
-
-		// now let's move the file to its final and allocate it with the new filename
-
-		//Upload Full Size
-		@move_uploaded_file($_FILES['newProfilePic']['tmp_name'], $uploadFilenameBig[$key])
-			or error('receiving directory insuffiecient permission,  please contact your web admin for a clean-up');
+			@getimagesize($_FILES['newProfilePic']['tmp_name'])
+				or error(' not an image');
 			
 		//Crop picture
 		$image = new SimpleImage();
-		$image->loadFromString($image);
+		$image->load($_FILES['newProfilePic']['tmp_name']);
 		
 		//Find ratio between original and Script Resize
 		$ratio = ($image->getWidth())/$currentWidth;
 		
 		$image->resizeCordsColor($finalWidth,$finalHeight,intval($x1*$ratio),intval($y1*$ratio),intval($x2*$ratio),intval($y2*$ratio),255,255,255);
-		$image->save("../tempTest/profilePic.jpeg");
-			
-		
-		
-		
-		
+		$image->save("tempTest/profilePic.jpeg");
+
 	}
 ?>
