@@ -17,6 +17,7 @@ $(window).load(function () {
 			if (data.status = "ok")
 			{
 				$("#profile-qr-status").css({"color":"green"}).html("Successfully generated new QR");
+				$("#profile-qr-object").attr('data','../qrgen.php');
 			}
 			else if (data.status = "error")
 			{
