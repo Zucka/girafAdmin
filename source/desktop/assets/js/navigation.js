@@ -45,11 +45,11 @@ window.onhashchange = function(){
 		break;
 		
 		case "#profilePicUpload":
-			if(){
+			if(profilePicType == "own"){
 				destinationPath = "sites/own_profile.php";
 			}
-			else{
-				destinationPath = "sites/own_profile.php";
+			else{ //Other
+				destinationPath = "sites/placeholder.html";
 			}
 			
 		break;

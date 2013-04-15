@@ -17,6 +17,10 @@
 		var postData = ";
 			echo json_encode($_POST);
 		
+	echo "var profilePicType = '";
+			echo $_GET['profilePicType'];
+	echo "'";
+		
 	echo "</script>";
 	
 	if(isset($_FILES['newProfilePic']['tmp_name'])){
