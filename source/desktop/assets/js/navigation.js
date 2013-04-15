@@ -45,7 +45,13 @@ window.onhashchange = function(){
 		break;
 		
 		case "#profilePicUpload":
-			destinationPath = "";
+			if(){
+				destinationPath = "sites/own_profile.php";
+			}
+			else{
+				destinationPath = "sites/own_profile.php";
+			}
+			
 		break;
 		
 		case "#addRelation":

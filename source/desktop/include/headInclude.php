@@ -22,8 +22,6 @@
 	if(isset($_FILES['newProfilePic']['tmp_name'])){
 		//Call croping and upload script
 		require "script/profilePicUpload.php";
-		/*$image_data = file_get_contents($_FILES['newProfilePic']['tmp_name']);
-		$_POST['profileImage'] = base64_encode($image_data);*/
 	}
 ?>
 	<html lang="en">
