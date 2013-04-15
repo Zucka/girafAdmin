@@ -123,9 +123,10 @@ echo '
 						<object data="../qrgen.php" height="100%" width="100%" type="image/svg+xml"> </object>
 					</div>
 					<div class="profile-btn-qr">
-						<button class="btn profile-btn" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["qrGenerateNew"].'</button>
+						<button class="btn profile-btn" id="btn-gen" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["qrGenerateNew"].'</button>
 						<button class="btn profile-btn" id="btn-print" type="button"><i class="icon-print"></i>'.$PROFILE_STRINGS["qrPrint"].'</button>
 					</div>
+					<div class="profile-qr-status"> </div>
 				</div>
 			</div>
 		</div>
@@ -134,21 +135,6 @@ echo '
 	<iframe name="print_frame" id="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
 ';
 
-/* 
-	Generate new QR code
-
-	returns a 512 character string 
-*/
-function generateNewQr()
-{
-	$qr = "";
-	for ($i=0; $i < 4; $i++) { 
-		$time = microtime();
-		$qr .= hash("sha512",$time);
-		usleep(100); // sleep for 100 microseconds (0.1 milliseconds) to get a different time from microtime
-	}
-	return $qr;
-}
 ?>
 
 

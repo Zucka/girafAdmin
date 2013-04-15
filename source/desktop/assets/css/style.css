@@ -113,6 +113,9 @@ body {
   display: inline-block;
   margin: 1% 2% 5% 2%;
 }
+.profile-qr-status {
+  text-align: center;
+}
 
 /* MODAL CSS */
 
