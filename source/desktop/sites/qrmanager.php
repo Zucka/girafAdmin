@@ -137,7 +137,7 @@ function editContent()
 	<div class="row">
 		<div class="span1"></div>
 		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrChildren"].'</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Children"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -166,7 +166,7 @@ function editContent()
 			</table>
 		</div>
 		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrGuardians"].'</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Guardians"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -195,7 +195,7 @@ function editContent()
 			</table>
 		</div>
 		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrParents"].'</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Parents"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -269,7 +269,7 @@ function choosePrintContent()
 	<div class="row">
 		<div class="span1"></div>
 		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrChildren"].'</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Children"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -286,7 +286,7 @@ function choosePrintContent()
 			</table>
 		</div>
 		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrGuardians"].'</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Guardians"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -303,7 +303,7 @@ function choosePrintContent()
 			</table>
 		</div>
 		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrParents"].'</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Parents"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
