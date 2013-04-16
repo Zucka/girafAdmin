@@ -4,24 +4,23 @@ header('Content-type: application/json');
 //Check if user is logged in
 if ($_SESSION['session_id'] != session_id())
 {
-	echo '
-		{
-			"status": "error"
-		}
-	';
+	echo json_encode(array("status" => "error"));
 	exit(0);
 } 
 $userId = $_SESSION['userId'];
 require_once ('../db/new.db.php');
 
 $newQr = generateNewQr();
-
-db_insertNewQrCode($session,$userId,$newQr);
-echo '
-	{
-		"status": "ok"
-	}
-';
+$session = '';
+$result = db_insertNewQrCode($session,$userId,$newQr);
+if  ($result == TRUE)
+{
+	echo json_encode(array("status" => "ok"));
+}
+else
+{
+	echo json_encode(array("status" => "error"));;
+}
 /* 
 	Generate new QR code
 

@@ -14,14 +14,15 @@ $(window).load(function () {
 		$.ajax({
 			url: "sites/generateNewQr.php"
 		}).done(function(data){
-			if (data.status = "ok")
+			if (data.status == "ok")
 			{
-				$("#profile-qr-status").css({"color":"green"}).html("Successfully generated new QR");
-				$("#profile-qr-object").attr('data','../qrgen.php');
+				$(".profile-qr-status").css({"color":"green"}).html("Successfully generated new QR");
+				$(".profile-qr-object").attr('data','../qrgen.php');
 			}
-			else if (data.status = "error")
+		}).always(function(data){
+			if (data.status == "error")
 			{
-				$("#profile-qr-status").css({"color":"red"}).html("Failed generating new QR, try refreshing");
+				$(".profile-qr-status").css({"color":"red"}).html("Failed generating new QR, try refreshing");
 			}
 		});
 	});
