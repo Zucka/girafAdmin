@@ -16,10 +16,13 @@
 	echo "<script>
 		var postData = ";
 			echo json_encode($_POST);
-		
-	echo "var profilePicType = '";
-			echo $_GET['profilePicType'];
-	echo "'";
+	
+	if (isset($_GET['profilePicType']))
+	{
+		echo "var profilePicType = '";
+				echo $_GET['profilePicType'];
+		echo "'";
+	}
 		
 	echo "</script>";
 	
