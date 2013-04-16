@@ -12,7 +12,7 @@ $(window).load(function () {
 
 	$("#btn-gen").click(function(){
 		$.ajax({
-			url: "generateNewQr.php"
+			url: "sites/generateNewQr.php"
 		}).done(function(data){
 			if (data.status = "ok")
 			{
