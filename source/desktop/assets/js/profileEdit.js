@@ -15,6 +15,41 @@ $(window).ready(function() {
 		closeModal();
 		closeImageAreaSelect();
 	});
+	
+	if(profilePicUploadError.length == 1){
+		//Write the Error message from the profilePicUpload
+		
+		var errorString = "";
+		var actualError = "";
+		
+		switch(profilePicUploadError){
+			case "1":
+				actualError = "the upload form is neaded";
+			break;
+			
+			case "2":
+				actualError = "No files were uploaded";
+			break;
+			
+			case "3":
+				actualError = "Not an HTTP Upload";
+			break;
+			
+			case "4":
+				actualError = "Not an Image";
+			break;
+			
+			default:
+				actualError = "Unknown Error";
+		}
+		
+		errorString = 
+		'        An error has occured: '+"\n\n"+
+		'        <span class="red">' + actualError + '...</span>'+"\n\n";
+		
+		changeModalInner("Upload failure",errorString);
+		openModal();
+	}
 });
 
 function closeImageAreaSelect(){
@@ -91,6 +126,7 @@ function changeProfilePicturePopup(){
 						'<input name="y1" id="y1" type="hidden" value="NULL">'+
 						'<input name="x2" id="x2" type="hidden" value="NULL">'+
 						'<input name="y2" id="y2" type="hidden" value="NULL">'+
+						'<input name="profileURL" type="hidden" value="'+document.URL+'">'+ //This means we know where it was called from.
 						'<input name="currentWidth" id="currentWidth" type="hidden" value="NULL">'+
 						'<center><img src="#" alt="Waiting for file select" id="profileCropImage"></center>'+
 						'<input type="submit" name="submit" value="Change" class="btn">'+

@@ -13,17 +13,10 @@
 			include('assets/lang/navigation/navigation.en.php');
 			break;
 	}
+	//Parse the $_POST array onto the navigation.js script
 	echo "<script>
-		var postData = ";
+			var postData = ";
 			echo json_encode($_POST);
-	
-	if (isset($_GET['profilePicType']))
-	{
-		echo "var profilePicType = '";
-				echo $_GET['profilePicType'];
-		echo "'";
-	}
-		
 	echo "</script>";
 	
 	if(isset($_FILES['newProfilePic']['tmp_name'])){

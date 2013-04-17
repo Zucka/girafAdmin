@@ -28,7 +28,7 @@ window.onhashchange = function(){
 	 */
 
     var hashInfo = location.hash;    
-	var hashArray = hashInfo.split("/");
+	var hashArray = hashInfo.split("/"); // We use / instead of ? in our URL's (for $_GET), they do the exact same, but gives a different look
 	var destination = hashArray[0];
 	var info = hashArray[1];
 	var destinationPath = "";
@@ -45,13 +45,7 @@ window.onhashchange = function(){
 		break;
 		
 		case "#profilePicUpload":
-			if(profilePicType == "own"){
-				destinationPath = "sites/own_profile.php";
-			}
-			else{ //Other
-				destinationPath = "sites/placeholder.html";
-			}
-			
+			destinationPath = "script/profilePicUpload.php";
 		break;
 		
 		case "#addRelation":
