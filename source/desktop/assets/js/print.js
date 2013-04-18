@@ -1,4 +1,4 @@
-$(window).load(function () {
+$(document).load(function () {
 	$("#btn-print").click(function () {
 		var printCSS = new String('<link href="../assets/css/style.css" rel="stylesheet" type="text/css">');
 		$("#print_frame").contents().find("head").append(printCSS);
@@ -16,12 +16,12 @@ $(window).load(function () {
 		}).done(function(data){
 			if (data.status = "ok")
 			{
-				$("#profile-qr-status").css({"color":"green"}).html("Successfully generated new QR");
-				$("#profile-qr-object").attr('data','../qrgen.php');
+				$(".profile-qr-status").css({"color":"green"}).html("Successfully generated new QR");
+				$(".profile-qr-object").attr('data','../qrgen.php');
 			}
 			else if (data.status = "error")
 			{
-				$("#profile-qr-status").css({"color":"red"}).html("Failed generating new QR, try refreshing");
+				$(".profile-qr-status").css({"color":"red"}).html("Failed generating new QR, try refreshing");
 			}
 		});
 	});
