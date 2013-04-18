@@ -117,7 +117,6 @@
 				header('location:login.php?error=2'); //Error: Password was wrong
 			}
 		}
-Messages @zfiredk
 
 	}
 ?>
