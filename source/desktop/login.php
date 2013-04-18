@@ -107,6 +107,7 @@
 				//Login success!
 				$_SESSION['session_id'] = session_id();
 				$_SESSION['username'] = $row['username'];
+				$_SESSION['userId'] = $row['idUser'];
 				session_write_close();
 				header('location:index.php');
 			}

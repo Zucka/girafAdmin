@@ -30,6 +30,8 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 			include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/own_profile/own_profile.en.php');
 			break;
 	}
+	//Include special profiles file
+	include "../include/profiles.php";
 
 	require_once($_SERVER['DOCUMENT_ROOT']."/db/db.php");
 	$userName = $_SESSION['username'];

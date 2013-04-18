@@ -45,7 +45,7 @@ echo '
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>'.$QRMANGER_STRINGS["headerTitle"].'</title>
+	<title>'.$QRMANAGER_STRINGS["headerTitle"].'</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="GIRAF">
@@ -101,6 +101,7 @@ function getContentFromAction($action)
 
 function mainContent()
 {
+	global $QRMANAGER_STRINGS;
 	$content = '
 	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpMain"].'</div>
 	<div class="row">
@@ -130,12 +131,13 @@ function mainContent()
 
 function editContent()
 {
+	global $QRMANAGER_STRINGS;
 	$content = '
 	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpEdit"].'</div>
 	<div class="row">
 		<div class="span1"></div>
 		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrChildren"].'</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Children"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -164,7 +166,7 @@ function editContent()
 			</table>
 		</div>
 		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrGuardians"].'</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Guardians"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -193,7 +195,7 @@ function editContent()
 			</table>
 		</div>
 		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrParents"].'</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Parents"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -230,6 +232,7 @@ function editContent()
 
 function editSubmitContent()
 {
+	global $QRMANAGER_STRINGS;
 	$leadInfoMessage = str_replace('%N','Helly Hansen',$QRMANAGER_STRINGS["editSubmitLeadInfoMessage"]);
 	$content = '
 	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpEditSubmit"].'</div>
@@ -254,6 +257,7 @@ function editSubmitContent()
 
 function choosePrintContent()
 {
+	global $QRMANAGER_STRINGS;
 	$content = '
 	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpChoosePrint"].'</div>
 	<div class="row">
@@ -265,7 +269,7 @@ function choosePrintContent()
 	<div class="row">
 		<div class="span1"></div>
 		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrChildren"].'</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Children"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -282,7 +286,7 @@ function choosePrintContent()
 			</table>
 		</div>
 		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrGuardians"].'</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Guardians"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -299,7 +303,7 @@ function choosePrintContent()
 			</table>
 		</div>
 		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["editQrParents"].'</h4>
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Parents"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
 				<tr>
 					<td>Helly Hansen</td>
@@ -330,7 +334,7 @@ function choosePrintContent()
 
 function choosePrintSubmitContent()
 {
-	global $connection;
+	global $connection, $QRMANAGER_STRINGS;
 	$content = '
 	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpChoosePrintSubmit"].'</div>
 	<div class="row">
@@ -383,6 +387,7 @@ function choosePrintSubmitContent()
 
 function printAllContent()
 {
+	global $QRMANAGER_STRINGS;
 	$content = '
 
 

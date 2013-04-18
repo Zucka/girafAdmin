@@ -12,14 +12,15 @@ $(document).load(function () {
 
 	$("#btn-gen").click(function(){
 		$.ajax({
-			url: "generateNewQr.php"
+			url: "sites/generateNewQr.php"
 		}).done(function(data){
-			if (data.status = "ok")
+			if (data.status == "ok")
 			{
 				$(".profile-qr-status").css({"color":"green"}).html("Successfully generated new QR");
 				$(".profile-qr-object").attr('data','../qrgen.php');
 			}
-			else if (data.status = "error")
+		}).always(function(data){
+			if (data.status == "error")
 			{
 				$(".profile-qr-status").css({"color":"red"}).html("Failed generating new QR, try refreshing");
 			}
