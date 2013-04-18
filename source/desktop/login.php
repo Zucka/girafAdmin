@@ -66,7 +66,7 @@
 					</head>
 					<body>
 					<div class="container">
-						<form class="form-signin" action="?action=login" method="post">
+						<form class="form-signin" action="?action=login&lang='.$lang.'" method="post">
 							<div class="logo">
 								<object width="100%" height="100%" data="assets/img/girafAdminLogo-01.svg" type="image/svg+xml"> </object>
 							</div>
@@ -108,6 +108,7 @@
 				$_SESSION['session_id'] = session_id();
 				$_SESSION['username'] = $row['username'];
 				$_SESSION['userId'] = $row['idUser'];
+				$_SESSION['lang'] = $lang;
 				session_write_close();
 				header('location:index.php');
 			}
@@ -116,5 +117,7 @@
 				header('location:login.php?error=2'); //Error: Password was wrong
 			}
 		}
+Messages @zfiredk
+
 	}
 ?>
