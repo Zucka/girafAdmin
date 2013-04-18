@@ -1,4 +1,4 @@
-$(document).load(function () {
+$(document).ready(function () {
 	$("#btn-print").click(function () {
 		var printCSS = new String('<link href="../assets/css/style.css" rel="stylesheet" type="text/css">');
 		$("#print_frame").contents().find("head").append(printCSS);
