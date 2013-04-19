@@ -121,12 +121,15 @@ echo '
 					<button class="btn profile-btn" type="button" onclick="changeProfilePicturePopup()"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["pictureEdit"].'</button>
 				</div>
 				<div>
+					<p class="lead text-center">'.$PROFILE_STRINGS["security"].'</p>
 					<div class="profile-qr">
-						<object class="profile-qr-object" data="../qrgen.php" height="100%" width="100%" type="image/svg+xml"> </object>
-					</div>
-					<div class="profile-btn-qr">
-						<button class="btn profile-btn" id="btn-gen" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["qrGenerateNew"].'</button>
-						<button class="btn profile-btn" id="btn-print" type="button"><i class="icon-print"></i>'.$PROFILE_STRINGS["qrPrint"].'</button>
+						<label>'.$PROFILE_STRINGS["changePassword"].'</label>
+						<form>
+							<input type="text" placeholder="'.$PROFILE_STRINGS["placeholderPassword"].'">
+							<input type="text" placeholder="'.$PROFILE_STRINGS["placeholderRepeatPassword"].'">
+							<input type="submit" value="'.$PROFILE_STRINGS["changePasswordSubmit"].'">
+						</form>
+						<button class="btn profile-btn" id="btn-gen" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["qrGenerateNewAndPrint"].'</button>
 					</div>
 					<div class="profile-qr-status"> </div>
 				</div>

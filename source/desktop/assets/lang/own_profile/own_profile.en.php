@@ -23,8 +23,12 @@
 			$PROFILE_STRINGS["tblEditProfile"] = " Edit";
 
 		$PROFILE_STRINGS["pictureEdit"] = " Edit";
-		$PROFILE_STRINGS["qrGenerateNew"] = " Generate new";
-		$PROFILE_STRINGS["qrPrint"] = " Print";
+		$PROFILE_STRINGS["security"] = "Security";
+		$PROFILE_STRINGS["changePassword"] = "Change Password";
+		$PROFILE_STRINGS["placeholderPassword"] = "Password";
+		$PROFILE_STRINGS["placeholderRepeatPassword"] = "Password Again";
+		$PROFILE_STRINGS["changePasswordSubmit"] = "Change";
+		$PROFILE_STRINGS["qrGenerateNewAndPrint"] = "Generate new QR and Print";
 
 
 
