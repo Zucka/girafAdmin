@@ -95,6 +95,10 @@ body {
   margin: 5% auto auto auto;
 }
 
+#security {
+  margin-bottom: 0px;
+}
+
 .table-profile {
   font-size: medium;
 }

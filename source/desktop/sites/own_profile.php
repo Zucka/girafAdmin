@@ -121,13 +121,13 @@ echo '
 					<button class="btn profile-btn" type="button" onclick="changeProfilePicturePopup()"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["pictureEdit"].'</button>
 				</div>
 				<div class="profile-security">
-					<p class="lead text-center">'.$PROFILE_STRINGS["security"].'</p>
+					<p class="lead text-center" id="security">'.$PROFILE_STRINGS["security"].'</p>
 					<div class="profile-qr">
 						<label>'.$PROFILE_STRINGS["changePassword"].'</label>
 						<form>
-							<input type="text" placeholder="'.$PROFILE_STRINGS["placeholderPassword"].'"></br>
-							<input type="text" placeholder="'.$PROFILE_STRINGS["placeholderRepeatPassword"].'">
-							<input class="btn-primary" type="submit" value="'.$PROFILE_STRINGS["changePasswordSubmit"].'">
+							<input type="text" placeholder="'.$PROFILE_STRINGS["placeholderPassword"].'"><br>
+							<input type="text" placeholder="'.$PROFILE_STRINGS["placeholderRepeatPassword"].'"><br>
+							<input class="btn btn-primary" type="submit" value="'.$PROFILE_STRINGS["changePasswordSubmit"].'">
 						</form>
 						</br>
 						<button class="btn profile-btn" id="btn-gen" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["qrGenerateNewAndPrint"].'</button>
