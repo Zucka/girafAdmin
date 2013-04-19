@@ -77,7 +77,7 @@ body {
 .profile-qr {
   display: block;
   padding: 5px;
-  margin: 5% auto auto auto;
+  margin: auto auto auto auto;
   border: 2px solid rgb(100,96,96);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -89,6 +89,10 @@ body {
   text-align: center;
   width: 20em;
   height:20em;
+}
+
+.profile-security {
+  margin: 5% auto auto auto;
 }
 
 .table-profile {
