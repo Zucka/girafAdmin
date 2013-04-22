@@ -10,6 +10,12 @@
 		$y2 = $_POST['y2'];
 		$currentWidth = $_POST['currentWidth'];
 		
+		//make sure $_POST['profileURL'] is without $_GET-errors
+		$urlString = explode("/",$_POST['profileURL']);
+		$urlString[1] = preg_replace("e=.",'',$urlString[1]);
+		$_POST['profileURL'] = $urlString[0]."/".$urlString[1];
+		
+		
 		// make an error handler which will be used if the upload fails
 		function error($error){			
 			header('Location: '.$_POST['profileURL'].'/e='.$error);
@@ -46,6 +52,6 @@
 		header('Location: '.$_POST['profileURL']);
 	}
 	else{
-		echo "You are trying to refresh a site without submitting, please go to My Profile, or the Profile you came from.";
+		echo "Upload Error: Permission Denied.";
 	}
 ?>
