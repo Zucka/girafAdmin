@@ -88,11 +88,11 @@ body {
   background-color: #fff;
   text-align: center;
   width: 20em;
-  height:20em;
+  height: 13.5em;
 }
 
 .profile-security {
-  margin: 5% auto auto auto;
+  margin: 4.5% auto auto auto;
 }
 
 #security {
@@ -110,7 +110,7 @@ body {
 
 .profile-btn {
   display: block;
-  margin: 1% auto auto auto;
+  margin: 0.5% auto auto auto;
 }
 
 .profile-btn-qr {
