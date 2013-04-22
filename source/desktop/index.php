@@ -25,7 +25,7 @@ if ($_SESSION['session_id'] != session_id())
 				
 			</div>
 			<div class="modalFooter">
-				<button type="button" class="btn modalClose">Close</button>
+				<button type="button" class="btn modalClose"><?php echo $NAVIGATION_STRINGS['modalClose'];?></button>
 			</div>
 		</div>
 	</div>

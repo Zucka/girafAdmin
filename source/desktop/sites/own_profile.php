@@ -20,14 +20,14 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 	if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'en';}
 	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
 	switch ($lang) {
-		case 'en':
-			include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/own_profile/own_profile.en.php');
-			break;
 		case 'dk':
 			include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/own_profile/own_profile.dk.php');
+			echo '<script src="assets/lang/own_profile_js/own_profile_js.dk.js"></script>';
 			break;
+		case 'en':
 		default:
 			include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/own_profile/own_profile.en.php');
+			echo '<script src="assets/lang/own_profile_js/own_profile_js.en.js"></script>';
 			break;
 	}
 	//Include special profiles file
