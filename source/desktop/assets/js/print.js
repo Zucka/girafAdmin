@@ -15,7 +15,7 @@ $(document).ready(function () {
 			else if (data.status == "ok")
 			{
 				$(".profile-qr-status").css({"color":"green"}).html("Successfully generated new QR");
-				var printCSS = new String('<link href="../assets/css/style.css" rel="stylesheet" type="text/css">');
+				var printCSS = new String('<link href="../assets/css/print-style.css" rel="stylesheet" type="text/css">');
 				$("#print_frame").contents().find("head").html(''); //Clear head if there was something
 				$("#print_frame").contents().find("body").html(''); //Clear body if there was something
 				$("#print_frame").contents().find("head").append(printCSS);
