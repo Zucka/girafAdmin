@@ -11,9 +11,11 @@
 		$currentWidth = $_POST['currentWidth'];
 		
 		//make sure $_POST['profileURL'] is without $_GET-errors
-		$urlString = explode("/",$_POST['profileURL']);
-		$urlString[1] = preg_replace("e=.",'',$urlString[1]);
-		$_POST['profileURL'] = $urlString[0]."/".$urlString[1];
+		if(0 <= strpos("e=",$_POST['profileURL'])){
+			$urlString = explode("/",$_POST['profileURL']);
+			$urlString[2] = preg_replace("|e=.|",'',$urlString[2]);
+			$_POST['profileURL'] = $urlString[0]."/".$urlString[1]."/".$urlString[2];
+		}
 		
 		
 		// make an error handler which will be used if the upload fails
