@@ -16,8 +16,8 @@ You should have received a copy of the GNU General Public License
 along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <?php
-
-	if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'en';}
+	session_start();
+	if (isset($_SESSION['lang'])) {$lang = $_SESSION['lang'];} else {$lang = 'en';}
 	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
 	switch ($lang) {
 		case 'dk':
