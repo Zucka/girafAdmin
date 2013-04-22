@@ -15,7 +15,7 @@ $(window).ready(function() {
 		closeModal();
 		closeImageAreaSelect();
 	});
-	
+		
 	if(profilePicUploadError.length == 1){
 		//Write the Error message from the profilePicUpload
 		
@@ -24,30 +24,30 @@ $(window).ready(function() {
 		
 		switch(profilePicUploadError){
 			case "1":
-				actualError = "the upload form is neaded";
+				actualError = own_profile_js_actualError1;
 			break;
 			
 			case "2":
-				actualError = "No files were uploaded";
+				actualError = own_profile_js_actualError2;
 			break;
 			
 			case "3":
-				actualError = "Not an HTTP Upload";
+				actualError = own_profile_js_actualError3;
 			break;
 			
 			case "4":
-				actualError = "Not an Image";
+				actualError = own_profile_js_actualError4;
 			break;
 			
 			default:
-				actualError = "Unknown Error";
+				actualError = own_profile_js_actualError5;
 		}
 		
 		errorString = 
-		'        An error has occured: '+"\n\n"+
+		'        '+own_profile_js_errorStringPart1+': '+"\n\n"+
 		'        <span class="red">' + actualError + '...</span>'+"\n\n";
 		
-		changeModalInner("Upload failure",errorString);
+		changeModalInner(own_profile_js_errorStringHeader,errorString);
 		openModal();
 	}
 });
@@ -88,7 +88,7 @@ function closeImageAreaSelect(){
 function editProfileInfo(element){
 	//Edit Button
 	//TODO: Remmember to add Language Specific
-	element.html('<i class=\"icon-hdd\"></i> Gem');
+	element.html('<i class=\"icon-hdd\"></i> '+own_profile_js_editInfoButtonSave);
 	element.unbind(); //Clear Event Handler
 	element.click(function () {  //Set new Event Handler
 		submitEditProfileInfo(element);
@@ -107,7 +107,7 @@ function submitEditProfileInfo(element){
 		editProfileInfo(element);
 	});
 	//TODO: Remmember to add Language Specific
-	element.html("<i class=\"icon-wrench\"></i> Ret");
+	element.html("<i class=\"icon-wrench\"></i> "+own_profile_js_editInfoButtonEdit);
 	var textElement = element.parent().prev();
 	var newText = textElement.children().val();
 	
@@ -119,7 +119,7 @@ function submitEditProfileInfo(element){
 
 function changeProfilePicturePopup(){
 	//Request picture
-	changeModalInner('Change Profile Picture',
+	changeModalInner(own_profile_js_changeProfilePicHeader,
 					'<form id="profilePictureUpload" method="post" enctype="multipart/form-data" action="#profilePicUpload">'+
 						'Select image-file: <input type="file" name="newProfilePic" id="newProfilePic" />'+
 						'<input name="x1" id="x1" type="hidden" value="NULL">'+
@@ -128,8 +128,8 @@ function changeProfilePicturePopup(){
 						'<input name="y2" id="y2" type="hidden" value="NULL">'+
 						'<input name="profileURL" type="hidden" value="'+document.URL+'">'+ //This means we know where it was called from.
 						'<input name="currentWidth" id="currentWidth" type="hidden" value="NULL">'+
-						'<center><img src="#" alt="Waiting for file select" id="profileCropImage"></center>'+
-						'<input type="submit" name="submit" value="Change" class="btn">'+
+						'<center><img src="#" alt="'+own_profile_js_changeProfilePicImgAlt+'" id="profileCropImage"></center>'+
+						'<input type="submit" name="submit" value="'+own_profile_js_changeProfilePicSubmit+'" class="btn">'+
 					'</form>'
 					);
 	openModal();
@@ -149,22 +149,6 @@ function changeProfilePicturePopup(){
 		
 	});
 	
-}
-
-function changeProfilePicture(){
-	//Change Modal window to contain the Requested picture
-
-	
-	//Display picture only in certain height and width, but remmember real height and width
-	//Wait for rezise cutting
-	
-	//Calculate the real cutting values
-	
-	//Cut and store profile picture
-	
-	//Change profile picture on site to new profilepicture
-	
-	//Close modal window and background
 }
 
 function readURL(input) {

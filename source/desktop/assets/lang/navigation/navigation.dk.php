@@ -22,4 +22,6 @@
 		$NAVIGATION_STRINGS['appManager'] = "<strong>A</strong>pp Manager";
 		
 		$NAVIGATION_STRINGS['logOut'] = "Log Ud";
+		
+		$NAVIGATION_STRINGS['modalClose'] = "Luk";
 ?>
