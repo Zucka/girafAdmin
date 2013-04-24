@@ -110,7 +110,7 @@
 				$_SESSION['userId'] = $row['idUser'];
 				$_SESSION['lang'] = $lang;
 				session_write_close();
-				header('location:index.php');
+				header('location:/#ownProfile');
 			}
 			else
 			{

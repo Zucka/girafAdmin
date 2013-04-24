@@ -11,16 +11,33 @@
 		$currentWidth = $_POST['currentWidth'];
 		
 		//make sure $_POST['profileURL'] is without $_GET-errors
-		if(0 <= strpos("e=",$_POST['profileURL'])){
-			$urlString = explode("/",$_POST['profileURL']);
-			$urlString[2] = preg_replace("|e=.|",'',$urlString[2]);
-			$_POST['profileURL'] = $urlString[0]."/".$urlString[1]."/".$urlString[2];
-		}
+		$_POST['profileURL'] = preg_replace("|e=.|",'',$_POST['profileURL']);
+		$urlString = explode('/',$_POST['profileURL']);
+		$GLOBALS['urlStringPart1'] = "";
+		$GLOBALS['urlStringPart2'] = "";
 		
+		if(count($urlString) == 4){//In case of no error in submit, or no extra information about profile
+			$GLOBALS['urlStringPart1'] = 'http://'.$urlString[2].'/'.$urlString[3];
+			$GLOBALS['urlStringPart2'] = "";
+		}
+		elseif(count($urlString) == 5){// In case of error message or extra information about profile
+			$GLOBALS['urlStringPart1'] = 'http://'.$urlString[2].'/'.$urlString[3];
+			$GLOBALS['urlStringPart2'] = $urlString[4];
+			if($GLOBALS['urlStringPart2'][0] == "&"){
+				$GLOBALS['urlStringPart2'][0] = "";
+			}
+		}		
+
 		
 		// make an error handler which will be used if the upload fails
-		function error($error){			
-			header('Location: '.$_POST['profileURL'].'/e='.$error);
+		function error($error){
+			if($GLOBALS['urlStringPart2'] != ""){
+				header('Location: '.$GLOBALS['urlStringPart1'].'/e='.$error.'&'.$GLOBALS['urlStringPart2']);
+			}
+			else{
+				header('Location: '.$GLOBALS['urlStringPart1'].'/e='.$error);
+			}
+			
 			exit;
 		}
 
