@@ -317,3 +317,72 @@ padding: 1%;
 }
 
 /* END OF Profiles CSS */
+
+/* PICS MANAGER */
+div#picsManagerNavi{
+	width:400px;
+	margin-left:auto;
+	margin-right:auto;
+	
+	text-align:center
+}
+
+#picsManagerNavi button{
+	width:200px;
+	height:100px;
+	margin-left:auto;
+	margin-right:auto;
+	
+	font-weight:bold;
+	font-size:125%;
+	
+	margin-top:10px;
+}
+
+#picsManagerContainer{
+	width:80%;
+	height:100%;
+	position:absolute;
+	top:0px;
+	left:20%;
+}
+
+#tableBox{
+	width:50%;
+	position:absolute;
+	top:10%;
+	left:2.5%;
+}
+
+#imageBox{
+	width:40%;
+	position:absolute;
+	top:10%;
+	left:55%;
+}
+#tempDisplay{
+	width:80%;
+}
+
+#soundBox{
+	width:40%;
+	position:absolute;
+	top:60%;
+	left:55%;
+}
+#soundPlayer{
+	width:80%;
+}
+
+#submitBox{
+	width:50%;
+	position:absolute;
+	top:35%;
+	left:2.5%;
+}
+#submitBox input{
+	width:100px;
+	height:50px;
+}
+
+/* END OF PICS MANAGER */

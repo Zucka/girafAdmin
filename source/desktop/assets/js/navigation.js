@@ -53,11 +53,11 @@ window.onhashchange = function(){
 		break;
 		
 		case "#picsManager":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "sites/picsManager.php";
 		break;
 		
 		case "#makePic":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "sites/picsManagerMake.php";
 		break;
 		
 		case "#addPic":
