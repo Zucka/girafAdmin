@@ -283,10 +283,6 @@ a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLin
 
 /* Start OF Profiles CSS */
 
-.row {
-  margin-left: 0px;
-}
-
 .tableStyle{
 	width:80%;
 	margin-left:auto;
@@ -311,12 +307,30 @@ border:1px dotted black;
 padding: 1%;
 }
 
+.tableStyle tr:nth-child(odd){ 
+background-color:#dd9639; 
+}
+
+
+
+.gaurdien1{
+background-color:#dd9639;
+}
+
 #profileCropImage{
 	width:700px; /* This is important, to make sure we keep the right ratio in the upload script */
 	margin-bottom:10px;
 }
 
 /* END OF Profiles CSS */
+
+/* Start OF Profiles CSS */
+
+
+
+/* End OF Opret Profiles CSS */
+
+
 
 /* PICS MANAGER */
 div#picsManagerNavi{
