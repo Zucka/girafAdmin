@@ -81,12 +81,14 @@
 								<input type="checkbox" value="remember-me"> '.$LOGIN_STRINGS["formRememberMe"].'
 							</label> -->
 							<button class="btn btn-large btn-primary" type="submit">'.$LOGIN_STRINGS["formSignIn"].'</button>
-							<a href="login.php?lang=en">
-								<img style="height:2em;width:2em;display:block;float:left;" src="../assets/img/flags/en.png">
-							</a>
-							<a href="login.php?lang=dk">
-								<img style="height:2em;width:2em;display:block;float:left;" src="../assets/img/flags/dk.png">
-							</a>
+							<div>
+								<a href="login.php?lang=en">
+									<img style="height:2em;width:2em;display:block;float:left;" src="../assets/img/flags/en.png">
+								</a>
+								<a href="login.php?lang=dk">
+									<img style="height:2em;width:2em;display:block;float:left;" src="../assets/img/flags/dk.png">
+								</a>
+							</div>
 						</form>
 					</div> <!-- /container -->
 
