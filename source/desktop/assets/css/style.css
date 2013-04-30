@@ -369,19 +369,20 @@ div#picsManagerNavi{
 }
 
 #imageBox{
-	width:40%;
+	width:400px;
 	position:absolute;
 	top:10%;
 	left:55%;
 }
 #tempDisplay{
-	width:80%;
+	width:400px;
+	height:400px;
 }
 
 #soundBox{
 	width:40%;
 	position:absolute;
-	top:60%;
+	top:600px;
 	left:55%;
 }
 #soundPlayer{
@@ -391,7 +392,7 @@ div#picsManagerNavi{
 #submitBox{
 	width:50%;
 	position:absolute;
-	top:35%;
+	top:350px;
 	left:2.5%;
 }
 #submitBox input{

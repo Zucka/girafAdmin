@@ -52,7 +52,7 @@
 			<div id="soundBox">
 				Lyd:<br>
 				<input type="file" id="soundFile" name="soundFile">
-				<embed height="50" width="100" id="soundPlayer" src="#">
+				<embed height="50" width="100" id="soundPlayer" src="assets/sound/empty.wma">
 			</div>
 			<div id="submitBox">
 				<input type="submit" name="submit" value="Opret">
