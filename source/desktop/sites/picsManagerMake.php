@@ -1,4 +1,6 @@
 
+<script src="assets/js/picsManagerMake.js" type="text/javascript"></script>
+
 <div id="picsManagerContainer">
 	<div class="breadcrump">
 	<a href="/#picsManager">Pics Manager</a> → Make
