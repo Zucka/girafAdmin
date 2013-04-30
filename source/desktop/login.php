@@ -82,15 +82,11 @@
 							</label> -->
 							<button class="btn btn-large btn-primary" type="submit">'.$LOGIN_STRINGS["formSignIn"].'</button>
 						</form>
-						<a href="login.php?lang=dk">
-							<div height="3em" width="4em" style="float:left;">
-								<object class="profile-qr-object" data="../assets/img/flags/dk.svg" height="100%" width="100%" type="image/svg+xml"> </object>
-							</div>
-						</a>
 						<a href="login.php?lang=en">
-							<div height="3em" width="4em" style="float:left;">
-								<object class="profile-qr-object" data="../assets/img/flags/en.svg" height="100%" width="100%" type="image/svg+xml"> </object>
-							</div>
+							<img style="height:2em;width:2em;" src="../assets/img/flags/en.png">
+						</a>
+						<a href="login.php?lang=dk">
+							<img style="height:2em;width:2em;" src="../assets/img/flags/dk.png">
 						</a>
 					</div> <!-- /container -->
 
