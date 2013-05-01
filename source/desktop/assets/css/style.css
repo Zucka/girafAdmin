@@ -283,6 +283,10 @@ a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLin
 
 /* Start OF Profiles CSS */
 
+.row {
+  margin-left: 0px;
+}
+
 .tableStyle{
 	width:80%;
 	margin-left:auto;
