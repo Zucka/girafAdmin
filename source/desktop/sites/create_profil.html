@@ -34,37 +34,46 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+	
+	<script src="../assets/js/jquery.min.js"></script>
 </head>
 
 <body>
-	<div align="center">
-		<h1> Opret Profil</h1>
-	</div>
-	
-	<form align="center">
-		<fieldset>
+	<h1 align="center"> Opret Profil</h1>
+
+	<form class="form-signin">
+		<p align="center">Profil type:
+		
 			<select>
 				<option>Child</option>
 				<option>Parant</option>
-				<option>Guardian</option>
+				<option><?php echo $opretProfil['guardian']; ?></option>
 			</select>
+			</p>
+		<br>
+			<p class="text">Navn:<br>
+			<input class="span3" type="text" placeholder="Indsæt navn"><br>
+			Addresse:<br>
+			<input class="span3" type="text" placeholder="Indsæt addresse"><br>
+			Post nr:<br>
+			<input class="input-mini" type="text" placeholder=""><br>	   
+			By:<br>
+			<input class="span2" type="text" placeholder="Indsæt by"><br>
+			Telefon:<br>
+			<input class="span2" type="text" placeholder="Indsæt telefonummer"><br>
+			Mobil:<br>
+			<input class="span2" type="text" placeholder="Indsæt telefonummer"><br>
 			
-			<input type="text" placeholder="Type something…">
-			<?php ?>
-				<span class="help-block">Example block-level help text here.</span>
-					<label class="checkbox">
-						<input type="checkbox"> Check me out
-					</label>
-				<button type="submit" class="btn">Submit</button>
-		</fieldset>
 	</form>
+
+
 		
 		<br>
 		<div align="center">
-		<button class="btn btn-mini" type="button"><i class="icon-wrench" ></i> Opret Profil</button>
+		<button class="btn btn-mini" type="button"><i class="icon-user" ></i> Opret Profil</button>
 		</div>
 		
-		<!-- <script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/bootstrap.min.js"></script> -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/bootstrap.min.js"></script>
 </body>
 </html>
