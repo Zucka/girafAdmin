@@ -90,6 +90,8 @@ body {
   text-align: center;
   width: 20em;
   height: 13.5em;
+  min-height: 200px;
+  min-width: 230px;
 }
 
 .profile-security {
