@@ -54,8 +54,11 @@
 			<div id="soundBox">
 				Lyd:<br>
 				<input type="file" id="soundFile" name="soundFile">
-				<div id="embedContainer">
-					<embed height="50" width="100" id="soundPlayer" src="assets/sound/empty.mp3">
+				<div id="audioContainer">
+					<audio id="audioElement" controls>
+						<source id="soundElement" src="assets/sound/empty.mp3">
+						Your browser does not support this audio format.
+					<audio>
 				</div>
 			</div>
 			<div id="submitBox">
