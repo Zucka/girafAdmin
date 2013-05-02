@@ -94,6 +94,10 @@ body {
   min-width: 230px;
 }
 
+.input-password {
+  height:22px;
+}
+
 .profile-security {
   margin: 4.5% auto auto auto;
 }

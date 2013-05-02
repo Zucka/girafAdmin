@@ -176,8 +176,8 @@ function pedagogue()
 					<div class="profile-qr">
 						<label>'.$PROFILE_STRINGS["changePassword"].'</label>
 						<form>
-							<input type="text" placeholder="'.$PROFILE_STRINGS["placeholderPassword"].'"><br>
-							<input type="text" placeholder="'.$PROFILE_STRINGS["placeholderRepeatPassword"].'"><br>
+							<input class="input-password" type="password" placeholder="'.$PROFILE_STRINGS["placeholderPassword"].'"><br>
+							<input class="input-password" type="password" placeholder="'.$PROFILE_STRINGS["placeholderRepeatPassword"].'"><br>
 							<input class="btn btn-primary" type="submit" value="'.$PROFILE_STRINGS["changePasswordSubmit"].'">
 						</form>
 						</br>
