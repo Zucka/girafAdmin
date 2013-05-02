@@ -7,6 +7,7 @@
 		
 		$NAVIGATION_STRINGS['profiles'] = "<strong>P</strong>rofiles";
 		$NAVIGATION_STRINGS['addRelation'] = "Add Relation";
+		$NAVIGATION_STRINGS['createProfile'] = "Create Profile";
 		
 		$NAVIGATION_STRINGS['picsManager'] = "<strong>P</strong>ics Manager";
 		$NAVIGATION_STRINGS['makePic'] = "Make";
