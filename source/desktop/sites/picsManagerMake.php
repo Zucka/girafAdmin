@@ -3,7 +3,7 @@
 
 <div id="picsManagerContainer">
 	<div class="breadcrump">
-	<a href="/#picsManager">Pics Manager</a> → Make
+	<a href="/#picsManager">Pics Manager</a> → Make 
 	</div>
 	<div class="UploadContainer">
 		<form action="/#makePic" method="post" enctype="multipart/form-data">
@@ -54,7 +54,9 @@
 			<div id="soundBox">
 				Lyd:<br>
 				<input type="file" id="soundFile" name="soundFile">
-				<embed height="50" width="100" id="soundPlayer" src="assets/sound/empty.wma">
+				<div id="embedContainer">
+					<embed height="50" width="100" id="soundPlayer" src="assets/sound/empty.mp3">
+				</div>
 			</div>
 			<div id="submitBox">
 				<input type="submit" name="submit" value="Opret">
