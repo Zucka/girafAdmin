@@ -29,6 +29,7 @@ body {
   min-height:100%;
 }
 
+/* Also used in "Create Profil" */
 .form-signin {
   max-width: 300px;
   padding: 19px 29px 29px;
