@@ -6,7 +6,7 @@
 	<a href="/#picsManager">Pics Manager</a> → Make 
 	</div>
 	<div class="UploadContainer">
-		<form action="/#makePic" method="post" enctype="multipart/form-data">
+		<form action="/#makePicUpload" method="post" enctype="multipart/form-data">
 			<div id="tableBox">
 				<table>
 					<tr>
@@ -62,7 +62,7 @@
 				</div>
 			</div>
 			<div id="submitBox">
-				<input type="submit" name="submit" value="Opret">
+				<input type="submit" name="picsManagerMakeSubmit" value="Opret">
 			</div>
 		</form>
 	</div>

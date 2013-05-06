@@ -64,6 +64,10 @@ window.onhashchange = function(){
 			destinationPath = "sites/picsManagerMake.php";
 		break;
 		
+		case "#makePicUpload":
+			destinationPath = "script/picsManagerMakeUpload.php";
+		break;
+		
 		case "#addPic":
 			destinationPath = "sites/placeholder.html";
 		break;

@@ -23,6 +23,10 @@
 		//Call croping and upload script
 		require "script/profilePicUpload.php";
 	}
+	if(isset($_POST['picsManagerMakeSubmit'])){
+		//Call upload script
+		require "script/picsManagerMakeUpload.php";
+	}
 ?>
 	<html lang="en">
 	<meta charset="utf-8">
