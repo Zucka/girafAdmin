@@ -63,6 +63,31 @@
 						<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
 						<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 						<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+
+						<script src="assets/js/jquery.min.js"></script>
+						<!-- Modernizr -->
+						<script src="assets/js/modernizr.js"></script>
+						<script>
+							function getURLParameter(name) {
+							    return decodeURIComponent((new RegExp(\'[?|&]\' + name + \'=\' + \'([^&;]+?)(&|#|;|$)\').exec(location.search)||[,""])[1].replace(/\+/g, \'%20\'))||null;
+							}
+							var lang = getURLParameter("lang");
+							if (!Modernizr.filereader)
+							{
+								if (lang == "dk")
+								{
+									$("#compatwarning").html("Du bruger en forældet browser der ikke understøtter alle de nødvendige funktioner der er nødvendig for denne side.<br> Overvej at opgradere til Chrome, Firefox eller IE10+");
+								}
+								else if (land == "en")
+								{
+									$("#compatwarning").html("You are using an outdated browser that does not support all of the neccesary functions this site needs.<br> Please consider upgrading to Chrome, Firefox or IE10+");
+								}
+								else
+								{
+									$("#compatwarning").html("You are using an outdated browser that does not support all of the neccesary functions this site needs.<br> Please consider upgrading to Chrome, Firefox or IE10+");
+								}
+							}
+						</script>
 					</head>
 					<body>
 					<div class="container">
@@ -90,9 +115,11 @@
 								</a>
 							</div>
 						</form>
+						<div id="compatwarning">
+
+						</div>
 					</div> <!-- /container -->
 
-					<script src="assets/js/jquery.min.js"></script>
 					<script src="assets/js/bootstrap.min.js"></script>
 					</body>
 				</html>
