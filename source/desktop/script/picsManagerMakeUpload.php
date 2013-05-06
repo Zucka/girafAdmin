@@ -13,7 +13,8 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 	}
 	
 	function isAllowedSoundFile($fileName,$fileTmpName){
-		$supportedFormats = array('.3gp','.flac','.mp3','.mid','.xmf','.mxmf','.rtttl','.rtx','.ota','.imy','.ogg','.wav');
+		$supportedExtensions = array('.3gp','.3gpp','.flac','.mp3','.mid','.xmf','.mxmf','.rtttl','.rtx','.ota','.imy','.ogg','.wav');
+		$supportedMimeTypes = array('audio/mpeg','audio/mp3','audio/mid','audio/wav','audio/x-wav','audio/rtx','audio/3gpp','audio/ogg','audio/mobile-xmf','audio/mxf'); //Could not find mime type of .rtttl, .ota and .imy
 	}
 	
 	//Check files
