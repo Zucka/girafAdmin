@@ -94,6 +94,11 @@ body {
   min-width: 230px;
 }
 
+#compatwarning {
+  color:red;
+  text-align: center;
+}
+
 #input-password {
   height:22px;
 }
