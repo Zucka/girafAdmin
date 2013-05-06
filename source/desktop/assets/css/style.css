@@ -337,7 +337,10 @@ background-color:#dd9639;
 
 /* Start OF Profiles CSS */
 
-
+.profileType{
+text-align:center;
+font-size:large;
+}
 
 /* End OF Opret Profiles CSS */
 

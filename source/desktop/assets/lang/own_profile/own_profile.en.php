@@ -1,3 +1,4 @@
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- Force document mode to IE9 standards -->
 <?php
 //ENGLISH LANGUAGE FILE, STRINGS SHOULD BE LOCATED IN $PROFILE_STRINGS["nameOfString"] = "STRING";
 
