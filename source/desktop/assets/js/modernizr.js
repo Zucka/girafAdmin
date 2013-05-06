@@ -22,4 +22,4 @@ var lang = getURLParameter("lang");
 			$("#compatwarning").html("You are using an outdated browser that does not support all of the neccesary functions this site needs.<br> Please consider upgrading to Chrome, Firefox or IE10+");
 		}
 	}
-};
+});
