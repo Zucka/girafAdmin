@@ -13,8 +13,36 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 	}
 	
 	function isAllowedSoundFile($fileName,$fileTmpName){
-		$supportedExtensions = array('.3gp','.3gpp','.flac','.mp3','.mid','.xmf','.mxmf','.rtttl','.rtx','.ota','.imy','.ogg','.wav');
+		$supportedExtensions = array('3gp','3gpp','flac','mp3','mid','xmf','mxmf','rtttl','rtx','ota','imy','ogg','wav');
 		$supportedMimeTypes = array('audio/mpeg','audio/mp3','audio/mid','audio/wav','audio/x-wav','audio/rtx','audio/3gpp','audio/ogg','audio/mobile-xmf','audio/mxf'); //Could not find mime type of .rtttl, .ota and .imy
+		
+		//Check file extension
+		$ext = pathinfo($fileName, PATHINFO_EXTENSION);
+		if(in_array($ext,$supportedExtensions)){
+			$fileExtOkay = true;
+		}
+		else{
+			$fileExtOkay = false;
+		}
+		
+		//Check Mime Type
+		$finfo = finfo_open(FILEINFO_MIME_TYPE); // return mime type ala mimetype extension
+		echo finfo_file($finfo, $fileTmpName); //TODO REMOVE LINE AFTER TESTING
+		if(in_array(finfo_file($finfo, $fileTmpName),$supportedMimeTypes)){
+			$fileMimeTypeOkay = true;
+		}
+		else{
+			$fileMimeTypeOkay = false;
+		}
+		finfo_close($finfo);
+		
+		//return
+		if($fileMimeTypeOkay && $fileExtOkay){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	
 	//Check files
@@ -26,6 +54,7 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 				or error('4');
 				
 		//Crop picture
+		require_once "include/SimpleImage.php";
 		$image = new SimpleImage();
 		$image->load($_FILES['uploadImage']['tmp_name']);
 		
