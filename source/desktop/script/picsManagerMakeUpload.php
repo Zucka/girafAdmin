@@ -1,14 +1,13 @@
 <?php
 if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
-	echo $_POST['titel'];
-	echo $_POST['inlineText'];
-	echo $_POST['privacySetting'];
-	echo $_POST['tags'];
-	echo $_POST['category'];
+	$_POST['titel'];
+	$_POST['inlineText'];
+	$_POST['privacySetting'];
+	$_POST['tags'];
+	$_POST['category'];
 	
 	function error($error){
 		header('Location: /#makePic/e='.$error);
-				
 		exit;
 	}
 	
@@ -51,7 +50,7 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 			or error('3');
 			
 		@getimagesize($_FILES['uploadImage']['tmp_name'])//Check that the file is an image
-				or error('4');
+			or error('4');
 				
 		//Crop picture
 		require_once "include/SimpleImage.php";
@@ -68,8 +67,13 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 		isAllowedSoundFile($_FILES['soundFile']['name'],$_FILES['soundFile']['tmp_name'])
 			or error('9000');
 		
-		
+		$fh = fopen($_FILES['soundFile']['tmp_name'], 'r');
+		$data = fread($fh, filesize($_FILES['soundFile']['tmp_name']));
+		fclose($fh);
+		$data;
 	}
+	
+	header('Location: /#makePic/e=0');
 }
 else{ //If the user sees this an unforseen error has occured or they tried to refresh the page without submitting data.
 	echo "ERROR: An unknown error has occured. Please try again in a few minutes.";
