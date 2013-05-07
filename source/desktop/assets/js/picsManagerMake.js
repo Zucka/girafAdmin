@@ -20,7 +20,7 @@ $(window).ready(function() {
 		reader.onload = function (e) {
 			$('#audioContainer').html('<audio id="audioElement" controls>'+
 										'<source id="soundElement" src="'+e.target.result+'">'+
-										'Your browser does not support this audio format.'+
+										picsManagerMake_js_soundElementAlt+
 									'<audio>');
 			//$('#audioContainer').html('<embed height="50" width="100" id="soundPlayer" src="'+e.target.result+'">');
 					
@@ -39,35 +39,33 @@ $(window).ready(function() {
 		
 		switch(uploadError){
 			case "0":
-				actualError = "Dit pictogram er nu oprettet";
-				modalTitel = "Succes";
+				actualError = picsManagerMake_js_actualError0;
+				modalTitel = picsManagerMake_js_succesTitel;
 			break;
 			
 			case "1":
-				actualError = "Du skal bruge formen for at uploade.";
-				modalTitel = "Error";
+				actualError = picsManagerMake_js_actualError1;
+				modalTitel = picsManagerMake_js_errorTitel;
 			break;
 			
 			case "2":
-				actualError = "Det billede du uploadede var ikke nogen billed fil.";
-				modalTitel = "Error";
+				actualError = picsManagerMake_js_actualError2;
+				modalTitel = picsManagerMake_js_errorTitel;
 			break;
 			
 			case "3":
-				actualError = "Den lyd fil du uploadede er ikke et understøttet format.";
-				modalTitel = "Error";
+				actualError = picsManagerMake_js_actualError3;
+				modalTitel = picsManagerMake_js_errorTitel;
 			break;
 			
 			default:
-				actualError = "En uforudset fejl er forekommet.";
-				modalTitel = "Error";
+				actualError = picsManagerMake_js_actualError4;
+				modalTitel = picsManagerMake_js_errorTitel;
 		}
 		
-		errorString = 
-		'        '+own_profile_js_errorStringPart1+': '+"\n\n"+
-		'        <span class="red">' + actualError + '...</span>'+"\n\n";
+		errorString = '<span class="red">' + actualError + '...</span>'+"\n\n";
 		
-		changeModalInner(own_profile_js_errorStringHeader,errorString);
+		changeModalInner(modalTitel,errorString);
 		openModal();
 	}
 });

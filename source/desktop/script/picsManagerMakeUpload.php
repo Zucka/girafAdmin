@@ -76,7 +76,19 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 	header('Location: /#makePic/e=0');
 }
 else{ //If the user sees this an unforseen error has occured or they tried to refresh the page without submitting data.
-	echo "ERROR: An unknown error has occured. Please try again in a few minutes.";
+	if (isset($_SESSION['lang'])) {$lang = $_SESSION['lang'];} else {$lang = 'en';}
+	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
+	switch ($lang) {
+		case 'dk':
+			include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/picsManagerMake/picsManagerMake.dk.php');
+			break;
+		case 'en':
+		default:
+			include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/picsManagerMake/picsManagerMake.en.php');
+			break;
+	}
+	
+	echo $picsManagerMakeStrings['picsManagerMakeUploadError'];
 }
 
 ?>
