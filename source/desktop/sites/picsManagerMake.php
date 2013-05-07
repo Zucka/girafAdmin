@@ -1,4 +1,11 @@
-
+<?php
+if(isset($_GET['e'])){
+	echo '<script> var uploadError = "'.$_GET['e'].'";</script>';
+}
+else{
+	echo '<script> var uploadError = "" </script>';
+}
+?>
 <script src="assets/js/picsManagerMake.js" type="text/javascript"></script>
 
 <div id="picsManagerContainer">

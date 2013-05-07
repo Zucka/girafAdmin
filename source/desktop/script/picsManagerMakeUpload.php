@@ -47,10 +47,10 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 	//Check files
 	if(isset($_FILES['uploadImage']['size'])){//Image file was uploaded
 		@is_uploaded_file($_FILES['uploadImage']['tmp_name'])// check that the file we are working on really was an HTTP upload
-			or error('3');
+			or error('1');
 			
 		@getimagesize($_FILES['uploadImage']['tmp_name'])//Check that the file is an image
-			or error('4');
+			or error('2');
 				
 		//Crop picture
 		require_once "include/SimpleImage.php";
@@ -62,10 +62,10 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 	}
 	if(isset($_FILES['soundFile']['size'])){//Sound file was uploaded
 		@is_uploaded_file($_FILES['soundFile']['tmp_name'])// check that the file we are working on really was an HTTP upload
-			or error('3');
+			or error('2');
 		
 		isAllowedSoundFile($_FILES['soundFile']['name'],$_FILES['soundFile']['tmp_name'])
-			or error('9000');
+			or error('3');
 		
 		$fh = fopen($_FILES['soundFile']['tmp_name'], 'r');
 		$data = fread($fh, filesize($_FILES['soundFile']['tmp_name']));
