@@ -1,10 +1,11 @@
 <?php
-$db_api_url = ''; //URL to the db api
-
+session_start();
+$session = $_SESSION['dbsess'];
 /* 
 	$json should be the json to be sent NOT ENCODED, i.e. it should be an associative array
 	Returns the JSON response NOT ENCODED, i.e. it is an associative array
  */
+/*
 function db_query($json)
 {
 	global $db_api_url;
@@ -31,7 +32,23 @@ function db_query($json)
 
     return json_decode($json_response, true);
 }
-
+*/
+function db_query($json)
+{
+	$address = '172.25.26.181';
+	$port = 2468;
+	$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+	socket_connect($socket, '172.25.26.181',2468);
+	$buffer = json_encode($json);
+	socket_write($socket, $buffer, strlen($json));
+	sleep(1);
+	$buf = '';
+	$ret = '';
+	if (false !== ($bytes = socket_recv($socket, $buf, 2048, MSG_WAITALL))) {
+		$ret .= $buf;
+	}
+	return json_decode($ret,true);
+}
 /* Returns a session if authentication was succesful, FALSE otherwise */
 function db_getSession($username,$password)
 {
@@ -66,6 +83,7 @@ function db_getSession($username,$password)
  */
 function db_getCertificatesFromIds($session,$ids)
 {
+	global $session;
 	$dataUser = array(
 		'auth' => array(
 			'session' => $session
@@ -132,6 +150,7 @@ function db_getCertificatesFromIds($session,$ids)
 */
 function db_insertNewQrCode($session,$userId,$newQr)
 {
+	global $session;
 	$data = array(
 		'auth' => array(
 			'session' => $session
