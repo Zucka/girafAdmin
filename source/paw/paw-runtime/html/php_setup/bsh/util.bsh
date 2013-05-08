@@ -1,0 +1,25 @@
+import java.util.regex.Pattern;
+
+String getFileAsString(File file) {
+   byte[] buf = new byte[file.length()];
+   fis = new FileInputStream(file);
+   fis.read(buf);
+   fis.close();
+   
+   return new String(buf);   
+}
+
+writeStringToFile(String s, File file) {
+   fos = new FileOutputStream(file);
+   fos.write(s.getBytes());
+   fos.close();  
+}
+
+replaceInFile(File file, String what, String with) {
+   content = getFileAsString(file);
+   matcher = Pattern.compile(what, Pattern.DOTALL).matcher(content);
+   if(matcher.matches()) {
+      content = matcher.replaceAll(with);
+   }
+   writeStringToFile(content, file);
+}

@@ -44,7 +44,7 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 	<div class="container-fluid">
 		<?php echo '<div class="breadcrump">'.$PROFILES_STRINGS["breadCrump"].'</div>' ?>
 
-		<table class=" table table-bordered table-striped qrmanager-table">
+		<table class=" table table-bordered table-striped profiles-table" align=center>
 			<thead>
 				<tr>
 					<th><?php echo $PROFILES_STRINGS["tblpedagogue"] ?></th>

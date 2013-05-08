@@ -468,3 +468,9 @@ div.qrManagerQrCode{
 
 /* END QR-manager */
 
+/* PROFILES */
+table.profiles-table {
+  border-color: #000;
+  width: 80%;
+}
+/* END PROFILES */
