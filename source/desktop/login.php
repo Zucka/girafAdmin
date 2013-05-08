@@ -133,4 +133,26 @@
 		}
 
 	}
+	/*
+	elseif ($action = 'login')
+	{
+		if (isset($_POST['username'])) {$username = $_POST['username'];} else {header('location:login.php');}
+		if (isset($_POST['password'])) {$password = $_POST['password'];} else {header('location:login.php');}
+
+		$result = db_getSession($username,$password);
+		if ($result == false) {
+			header('location:login.php?error=1');
+			exit();
+		}
+		else {
+			$_SESSION['session_id'] = session_id();
+			$_SESSION['username'] = $username;
+			//$_SESSION['userId'] = $row['idUser'];
+			$_SESSION['lang'] = $lang;
+			$_SESSION['dbsess'] = $result;
+			session_write_close();
+			header('location:/#ownProfile');
+		}
+	}
+	*/
 ?>
