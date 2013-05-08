@@ -1,4 +1,3 @@
-<meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- Force document mode to IE9 standards -->
 <?php
 
 

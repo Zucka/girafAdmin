@@ -41,7 +41,7 @@ window.onhashchange = function(){
 		break;
 		
 		case "#profiles":
-			destinationPath = "sites/profiles.html";
+			destinationPath = "sites/profiles.php";
 		break;
 		
 		case "#profilePicUpload":
@@ -62,6 +62,10 @@ window.onhashchange = function(){
 		
 		case "#makePic":
 			destinationPath = "sites/picsManagerMake.php";
+		break;
+		
+		case "#makePicUpload":
+			destinationPath = "script/picsManagerMakeUpload.php";
 		break;
 		
 		case "#addPic":

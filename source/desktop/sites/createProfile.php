@@ -60,7 +60,7 @@
 						<option value="3">'.$CREATEPROFILE_STRINGS["guardian"].'</option>
 					</select></div><br>
 					'.$CREATEPROFILE_STRINGS["name"].':<br>
-					<input class="profileInput" id="name" type="text" placeholder="" required>
+					<input class="profileInput" id="name" type="text" placeholder="" required>*<br>
 					'.$CREATEPROFILE_STRINGS["address"].':<br>
 					<input class="profileInput" type="text" placeholder=""><br>
 					'.$CREATEPROFILE_STRINGS["city"].': <br>
@@ -72,6 +72,8 @@
 					'.$CREATEPROFILE_STRINGS["mobile"].':<br>
 					<input class="profileInput" type="text"  placeholder=""><br>
 					<div id="emailContainer"></div>
+					<div color="#FF0000">'.$CREATEPROFILE_STRINGS["dataRequired"].'</div>
+					
 				</form>
 				<br>
 				<div align="center">
