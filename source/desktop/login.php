@@ -63,6 +63,10 @@
 						<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
 						<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 						<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+
+						<script src="assets/js/jquery.min.js"></script>
+						<!-- Modernizr -->
+						<script src="assets/js/modernizr.js"></script>
 					</head>
 					<body>
 					<div class="container">
@@ -90,9 +94,11 @@
 								</a>
 							</div>
 						</form>
+						<div id="compatwarning">
+
+						</div>
 					</div> <!-- /container -->
 
-					<script src="assets/js/jquery.min.js"></script>
 					<script src="assets/js/bootstrap.min.js"></script>
 					</body>
 				</html>

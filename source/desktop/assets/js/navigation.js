@@ -52,12 +52,20 @@ window.onhashchange = function(){
 			destinationPath = "sites/placeholder.html";
 		break;
 		
+		case "#createProfile":
+			destinationPath = "sites/createProfile.php";
+		break;
+		
 		case "#picsManager":
 			destinationPath = "sites/picsManager.php";
 		break;
 		
 		case "#makePic":
 			destinationPath = "sites/picsManagerMake.php";
+		break;
+		
+		case "#makePicUpload":
+			destinationPath = "script/picsManagerMakeUpload.php";
 		break;
 		
 		case "#addPic":

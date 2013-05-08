@@ -16,5 +16,6 @@
 		$CREATEPROFILE_STRINGS["mobile"] = "Mobile No.";
 		$CREATEPROFILE_STRINGS["email"] = "Email";
 		$CREATEPROFILE_STRINGS["createprofile"] = "Create Profile";
+		$CREATEPROFILE_STRINGS["dataRequired"] = "* Marked fields is required <br> to make a profile";
 
 ?>

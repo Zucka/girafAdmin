@@ -90,6 +90,17 @@ body {
   text-align: center;
   width: 20em;
   height: 13.5em;
+  min-height: 200px;
+  min-width: 230px;
+}
+
+#compatwarning {
+  color:red;
+  text-align: center;
+}
+
+#input-password {
+  height:22px;
 }
 
 .profile-security {
@@ -331,7 +342,10 @@ background-color:#dd9639;
 
 /* Start OF Profiles CSS */
 
-
+.profileType{
+text-align:center;
+font-size:large;
+}
 
 /* End OF Opret Profiles CSS */
 
