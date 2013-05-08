@@ -54,9 +54,9 @@ if ($_SESSION['session_id'] != session_id())
 					<hr class="menuSubLinkSplitter">
 				<a href="#deletePic" class="menuLink menuSubLink menuLastLink"><?php echo $NAVIGATION_STRINGS['deletePic'];?></a>
 					<hr class="menuLinkSplitter">
-				<a href="#depManager" class="menuLink deptOnly"><?php echo $NAVIGATION_STRINGS['depManager'];?></a>
+				<a href="#depManager/action=department" class="menuLink deptOnly"><?php echo $NAVIGATION_STRINGS['depManager'];?></a>
 					<hr class="menuSubLinkSplitter">
-				<a href="#depInfo" class="menuLink menuSubLink deptOnly"><?php echo $NAVIGATION_STRINGS['depInfo'];?></a>
+				<a href="#depInfo/action=department" class="menuLink menuSubLink deptOnly"><?php echo $NAVIGATION_STRINGS['depInfo'];?></a>
 					<hr class="menuSubLinkSplitter">
 				<a href="#qrManager" class="menuLink menuSubLink deptOnly menuLastLink"><?php echo $NAVIGATION_STRINGS['qrManager'];?></a>
 					<hr class="menuLinkSplitter">

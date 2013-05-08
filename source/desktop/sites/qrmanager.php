@@ -54,7 +54,6 @@ echo '
 	<link href="../assets/css/bootstrap.css" rel="stylesheet">
 	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="../assets/css/style.css" rel="stylesheet">
-	<link href="../sites/tempstyle.css" rel="stylesheet">
 
 	<!-- Fav and touch icons -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">

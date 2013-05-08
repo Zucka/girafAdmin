@@ -3,6 +3,8 @@ $(window).ready(function() {
 		editProfileInfo($(this));
 	});
 	
+
+
 	$(".profilePictureButton").click(function(){
 		changeProfilePicturePopup();
 	});
@@ -51,6 +53,8 @@ $(window).ready(function() {
 		openModal();
 	}
 });
+
+
 
 function closeImageAreaSelect(){
 	$('.imgareaselect-outer').animate({
