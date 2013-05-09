@@ -1,6 +1,6 @@
 <?php
 session_start();
-$session = $_SESSION['dbsess'];
+if (isset($_SESSION['dbsess'])) {$session = $_SESSION['dbsess'];} else {$session = '';}
 /* 
 	$json should be the json to be sent NOT ENCODED, i.e. it should be an associative array
 	Returns the JSON response NOT ENCODED, i.e. it is an associative array
@@ -171,6 +171,7 @@ function db_insertNewQrCode($userId,$newQr)
 	);
 
 	$result = db_query(json_encode($data));
+	error_log($result['status']);
 	if ($result['status'] == 'OK')
 	{
 		return TRUE;
