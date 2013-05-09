@@ -39,8 +39,7 @@ function db_query($json)
 	$port = 2468;
 	$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 	socket_connect($socket, '172.25.26.181',2468);
-	$buffer = json_encode($json);
-	socket_write($socket, $buffer, strlen($json));
+	socket_write($socket, $json, strlen($json));
 	sleep(1);
 	$buf = '';
 	$ret = '';
@@ -52,12 +51,14 @@ function db_query($json)
 /* Returns a session if authentication was succesful, FALSE otherwise */
 function db_getSession($username,$password)
 {
-	$data = array(
-		'auth' => array(
-			'username' => $username,
-			'password' => $password	
-		)
-	);
+	$data = '{
+		"action": null,
+	    "auth": {
+	        "username": '.$username.',
+	        "password": '.$password.'
+	    },
+	    "data": null
+	}';
 
 	$result = db_query($data);
 	if ($result['status'] != 'OK')
@@ -66,7 +67,7 @@ function db_getSession($username,$password)
 	}
 	else
 	{
-		return $result['data']['session']; 
+		return $result['session']['session']; 
 	}
 
 }
@@ -95,7 +96,6 @@ function db_getCertificatesFromIds($session,$ids)
 			'ids' => $ids
 		)
 	);
-
 	$resultUser = db_query($dataUser);
 	if ($resultUser['status'] != 'OK')
 	{

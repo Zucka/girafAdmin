@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require_once('db/db.php');
+	require_once('db/new.db.php');
 	if (isset($_GET['action'])) {$action = $_GET['action'];} else {$action = '';}
 	if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'en';}
 	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
@@ -104,6 +104,7 @@
 				</html>
 		';
 	}
+	/*
 	elseif ($action == 'login') {
 		if (isset($_POST['username'])) {$username = $connection->real_escape_string($_POST['username']);} else {header('location:login.php');}
 		if (isset($_POST['password'])) {$password = $connection->real_escape_string($_POST['password']);} else {header('location:login.php');}
@@ -133,7 +134,7 @@
 		}
 
 	}
-	/*
+	*/
 	elseif ($action = 'login')
 	{
 		if (isset($_POST['username'])) {$username = $_POST['username'];} else {header('location:login.php');}
@@ -154,5 +155,4 @@
 			header('location:/#ownProfile');
 		}
 	}
-	*/
 ?>
