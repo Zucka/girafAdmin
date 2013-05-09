@@ -149,7 +149,7 @@ function db_getCertificatesFromIds($session,$ids)
 	$newQr should be a 512 character unique string 
 
 */
-function db_insertNewQrCode($session,$userId,$newQr)
+function db_insertNewQrCode($userId,$newQr)
 {
 	global $session;
 	$data = array(
@@ -170,7 +170,7 @@ function db_insertNewQrCode($session,$userId,$newQr)
 		)
 	);
 
-	$result = db_query($data);
+	$result = db_query(json_encode($data));
 	if ($result['status'] == 'OK')
 	{
 		return TRUE;

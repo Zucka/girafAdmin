@@ -1,8 +1,4 @@
 $(document).ready(function () {
-	$("#btn-print").click(function () {
-		
-		
-	});
 
 	$("#btn-gen").click(function(){
 		$.ajax({

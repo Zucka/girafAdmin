@@ -12,8 +12,7 @@ require_once ('../db/new.db.php');
 
 $newQr = generateNewQr();
 $session = '';
-//$result = db_insertNewQrCode($session,$userId,$newQr);
-$result = TRUE;
+$result = db_insertNewQrCode($userId,$newQr);
 if  ($result == TRUE)
 {
 	echo json_encode(array("status" => "ok","qr" => $newQr));
