@@ -54,8 +54,8 @@ function db_getSession($username,$password)
 	$data = '{
 		"action": null,
 	    "auth": {
-	        "username": '.$username.',
-	        "password": '.$password.'
+	        "username": "'.$username.'",
+	        "password": "'.$password.'"
 	    },
 	    "data": null
 	}';
@@ -63,7 +63,7 @@ function db_getSession($username,$password)
 	$result = db_query($data);
 	if ($result['status'] != 'OK')
 	{
-		error_log($result['status']);
+		error_log("db_getSession failed with error: ".$result['status']);
 		return FALSE;
 	}
 	else
