@@ -6,7 +6,8 @@
 	    "auth": {
 	        "username": "John",
 	        "password": "123456"
-	    }
+	    },
+	    "data": null
 	}';
 	socket_write($socket, $buffer, strlen($buffer));
 	sleep(1);
