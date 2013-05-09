@@ -68,7 +68,8 @@ function db_getSession($username,$password)
 	}
 	else
 	{
-		return $result['session']['session']; 
+		return 'asdf'; //temporary session
+		//return $result['session']['session']; //Uncomment when session is implemented
 	}
 
 }
