@@ -1,0 +1,167 @@
+<bsh>
+service = server.props.get("serviceContext");
+pluginVersion = "0.5";
+pluginName = "php_setup";
+
+pawHome = service.pawHome;
+pluginPath = pawHome + "html/" + pluginName;
+dataDir = service.getFilesDir().getAbsolutePath().replace("/files", "/bin");
+
+source(pluginPath + "/bsh/php_timezones.bsh");
+source(pluginPath + "/bsh/util.bsh");
+
+</bsh>
+
+<html>
+<head>
+<title>PHP Setup for PAW Runtime</title>
+ <link rel="stylesheet" href="../../css/default.css" />
+</head>
+<bsh>source(pawHome + "html/app/auth.bsh");</bsh>
+<body>
+
+<img src="icon.png" /> <br />
+<h3>PHP Setup for PAW Runtime</h3>
+<p style="color: gray;">
+Version: <bsh>$$.print(pluginVersion);</bsh><br />
+</p>
+<p>
+<b>Note:</b> This setup will only work on devices with ARM processors!
+</p>
+<p>
+This setup allows to install/uninstall PHP onto your device.<br />
+SL4A is supported by setting the environment variables <tt>AP_HOST</tt> and <tt>AP_PORT</tt> if the settings can be detected via logcat on startup of the PAW Server.<br />
+The <tt>php-cgi</tt> binary will be installed into the <bsh>$$.print(dataDir);</bsh> directory. The php.ini file can be found in the <bsh>$$.print(pluginPath + "/conf");</bsh> directory.<br /><br />
+After resarting the server you can check if PHP is working by viewing the <a class="link" href="phpinfo.php">PHP info page</a>.
+</p>
+<p>
+<fieldset style="width: 80%; background: rgb(211, 211, 211);">
+<legend><b>Credits</b></legend>
+The PHP 5.3.8 binary is provided by <i>Iulian Virtejanu</i>.<br />
+For more information see: <a href="http://hex.ro/wp/blog/php-and-lighttpd-for-android/" class="link" target="_blank">PHP and Lighttpd for Android</a>
+</fieldset>
+<!--
+PAW Home: <bsh>$$.print(pawHome);</bsh><br />
+Plugin Path: <bsh>$$.print(pluginPath);</bsh><br />
+PHP Binary Path: <bsh>$$.print(dataDir);</bsh><br />
+-->
+
+<bsh>
+install = parameters.get("install");
+if(install != null && install.equals("true")) {
+  overwrite = (parameters.get("overwrite_php_ini") != null && parameters.get("overwrite_php_ini").equals("on")) ? true : false;
+
+  binDir = new File(dataDir);
+
+  // Create bin directory
+  if(!binDir.exists()) {
+     binDir.mkdir();
+  }
+  
+  phpVersion = parameters.get("php_version");
+
+  // Copy php-cgi
+  cp(pluginPath + "/bin/php-cgi_"  + phpVersion, dataDir + "/php-cgi");
+  exec("chmod 755 " + dataDir + "/php-cgi");
+
+  // Generate php.ini
+  phpIniSource = new File(pluginPath + "/templates/php.ini");
+  phpIniDest = new File(pluginPath + "/conf/php.ini");
+
+  if(!phpIniDest.exists() || overwrite) {
+     iniContent = getFileAsString(phpIniSource);
+     iniContent = iniContent.replace("[TIMEZONE]", parameters.get("timezone"));
+     iniContent = iniContent.replace("[TMP_DIR]", pawHome + "tmp");
+     iniContent = iniContent.replace("[INCLUDE_PATH]", pluginPath + "/conf");
+     
+     writeStringToFile(iniContent, phpIniDest);
+  }
+
+  // Generate handler.xml
+  handlerTemplateSource = new File(pluginPath + "/templates/handler.xml");
+  handlerDest = new File(pawHome + "conf/handler.xml");
+  
+  handlerTemplate = getFileAsString(handlerTemplateSource);
+  handlerTemplate = handlerTemplate.replace("[PHP_CGI]", dataDir + "/php-cgi");
+  handlerTemplate = handlerTemplate.replace("[HTML_PATH]", pawHome + "html");
+  handlerTemplate = handlerTemplate.replace("[TMP_DIR]", pawHome + "tmp");
+  handlerTemplate = handlerTemplate.replace("[INCLUDE_PATH]", pluginPath + "/conf");
+  
+  // Remove to be sure
+  replaceInFile(handlerDest, "(.*)<handler.*?<id>phpCgiHandler</id>.*?</handler>[^<]*(.*)", "$1$2");
+  // Insert
+  replaceInFile(handlerDest, "(.*<handler.*?<id>bsh</id>.*?</handler>[^<]*)(.*)", "$1" + handlerTemplate + "$2");
+
+  print("<p><div style='width: 80%; background: rgb(150, 193, 77); border: 1px solid black;padding: 10px;'><h3><img src='images/info.png' /><i>PHP has been installed!</i></h3>");
+  print("The server has to be restarted for the changes to take effect!</div></p>");
+
+}
+
+uninstall = parameters.get("uninstall");
+if(uninstall != null && uninstall.equals("true")) {
+   exec("rm " + dataDir + "/php-cgi");
+   exec("rm " + pluginPath + "/conf/php.ini");
+
+   handlerDest = new File(pawHome + "conf/handler.xml");
+   replaceInFile(handlerDest, "(.*)<handler.*?<id>phpCgiHandler</id>.*?</handler>[^<]*(.*)", "$1$2");
+
+   print("<p><div style='width: 80%; background: rgb(150, 193, 77); border: 1px solid black;padding: 10px;'><h3><img src='images/info.png' /><i>PHP has been uninstalled!</i></h3>");
+   print("The server has to be restarted for the changes to take effect!</div></p>");
+}
+
+</bsh>
+<p />
+<fieldset style="width: 80%;">
+<form method="post">
+<legend>Install PHP</legend>
+<p>
+Select a PHP version to install.
+</p>
+<p>
+<input type="radio" name="php_version" value="5.3.8" checked> PHP 5.3.8
+<p style="color: gray;">
+Use this version if possible.<br />
+This is the more recent version of PHP. It is compiled against libc.<br />
+If you encounter problems please use PHP version 5.3.6 below.
+</p>
+<br />
+<input type="radio" name="php_version" value="5.3.6"> PHP 5.3.6
+<p style="color: gray;">
+This is an older version of PHP.<br />
+It is compiled against Bionic and should work on all devices.
+</p>
+<hr>
+<p>
+Select your timezone and press the install button to install PHP onto your device.
+</p>
+<table>
+<tr><td>Select Timezone:</td><td>
+<select name="timezone">
+<bsh>
+for(timezone : timezones) {
+print("<option>" + timezone + "</option>");
+}
+</bsh>
+</select>
+</td></tr>
+<tr><td>Overwrite php.ini (if exists)</td><td><input type="checkbox" name="overwrite_php_ini"></td></tr>
+</table>
+<p />
+<input type="hidden" name="install" value="true" />
+<input type="submit" value="Install" />
+</form>
+</fieldset>
+<p />
+<fieldset style="width: 80%;">
+<legend>Uninstall PHP</legend>
+<p style="color: gray;">
+Press the button to uninstall PHP from your device.
+</p>
+<form method="post">
+<p />
+<input type="hidden" name="uninstall" value="true" />
+<input type="submit" value="Uninstall" />
+</form>
+</fieldset>
+</body>
+</html>

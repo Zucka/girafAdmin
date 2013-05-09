@@ -33,7 +33,7 @@ body {
 .form-signin {
   max-width: 300px;
   padding: 19px 29px 29px;
-  margin: 10% auto 20px;
+  margin: 3% auto 20px;
   background-color: #fff;
   border: 2px solid rgb(100,96,96);
   -webkit-border-radius: 10px;
@@ -199,6 +199,8 @@ body {
 
 #menuBarOuter {
   width:15%;
+  position: fixed;
+  height: 100%;
 }
 
 a.menuLink:link, a.menuLink:visited{
@@ -283,7 +285,7 @@ a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLin
 #content{
 /*	float:right; */
 	width:85%;
-  margin: 0% 0% 0% 0% ;
+  margin: 0% 0% 0% 15% ;
 	height:auto;
 	min-height:100%;
 	border:0px solid black;
@@ -420,3 +422,55 @@ div#picsManagerNavi{
 }
 
 /* END OF PICS MANAGER */
+
+/* QR-manager */
+
+  button.qrmanager-buttons {
+  width: 60%;
+  height: 15%;
+  margin-bottom: 3em;
+}
+button.qrmanager-btnEdit{
+  margin-left: 35%;
+}
+
+table.qrmanager-table{
+  border-color: #000;
+  border-left-color: #000;
+}
+.qrmanager-table tbody{
+  border-color: #000;
+}
+.table-bordered td {
+  border-color: #000;
+}
+div.qrManagerQrCode{
+  height:20em;
+  width:20em;
+  border: 2px solid #000;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  margin-left: -15%;
+}
+
+.qrManagerInlineForm {
+  margin: 0;
+}
+.btn-choosePrintSubmit {
+  margin-left: 43%;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border-left: 1px solid #000;
+}
+
+/* END QR-manager */
+
+/* PROFILES */
+table.profiles-table {
+  border-color: #000;
+  width: 80%;
+}
+/* END PROFILES */

@@ -147,22 +147,22 @@ function pedagogue()
 						<tr>
 							<td>Jens Hansen</td>
 							<td>Mai Petersen; Hans Jensen</td>
-							<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["tblEditProfile"].'</button></td>
+							<td><button class="btn btn-mini btnEditChild" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["tblEditProfile"].'</button></td>
 						</tr>
 						<tr>
 							<td>Hans Jensen</td>
 							<td>Anne Larsen; Peter Svendsen</td>
-							<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["tblEditProfile"].'</button></td>
+							<td><button class="btn btn-mini btnEditChild" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["tblEditProfile"].'</button></td>
 						</tr>
 						<tr>
 							<td>Pia Larsen</td>
 							<td>Gerta Larsen; Ken Larsen</td>
-							<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["tblEditProfile"].'</button></td>
+							<td><button class="btn btn-mini btnEditChild" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["tblEditProfile"].'</button></td>
 						</tr>
 						<tr>
 							<td>Jens Hansen</td>
 							<td>Mai Petersen; Hans Jensen</td>
-							<td><button class="btn btn-mini" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["tblEditProfile"].'</button></td>
+							<td><button class="btn btn-mini btnEditChild" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["tblEditProfile"].'</button></td>
 						</tr>
 					</table>
 				</div>

@@ -49,7 +49,7 @@ window.onhashchange = function(){
 		break;
 		
 		case "#addRelation":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "relations.html";
 		break;
 		
 		case "#createProfile":
@@ -85,11 +85,11 @@ window.onhashchange = function(){
 		break;
 		
 		case "#depManager":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "sites/own_profile.php";
 		break;
 		
 		case "#depInfo":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "sites/own_profile.php";
 		break;
 		
 		case "#qrManager":
