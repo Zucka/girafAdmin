@@ -49,7 +49,7 @@ window.onhashchange = function(){
 		break;
 		
 		case "#addRelation":
-			destinationPath = "relations.html";
+			destinationPath = "sites/relations.php";
 		break;
 		
 		case "#createProfile":
