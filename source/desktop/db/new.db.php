@@ -152,25 +152,23 @@ function db_getCertificatesFromIds($session,$ids)
 function db_insertNewQrCode($userId,$newQr)
 {
 	global $session;
-	$data = array(
-		'auth' => array(
-			'session' => $session
-		),
-		'action' => 'update',
-		'data' => array(
-			'type' => 'user',
-			'values' => array(
-				array(
-					'id' => $userId,
-					'value' => array(
-						'certificate' => $newQr
-					)
-				)
-			)
-		)
-	);
-
-	$result = db_query(json_encode($data));
+	$data = '{
+		"auth": "'.$session.'",
+		"action": "update",
+		"data": {
+			"type": "user",
+			"values": [
+				{
+					"id": "'.$userId.'",
+					"value": {
+						"certificate": "'.$newQr.'"
+					}
+				}
+			]
+		}
+	}
+	';
+	$result = db_query($data);
 	error_log($result['status']);
 	if ($result['status'] == 'OK')
 	{
