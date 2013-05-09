@@ -141,7 +141,6 @@
 		if (isset($_POST['password'])) {$password = $_POST['password'];} else {header('location:login.php');}
 
 		$result = db_getSession($username,$password);
-		error_log($result);
 		if ($result == false) {
 			header('location:login.php?error=1');
 			exit();
