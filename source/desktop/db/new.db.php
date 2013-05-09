@@ -63,6 +63,7 @@ function db_getSession($username,$password)
 	$result = db_query($data);
 	if ($result['status'] != 'OK')
 	{
+		error_log($result['status']);
 		return FALSE;
 	}
 	else
