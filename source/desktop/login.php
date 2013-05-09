@@ -151,6 +151,7 @@
 			$_SESSION['userId'] = $result['user'];
 			$_SESSION['lang'] = $lang;
 			$_SESSION['dbsess'] = $result['session'];
+			$_SESSION['password'] = $password;
 			session_write_close();
 			header('location:/#ownProfile');
 		}

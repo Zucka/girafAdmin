@@ -1,6 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION['dbsess'])) {$session = $_SESSION['dbsess'];} else {$session = '';}
+if (isset($_SESSION['username'])) {$username = $_SESSION['username'];} else {$username = '';}
+if (isset($_SESSION['dbsess'])) {$password = $_SESSION['password'];} else {$password = '';}
 /* 
 	$json should be the json to be sent NOT ENCODED, i.e. it should be an associative array
 	Returns the JSON response NOT ENCODED, i.e. it is an associative array
@@ -151,11 +153,11 @@ function db_getCertificatesFromIds($session,$ids)
 */
 function db_insertNewQrCode($userId,$newQr)
 {
-	global $session;
+	global $session,$username,$password;
 	$data = '{
 		"auth": {
-			"username": "John",
-			"password": "123456"
+			"username": "'.$username.'",
+			"password": "'.$password.'"
 		},
 		"action": "update",
 		"data": {
