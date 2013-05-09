@@ -154,7 +154,8 @@ function db_insertNewQrCode($userId,$newQr)
 	global $session;
 	$data = '{
 		"auth": {
-			"session": "'.$session.'"
+			"username": "John",
+			"password": "123456"
 		},
 		"action": "update",
 		"data": {
