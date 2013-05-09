@@ -148,9 +148,9 @@
 		else {
 			$_SESSION['session_id'] = session_id();
 			$_SESSION['username'] = $username;
-			//$_SESSION['userId'] = $row['idUser'];
+			$_SESSION['userId'] = $result['user'];
 			$_SESSION['lang'] = $lang;
-			$_SESSION['dbsess'] = $result;
+			$_SESSION['dbsess'] = $result['session'];
 			session_write_close();
 			header('location:/#ownProfile');
 		}

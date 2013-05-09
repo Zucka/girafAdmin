@@ -48,7 +48,7 @@ function db_query($json)
 	}
 	return json_decode($ret,true);
 }
-/* Returns a session if authentication was succesful, FALSE otherwise */
+/* Returns an array with session and user(userid) if authentication was succesful, FALSE otherwise */
 function db_getSession($username,$password)
 {
 	$data = '{
@@ -67,7 +67,7 @@ function db_getSession($username,$password)
 	}
 	else
 	{
-		return 'asdf'; //temporary session
+		return array('session' => 'asdf','user' => $result['session']['user']); //temporary session
 		//return $result['session']['session']; //Uncomment when session is implemented
 	}
 
