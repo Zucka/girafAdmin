@@ -21,7 +21,7 @@ function db_uploadePictogram($jsonPictogram){
 	    }
 	}';
 	$result = db_query($data);
-	echo "<br><br>Result: ".$result;
+	echo "<br><br>Result: ".$result['status'];
 	/*if ($result['status'] == 'OK')
 	{
 		return $result['data'];
@@ -45,35 +45,35 @@ function makeJsonPictogram($title,$privacy,$imageString,$soundString,$inlineText
 	$regex = "/[\t\s,.;:]+/";
 	$tagArray = preg_split($regex,$tagString);
 	if(count($tagArray)==0)
-		$tagPrint = "NULL";
+		$tagPrint = "null";
 	else
 		$tagPrint = '["'.implode('","',$tagArray).'"]';
 	
 	//If any of these are empty, make them contain the string NULL instead
 	//Else add string start and end to the string
 	if($imageString == "")
-		$imageString = "NULL";
+		$imageString = "null";
 	else
 		$imageString = '"'.$imageString.'"';
 		
 	if($soundString == "")
-		$soundString = "NULL";
+		$soundString = "null";
 	else
 		$soundString = '"'.$soundString.'"';
 		
 	if($inlineText == "")
-		$inlineText = "NULL";
+		$inlineText = "null";
 	else
 		$inlineText = '"'.$inlineText.'"';
 	
 	return 
-	'"value_object": { 
+	'{ 
 		"name": "'.$title.'", 
 		"public": '.$privacyBool.', 
 		"image": '.$imageString.', 
 		"sound": '.$soundString.', 
 		"text": '.$inlineText.', 
-		"categories": NULL, 
+		"categories": null, 
 		"tags": '.$tagPrint.' 
 	}';
 }
