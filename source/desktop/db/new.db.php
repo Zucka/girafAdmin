@@ -272,7 +272,7 @@ function db_getRights($id)
 	    }
 	}';
 	$result = db_query($data);
-	if (if ($result['status'] != 'OK'))
+	if ($result['status'] != 'OK')
 	{
 		return false;
 	}
