@@ -259,26 +259,27 @@ function choosePrintContent()
 	foreach ($profiles as $value) {
 		switch ($value['role']) {
 			case '0':
-				$asdf .= '
-					<tr>
-						<td>'.$value['name'].'</td>
-						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
-					</tr>';
 				break;
 			case '1':
-				$asdf .= '
+				$children .= '
 					<tr>
 						<td>'.$value['name'].'</td>
 						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
 					</tr>';
 				break;
 			case '2':
-				$asdf .= '
+				$guardians .= '
 					<tr>
 						<td>'.$value['name'].'</td>
 						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
 					</tr>';
 				break;
+			case '3': 
+				$parents .= '
+					<tr>
+						<td>'.$value['name'].'</td>
+						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
+					</tr>';
 			default:
 				break;
 		}
