@@ -60,16 +60,19 @@ class SimpleImage {
       }
    }
    function output($image_type=IMAGETYPE_JPEG) {
- 
+	  ob_start();
       if( $image_type == IMAGETYPE_JPEG ) {
-         return imagejpeg($this->image);
+         imagejpeg($this->image);
       } elseif( $image_type == IMAGETYPE_GIF ) {
  
-         return imagegif($this->image);
+         imagegif($this->image);
       } elseif( $image_type == IMAGETYPE_PNG ) {
  
-         return imagepng($this->image);
+         imagepng($this->image);
       }
+	  $stringdata = ob_get_contents(); // read from buffer
+	  ob_end_clean();
+	  return $stringdata;
    }
    function getWidth() {
  

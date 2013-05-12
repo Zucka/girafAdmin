@@ -25,7 +25,7 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 		
 		//Check Mime Type
 		$finfo = finfo_open(FILEINFO_MIME_TYPE); // return mime type ala mimetype extension
-		echo finfo_file($finfo, $fileTmpName); //TODO REMOVE LINE AFTER TESTING
+		
 		if(in_array(finfo_file($finfo, $fileTmpName),$supportedMimeTypes)){
 			$fileMimeTypeOkay = true;
 		}
