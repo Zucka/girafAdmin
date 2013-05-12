@@ -1,6 +1,6 @@
 <?
 	$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-	socket_connect($socket, '172.25.26.181',2468);
+	socket_connect($socket, '130.225.196.27',2468);
 	$buffer = '{
 		"action": null,
 	    "auth": {
