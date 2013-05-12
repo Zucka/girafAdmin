@@ -474,3 +474,13 @@ table.profiles-table {
   width: 80%;
 }
 /* END PROFILES */
+
+/* Relations */
+.checkbox{
+text-align:center;
+}
+
+#checkbox2{
+text-align:center;
+}
+/* END Realations */

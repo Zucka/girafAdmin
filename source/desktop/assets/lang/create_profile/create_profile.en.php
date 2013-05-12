@@ -3,8 +3,8 @@
 
 		$CREATEPROFILE_STRINGS = array();
 
-		$CREATEPROFILE_STRINGS["headerTitle"] = "Create Profile in &middot; GIRAF";
-		$CREATEPROFILE_STRINGS["headline"] = "Create New Profile";
+		$CREATEPROFILE_STRINGS["profiles"] = "Profiles";
+		$CREATEPROFILE_STRINGS["createProfile"] = "Create Profile";
 		$CREATEPROFILE_STRINGS["child"] = "Child";
 		$CREATEPROFILE_STRINGS["parant"] = "Parant";
 		$CREATEPROFILE_STRINGS["guardian"] = "Guardian";
