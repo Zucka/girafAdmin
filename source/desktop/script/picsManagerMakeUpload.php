@@ -45,8 +45,7 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 	}
 	
 	//Check files
-	if(isset($_FILES['uploadImage']['size'])){//Image file was uploaded
-		error('3');
+	if(isset($_FILES['uploadImage']['tmp_name'])){//Image file was uploaded
 		@is_uploaded_file($_FILES['uploadImage']['tmp_name'])// check that the file we are working on really was an HTTP upload
 			or error('1');
 			
@@ -61,7 +60,7 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 		$image->resizeCordsColor(400,400,0,0,$image->getWidth(),$image->getHeight(),255,255,255);
 		$image->save("tempTest/picsManagerMake.jpeg");//TODO: Make this line into a DB query
 	}
-	if(isset($_FILES['soundFile']['size'])){//Sound file was uploaded
+	if(isset($_FILES['soundFile']['tmp_name'])){//Sound file was uploaded
 		@is_uploaded_file($_FILES['soundFile']['tmp_name'])// check that the file we are working on really was an HTTP upload
 			or error('1');
 		
