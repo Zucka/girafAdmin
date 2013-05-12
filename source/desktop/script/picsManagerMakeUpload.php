@@ -62,7 +62,7 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 	}
 	if(isset($_FILES['soundFile']['size'])){//Sound file was uploaded
 		@is_uploaded_file($_FILES['soundFile']['tmp_name'])// check that the file we are working on really was an HTTP upload
-			or error('2');
+			or error('1');
 		
 		isAllowedSoundFile($_FILES['soundFile']['name'],$_FILES['soundFile']['tmp_name'])
 			or error('3');
