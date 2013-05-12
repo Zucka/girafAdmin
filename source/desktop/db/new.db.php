@@ -137,7 +137,8 @@ function db_insertNewQrCode($userId,$newQr)
 				{
 					"id": '.$userId.',
 					"value": {
-						"certificate": "'.$newQr.'"
+						"certificate": "'.$newQr.'",
+						"id":'.$userId.'
 					}
 				}
 			]
