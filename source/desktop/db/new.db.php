@@ -40,7 +40,7 @@ function db_getSession($username,$password)
 	}
 	else
 	{
-		return array('session' => 'asdf','user' => $result['session']['user']); //temporary session
+		return array('session' => 'asdf','user' => $result['session']['user'], 'profile' => $result['session']['profile']); //temporary session
 		//return $result['session']['session']; //Uncomment when session is implemented
 	}
 
