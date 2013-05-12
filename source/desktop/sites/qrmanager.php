@@ -253,7 +253,9 @@ function choosePrintContent()
 {
 	global $QRMANAGER_STRINGS;
 	$profiles = db_getProfiles();
-	$children = '',$guardians = '',$parents = '';
+	$children = '';
+	$guardians = '';
+	$parents = '';
 	foreach ($profiles as $value) {
 		switch ($value['role']) {
 			case '0':
