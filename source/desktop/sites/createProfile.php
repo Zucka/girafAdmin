@@ -17,7 +17,7 @@
 ?>
 	
 	<script> 
-	var languageEmail = "<?php echo $CREATEPROFILE_STRINGS["email"]; ?>";
+	var languageEmail = "<?php echo .$CREATEPROFILE_STRINGS["email"]; ?>";
 	</script>
 	
 <?php
@@ -32,8 +32,8 @@
 
 			</head>
 			<body>
-				<div align="center">
-					<h1>'.$CREATEPROFILE_STRINGS["headline"].'</h1>
+				<div class="breadcrump">
+					'.$CREATEPROFILE_STRINGS["headline"].'
 				</div>
 	
 				<form class="form-signin" action="/#createProfile">
