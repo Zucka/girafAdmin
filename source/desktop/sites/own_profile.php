@@ -34,13 +34,13 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 	//Include special profiles file
 	include "../include/profiles.php";
 
-	require_once($_SERVER['DOCUMENT_ROOT']."/db/db.php");
-	$userName = $_SESSION['username'];
-	$result = $connection->query("SELECT * FROM Profile WHERE idProfile = '$userName' ");
-	if ($result->num_rows > 0)
-	{
-		$row = $result->fetch_assoc();
-	}
+	// require_once($_SERVER['DOCUMENT_ROOT']."/db/db.php");
+	// $userName = $_SESSION['username'];
+	// $result = $connection->query("SELECT * FROM Profile WHERE idProfile = '$userName' ");
+	// if ($result->num_rows > 0)
+	// {
+	// 	$row = $result->fetch_assoc();
+	// }
 	if (isset($_GET["action"])) {$action = $_GET["action"];} else {$action = '';}
 	$title = getTitleFromAction($action);
 	$content = getContentFromAction($action);
