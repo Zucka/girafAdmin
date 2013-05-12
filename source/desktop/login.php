@@ -2,7 +2,7 @@
 	session_start();
 	require_once('db/new.db.php');
 	if (isset($_GET['action'])) {$action = $_GET['action'];} else {$action = '';}
-	if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'en';}
+	if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'dk';}
 	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
 	switch ($lang) {
 		case 'en':
