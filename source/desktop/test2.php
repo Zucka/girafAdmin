@@ -9,8 +9,8 @@
 	    },
 	    "data": {
 	    	"type":"profile",
-	    	"view":"list",
-	    	"ids":null
+	    	"view":"details",
+	    	"ids":[1]
 	    }
 	}';
 	socket_write($socket, $buffer, strlen($buffer));
