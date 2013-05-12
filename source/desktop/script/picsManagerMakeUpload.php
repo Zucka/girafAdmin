@@ -43,37 +43,42 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 			return false;
 		}
 	}
-	
-	//Check files
-	if(isset($_FILES['uploadImage']['tmp_name'])){//Image file was uploaded
-		@is_uploaded_file($_FILES['uploadImage']['tmp_name'])// check that the file we are working on really was an HTTP upload
-			or error('1');
-			
-		@getimagesize($_FILES['uploadImage']['tmp_name'])//Check that the file is an image
-			or error('2');
+	if(isset($_POST['titel'])){
+
+		//Check files
+		if(file_exists($_FILES['uploadImage']['tmp_name']) || is_uploaded_file($_FILES['uploadImage']['tmp_name'])){//Image file was uploaded
+			@is_uploaded_file($_FILES['uploadImage']['tmp_name'])// check that the file we are working on really was an HTTP upload
+				or error('1');
 				
-		//Crop picture
-		require_once "include/SimpleImage.php";
-		$image = new SimpleImage();
-		$image->load($_FILES['uploadImage']['tmp_name']);
+			@getimagesize($_FILES['uploadImage']['tmp_name'])//Check that the file is an image
+				or error('2');
+					
+			//Crop picture
+			require_once "include/SimpleImage.php";
+			$image = new SimpleImage();
+			$image->load($_FILES['uploadImage']['tmp_name']);
+			
+			$image->resizeCordsColor(400,400,0,0,$image->getWidth(),$image->getHeight(),255,255,255);
+			$image->save("tempTest/picsManagerMake.jpeg");//TODO: Make this line into a DB query
+		}
+		if(file_exists($_FILES['soundFile']['tmp_name']) || is_uploaded_file($_FILES['soundFile']['tmp_name'])){//Sound file was uploaded
+			@is_uploaded_file($_FILES['soundFile']['tmp_name'])// check that the file we are working on really was an HTTP upload
+				or error('1');
+			
+			isAllowedSoundFile($_FILES['soundFile']['name'],$_FILES['soundFile']['tmp_name'])
+				or error('3');
+			
+			$fh = fopen($_FILES['soundFile']['tmp_name'], 'r');
+			$data = fread($fh, filesize($_FILES['soundFile']['tmp_name']));
+			fclose($fh);
+			$data;
+		}
 		
-		$image->resizeCordsColor(400,400,0,0,$image->getWidth(),$image->getHeight(),255,255,255);
-		$image->save("tempTest/picsManagerMake.jpeg");//TODO: Make this line into a DB query
+		header('Location: /#makePic/e=0');
 	}
-	if(isset($_FILES['soundFile']['tmp_name'])){//Sound file was uploaded
-		@is_uploaded_file($_FILES['soundFile']['tmp_name'])// check that the file we are working on really was an HTTP upload
-			or error('1');
-		
-		isAllowedSoundFile($_FILES['soundFile']['name'],$_FILES['soundFile']['tmp_name'])
-			or error('3');
-		
-		$fh = fopen($_FILES['soundFile']['tmp_name'], 'r');
-		$data = fread($fh, filesize($_FILES['soundFile']['tmp_name']));
-		fclose($fh);
-		$data;
+	else{
+		header('Location: /#makePic/e=4');
 	}
-	
-	header('Location: /#makePic/e=0');
 }
 else{ //If the user sees this an unforseen error has occured or they tried to refresh the page without submitting data.
 	if (isset($_SESSION['lang'])) {$lang = $_SESSION['lang'];} else {$lang = 'en';}

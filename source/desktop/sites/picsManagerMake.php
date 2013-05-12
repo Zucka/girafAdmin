@@ -32,7 +32,7 @@
 			<div id="tableBox">
 				<table>
 					<tr>
-						<td><?php echo $picsManagerMakeStrings['titel'];?>: </td><td><input type="text" name="titel"></td>
+						<td><?php echo $picsManagerMakeStrings['titel'];?>*: </td><td><input type="text" name="titel" id="titel"></td>
 					</tr>
 					<tr>
 						<td><?php echo $picsManagerMakeStrings['inlineText'];?>: </td><td><input type="text" name="inlineText"></td>
@@ -50,16 +50,6 @@
 					<tr>
 						<td><?php echo $picsManagerMakeStrings['tags'];?>: </td><td><input type="text" name="tags"></td>
 					</tr>
-					<tr>
-						<td><?php echo $picsManagerMakeStrings['category'];?>: </td>
-						<td>
-							<select name="category"> 
-							  <option value="heste">Heste</option>
-							  <option value="mad">Mad</option>
-							  <option value="morgenmad">Morgenmad</option>
-							</select>
-						</td>
-					</tr>
 					
 				</table>
 			</div>
@@ -67,11 +57,6 @@
 				<?php echo $picsManagerMakeStrings['image'];?>:<br>
 				<img id="tempDisplay" src="#" alt="<?php echo $picsManagerMakeStrings['imageAlt'];?>">
 				<input type="file" id="uploadImage" name="uploadImage">
-				
-				<input type="hidden" id="x1" name="x1">
-				<input type="hidden" id="x2" name="x2">
-				<input type="hidden" id="y1" name="y1">
-				<input type="hidden" id="y2" name="y2">
 			</div>
 			<div id="soundBox">
 				<?php echo $picsManagerMakeStrings['sound'];?>:<br>
@@ -84,7 +69,7 @@
 				</div>
 			</div>
 			<div id="submitBox">
-				<input type="submit" name="picsManagerMakeSubmit" value="<?php echo $picsManagerMakeStrings['submit'];?>">
+				<input type="submit" id="submit" name="picsManagerMakeSubmit" value="<?php echo $picsManagerMakeStrings['submit'];?>" disabled="disabled">
 			</div>
 		</form>
 	</div>
