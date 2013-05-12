@@ -150,7 +150,7 @@
 			$_SESSION['dbsess'] = $result['session'];
 			$_SESSION['password'] = $password;
 			$role = db_getProfileInfo($result['profile']);
-			$_SESSION['role'] = $role['role'];
+			$_SESSION['role'] = $role[0]['role'];
 			$rights = db_getRights($result['profile']);
 			$_SESSION['update'] = $rights['update'];
 			$_SESSION['delete'] = $rights['delete'];

@@ -184,6 +184,54 @@ function choosePrintContent()
 	return $content;
 }
 
+function choosePrintSubmitContent()
+{
+	global $connection, $QRMANAGER_STRINGS;
+	$content = '
+	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpChoosePrintSubmit"].'</div>
+	<div class="row">
+		<div class="span12">
+			<p class="lead text-center">'.count($_POST['ids']).$QRMANAGER_STRINGS["choosePrintSubmitLeadInfoMessage"].'</p>
+		</div>
+	</div>
+	';
+	$i = 0;
+	$inRow = false;
+	foreach ($_POST['ids'] as $value) {
+		$newQr = generateNewQr();
+		db_insertNewQrCode($value,$newQr);
+		if ($i % 3 == 0)
+		{
+			if ($inRow)
+			{
+				$content .= '<div class="span1"></div></div>';
+			}
+			$content .= '<div class="row">\n <div class="span1"></div>';
+			$inRow == true;
+		}
+		$profileInfo = db_getProfileInfo($value);
+		$content .= '
+			<div class="span3">
+				'.QRcode::svg($newQr,false,4,4,false,0xFFFFFF,0x000000).'<br>
+				'.$profileInfo[0]['name'].'
+			</div>
+			';
+
+		$i++;
+	}
+	if ($inRow)
+	{
+		$content .= '<div class="span1"></div></div>';
+	}
+	$content .= '
+	<div class="row">
+		<button class="btn-primary btn-large btn-choosePrintSubmit">'.$QRMANAGER_STRINGS["choosePrintSubmitButtonSubmit"].'</button>
+	</div>
+	';
+
+	return $content;
+}
+
 function mainContent()
 {
 	global $QRMANAGER_STRINGS;
@@ -342,53 +390,7 @@ function editSubmitContent()
 
 
 
-function choosePrintSubmitContent()
-{
-	global $connection, $QRMANAGER_STRINGS;
-	$content = '
-	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpChoosePrintSubmit"].'</div>
-	<div class="row">
-		<div class="span12">
-			<p class="lead text-center">'.count($_POST['ids']).$QRMANAGER_STRINGS["choosePrintSubmitLeadInfoMessage"].'</p>
-		</div>
-	</div>
-	';
-	$i = 0;
-	$inRow = false;
-	foreach ($_POST['ids'] as $value) {
-		$newQr = generateNewQr();
-		db_insertNewQrCode($vlue,$newQr);
-		if ($i % 3 == 0)
-		{
-			if ($inRow)
-			{
-				$content .= '<div class="span1"></div></div>';
-			}
-			$content .= '<div class="row">\n <div class="span1"></div>';
-			$inRow == true;
-		}
-		$profileInfo = db_getProfileInfo($value);
-		$content .= '
-			<div class="span3">
-				'.QRcode::svg($newQr,false,4,4,false,0xFFFFFF,0x000000).'<br>
-				'.$profileInfo['name'].'
-			</div>
-			';
 
-		$i++;
-	}
-	if ($inRow)
-	{
-		$content .= '<div class="span1"></div></div>';
-	}
-	$content .= '
-	<div class="row">
-		<button class="btn-primary btn-large btn-choosePrintSubmit">'.$QRMANAGER_STRINGS["choosePrintSubmitButtonSubmit"].'</button>
-	</div>
-	';
-
-	return $content;
-}
 
 function printAllContent()
 {
