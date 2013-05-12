@@ -353,34 +353,29 @@ function choosePrintSubmitContent()
 		</div>
 	</div>
 	';
-	$query = "SELECT certificate FROM AuthUsers WHERE idUser IN (";
-	foreach ($_POST['ids'] as $id) {
-		$query .= $connection->real_escape_string($id).',';
-	}
-	$query = substr($query,0,strlen($query)-1);
-	$query .= ')';
-	$result = $connection->query($query);
 	$i = 0;
 	$inRow = false;
-	if ($result->num_rows != 0)
-	{
-		while ($row = $result->fetch_assoc())
+	foreach ($_POST['ids'] as $value) {
+		$newQr = generateNewQr();
+		db_insertNewQrCode($vlue,$newQr);
+		if ($i % 3 == 0)
 		{
-			if ($i % 3 == 0)
+			if ($inRow)
 			{
-				if ($inRow)
-				{
-					$content .= '<div class="span1"></div></div>';
-				}
-				$content .= '<div class="row">\n <div class="span1"></div>';
-				$inRow == true;
+				$content .= '<div class="span1"></div></div>';
 			}
-			$content .= '
+			$content .= '<div class="row">\n <div class="span1"></div>';
+			$inRow == true;
+		}
+		$profileInfo = db_getProfileInfo($value);
+		$content .= '
 			<div class="span3">
-				'.QRcode::svg($row['certificate'],false,4,4,false,0xFFFFFF,0x000000).'
+				'.QRcode::svg($newQr,false,4,4,false,0xFFFFFF,0x000000).'<br>
+				'.$profileInfo['name'].'
 			</div>
 			';
-		}
+
+		$i++;
 	}
 	if ($inRow)
 	{
@@ -403,5 +398,21 @@ function printAllContent()
 
 	';
 	return $content;
+}
+
+/* 
+	Generate new QR code
+
+	returns a 512 character string 
+*/
+function generateNewQr()
+{
+	$qr = "";
+	for ($i=0; $i < 4; $i++) { 
+		$time = microtime();
+		$qr .= hash("sha512",$time);
+		usleep(100); // sleep for 100 microseconds (0.1 milliseconds) to get a different time from microtime
+	}
+	return $qr;
 }
 ?>
