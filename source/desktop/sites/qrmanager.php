@@ -82,7 +82,7 @@ function getContentFromAction($action)
 	switch ($action) {
 		case '':
 		case 'main':
-			return mainContent();
+			return choosePrintContent();
 		case 'edit':
 			return editContent();
 		case 'editSubmit':
@@ -257,6 +257,35 @@ function editSubmitContent()
 function choosePrintContent()
 {
 	global $QRMANAGER_STRINGS;
+	$profiles = db_getProfiles();
+	$children = '',$guardians = '',$parents = '';
+	foreach ($profiles as $value) {
+		switch ($value['role']) {
+			case '0':
+				$asdf .= '
+					<tr>
+						<td>'.$value['name'].'</td>
+						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
+					</tr>';
+				break;
+			case '1':
+				$asdf .= '
+					<tr>
+						<td>'.$value['name'].'</td>
+						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
+					</tr>';
+				break;
+			case '2':
+				$asdf .= '
+					<tr>
+						<td>'.$value['name'].'</td>
+						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
+					</tr>';
+				break;
+			default:
+				break;
+		}
+	}
 	$content = '
 	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpChoosePrint"].'</div>
 	<div class="row">
@@ -270,52 +299,19 @@ function choosePrintContent()
 		<div class="span3">
 			<h4 class="text-center">'.$QRMANAGER_STRINGS["Children"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
-				<tr>
-					<td>Helly Hansen</td>
-					<td><input type="checkbox" name="ids[]" value="id here"></td>
-				</tr>
-				<tr>
-					<td>Helly Hansen</td>
-					<td><input type="checkbox" name="ids[]" value="id here"></td>
-				</tr>
-				<tr>
-					<td>Helly Hansen</td>
-					<td><input type="checkbox" name="ids[]" value="id here"></td>
-				</tr>
+				'.$children.'
 			</table>
 		</div>
 		<div class="span3">
 			<h4 class="text-center">'.$QRMANAGER_STRINGS["Guardians"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
-				<tr>
-					<td>Helly Hansen</td>
-					<td><input type="checkbox" name="ids[]" value="id here"></td>
-				</tr>
-				<tr>
-					<td>Helly Hansen</td>
-					<td><input type="checkbox" name="ids[]" value="id here"></td>
-				</tr>
-				<tr>
-					<td>Helly Hansen</td>
-					<td><input type="checkbox" name="ids[]" value="id here"></td>
-				</tr>
+				'.$guardians.'
 			</table>
 		</div>
 		<div class="span3">
 			<h4 class="text-center">'.$QRMANAGER_STRINGS["Parents"].'</h4>
 			<table class="table table-bordered table-striped qrmanager-table">
-				<tr>
-					<td>Helly Hansen</td>
-					<td><input type="checkbox" name="ids[]" value="id here"></td>
-				</tr>
-				<tr>
-					<td>Helly Hansen</td>
-					<td><input type="checkbox" name="ids[]" value="id here"></td>
-				</tr>
-				<tr>
-					<td>Helly Hansen</td>
-					<td><input type="checkbox" name="ids[]" value="id here"></td>
-				</tr>
+				'.$parents.'
 			</table>
 		</div>
 		<div class="span1"></div>
