@@ -207,7 +207,7 @@ function choosePrintSubmitContent()
 				$content .= '<div class="span1"></div></div>';
 			}
 			$content .= '<div class="row">\n <div class="span1"></div>';
-			$inRow == true;
+			$inRow = true;
 		}
 		$profileInfo = db_getProfileInfo($value);
 		$content .= '
