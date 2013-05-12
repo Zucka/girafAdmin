@@ -8,7 +8,7 @@
 	        "password": "123456"
 	    },
 	    "data": {
-	    	"type":"profile",
+	    	"type":"department",
 	    	"view":"details",
 	    	"ids":[1]
 	    }
