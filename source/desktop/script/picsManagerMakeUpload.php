@@ -72,6 +72,15 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 			fclose($fh);
 			$soundData = $data;
 		}
+		if(!isset($imageData))
+			$imageData = "";
+		if(!isset($soundData))
+			$soundData = "";
+		
+		//Make DB-call
+		$pictogram = makeJsonPictogram($_POST['titel'],$_POST['privacySetting'],$imageData,$soundData,$_POST['inlineText'],$_POST['tags']);
+		if(db_uploadePictogram($pictogram) == false)
+			error('6');
 		
 		header('Location: /#makePic/e=0');
 	}

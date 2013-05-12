@@ -12,3 +12,4 @@ var picsManagerMake_js_actualError2 = "Det billede du uploadede var ikke nogen b
 var picsManagerMake_js_actualError3 = "Den lyd fil du uploadede er ikke et understøttet format.";
 var picsManagerMake_js_actualError4 = "Du bliver nødt til at udfylde en titel for dit pictogram.";
 var picsManagerMake_js_actualError5 = "En uforudset fejl er forekommet.";
+var picsManagerMake_js_actualError5 = "Der var en fejl med databasen, prøv venligst igen senere.";

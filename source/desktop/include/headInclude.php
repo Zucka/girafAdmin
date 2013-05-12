@@ -13,6 +13,10 @@
 			include('assets/lang/navigation/navigation.en.php');
 			break;
 	}
+	
+	//Include the database file
+	require_once "db/new.db.php";
+	
 	//Parse the $_POST array onto the navigation.js script
 	echo "<script>
 			var postData = ";

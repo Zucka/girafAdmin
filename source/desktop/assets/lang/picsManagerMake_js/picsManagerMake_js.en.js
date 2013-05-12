@@ -12,3 +12,4 @@ var picsManagerMake_js_actualError2 = "The image you uploaded is no image.";
 var picsManagerMake_js_actualError3 = "The sound file you uploaded is not supported in this system.";
 var picsManagerMake_js_actualError4 = "You need to enter a title for your pictogram.";
 var picsManagerMake_js_actualError5 = "An unforseen error has occured.";
+var picsManagerMake_js_actualError6 = "There was an error with the database, please try again later.";
