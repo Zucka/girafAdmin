@@ -2,7 +2,7 @@
 require "db/new.db.php";
 
 //Run function
-$pictogram = makeJsonPictogram("testPic","3","","","Super Hest","hest fisk, ko,and.rasmus;læder:disko");
+$pictogram = makeJsonPictogram("testPic","3","","","Super Hest","Ko,spand . and;kat : land..spand");
 echo "Pictogram: ".$pictogram;
 db_uploadePictogram($pictogram);
 
@@ -20,8 +20,12 @@ function db_uploadePictogram($jsonPictogram){
 	    	"values":['.$jsonPictogram.']
 	    }
 	}';
+	
+	echo "<br><br>Data: ".$data;
+	
 	$result = db_query($data);
 	echo "<br><br>Result: ".$result['status'];
+	echo "<br><br>Error :".$result['errors'][0];
 	/*if ($result['status'] == 'OK')
 	{
 		return $result['data'];
@@ -44,7 +48,7 @@ function makeJsonPictogram($title,$privacy,$imageString,$soundString,$inlineText
 	
 	$regex = "/[\t\s,.;:]+/";
 	$tagArray = preg_split($regex,$tagString);
-	if(count($tagArray)==0)
+	if($tagArray[0]=="")
 		$tagPrint = "null";
 	else
 		$tagPrint = '["'.implode('","',$tagArray).'"]';
@@ -66,15 +70,21 @@ function makeJsonPictogram($title,$privacy,$imageString,$soundString,$inlineText
 	else
 		$inlineText = '"'.$inlineText.'"';
 	
-	return 
-	'{ 
+	
+	$returnVar = '{ 
 		"name": "'.$title.'", 
-		"public": '.$privacyBool.', 
-		"image": '.$imageString.', 
-		"sound": '.$soundString.', 
-		"text": '.$inlineText.', 
-		"categories": null, 
-		"tags": '.$tagPrint.' 
-	}';
+		"public": '.$privacyBool;
+		
+	if($imageString != "null")	
+		$returnVar .= ',"image": '.$imageString;
+	if($soundString != "null")
+		$returnVar .= ',"sound": '.$soundString;
+	if($inlineText != "null")
+		$returnVar .= ',"text": '.$inlineText;
+	if($tagPrint != "null")
+		$returnVar .= ',"tags": '.$tagPrint;
+	$returnVar .='}';
+	
+	return $returnVar;
 }
 ?>

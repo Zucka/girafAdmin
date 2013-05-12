@@ -4,7 +4,6 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 	$_POST['inlineText'];
 	$_POST['privacySetting'];
 	$_POST['tags'];
-	$_POST['category'];
 	
 	function error($error){
 		header('Location: /#makePic/e='.$error);
@@ -59,7 +58,7 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 			$image->load($_FILES['uploadImage']['tmp_name']);
 			
 			$image->resizeCordsColor(400,400,0,0,$image->getWidth(),$image->getHeight(),255,255,255);
-			$image->save("tempTest/picsManagerMake.jpeg");//TODO: Make this line into a DB query
+			$imageData = $image->output();
 		}
 		if(file_exists($_FILES['soundFile']['tmp_name']) || is_uploaded_file($_FILES['soundFile']['tmp_name'])){//Sound file was uploaded
 			@is_uploaded_file($_FILES['soundFile']['tmp_name'])// check that the file we are working on really was an HTTP upload
@@ -71,7 +70,7 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 			$fh = fopen($_FILES['soundFile']['tmp_name'], 'r');
 			$data = fread($fh, filesize($_FILES['soundFile']['tmp_name']));
 			fclose($fh);
-			$data;
+			$soundData = $data;
 		}
 		
 		header('Location: /#makePic/e=0');

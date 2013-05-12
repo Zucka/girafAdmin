@@ -62,13 +62,13 @@ class SimpleImage {
    function output($image_type=IMAGETYPE_JPEG) {
  
       if( $image_type == IMAGETYPE_JPEG ) {
-         imagejpeg($this->image);
+         return imagejpeg($this->image);
       } elseif( $image_type == IMAGETYPE_GIF ) {
  
-         imagegif($this->image);
+         return imagegif($this->image);
       } elseif( $image_type == IMAGETYPE_PNG ) {
  
-         imagepng($this->image);
+         return imagepng($this->image);
       }
    }
    function getWidth() {
