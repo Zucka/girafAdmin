@@ -70,13 +70,13 @@ echo '
 	<script src="../assets/js/bootstrap.min.js"></script>
 	<script>
 		$(".checkbox-checkall").change(function (){
-			if (this.attr("checked"))
+			if (!$(this).attr("checked"))
 			{
-				$("input[type=checkbox]").attr("checked",true);
+				$("input[type=checkbox]").prop("checked",true);
 			}
 			else
 			{
-				$("input[type=checkbox]").attr("checked",false);
+				$("input[type=checkbox]").prop("checked",false);
 			}
 		});
 	</script>
