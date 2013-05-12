@@ -31,14 +31,9 @@ switch ($lang) {
 		break;
 }
 
-require_once($_SERVER['DOCUMENT_ROOT']."/db/db.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/db/new.db.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/include/phpqrcode/qrlib.php");
 $userName = $_SESSION['username'];
-$result = $connection->query("SELECT * FROM Profile WHERE idProfile = '$userName' ");
-if ($result->num_rows > 0)
-{ 
-	$row = $result->fetch_assoc();
-}
 if (isset($_GET["action"])) {$action = $_GET["action"];} else {$action = '';}
 $content = getContentFromAction($action);
 echo '
