@@ -184,4 +184,29 @@ function db_insertNewQrCode($userId,$newQr)
 		return FALSE;
 	}
 }
+
+function db_getProfiles(){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+		"data": {
+	    	"type":"profile",
+	    	"view":"list",
+	    	"ids":null
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
 ?>
