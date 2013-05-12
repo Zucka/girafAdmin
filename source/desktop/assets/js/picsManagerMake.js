@@ -1,17 +1,4 @@
 $(window).ready(function() {
-	/*$('#soundFile').on('change', function(){
-		if (this.files && this.files[0]) {
-			
-
-			reader.onload = function (e) {
-				$('#embedContainer').html('<embed height="50" width="100" id="soundPlayer" src="'+e.target.result+'">');
-				alert("test1");
-			}
-			alert("test2");
-			
-			reader.readAsDataURL(this.files[0]);
-		}*/
-		
 	$("#soundFile").on('change',function(){
 		var reader = new FileReader(); 
 		
@@ -21,9 +8,7 @@ $(window).ready(function() {
 			$('#audioContainer').html('<audio id="audioElement" controls>'+
 										'<source id="soundElement" src="'+e.target.result+'">'+
 										picsManagerMake_js_soundElementAlt+
-									'<audio>');
-			//$('#audioContainer').html('<embed height="50" width="100" id="soundPlayer" src="'+e.target.result+'">');
-					
+									'<audio>');					
 		}
 	});
 		
