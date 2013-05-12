@@ -27,13 +27,10 @@
 			$errorStartUsername = '	<div class="control-group error">
 										<div class="controls">
 								';
-			$errorEndUsername	= '			<span class="help-inline">'.$LOGIN_STRINGS["errorUsernameNotFound"].'</span>
+			$errorEndUsername	= '	
 										</div> <!-- controls -->
 									</div> <!-- control-group error -->
 								';
-		}
-		elseif ($error == '2')
-		{
 			$errorStartPassword = '	<div class="control-group error">
 										<div class="controls">
 								';

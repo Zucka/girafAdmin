@@ -10,7 +10,6 @@
 		$LOGIN_STRINGS["formRememberMe"] = "Remember me";
 		$LOGIN_STRINGS["formSignIn"] = "Sign In";
 
-		$LOGIN_STRINGS["errorUsernameNotFound"] = "Username was not found";
-		$LOGIN_STRINGS["errorWrongPassword"] = "Wrong Password";
+		$LOGIN_STRINGS["errorWrongPassword"] = "Login failed";
 
 ?>
