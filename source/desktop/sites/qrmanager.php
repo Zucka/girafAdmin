@@ -68,6 +68,18 @@ echo '
 
 	<script src="../assets/js/jquery.min.js"></script>
 	<script src="../assets/js/bootstrap.min.js"></script>
+	<script>
+		$(".checkbox-checkall").change(function (){
+			if (this.attr("checked"))
+			{
+				$("input[type=checkbox]").attr("checked",true);
+			}
+			else
+			{
+				$("input[type=checkbox]").attr("checked",false);
+			}
+		});
+	</script>
 </body>
 </html>
 ';
@@ -91,6 +103,85 @@ function getContentFromAction($action)
 		default:
 			return mainContent();
 	}
+}
+
+function choosePrintContent()
+{
+	global $QRMANAGER_STRINGS;
+	$profiles = db_getProfiles();
+	$children = '';
+	$guardians = '';
+	$parents = '';
+	foreach ($profiles as $value) {
+		switch ($value['role']) {
+			case '2':
+				$children .= '
+					<tr>
+						<td>'.$value['name'].'</td>
+						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
+					</tr>';
+				break;
+			case '0':
+				$guardians .= '
+					<tr>
+						<td>'.$value['name'].'</td>
+						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
+					</tr>';
+				break;
+			case '1': 
+				$parents .= '
+					<tr>
+						<td>'.$value['name'].'</td>
+						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
+					</tr>';
+			default:
+				break;
+		}
+	}
+	$content = '
+	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpChoosePrint"].'</div>
+	<div class="row">
+		<div class="span12">
+			<p class="lead text-center">'.$QRMANAGER_STRINGS["choosePrintLeadInfoMessage"].'</p>
+		</div>
+	</div>
+	<form action="#qrManager/action=choosePrintSubmit" method="post">
+	<div class="row">
+		<div class="span1"></div>
+		<div class="span3">
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Children"].'</h4>
+			<table class="table table-bordered table-striped qrmanager-table">
+				'.$children.'
+			</table>
+		</div>
+		<div class="span3">
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Guardians"].'</h4>
+			<table class="table table-bordered table-striped qrmanager-table">
+				'.$guardians.'
+			</table>
+		</div>
+		<div class="span3">
+			<h4 class="text-center">'.$QRMANAGER_STRINGS["Parents"].'</h4>
+			<table class="table table-bordered table-striped qrmanager-table">
+				'.$parents.'
+			</table>
+		</div>
+		<div class="span1"></div>
+	</div>
+	<div class="row">
+		<div class="span12">
+			'.$QRMANAGER_STRINGS['checkbox-checkall'].'<input class="checkbox-checkall" type="checkbox">
+		</div>
+	</div>
+	<div class="row">
+		<div class="span12">
+			<input class="btn-primary btn-large btn-choosePrintSubmit" type="submit" value="'.$QRMANAGER_STRINGS["choosePrintSubmitText"].'">
+		</div>
+	</div>
+	</form>
+	';
+
+	return $content;
 }
 
 function mainContent()
@@ -249,81 +340,7 @@ function editSubmitContent()
 	return $content;
 }
 
-function choosePrintContent()
-{
-	global $QRMANAGER_STRINGS;
-	$profiles = db_getProfiles();
-	$children = '';
-	$guardians = '';
-	$parents = '';
-	foreach ($profiles as $value) {
-		switch ($value['role']) {
-			case '0':
-				break;
-			case '1':
-				$children .= '
-					<tr>
-						<td>'.$value['name'].'</td>
-						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
-					</tr>';
-				break;
-			case '2':
-				$guardians .= '
-					<tr>
-						<td>'.$value['name'].'</td>
-						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
-					</tr>';
-				break;
-			case '3': 
-				$parents .= '
-					<tr>
-						<td>'.$value['name'].'</td>
-						<td><input type="checkbox" name="ids[]" value="'.$value['id'].'"></td>
-					</tr>';
-			default:
-				break;
-		}
-	}
-	$content = '
-	<div class="breadcrump">'.$QRMANAGER_STRINGS["breadCrumpChoosePrint"].'</div>
-	<div class="row">
-		<div class="span12">
-			<p class="lead text-center">'.$QRMANAGER_STRINGS["choosePrintLeadInfoMessage"].'</p>
-		</div>
-	</div>
-	<form action="#qrManager/action=choosePrintSubmit" method="post">
-	<div class="row">
-		<div class="span1"></div>
-		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["Children"].'</h4>
-			<table class="table table-bordered table-striped qrmanager-table">
-				'.$children.'
-			</table>
-		</div>
-		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["Guardians"].'</h4>
-			<table class="table table-bordered table-striped qrmanager-table">
-				'.$guardians.'
-			</table>
-		</div>
-		<div class="span3">
-			<h4 class="text-center">'.$QRMANAGER_STRINGS["Parents"].'</h4>
-			<table class="table table-bordered table-striped qrmanager-table">
-				'.$parents.'
-			</table>
-		</div>
-		<div class="span1"></div>
-	</div>
-	<div class="row">
-		<div class="span12">
-			<input class="btn-primary btn-large btn-choosePrintSubmit" type="submit" value="'.$QRMANAGER_STRINGS["choosePrintSubmitText"].'">
-		</div>
-	</div>
-	</form>
-	';
 
-	return $content;
-}
 
 function choosePrintSubmitContent()
 {

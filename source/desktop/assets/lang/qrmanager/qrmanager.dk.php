@@ -27,6 +27,7 @@
 		$QRMANAGER_STRINGS["breadCrumpChoosePrint"] = '<a href="index.php#qrManager/action=main">QR Manager</a> &rarr; Vælg QR at printe';
 		$QRMANAGER_STRINGS["choosePrintLeadInfoMessage"] = 'Vælg QR at printe';
 		$QRMANAGER_STRINGS["choosePrintSubmitText"] = 'Bekræft';
+		$QRMANAGER_STRINGS['checkbox-checkall'] = 'Vælg alle';
 
 		/* CHOOSE QR SUBMIT */
 		$QRMANAGER_STRINGS["breadCrumpChoosePrintSubmit"] = '<a href="index.php#qrManager/action=main">QR Manager</a> &rarr; <a href="index.php#qrManager/action=choosePrint">Vælg QR at printe</a> &rarr; Resultat';

@@ -151,6 +151,9 @@
 			$_SESSION['password'] = $password;
 			$role = db_getProfileInfo($result['profile']);
 			$_SESSION['role'] = $role['role'];
+			$rights = db_getRights($result['profile']);
+			$_SESSION['update'] = $rights['update'];
+			$_SESSION['delete'] = $rights['delete'];
 			session_write_close();
 			header('location:/#ownProfile');
 		}

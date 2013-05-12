@@ -256,6 +256,34 @@ function db_getGuardian_of($guardian_of){
 	}
 }
 
+function db_getRights($id)
+{
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+	    "data": {
+	    	"type":"profile",
+	    	"view":"list",
+	    	"ids":null
+	    }
+	}';
+	$result = db_query($data);
+	if (if ($result['status'] != 'OK'))
+	{
+		return false;
+	}
+	foreach ($result['data'] as $value) {
+		if ($value['id'] == $id)
+		{
+			return array("update" => $value['update'],"delete" => $value['delete']);
+		}
+	}
+}
+
 ?>
 
 
