@@ -192,7 +192,7 @@ function db_getProfileInfo($id){
 		"data": {
 	    	"type":"profile",
 	    	"view":"details",
-	    	"ids":["'.$id.'"]
+	    	"ids":['.$id.']
 	    }
 	}';
 	$result = db_query($data);
