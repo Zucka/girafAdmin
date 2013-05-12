@@ -16,6 +16,22 @@ $(window).ready(function() {
 		readURL(this);
 	});
 	
+	//Make sure that submit can not be pressed unless there is a title. (Also check in PHP)
+	$("#titel").on('change',function(){
+		checkIfTitleIsSet();
+	});
+	$("#titel").on('keyup',function(){
+		checkIfTitleIsSet();
+	});
+	function checkIfTitleIsSet(){
+		if($("#titel").val() != ""){
+			$("#submit").prop({disabled: false});
+		}
+		else{
+			$("#submit").prop({disabled: true});
+		}
+	}
+	
 	if(uploadError.length == 1){
 		//Write the Error message from the profilePicUpload
 		
@@ -24,7 +40,7 @@ $(window).ready(function() {
 		
 		switch(uploadError){
 			case "0":
-				actualError = picsManagerMake_js_actualError0;
+				actualError = picsManagerMake_js_actualError0part1+' <a href="#category">'+picsManagerMake_js_actualError0part2+'</a>';
 				modalTitel = picsManagerMake_js_succesTitel;
 			break;
 			
@@ -43,8 +59,13 @@ $(window).ready(function() {
 				modalTitel = picsManagerMake_js_errorTitel;
 			break;
 			
-			default:
+			case "4":
 				actualError = picsManagerMake_js_actualError4;
+				modalTitel = picsManagerMake_js_errorTitel;
+			break;
+			
+			default:
+				actualError = picsManagerMake_js_actualError5;
 				modalTitel = picsManagerMake_js_errorTitel;
 		}
 		
