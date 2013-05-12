@@ -2,7 +2,6 @@
 	require_once "db/new.db.php";
 
 	// GET USER INFO (ROLE AND ID)
-
 	$buffer = '{
 		"action": null,
 	    "auth": {
