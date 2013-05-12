@@ -2,7 +2,7 @@
 //CONNECTION TO THE DATABASE
 
 $url = "localhost";
-$username = "jsore10";
+$username = "jens";
 $password = "tts37ent";
 $database = "savannah";
 $connection = new mysqli($url,$username,$password,$database);
