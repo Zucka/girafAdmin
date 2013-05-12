@@ -199,7 +199,7 @@ function choosePrintSubmitContent()
 	$inRow = false;
 	foreach ($_POST['ids'] as $value) {
 		$newQr = generateNewQr();
-		db_insertNewQrCode($value,$newQr);
+		db_insertNewQrCode(intval($value),$newQr);
 		if ($i % 3 == 0)
 		{
 			if ($inRow)

@@ -122,7 +122,7 @@ function db_getCertificatesFromIds($session,$ids)
 	$newQr should be a 512 character unique string 
 
 */
-function db_insertNewQrCode($userId,$newQr)
+function db_insertNewQrCode($id,$newQr)
 {
 	global $session,$username,$password;
 	$data = '{
@@ -135,10 +135,10 @@ function db_insertNewQrCode($userId,$newQr)
 			"type": "user",
 			"values": [
 				{
-					"id": '.$userId.',
+					"id": '.$id.',
 					"value": {
 						"certificate": "'.$newQr.'",
-						"id":'.$userId.'
+						"id":'.$id.'
 					}
 				}
 			]
