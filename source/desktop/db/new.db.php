@@ -181,7 +181,7 @@ function db_getProfiles(){
 	}
 }
 
-function db_getProfileInfo(){
+function db_getProfileInfo($id){
 	global $session,$username,$password;
 	$data = '{
 		"action": "read",
@@ -192,7 +192,7 @@ function db_getProfileInfo(){
 		"data": {
 	    	"type":"profile",
 	    	"view":"details",
-	    	"ids":['.$userId.']
+	    	"ids":["'.$id.'"]
 	    }
 	}';
 	$result = db_query($data);

@@ -152,6 +152,8 @@
 			$_SESSION['lang'] = $lang;
 			$_SESSION['dbsess'] = $result['session'];
 			$_SESSION['password'] = $password;
+			$role = db_getProfileInfo($result['profile']);
+			$_SESSION['role'] = $role['role'];
 			session_write_close();
 			header('location:/#ownProfile');
 		}
