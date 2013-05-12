@@ -8,7 +8,7 @@ if (isset($_SESSION['userId'])) {$userId = $_SESSION['userId'];} else {$userId =
 
 function db_query($json)
 {
-	$address = '172.25.26.181';
+	$address = '130.225.196.27';
 	$port = 2468;
 	$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 	socket_connect($socket, '172.25.26.181',2468);
