@@ -31,21 +31,21 @@
 	    	"ids":['.$profile.']
 	    }
 	}';
-	$return = db_query($buffer);
+	$profileInfo = db_query($buffer)["data"];
 
-	echo $return["data"][0]["name"];
+	echo $profileInfo[0]["name"];
 		echo "</br>";
-	echo $return["data"][0]["department"];
+	echo $profileInfo[0]["phone"];
 		echo "</br>";
-	echo $return["data"][0]["guardian_of"][0];
+	echo $profileInfo[0]["address"];
 		echo "</br>";
-	echo $return["data"][0]["name"];
+	echo $profileInfo[0]["email"];
 	echo "</br>";
 
 	// GET DEPARTMENT
 
-	$guardian_of = $return["data"][0]["guardian_of"][0];
-	$department = $return["data"][0]["department"];
+	$guardian_of = $profileInfo[0]["guardian_of"][0];
+	$department = $profileInfo[0]["department"];
 
 	$buffer = '{
 		"action": "read",
@@ -59,8 +59,15 @@
 	    	"ids":['.$department.']
 	    }
 	}';
-	$return = db_query($buffer);
-
+	$departmentInfoe = db_query($buffer)["data"];
+	echo $departmentInfoe;
+	echo $departmentInfoe[0]["name"];
+		echo "</br>";
+	echo $departmentInfoe[0]["phone"];
+		echo "</br>";
+	echo $departmentInfoe[0]["address"];
+		echo "</br>";
+	echo $departmentInfoe[0]["email"];
 	echo "</br>";
 
 	// GET GUARDIAN OF
@@ -77,10 +84,16 @@
 	    	"ids":['.$guardian_of.']
 	    }
 	}';
+	$guardian_ofInfo = db_query($buffer)["data"];
 
-	$return = db_query($buffer);
-
-
+	echo $guardian_ofInfo[0]["name"];
+		echo "</br>";
+	echo $guardian_ofInfo[0]["phone"];
+		echo "</br>";
+	echo $guardian_ofInfo[0]["address"];
+		echo "</br>";
+	echo $guardian_ofInfo[0]["email"];
+	echo "</br>";
 
 
 ?>
