@@ -3,38 +3,9 @@ session_start();
 if (isset($_SESSION['dbsess'])) {$session = $_SESSION['dbsess'];} else {$session = '';}
 if (isset($_SESSION['username'])) {$username = $_SESSION['username'];} else {$username = '';}
 if (isset($_SESSION['dbsess'])) {$password = $_SESSION['password'];} else {$password = '';}
-/* 
-	$json should be the json to be sent NOT ENCODED, i.e. it should be an associative array
-	Returns the JSON response NOT ENCODED, i.e. it is an associative array
- */
-/*
-function db_query($json)
-{
-	global $db_api_url;
-    $content = json_encode($json);
-
-    $curl = curl_init($db_api_url);
-    curl_setopt($curl, CURLOPT_HEADER, false);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_HTTPHEADER,
-            array("Content-type: application/json"));
-    curl_setopt($curl, CURLOPT_POST, true);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $content);
-
-    $json_response = curl_exec($curl);
-
-    $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-    if ( $status != 201 ) {
-        die("Error: call to URL $db_api_url failed with status $status, response $json_response, curl_error " . curl_error($curl) . ", curl_errno " . curl_errno($curl));
-    }
+if (isset($_SESSION['userId'])) {$userId = $_SESSION['userId'];} else {$userId = '';}
 
 
-    curl_close($curl);
-
-    return json_decode($json_response, true);
-}
-*/
 function db_query($json)
 {
 	$address = '172.25.26.181';
@@ -209,4 +180,82 @@ function db_getProfiles(){
 		return false;
 	}
 }
+
+function db_getProfileInfo(){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+		"data": {
+	    	"type":"profile",
+	    	"view":"details",
+	    	"ids":['.$userId.']
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function db_getDepartmentInfo($departmentId){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+	    "data": {
+	    	"type":"department",
+	    	"view":"details",
+	    	"ids":['.$departmentId.']
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function db_getGuardian_of($guardian_of){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+	    "data": {
+	    	"type":"profile",
+	    	"view":"details",
+	    	"ids":['.$guardian_of.']
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
 ?>
+
+
