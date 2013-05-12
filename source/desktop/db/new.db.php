@@ -146,6 +146,7 @@ function db_insertNewQrCode($userId,$newQr)
 	';
 	$result = db_query($data);
 	error_log($result['status']);
+	error_log($result['data']);
 	if ($result['status'] == 'OK')
 	{
 		return TRUE;
