@@ -21,19 +21,16 @@ function db_uploadePictogram($jsonPictogram){
 	    }
 	}';
 	
-	echo "<br><br>Data: ".$data;
-	
 	$result = db_query($data);
-	echo "<br><br>Result: ".$result['status'];
-	echo "<br><br>Error :".$result['errors'][0];
-	/*if ($result['status'] == 'OK')
+
+	if ($result['status'] == 'OK')
 	{
 		return $result['data'];
 	}
 	else
 	{
 		return false;
-	}*/
+	}
 }
 
 function makeJsonPictogram($title,$privacy,$imageString,$soundString,$inlineText,$tagString){
@@ -46,45 +43,33 @@ function makeJsonPictogram($title,$privacy,$imageString,$soundString,$inlineText
 		$privacyBool = "true";
 	}
 	
+	//Handle Tag Array with various splits
 	$regex = "/[\t\s,.;:]+/";
 	$tagArray = preg_split($regex,$tagString);
 	if($tagArray[0]=="")
-		$tagPrint = "null";
+		$tagPrint = "";
 	else
 		$tagPrint = '["'.implode('","',$tagArray).'"]';
-	
-	//If any of these are empty, make them contain the string NULL instead
-	//Else add string start and end to the string
-	if($imageString == "")
-		$imageString = "null";
-	else
-		$imageString = '"'.$imageString.'"';
-		
-	if($soundString == "")
-		$soundString = "null";
-	else
-		$soundString = '"'.$soundString.'"';
-		
-	if($inlineText == "")
-		$inlineText = "null";
-	else
-		$inlineText = '"'.$inlineText.'"';
-	
-	
+
 	$returnVar = '{ 
 		"name": "'.$title.'", 
 		"public": '.$privacyBool;
 		
-	if($imageString != "null")	
+	//If any of these are empty, don't include them in the JSON
+	if($imageString != "")	
 		$returnVar .= ',"image": '.$imageString;
-	if($soundString != "null")
+	if($soundString != "")
 		$returnVar .= ',"sound": '.$soundString;
-	if($inlineText != "null")
+	if($inlineText != "")
 		$returnVar .= ',"text": '.$inlineText;
-	if($tagPrint != "null")
+	if($tagPrint != "")
 		$returnVar .= ',"tags": '.$tagPrint;
 	$returnVar .='}';
 	
 	return $returnVar;
 }
+
+	echo "<br><br>Data: ".$data;
+	echo "<br><br>Result: ".$result['status'];
+	echo "<br><br>Error :".$result['errors'][0];
 ?>
