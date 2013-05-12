@@ -33,7 +33,7 @@
 			</head>
 			<body>
 				<div align="center">
-					<span class="breadcrump"> </span>
+					<h1>'.$CREATEPROFILE_STRINGS["headline"].'</h1>
 				</div>
 	
 				<form class="form-signin" action="/#createProfile">
