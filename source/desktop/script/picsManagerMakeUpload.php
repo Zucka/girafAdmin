@@ -46,6 +46,7 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 	
 	//Check files
 	if(isset($_FILES['uploadImage']['size'])){//Image file was uploaded
+		error('3');
 		@is_uploaded_file($_FILES['uploadImage']['tmp_name'])// check that the file we are working on really was an HTTP upload
 			or error('1');
 			
