@@ -95,6 +95,8 @@
 	echo $guardian_ofInfo[0]["email"];
 	echo "</br>";
 
+	$child1 = db_getProfiles($guardian_of);
+
 
 ?>
 
