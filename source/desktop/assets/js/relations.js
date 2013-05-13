@@ -1,10 +1,13 @@
+var goodchild = false;
+var goodguardian = false;
+
 $(document).ready(function() {
 	// Handler for .ready() called.
-	$(".checkbox").change( function(){
-		dataCheck();		
+	$(".checkbox").on('click', function(){
+		dataCheck();	
 	});
 	
-	if(uploadError.length == 1){
+/* 	if(uploadError.length == 1){
 		//Write the Error message from the profilePicUpload
 		
 		var errorString = "";
@@ -35,36 +38,26 @@ $(document).ready(function() {
 		
 		changeModalInner(modalTitel,reportString);
 		openModal();
-	}
+	} */
 });
 
  function dataCheck(){
-	for( $('input[name~="child"]')){
+	$(".child").each(function(){
+		if(jQuery('#children input[type=checkbox]:checked').length) {goodchild = true;  }else {goodchild = false;alert("12345");} 
+	});
 	
+	$(".guardian").each(function(){
+		if(jQuery('#guardian input[type=checkbox]:checked').length) {goodguardian = true;  }else {goodguaridan = false;alert("12345");} 
+	});
 	
-	
-	}
- 
-	//check if #profile == 2 || 3
-	//if true #email is set
-	//if false only check name
-	if($('#name').val() != ""){
-	 	if($('#profile').val() == "2" || $('#profile').val() == "3"){
-			var email = $('#inputEmail');
-			var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-			if (filter.test(email.val())){
-				$('#create').removeAttr('disabled');
-			}
-			else{
-				$('#create').attr('disabled','disabled');
-			}
-		}
-		else{
-			$('#create').removeAttr('disabled');
-		}
+	if(goodchild && goodguardian){
+		$('#create').removeAttr('disabled');
 	}
 	else{
 		$('#create').attr('disabled','disabled');
-	}
-} 
+	}	
+}	
+	
+	
+
   
