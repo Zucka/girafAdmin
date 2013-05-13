@@ -337,11 +337,11 @@ function makeJsonPictogram($title,$privacy,$imageString,$soundString,$inlineText
 		
 	//If any of these are empty, don't include them in the JSON
 	if($imageString != "")	
-		$returnVar .= ',"image": '.$imageString;
+		$returnVar .= ',"image": "'.$imageString.'"';
 	if($soundString != "")
-		$returnVar .= ',"sound": '.$soundString;
+		$returnVar .= ',"sound": "'.$soundString.'"';
 	if($inlineText != "")
-		$returnVar .= ',"text": '.$inlineText;
+		$returnVar .= ',"text": "'.$inlineText.'"';
 	if($tagPrint != "")
 		$returnVar .= ',"tags": '.$tagPrint;
 	$returnVar .='}';
