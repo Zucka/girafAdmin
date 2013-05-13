@@ -31,6 +31,10 @@
 		//Call upload script
 		require "script/picsManagerMakeUpload.php";
 	}
+	if(isset($_POST['createProfileSubmit'])){
+		//Call upload script
+		require "script/createProfileSubmit.php";
+	}
 ?>
 	<html lang="en">
 	<meta charset="utf-8">
