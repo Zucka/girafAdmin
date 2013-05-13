@@ -44,7 +44,6 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 		$profileInfo = db_getProfileInfo($_SESSION["userId"]);
 	}
 	$departmentInfo = db_getDepartmentInfo($profileInfo[0]["department"]);
-
 	if ($action == '') {
 		switch ($profileInfo[0]["role"]) {
 			case '0':
@@ -73,6 +72,8 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 
 	function getTitleFromAction($action)
 	{
+		global $DEPARTMENT_STRINGS;
+		global $PROFILE_STRINGS;
 		switch ($action) {
 			case '':
 			case 'pedagogue':
@@ -174,7 +175,7 @@ function contentBlock2($role)
 							';
 		foreach($profileInfo[0]["guardian_of"] as $guardian_of) {
 			foreach ($listOfUsersAvailable as $user) {
-					if ($user[0]["role"] == 1) {
+					if ($user[0]["role"] == 1 && $user[0]["guardian_of"] == $guardian_of) {
 						$parents .= $user[0]["name"].';';
 					}
 				}
@@ -231,9 +232,11 @@ function contentBlock2($role)
 
 function contentBlock3()
 {
+	global $PROFILE_STRINGS;	
+	global $profileInfo;
 	$contentBlock3 ='
 					<div>
-						<img class="profile_picture" src="data:image/jpeg;base64{'.$profileInfo[0]["picture"].'}">
+						<img class="profile_picture" src="data:image/jpeg;base64,'.$profileInfo[0]["picture"].'">
 						<button class="btn profile-btn" type="button" onclick="changeProfilePicturePopup()"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["pictureEdit"].'</button>
 					</div>
 					';
@@ -267,7 +270,7 @@ function contentPersonalInfo($role)
 						<tr>
 							<td>'.$PROFILE_STRINGS["department"].'</td>
 							<td>'.$departmentInfo[0]["name"].'</td>
-							'.$btnEditVar.'
+							<td> </td>
 						</tr>
 					</table>
 					';}
@@ -419,9 +422,9 @@ function department()
 					<h3>'.$DEPARTMENT_STRINGS["h_pedagogues"].'</h3>
 					<table class="table table-striped">
 						<tr>
-							<th>'.$DEPARTMENT_STRINGS["tblName"].'</th>
-							<th>'.$DEPARTMENT_STRINGS["tblAttachedChildren"].'</th>
-							<th>'.$DEPARTMENT_STRINGS["tblEditPedagogue"].'</th>
+							<th>'.$PROFILE_STRINGS["tblName"].'</th>
+							<th>'.$PROFILE_STRINGS["h_attachedChildren"].'</th>
+							<th>'.$PROFILE_STRINGS["tblEditRelation"].'</th>
 						</tr>
 						<tr>
 							<td>Jens Hansen</td>

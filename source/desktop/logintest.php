@@ -39,7 +39,7 @@
 		echo "</br>";
 	echo $profileInfo[0]["address"];
 		echo "</br>";
-	echo $profileInfo[0]["email"];
+	echo $profileInfo[0]["picture"];
 	echo "</br>";
 
 	// GET DEPARTMENT

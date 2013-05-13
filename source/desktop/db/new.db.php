@@ -16,7 +16,7 @@ function db_query($json)
 	$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 	socket_connect($socket, '130.225.196.27',2468);
 	socket_write($socket, $json, strlen($json));
-	sleep(1);
+	sleep(0.1);
 	$buf = '';
 	$ret = '';
 	if (false !== ($bytes = socket_recv($socket, $buf, 2048000, MSG_WAITALL))) {

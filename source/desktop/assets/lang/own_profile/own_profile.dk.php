@@ -15,6 +15,12 @@
 			$PROFILE_STRINGS["mobilePhoneNr"] = "Mob :";
 			$PROFILE_STRINGS["address"] = "Adresse :";
 			$PROFILE_STRINGS["department"] = "Afdeling :";
+		// For Child page only
+			$PROFILE_STRINGS["mother"] = "Mors Tlf :";
+			$PROFILE_STRINGS["father"] = "Fars Tlf :";
+			$PROFILE_STRINGS["h_pedagogues"] = "Pædagog:";
+			$PROFILE_STRINGS["tblEditRelation"] = "Ret relation";
+
 
 		$PROFILE_STRINGS["h_attachedChildren"] = "Tilknyttede Børn:";
 			$PROFILE_STRINGS["tblName"] = "Navn";
@@ -34,31 +40,17 @@
 
 		$DEPARTMENT_STRINGS = array();
 
-		$DEPARTMENT_STRINGS["headerTitle"] = "Egen Profil &middot; GIRAF";
+		$DEPARTMENT_STRINGS["headerTitle"] = "Afdelings info &middot; GIRAF";
+		$DEPARTMENT_STRINGS["breadCrump"] = "Afdelings side";
 
-		$DEPARTMENT_STRINGS["breadCrump"] = "Egen Profil";
-		$DEPARTMENT_STRINGS["btnEdit"] = " Ret";
+		$DEPARTMENT_STRINGS["h_personalInfo"] = "Afdelings Information:";
+			$DEPARTMENT_STRINGS["dpHead"] = "Afdelingsleder :";
 
-
-		$DEPARTMENT_STRINGS["h_personalInfo"] = "Personlig Information:";
-			$DEPARTMENT_STRINGS["name"] = "Navn :";
-			$DEPARTMENT_STRINGSDEPARTMENT_STRINGS["phoneNr"] = "Tlf :";
-			$DEPARTMENT_STRINGS["mobilePhoneNr"] = "Mob :";
-			$DEPARTMENT_STRINGS["address"] = "Adresse :";
-			$DEPARTMENT_STRINGS["department"] = "Afdeling :";
-
-		$DEPARTMENT_STRINGS["h_attachedChildren"] = "Tilknyttede Børn:";
+		$DEPARTMENT_STRINGS["h_pedagogues"] = "Pædagogor:";
 			$DEPARTMENT_STRINGS["tblName"] = "Navn";
-			$DEPARTMENT_STRINGS["tbParents"] = "Forældre";
-			$DEPARTMENT_STRINGS["tblEditChild"] = "Ret barn profil";
-			$DEPARTMENT_STRINGS["tblEditProfile"] = " Ret profil";
+			$DEPARTMENT_STRINGS["tblAttachedChildren"] = "Attached Children";
+			$DEPARTMENT_STRINGS["tblEditPedagogue"] = "Edit relation";
 
-		$DEPARTMENT_STRINGS["pictureEdit"] = " Ændre";
-		$DEPARTMENT_STRINGS["security"] = "Sikkerhed";
-		$DEPARTMENT_STRINGS["changePassword"] = "Skift kodeord";
-		$DEPARTMENT_STRINGS["placeholderPassword"] = "Kodeord";
-		$DEPARTMENT_STRINGS["placeholderRepeatPassword"] = "Kodeord Igen";
-		$DEPARTMENT_STRINGS["changePasswordSubmit"] = "Skift";
-		$DEPARTMENT_STRINGS["qrGenerateNewAndPrint"] = "Generer ny QR og print";
+		$DEPARTMENT_STRINGS["pictureEdit"] = " Edit";
 
 ?>
