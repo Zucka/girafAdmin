@@ -35,9 +35,9 @@ function db_uploadeProfilePic($profileImage){
 
 function makeJsonProfilePic($id,$profileImage){
 	'[{ 
-		"id": INT, 
+		"id": '.$id.', 
 		"value": value_object 
-	}]'
+	}]';
 }
 
 function db_uploadePictogram($jsonPictogram){
