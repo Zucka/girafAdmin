@@ -7,6 +7,39 @@ echo "Pictogram: ".$pictogram;
 db_uploadePictogram($pictogram);
 
 //Functions
+function db_uploadeProfilePic($profileImage){
+	global $session,$username,$password;
+	$data = '{
+		"action": "update",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+	    "data": {
+	    	"type":"profile",
+	    	"values":['.$jsonPictogram.']
+	    }
+	}';
+	
+	$result = db_query($data);
+
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function makeJsonProfilePic($id,$profileImage){
+	'[{ 
+		"id": INT, 
+		"value": value_object 
+	}]'
+}
+
 function db_uploadePictogram($jsonPictogram){
 	global $session,$username,$password;
 	$data = '{

@@ -1,5 +1,8 @@
 <?php
-session_start();
+if( ! $_SESSION)
+{
+	session_start();
+}
 if (isset($_SESSION['dbsess'])) {$session = $_SESSION['dbsess'];} else {$session = '';}
 if (isset($_SESSION['username'])) {$username = $_SESSION['username'];} else {$username = '';}
 if (isset($_SESSION['dbsess'])) {$password = $_SESSION['password'];} else {$password = '';}
