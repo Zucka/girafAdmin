@@ -2,11 +2,44 @@
 require "db/new.db.php";
 
 //Run function
-$pictogram = makeJsonPictogram("testPic","3","","","Super Hest","hest fisk, ko,and.rasmus;læder:disko");
+$pictogram = makeJsonPictogram("testPic","3","","","Super Hest","Ko,spand . and;kat : land..spand");
 echo "Pictogram: ".$pictogram;
 db_uploadePictogram($pictogram);
 
 //Functions
+function db_uploadeProfilePic($profileImage){
+	global $session,$username,$password;
+	$data = '{
+		"action": "update",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+	    "data": {
+	    	"type":"profile",
+	    	"values":['.$jsonPictogram.']
+	    }
+	}';
+	
+	$result = db_query($data);
+
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function makeJsonProfilePic($id,$profileImage){
+	'[{ 
+		"id": '.$id.', 
+		"value": value_object 
+	}]';
+}
+
 function db_uploadePictogram($jsonPictogram){
 	global $session,$username,$password;
 	$data = '{
@@ -20,16 +53,17 @@ function db_uploadePictogram($jsonPictogram){
 	    	"values":['.$jsonPictogram.']
 	    }
 	}';
+	
 	$result = db_query($data);
-	echo "<br><br>Result: ".$result['status'];
-	/*if ($result['status'] == 'OK')
+
+	if ($result['status'] == 'OK')
 	{
 		return $result['data'];
 	}
 	else
 	{
 		return false;
-	}*/
+	}
 }
 
 function makeJsonPictogram($title,$privacy,$imageString,$soundString,$inlineText,$tagString){
@@ -42,39 +76,33 @@ function makeJsonPictogram($title,$privacy,$imageString,$soundString,$inlineText
 		$privacyBool = "true";
 	}
 	
+	//Handle Tag Array with various splits
 	$regex = "/[\t\s,.;:]+/";
 	$tagArray = preg_split($regex,$tagString);
-	if(count($tagArray)==0)
-		$tagPrint = "null";
+	if($tagArray[0]=="")
+		$tagPrint = "";
 	else
 		$tagPrint = '["'.implode('","',$tagArray).'"]';
-	
-	//If any of these are empty, make them contain the string NULL instead
-	//Else add string start and end to the string
-	if($imageString == "")
-		$imageString = "null";
-	else
-		$imageString = '"'.$imageString.'"';
-		
-	if($soundString == "")
-		$soundString = "null";
-	else
-		$soundString = '"'.$soundString.'"';
-		
-	if($inlineText == "")
-		$inlineText = "null";
-	else
-		$inlineText = '"'.$inlineText.'"';
-	
-	return 
-	'{ 
+
+	$returnVar = '{ 
 		"name": "'.$title.'", 
-		"public": '.$privacyBool.', 
-		"image": '.$imageString.', 
-		"sound": '.$soundString.', 
-		"text": '.$inlineText.', 
-		"categories": null, 
-		"tags": '.$tagPrint.' 
-	}';
+		"public": '.$privacyBool;
+		
+	//If any of these are empty, don't include them in the JSON
+	if($imageString != "")	
+		$returnVar .= ',"image": '.$imageString;
+	if($soundString != "")
+		$returnVar .= ',"sound": '.$soundString;
+	if($inlineText != "")
+		$returnVar .= ',"text": '.$inlineText;
+	if($tagPrint != "")
+		$returnVar .= ',"tags": '.$tagPrint;
+	$returnVar .='}';
+	
+	return $returnVar;
 }
+
+	echo "<br><br>Data: ".$data;
+	echo "<br><br>Result: ".$result['status'];
+	echo "<br><br>Error :".$result['errors'][0];
 ?>

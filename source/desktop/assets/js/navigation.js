@@ -37,6 +37,7 @@ window.onhashchange = function(){
 	{
 		case "":
 		case "#ownProfile":
+		case "#otherProfiles":
 			destinationPath = "sites/own_profile.php";
 		break;
 		

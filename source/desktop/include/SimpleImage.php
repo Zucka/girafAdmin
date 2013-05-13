@@ -60,7 +60,7 @@ class SimpleImage {
       }
    }
    function output($image_type=IMAGETYPE_JPEG) {
- 
+	  ob_start();
       if( $image_type == IMAGETYPE_JPEG ) {
          imagejpeg($this->image);
       } elseif( $image_type == IMAGETYPE_GIF ) {
@@ -70,6 +70,9 @@ class SimpleImage {
  
          imagepng($this->image);
       }
+	  $stringdata = ob_get_contents(); // read from buffer
+	  ob_end_clean();
+	  return $stringdata;
    }
    function getWidth() {
  
