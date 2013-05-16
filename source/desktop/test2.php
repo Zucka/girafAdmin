@@ -20,6 +20,8 @@
 	if (false !== ($bytes = socket_recv($socket, $buf, 2048, MSG_WAITALL))) {
 		$final .= $buf;
 	}
+	print_r($final);
+	echo "</br>";
 	echo detect($final);
 	echo "</br>";
 	$final = iconv('iso-8859-1','utf-8',$final);
