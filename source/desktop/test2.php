@@ -20,20 +20,17 @@
 	if (false !== ($bytes = socket_recv($socket, $buf, 2048, MSG_WAITALL))) {
 		$final .= $buf;
 	}
+	$test2 = json_decode($final,true);
+	echo $test2["data"][0]["address"];
+	echo "</br>";
+	print "{$test2['data'][0]["address"]}";
+	echo "</br>";
 	print_r($final);
-	echo "</br>";
-	$test = mb_convert_encoding($final, "ISO-8859-1");
-	print_r($test);
-	echo "</br>";
 	echo detect($final);
-	echo "</br>";
-	echo $test["data"][0]["address"];
 	echo "</br>";
 	$final = iconv('iso-8859-1','utf-8',$final);
 	$array = json_decode($final,true);
 	print_r($final);
-	echo "</br>";
-	echo $final["data"][0]["address"];
 	echo "</br>";
 	$json_errors = array(
     JSON_ERROR_NONE => 'No error has occurred',
