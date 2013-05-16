@@ -19,5 +19,6 @@
 	if (false !== ($bytes = socket_recv($socket, $buf, 2048, MSG_WAITALL))) {
 		echo $buf;
 	}
-	echo json_decode($buf,true)['data'][0]['address'];
+	$array = json_decode($buf,true);
+	echo $array['data'][0]['address'];
 ?>
