@@ -19,6 +19,8 @@
 
 	$departmentInfoe = db_query($buffer);
 	print_r($departmentInfoe);
+	$test = mb_convert_encoding($departmentInfoe, "ISO-8859-1");
+	print_r($test);
 	// 	echo "</br>";
 	// echo $departmentInfoe["phone"];
 	// 	echo "</br>";

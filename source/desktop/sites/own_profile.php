@@ -16,6 +16,7 @@ You should have received a copy of the GNU General Public License
 along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <?php
+
 	session_start();
 	require_once($_SERVER['DOCUMENT_ROOT']."/db/new.db.php");
 	if (isset($_SESSION['lang'])) {$lang = $_SESSION['lang'];} else {$lang = 'en';}
@@ -105,7 +106,6 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 <html lang="en">
 <head>
 	<?php echo $title ?>
-
 	<!-- JavaScript -->
 	<script src="assets/js/profileEdit.js"></script>
 	<script src="assets/js/print.js"></script>

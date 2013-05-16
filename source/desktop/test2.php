@@ -20,10 +20,11 @@
 	if (false !== ($bytes = socket_recv($socket, $buf, 2048, MSG_WAITALL))) {
 		$final .= $buf;
 	}
-	$test2 = json_decode($final,true);
+	$final2 = utf8_encode($final);
+	$test2 = json_decode($final2,true);
 	echo $test2["data"][0]["address"];
 	echo "</br>";
-	print "{$test2['data'][0]["address"]}";
+	print_r("{$test2['data'][0]["address"]}");
 	echo "</br>";
 	print_r($final);
 	echo detect($final);
