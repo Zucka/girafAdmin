@@ -17,10 +17,11 @@
 	sleep(1);
 	$buf = '';
 	$final = '';
-	while (false !== ($bytes = socket_recv($socket, $buf, 2048, MSG_WAITALL))) {
+	if (false !== ($bytes = socket_recv($socket, $buf, 2048, MSG_WAITALL))) {
 		echo $buf;
 		$final .= $buf;
 	}
-	$array = json_decode($buf,true);
+	$array = json_decode($final,true);
+	print_r($array);
 	echo $array['data'][0]['address'];
 ?>
