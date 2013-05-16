@@ -21,9 +21,11 @@
 		$final .= $buf;
 	}
 	echo detect($final);
+	echo "</br>";
 	$final = iconv('iso-8859-1','utf-8',$final);
 	$array = json_decode($final,true);
 	print_r($final);
+	echo "</br>";
 	$json_errors = array(
     JSON_ERROR_NONE => 'No error has occurred',
     JSON_ERROR_DEPTH => 'The maximum stack depth has been exceeded',
@@ -33,7 +35,9 @@
     JSON_ERROR_UTF8 => 'Malformed UTF-8 characters, possibly incorrectly encoded'
 	);
  	echo 'Last error : ', $json_errors[json_last_error()], PHP_EOL, PHP_EOL;
+	echo "</br>";
 	print_r($array);
+	echo "</br>";
 
 	function detect($string, $enc=null) { 
     
