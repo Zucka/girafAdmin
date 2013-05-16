@@ -21,7 +21,7 @@
 		$final .= $buf;
 	}
 	echo detect($final);
-	$final = utf8_encode($final);
+	$final = iconv('iso-8859-1','utf-8',$final);
 	$array = json_decode($final,true);
 	print_r($final);
 	$json_errors = array(
