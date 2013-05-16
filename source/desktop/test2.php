@@ -24,4 +24,10 @@
 	echo $final;
 	print_r($array);
 	echo $array['data'][0]['address'];
+	echo '<br><br><br>';
+	$data = '
+		{"data":[{"address":"Selma Lagerløfs Vej 300","email":"test@test.com","id":1,"name":"Cassiopeia","phone":"12345678","subdepartments":[],"topdepartment":0}],"errors":[],"session":{"profile":1,"session":"","user":1},"status":"OK"}
+	';
+	$test = json_decode($data,true);
+	print_r($test);
 ?>
