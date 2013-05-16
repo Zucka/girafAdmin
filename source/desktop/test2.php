@@ -18,10 +18,10 @@
 	$buf = '';
 	$final = '';
 	if (false !== ($bytes = socket_recv($socket, $buf, 2048, MSG_WAITALL))) {
-		echo $buf;
 		$final .= $buf;
 	}
 	$array = json_decode($final,true);
+	echo $final;
 	print_r($array);
 	echo $array['data'][0]['address'];
 ?>
