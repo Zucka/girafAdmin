@@ -2,8 +2,8 @@
 	if(!empty($_POST['x1'])){
 		include_once "include/SimpleImage.php";
 		
-		$finalWidth = 400;
-		$finalHeight = 400;
+		$finalWidth = 300;
+		$finalHeight = 300;
 		$x1 = $_POST['x1'];
 		$x2 = $_POST['x2'];
 		$y1 = $_POST['y1'];
@@ -66,7 +66,7 @@
 		$ratio = ($image->getWidth())/$currentWidth;
 		
 		$image->resizeCordsColor($finalWidth,$finalHeight,intval($x1*$ratio),intval($y1*$ratio),intval($x2*$ratio),intval($y2*$ratio),255,255,255);
-		$image->save("tempTest/profilePic.jpeg");
+		$outPutImage = $image->output();
 		
 		header('Location: '.$_POST['profileURL']);
 	}

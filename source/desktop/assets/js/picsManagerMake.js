@@ -64,6 +64,11 @@ $(window).ready(function() {
 				modalTitel = picsManagerMake_js_errorTitel;
 			break;
 			
+			case "6":
+				actualError = picsManagerMake_js_actualError6;
+				modalTitel = picsManagerMake_js_errorTitel;
+			break;
+			
 			default:
 				actualError = picsManagerMake_js_actualError5;
 				modalTitel = picsManagerMake_js_errorTitel;

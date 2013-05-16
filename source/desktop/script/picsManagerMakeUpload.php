@@ -4,7 +4,6 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 	$_POST['inlineText'];
 	$_POST['privacySetting'];
 	$_POST['tags'];
-	$_POST['category'];
 	
 	function error($error){
 		header('Location: /#makePic/e='.$error);
@@ -26,7 +25,7 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 		
 		//Check Mime Type
 		$finfo = finfo_open(FILEINFO_MIME_TYPE); // return mime type ala mimetype extension
-		echo finfo_file($finfo, $fileTmpName); //TODO REMOVE LINE AFTER TESTING
+		
 		if(in_array(finfo_file($finfo, $fileTmpName),$supportedMimeTypes)){
 			$fileMimeTypeOkay = true;
 		}
@@ -58,8 +57,9 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 			$image = new SimpleImage();
 			$image->load($_FILES['uploadImage']['tmp_name']);
 			
-			$image->resizeCordsColor(400,400,0,0,$image->getWidth(),$image->getHeight(),255,255,255);
-			$image->save("tempTest/picsManagerMake.jpeg");//TODO: Make this line into a DB query
+			$image->resizeCordsColor(300,300,0,0,$image->getWidth(),$image->getHeight(),255,255,255);
+			$imageData = $image->output();
+			$encodedImage = base64_encode($imageData);
 		}
 		if(file_exists($_FILES['soundFile']['tmp_name']) || is_uploaded_file($_FILES['soundFile']['tmp_name'])){//Sound file was uploaded
 			@is_uploaded_file($_FILES['soundFile']['tmp_name'])// check that the file we are working on really was an HTTP upload
@@ -71,8 +71,18 @@ if(isset($_POST['picsManagerMakeSubmit'])){//Make sure the form was used
 			$fh = fopen($_FILES['soundFile']['tmp_name'], 'r');
 			$data = fread($fh, filesize($_FILES['soundFile']['tmp_name']));
 			fclose($fh);
-			$data;
+			$soundData = $data;
+			$encodedSound = base64_encode($soundData);
 		}
+		if(!isset($encodedImage))
+			$encodedImage = "";
+		if(!isset($encodedSound))
+			$encodedSound = "";
+		
+		//Make DB-call
+		$pictogram = makeJsonPictogram($_POST['titel'],$_POST['privacySetting'],$encodedImage,$encodedSound,$_POST['inlineText'],$_POST['tags']);
+		if(db_uploadePictogram($pictogram) == false)
+			error('6');
 		
 		header('Location: /#makePic/e=0');
 	}

@@ -13,6 +13,10 @@
 			include('assets/lang/navigation/navigation.en.php');
 			break;
 	}
+	
+	//Include the database file
+	require_once "db/new.db.php";
+	
 	//Parse the $_POST array onto the navigation.js script
 	echo "<script>
 			var postData = ";
@@ -26,6 +30,10 @@
 	if(isset($_POST['picsManagerMakeSubmit'])){
 		//Call upload script
 		require "script/picsManagerMakeUpload.php";
+	}
+	if(isset($_POST['createProfileSubmit'])){
+		//Call upload script
+		require "script/createProfileSubmit.php";
 	}
 ?>
 	<html lang="en">

@@ -4,6 +4,7 @@
 	$CREATEPROFILE_STRINGS = array();
 
 	$CREATEPROFILE_STRINGS["profiles"] = "Profiles";
+	$CREATEPROFILE_STRINGS["profile"] = "Profile";
 	$CREATEPROFILE_STRINGS["createProfile"] = "Create Profile";
 	$CREATEPROFILE_STRINGS["child"] = "Child";
 	$CREATEPROFILE_STRINGS["parant"] = "Parant";
@@ -15,7 +16,6 @@
 	$CREATEPROFILE_STRINGS["phone"] = "Phone No.";
 	$CREATEPROFILE_STRINGS["mobile"] = "Mobile No.";
 	$CREATEPROFILE_STRINGS["email"] = "Email";
-	$CREATEPROFILE_STRINGS["createprofile"] = "Create Profile";
 	$CREATEPROFILE_STRINGS["dataRequired"] = "* Marked fields is required <br> to make a profile";
 
 ?>

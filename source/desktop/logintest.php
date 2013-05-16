@@ -39,7 +39,7 @@
 		echo "</br>";
 	echo $profileInfo[0]["address"];
 		echo "</br>";
-	echo $profileInfo[0]["email"];
+	echo $profileInfo[0]["picture"];
 	echo "</br>";
 
 	// GET DEPARTMENT
@@ -94,6 +94,8 @@
 		echo "</br>";
 	echo $guardian_ofInfo[0]["email"];
 	echo "</br>";
+
+	$child1 = db_getProfiles($guardian_of);
 
 
 ?>
