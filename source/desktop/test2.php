@@ -20,7 +20,7 @@
 	if (false !== ($bytes = socket_recv($socket, $buf, 2048, MSG_WAITALL))) {
 		$final .= $buf;
 	}
-	echo mb_detect_encoding($final);
+	echo detect($final);
 	$final = utf8_encode($final);
 	$array = json_decode($final,true);
 	print_r($final);
@@ -34,4 +34,17 @@
 	);
  	echo 'Last error : ', $json_errors[json_last_error()], PHP_EOL, PHP_EOL;
 	print_r($array);
+
+	function detect($string, $enc=null) { 
+    
+	    static $list = array('utf-8', 'iso-8859-1', 'windows-1251');
+	    
+	    foreach ($list as $item) {
+	        $sample = iconv($item, $item, $string);
+	        if (md5($sample) == md5($string)) { 
+	            if ($enc == $item) { return true; }    else { return $item; } 
+	        }
+	    }
+	    return null;
+	}
 ?>
