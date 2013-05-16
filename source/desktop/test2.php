@@ -20,6 +20,7 @@
 	if (false !== ($bytes = socket_recv($socket, $buf, 2048, MSG_WAITALL))) {
 		$final .= $buf;
 	}
+	$final = utf8_encode($final);
 	$array = json_decode($final,true);
 	print_r($final);
 	$json_errors = array(
