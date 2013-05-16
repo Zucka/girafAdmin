@@ -16,8 +16,10 @@
 	socket_write($socket, $buffer, strlen($buffer));
 	sleep(1);
 	$buf = '';
-	if (false !== ($bytes = socket_recv($socket, $buf, 2048, MSG_WAITALL))) {
+	$final = '';
+	while (false !== ($bytes = socket_recv($socket, $buf, 2048, MSG_WAITALL))) {
 		echo $buf;
+		$final .= $buf;
 	}
 	$array = json_decode($buf,true);
 	echo $array['data'][0]['address'];
