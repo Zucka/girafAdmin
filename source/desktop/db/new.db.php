@@ -20,10 +20,11 @@ function db_query($json)
 	$buf = '';
 	$ret = '';
 	if (false !== ($bytes = socket_recv($socket, $buf, 2048000, MSG_WAITALL))) {
-		$ret .= $buf;
+		$ret .= utf8_encode($buf);
 	}
 	// echo $ret;
 	// echo "</br>";
+
 	return json_decode($ret,true);
 }
 /* Returns an array with session and user(userid) if authentication was succesful, FALSE otherwise */
