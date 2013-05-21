@@ -38,9 +38,9 @@ if ($_SESSION['session_id'] != session_id())
 					<hr class="menuLinkSplitter">
 				<a href="#profiles" class="menuLink deptOnly"><?php echo $NAVIGATION_STRINGS['profiles'];?></a>
 					<hr class="menuSubLinkSplitter">
-				<a href="#addRelation" class="menuLink menuSubLink deptOnly menuLastLink"><?php echo $NAVIGATION_STRINGS['addRelation'];?></a>
-					<hr class="menuSubLinkSplitter">
 				<a href="#createProfile" class="menuLink menuSubLink deptOnly menuLastLink"><?php echo $NAVIGATION_STRINGS['createProfile'];?></a>
+					<hr class="menuSubLinkSplitter">
+				<a href="#addRelation" class="menuLink menuSubLink deptOnly menuLastLink"><?php echo $NAVIGATION_STRINGS['addRelation'];?></a>
 					<hr class="menuLinkSplitter">
 				<a href="#picsManager" class="menuLink"><?php echo $NAVIGATION_STRINGS['picsManager']; ?></a>
 					<hr class="menuSubLinkSplitter">

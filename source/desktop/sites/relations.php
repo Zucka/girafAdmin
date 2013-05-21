@@ -55,11 +55,11 @@
 ?>
 
 
-<form action="/#relations" method="POST">	
+<form action="/#addRelation" method="POST">	
 	<div class="container-fluid row">
 		<div class="span4 offset1">
 			<h3> <?php echo $RELATIONS_STRINGS['children']; ?></h3>
-			<table class="table table-striped" id="children">
+			<table class="table table-striped table-bordered qrmanager-table" id="children">
 				<tr>
 					<th><?php echo $RELATIONS_STRINGS['name'];?></th>
 					<th class="span2"><?php echo $RELATIONS_STRINGS['addRelation'];?></th>
@@ -77,13 +77,24 @@
 						';
 						$i++;
 					}
+						//If no children are found
+						if($children == NULL){
+						echo '	
+							<tr>
+								<td>'.$RELATIONS_STRINGS['childrenError'].'</td>
+								<td  style= "text-align: center;">
+								<input type="checkbox" class="checkbox" disabled>
+								</td>
+							</tr>
+						';
+					}
 				?>
 				<input type="hidden" name="numOfChildren" value="<?php echo count($children);?>">
 			</table>
 		</div>
 		<div class="span4 offset2">
 			<h3><?php echo $RELATIONS_STRINGS['parantAndPedagogue'];?></h3>
-			<table class="table table-striped" id="guardian">
+			<table class="table table-bordered table-striped qrmanager-table" id="guardian">
 				<tr>
 					<th><?php echo $RELATIONS_STRINGS['name'];?></th>
 					<th class="span2"><?php echo $RELATIONS_STRINGS['addRelation']; ?></th>
@@ -102,7 +113,17 @@
 						';
 						$i++;
 					}
-					
+					//If no Parants and Pedagogues are found
+					if($guardians == NULL){
+						echo '	
+							<tr>
+								<td>'.$RELATIONS_STRINGS['parantAndPedagogueError'].'</td>
+								<td  style= "text-align: center;">
+								<input type="checkbox" class="checkbox" disabled>
+								</td>
+							</tr>
+						';
+					}
 				?>
 				<input type="hidden" name="numOfGuardians" value="<?php echo count($guardians);?>">
 			</table>
@@ -110,6 +131,6 @@
 	</div>
 			
 	<div align="center">
-		<input type="submit" class="btn btn-large" id="create" name="createProfileSubmit" type="button" disabled value=" <?php echo $RELATIONS_STRINGS['createRelation'];?>">
+		<input type="submit" class="btn btn-large" id="create" name="relationsSubmit" type="button" disabled value=" <?php echo $RELATIONS_STRINGS['createRelation'];?>">
 	</div>
 </form>
