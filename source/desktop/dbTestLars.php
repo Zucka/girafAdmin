@@ -2,7 +2,7 @@
 require "db/new.db.php";
 
 //Run function
-$ProfilBillede = makeJsonProfilePic("2","tudtudImage");
+$ProfilBillede = makeJsonProfilePic("1","tudtudImage");
 echo "ProfilBillede: ".$ProfilBillede;
 db_uploadeProfilePic($ProfilBillede);
 
@@ -39,12 +39,13 @@ function makeJsonProfilePic($id,$profileImage){
 	'{ 
 		"id": '.$id.', 
 		"value": { 
-			"id": '.$id.', 
-			"picture": "'.base64_encode($profileImage).'"
+			
+			"phone" : "30303003" 
 			}
 	}';
 }
-
+//"phone": "'.$profileImage.'"
+//"id" : '.$id.',
 	
 	
 ?>
