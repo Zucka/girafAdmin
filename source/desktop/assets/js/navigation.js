@@ -117,7 +117,6 @@ window.onhashchange = function(){
 		url: destinationPath,
 		data: postData,
 		success: function(result) { // result is the content that the php file 'ECHO's.
-			//var obj = jQuery.parseJSON(result); // Parsing JSON for easy Data Acces
 			$("#content").html(result);
 		}
 	});
