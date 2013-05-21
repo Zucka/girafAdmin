@@ -36,12 +36,18 @@ if ($_SESSION['session_id'] != session_id())
 			<div id="menuBar">
 				<a href="#ownProfile" class="menuLink menuLastLink"><?php echo $NAVIGATION_STRINGS['ownProfile'];?></a>
 					<hr class="menuLinkSplitter">
+				<?php
+					//if($_SESSION['delete']){
+				?>
 				<a href="#profiles" class="menuLink deptOnly"><?php echo $NAVIGATION_STRINGS['profiles'];?></a>
 					<hr class="menuSubLinkSplitter">
 				<a href="#createProfile" class="menuLink menuSubLink deptOnly menuLastLink"><?php echo $NAVIGATION_STRINGS['createProfile'];?></a>
 					<hr class="menuSubLinkSplitter">
 				<a href="#addRelation" class="menuLink menuSubLink deptOnly menuLastLink"><?php echo $NAVIGATION_STRINGS['addRelation'];?></a>
 					<hr class="menuLinkSplitter">
+				<?php
+					//}
+				?>
 				<a href="#picsManager" class="menuLink"><?php echo $NAVIGATION_STRINGS['picsManager']; ?></a>
 					<hr class="menuSubLinkSplitter">
 				<a href="#makePic" class="menuLink menuSubLink"><?php echo $NAVIGATION_STRINGS['makePic'];?></a>
@@ -54,12 +60,18 @@ if ($_SESSION['session_id'] != session_id())
 					<hr class="menuSubLinkSplitter">
 				<a href="#deletePic" class="menuLink menuSubLink menuLastLink"><?php echo $NAVIGATION_STRINGS['deletePic'];?></a>
 					<hr class="menuLinkSplitter">
+				<?php
+					//if($_SESSION['delete']){
+				?>
 				<a href="#depManager/action=department" class="menuLink deptOnly"><?php echo $NAVIGATION_STRINGS['depManager'];?></a>
 					<hr class="menuSubLinkSplitter">
 				<a href="#depInfo/action=department" class="menuLink menuSubLink deptOnly"><?php echo $NAVIGATION_STRINGS['depInfo'];?></a>
 					<hr class="menuSubLinkSplitter">
 				<a href="#qrManager" class="menuLink menuSubLink deptOnly menuLastLink"><?php echo $NAVIGATION_STRINGS['qrManager'];?></a>
 					<hr class="menuLinkSplitter">
+				<?php
+					//}
+				?>
 				<a href="#appManager" class="menuLink menuLastLink"><?php echo $NAVIGATION_STRINGS['appManager'];?></a>
 					<hr class="menuLinkSplitter">
 
