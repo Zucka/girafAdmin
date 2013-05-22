@@ -1,0 +1,3 @@
+[submodule "report/tex/commonReport"]
+	path = report/tex/commonReport
+	url = http://cs-cust06-int.cs.aau.dk/git-ro/common-report-f13.git
