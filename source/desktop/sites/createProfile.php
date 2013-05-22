@@ -1,5 +1,8 @@
 ﻿<?php
-	session_start();
+	if( ! $_SESSION)
+	{
+		session_start();
+	}
 	
 	if(isset($_GET['e'])){
 		echo '<script> var uploadError = "'.$_GET['e'].'";</script>';
@@ -59,8 +62,10 @@
 	<input class="profileInput" name="zipcode" type="text" class="span4" type="text" placeholder=""><br>
 	<?php echo $CREATEPROFILE_STRINGS["phone"];?>:<br>
 	<input class="profileInput" name="phone" type="text" placeholder=""><br>
+<!-- 
 	<?php echo $CREATEPROFILE_STRINGS["mobile"];?>:<br>
 	<input class="profileInput" name="mobile" type="text"  placeholder=""><br>
+ -->
 	<div id="emailContainer"></div>
 	<div color="#FF0000"><?php echo $CREATEPROFILE_STRINGS["dataRequired"];?></div>
 	<br>
