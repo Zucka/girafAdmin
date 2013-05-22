@@ -24,6 +24,17 @@
 \usepackage[ final ]{pdfpages}
 \usepackage{epstopdf}
 
+%Acronymer for P6 Giraf Projekt
+\newcommand{\secref}[1]{Section \ref{#1}}
+\usepackage{acronym}
+\acrodef{api}[API]{Application Programming Interface}
+\acrodef{cat}[CAT]{Category Administration Tool}
+\acrodef{lamp}[LAMP]{Linux, Apache2, MySql and PHP}
+\acrodef{giraf}[GIRAF]{Graphical Interface Resources for Autistic Folk}
+\acrodef{oha}[OHA]{Open Handset Alliance}
+\acrodef{gui}[GUI]{Graphical User Interface}
+\acrodef{json}[JSON]{JavaScript Object Notation}
+
 \lstdefinelanguage{cs}
   {morekeywords={abstract,event,new,struct,as,explicit,null,switch
 		base,extern,object,this,bool,false,operator,throw,
@@ -75,6 +86,9 @@
  	extendedchars=true,
 }
 
+
+% Bibtex %
+\usepackage{natbib}
 
 % URL %
 \usepackage{url}

@@ -21,41 +21,43 @@
 		}
 		$i++;
 	}
-
-	foreach($children as $child){
+	
+/* 	foreach($children as $child){
 		foreach($guardians as $guardian){
-		
-		{ 
-		"type": data_type 
-		"values": 
-			[ 
-    { 
-      "id": INT, 
-      "value": value_object 
-    }, 
-    ... 
-				] 
-			}
-		
-		
-	
+				
+			{ 
+			"type": data_type 
+			"values": 
+				[ 
+			{ 
+			  "id": INT, 
+			  "value": value_object 
+			}, 
+				... 
+						] 
+					}
+				
+				
+			
+			} 
 		} 
-	} 
+	}
+	else {
 	
 	
+	
+	
+	} */
 	
 	function error($error){
-		header('Location: /#createProfile/e='.$error);
+		header('Location: /#addRelation/e='.$error);
 		exit;
 	}
 	
-	isset($_POST['name']) or error("1");
-	
-	if($_POST['profile'] != "1"){
-		isset($_POST['email']) or error("2");
-	}
+	isset($_POST['numOfChildren']) or error("1");
+	isset($_POST['numOfGuardians']) or error("2");
 	
 	//make db call
 	
-	header('Location: /#createProfile/e=0');
+	header('Location: /#addRelation/e=0');
 ?>

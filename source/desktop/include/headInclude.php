@@ -1,16 +1,13 @@
 <?php
 	//This file includes every important script, or other file in the headder.
-	if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'en';}
-	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
+	if (isset($_SESSION['lang'])) {$lang = $_SESSION['lang'];} else {$lang = 'en';}
 	switch ($lang) {
 		case 'en':
 			include('assets/lang/navigation/navigation.en.php');
 			break;
 		case 'dk':
-			include('assets/lang/navigation/navigation.dk.php');
-			break;
 		default:
-			include('assets/lang/navigation/navigation.en.php');
+			include('assets/lang/navigation/navigation.dk.php');
 			break;
 	}
 	

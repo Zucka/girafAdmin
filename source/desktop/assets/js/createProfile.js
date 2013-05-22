@@ -42,8 +42,8 @@ $(document).ready(function() {
 			break;
 			
 			default:
-				actualError = picsManagerMake_js_actualError3;
-				modalTitel = picsManagerMake_js_errorTitel;
+				actualError = createProfile_js_actualError3;
+				modalTitel = createProfile_js_errorTitel;
 		}
 	
 		reportString = '<span class="red">' + actualError + '...</span><br><br>';
