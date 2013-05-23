@@ -69,6 +69,7 @@
 		}
 	}';
 
+  
 
 	$qr = generateNewQr();
 	$username = explode(" ", $_POST['name']);
@@ -95,6 +96,14 @@
 	}
 	else{
 		$passWord = substr(md5(time()),0,10);
+
+		$To = $_POST['email']; 
+		$Subject = 'New profile at girafadmin.tk'; 
+		$Message = 'Hi,\n \n A new profile has been created for you at girafadmin.tk.\n \n Username : '.$username[0].'\n \n Password : '.$password.'\n \n -The Giraf Admin System'; 
+		$Headers = "From: profiles@giraf.tk \r\n" . 
+		"Reply-To: profiles@giraf.tk \r\n" . 
+		"Content-type: text/html; charset=UTF-8 \r\n"; 
+		mail($To, $Subject, $Message, $Headers); 
 		// echo 'Password til nyoprettet bruger : '. $passWord .'<br>';
 		$buffer = '{
 			"action": "create",
@@ -114,6 +123,7 @@
 		}';
 	}
 
+	//echo '<script> var newProfileQr = "'.$qr.'" </script>';
 	db_query($buffer);
 	// echo "ID på oprettet user: ". $return["data"][0]."<br>";
 
