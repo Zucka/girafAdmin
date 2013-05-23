@@ -1,0 +1,260 @@
+\chapter{Project Progress}
+\label{sec:projectProgress}
+%Why do we explain this?
+This chapter concerns the work progress of the project and the documentation here of. 
+The work progress was split into weekly progress that was documented with a weekly abstract that is to be conjunction with sprint story.  
+At the end of this chapter should the reader have the knowledge of the development structure that is used and have the overview of the work that is done in this project. 
+
+
+\section{Weekly Abstracts}      
+\label{subsec:weeklyAbstracts}
+%Why did we make Weekly Abstracts?
+Weekly abstracts is a small resume on that has been developed over the week and problems that may have occurred. 
+Usually is the weekly abstract between 5-10 lines that is written the end of each week. 
+Writing weekly abstracts is a easy way to ensure that the development move forward because there will nothing to write if none is done.
+New comers or a involved third person will quickly manage to get up to date with reading the abstract. 
+At the end of the project it is possible to extract the problems to improve the development method, use as documentation for project and to overall analysis.          
+
+\section{Weekly Progress}
+\label{subsec:weeklyProgress}
+%Why did we do what we did?
+In the rest of the section is a description of the weekly progress in conjunction with sprint story.
+The conclusion of the work progress will be at the end of this chapter. 
+
+The first two weeks of project was used to create the groups and determent projects.  
+Internal in the group was the expectation aligned and work conditions was established.   
+
+Sprint stories was first used in week 3 (04/03/2013-08/03/2013).   
+
+\textbf{Week 1 (18/02/2013-22/02/2013)} 
+Designs and features for the Admin interface was discuessed.
+Low-fi board designs was made to give abstract view of our ideas regarding the meeting with our contact person.   
+The first considerations to incorporation of multi language support.
+The stucture of php, project and report has been made so it is ready for the first sprint.
+Setup GIT and Redmine.
+It was agreed upon to make a web based administration system that is convertible to both desktop and tablet.  
+For further information this choice is readable in chapter \fix{referance} 
+
+\textbf{Week 2 (25/02/2013-01/03/2013)}
+The focus has been on finishing the preliminary interface design and web application structure.
+All of the interface design that was drawn on whiteboards is converted to Balsamiq mock-ups for a coherent feel.
+At the meeting with the contact person there was feedback on the design and features. 
+The work in the committees is started. 
+The feedback, questions and answers regarding how the day care works can be found in \fix{appendix}.
+The Balsamiq mock-ups and web application structure is found in chapter \fix{henvisning} 
+
+\textbf{Week 3 (04/03/2013-08/03/2013)}
+This week work has been on implementing the design and functionality of the login screen, main navigationon the desktop application.  We have also edited our mockup designs with the feedback we got from our contact person. 
+The first scrum sprint started with the main story being  our, which will last from 04/03/2013-18/03/2013. 
+
+"The guardian is in the launcher and starts all the applications one after one, the gaurdian can freely move from application to launcher at any given time.
+The guardian also enters the administration."
+
+From that story we concluded the demand for our sprint was for a user to log in to the system and view his/her profile page. 
+
+\textbf{Week 4 (11/03/2013-15/03/2013) }
+The first scrum sprint is completed. 
+Following features are implemented in the Admin system:
+\begin{itemize}
+	\item Log In/Out
+	\item Own Profile
+	\item View own information
+	\item Edit own information
+\end{itemize}
+The site can still not be shown outside of the campus network, and therefore can it not be shown to the contact person.
+Regarding functionality is the site not connected to the final database there is all the data dummy data.  
+The first parts of the common report is created.
+
+\textbf{Week 5 (18/03/2013-22/03/2013)}
+Most progress was in implementing the design. The committee for the DB-api is started. This committee is important as it will define connection to the database. 
+
+The new sprint is:
+"The guardian is in a application and is working with a picture"
+
+The focus is therefor on implementing profile pictures. 
+
+\textbf{Week 6 (25/03/2013-29/03/2013)}
+Time was short because of Easter. 
+Following features was integrated the Profile Picture Edit and ability to Change QR.
+
+Sprint 3 Story 26-03-13
+
+
+\textbf{Week 7 (02/04/2013-05/04/2013)}
+This week there only were 4-8 hours of free work time, because of the many lectures and the holiday of this week.
+
+The new sprint is as follows: 
+"The guardian creates a pictogram, and imports the pictogram to an application. The guardian personalizes the application."
+
+
+
+\textbf{Week 8 (08/04/2013-12/04/2013)}
+This week an auto update script that fetches the git-repository for our web-server were made.
+Uploading the profile picture was reworked to a faster and more data efficient way. 
+But still missing the database to store the data and to give a report when the image fails to upload or succeeds.
+The QR generators is now fully functional. 
+There is now a printer function to send our QR-images to the browser or OS printing service.
+
+\textbf{Week 9 (15/04/2013-19/04/2013)}
+The QR system is changed, so that it is secure. 
+Language support now work for all the developed sites.
+
+
+\textbf{Week 10 (22/04/2013-26/04/2013)}
+Uploading of profile picture is finished.
+The work is now on getting the Admin interface down to the tablet.
+A date with Mette Als (the contact person), to test our system.
+
+New sprint: 
+"The guardian can navigate between applications and use them"
+
+\textbf{Week 11 (29/04/2013-03/05/2013)}
+This week were used on solving the whole problem with the missing database.
+A front end was created for the Picto Admin. Features  in our system can not be supported in IE9 and below. Therefor is a warning added at the log-in page that informs the user that they are using an old browser if they do not support the "FileReader" system in JavaScript.
+
+\textbf{Week 12 (06/05/2013-10/05/2013)}
+The week was used to prepare for the usability tests(monday the 13th).
+Profile Create and Make Relations got finished, with exception of the DB create implementation. 
+Also Picto Admin Create is fully finished. But it does not support categories. 
+In the weekend between the 10th and the 13th was used to ensure that the syestem could work with the newly developed database API. The system was not ready in time for the usability tests. 
+
+\textbf{Week 13 (13/05/2013-17/05/2013)}
+The tests was completed and analyzed. 
+All the bugs and wanted changes got documented and set to be fixed.
+Most of week was used on implementing the DB API in the system and make fixes.     
+The rapport structure was made and writing is started. 
+The finished functionality can be found in section \FIX{referance}   
+ 
+At the end of the project was the program tuned to be fully functional and include with notes.
+Until the report delivery was writing documentation.       
+
+\section{Conclusion of Project Progress}
+\label{sec:conclusionofProjectProgress}
+
+
+
+The navigation system that we have implemented in our system is based on JavaScript and the event \texttt{window.onhashchange}, with the addition of Ajax.
+We use Ajax to fetch the sites without ever navigating away from the index site. This is done because we wanted to minimize the amount of data transfer from the server that the site is made on. However this do present itself with a few challenges. For example we have had to come up with a special solution in order to send the PHP \texttt{\$\_POST} and \texttt{\$\_GET} data around, in this section we will explain how this is implemented and how it should be used in the future.\\
+\\
+%Why did we make it so complex?
+	%Alternative solutions
+But first we will elaborate on the alternatives that was available to us.\\
+There is at least two other solutions that could have been implemented with different advantages. First we could have implemented the old HTML method, which means that the user would have to navigate directly to the files name. This would be an easy way to build the website, but would leave it very hard to maintain, since the design of the website would have to be written more than one place, or at least use an include in the top and bottom of each page.\\
+Another alternative would have been the use of a PHP based switch. The method is commonly used in larger website systems, because it makes for easy design and maintainability.
+\lstset{language=PHP}
+\begin{figure}[htbp]
+\begin{lstlisting}[firstline=1]
+	$site = $_GET['site'];
+	switch ($site) {
+    case "ownProfile":
+        include "sites/ownProfile.php";
+        break;
+    case "picsMake":
+        include "sites/picsMake.php";
+        break;
+    case "":
+		default:
+        include "sites/home.php";
+        break;
+	}
+\end{lstlisting}
+\caption{A PHP switch Example}
+\label{lst:phpSwitch}
+\end{figure}
+
+As seen in listing \ref{lst:phpSwitch} it is easy to create the switch method, and maintain it, since all that is needed is to add another case when a new site is made.\\
+What listing \ref{lst:phpSwitch} contains has to be included in the index.php file, and the links, or hyperlinks, will have to set the \texttt{\$\_GET} variable \texttt{site} to a fitting name for the site, and it will then include the content of that site.\\
+\\
+However this PHP switch solution has one downside to it. It still sends the data of the index file from the server to the user each time the user presses a link. This might not be much data, but it becomes so in the long run. We therefore went with a third alternative, which is much like the PHP switch method. We simply took the same idea and wrote it in JavaScript, this however means that we must use Ajax to perform the fetching of new data.\\
+\lstset{language=Java}
+\begin{figure}[htbp]
+\begin{lstlisting}[firstline=1]
+switch(destination)
+	{
+		case "":
+		case "#ownProfile":
+		case "#otherProfiles":
+			destinationPath = "sites/own_profile.php";
+		break;
+		
+		case "#profiles":
+			destinationPath = "sites/profiles.php";
+		break;
+		
+		case "#profilePicUpload":
+			destinationPath = "script/profilePicUpload.php";
+		break;
+		
+		...
+		
+	}
+	
+	...
+	
+	$.ajax({
+		type: "POST",
+		url: destinationPath,
+		data: postData,
+		success: function(result) { // result is the content that the php file 'ECHO's.
+			$("#content").html(result);
+		}
+	});
+\end{lstlisting}
+\caption{The JavaScript switch}
+\label{lst:javascriptSwitch}
+\end{figure}
+
+%POST Transfer
+Listing \ref{lst:javascriptSwitch} contains the main contents of the JavaScript switch that we created. \texttt{destination} is the variable that we use for storing the actual hash value\footnote{Hash value is the value followed by the hash symbol \# in hyperlinks.} and the \texttt{postData} is created in a unique way, so that we can send the PHP \texttt{\$\_POST} data on to the site that the JavaScript is Ajax'ing to.\\
+%File list
+\lstset{language=PHP}
+\begin{figure}[htbp]
+\begin{lstlisting}[firstline=1]
+	echo "<script>
+		var postData = ";
+		echo json_encode($_POST);
+	echo "</script>";
+\end{lstlisting}
+\caption{The POST transform code}
+\label{lst:postTransform}
+\end{figure}
+
+As seen in listing \ref{lst:postTransform} we convert the \texttt{\$\_POST} data from PHP into a JavaScript variable that then again is send on to the next PHP site as seen in listing \ref{lst:javascriptSwitch}.\\
+\\
+%Syntax
+However we also wanted to be able to use the \texttt{\$\_GET} variable from PHP on other sites that we call with Ajax. In order to do this we created a rule as can be seen in listing \ref{lst:getData}, the rule says that instead of using the usual syntax of ''?'' after the hyperlink, there needs to be a ''/'' instead. We do this because we think it gives a better look on the link itself.\\
+
+\lstset{language=Java}
+\begin{figure}[htbp]
+\begin{lstlisting}[firstline=1]
+    var hashInfo = location.hash;    
+	var hashArray = hashInfo.split("/"); // We use / instead of ? in our URL's (for $_GET), they do the exact same, but gives a different look
+	var destination = hashArray[0];
+	var info = hashArray[1];
+	var destinationPath = "";
+\end{lstlisting}
+\caption{The GET transform code}
+\label{lst:getData}
+\end{figure}
+
+Then when the code in listing \ref{lst:getData} and the switch in \ref{lst:javascriptSwitch} has been executed we append \texttt{info} to \texttt{destinationPath} with the normal syntax. Then the Ajax call does the rest.\\
+\\
+But this method also has a bad side. It requires a more complex way of calling scripts that is dependent on large amounts of data from the user. For example when the user wish to upload an image for a pictogram.\\
+As seen in listing \ref{lst:largePost} which is a cutout of the \texttt{headInclude.php} file, which is always included in our \texttt{index.php} file, we include the script directly into the index file instead of using our special Ajax JavaScript function. If we did not do this, the user would have to send the data to the server twice. First in order to send it to the index file, then the user will receive it again, and then call the Ajax function with the same data.\\
+
+\lstset{language=PHP}
+\begin{figure}[htbp]
+\begin{lstlisting}[firstline=1]
+	if(isset($_POST['picsManagerMakeSubmit'])){
+		//Call upload script
+		require "script/picsManagerMakeUpload.php";
+	}
+\end{lstlisting}
+\caption{The handling of big PHP POSTs}
+\label{lst:largePost}
+\end{figure}
+
+And then the upload script must always make sure to use a PHP \texttt{header} call to navigate the user to the right site, depending on whether he got an error or not.\\
+\\
+If the reader wants to learn more about the navigation script the files used for this script is: \texttt{/include/headInclude.php} , \texttt{/assets/js/navigation.js} and \texttt{index.php} .
+
