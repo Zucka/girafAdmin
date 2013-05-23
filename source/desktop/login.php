@@ -143,18 +143,21 @@
 			exit();
 		}
 		else {
+			$role   = db_getProfileInfo($result['profile']);
+			$rights = db_getRights($result['profile']);
+			$dpInfo = db_getAdminRight($role[0]["department"]);
 			$_SESSION['session_id'] = session_id();
 			$_SESSION['username'] = $username;
-			$_SESSION['userId'] = $result['profile'];
+			$_SESSION['userId'] = $result['user'];
+			$_SESSION['profileId'] = $result['profile'];
 			$_SESSION['lang'] = $lang;
 			$_SESSION['dbsess'] = $result['session'];
 			$_SESSION['password'] = $password;
-			$role = db_getProfileInfo($result['profile']);
 			$_SESSION['department'] = $role[0]["department"];
 			$_SESSION['role'] = $role[0]['role'];
-			$rights = db_getRights($result['profile']);
 			$_SESSION['update'] = $rights['update'];
 			$_SESSION['delete'] = $rights['delete'];
+			$_SESSION['isAdmin'] = $dpInfo[0]["update"];
 			session_write_close();
 			header('location:/#ownProfile');
 		}
