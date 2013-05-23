@@ -43,14 +43,20 @@
 		$DEPARTMENT_STRINGS["headerTitle"] = "Afdelings info &middot; GIRAF";
 		$DEPARTMENT_STRINGS["breadCrump"] = "Afdelings side";
 
+				$DEPARTMENT_STRINGS["btnEdit"] = " Ret";
+
 		$DEPARTMENT_STRINGS["h_personalInfo"] = "Afdelings Information:";
+			$DEPARTMENT_STRINGS["name"] = "Navn :";
+			$DEPARTMENT_STRINGS["phoneNr"] = "Tlf :";
+			$DEPARTMENT_STRINGS["mobilePhoneNr"] = "Mob :";
+			$DEPARTMENT_STRINGS["address"] = "Addresse :";
 			$DEPARTMENT_STRINGS["dpHead"] = "Afdelingsleder :";
 
 		$DEPARTMENT_STRINGS["h_pedagogues"] = "Pædagogor:";
 			$DEPARTMENT_STRINGS["tblName"] = "Navn";
-			$DEPARTMENT_STRINGS["tblAttachedChildren"] = "Attached Children";
-			$DEPARTMENT_STRINGS["tblEditPedagogue"] = "Edit relation";
+			$DEPARTMENT_STRINGS["tblAttachedChildren"] = "Tilknyttede børn";
+			$DEPARTMENT_STRINGS["tblEditPedagogue"] = "Ret relation";
 
-		$DEPARTMENT_STRINGS["pictureEdit"] = " Edit";
+		$DEPARTMENT_STRINGS["pictureEdit"] = " Ret";
 
 ?>

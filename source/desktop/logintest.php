@@ -1,6 +1,6 @@
 <?
 	require_once "db/new.db.php";
-
+/*
 function generateNewQr()
 {
 	$qr = "";
@@ -64,15 +64,15 @@ function generateNewQr()
 	print_r($return);
 	echo "</br>";
 	echo "ID på oprettet user: <br>". $return["data"][0]."<br>";
+*/
 
 
-/*
 	// GET USER INFO (ROLE AND ID)
 	$buffer = '{
 		"action": null,
 	    "auth": {
-	        "username": "John",
-	        "password": "123456"
+	        "username": "Neo",
+	        "password": "8a98a0ecd5"
 	    },
 	    "data": "null"
 	}';
@@ -88,8 +88,8 @@ function generateNewQr()
 	$buffer = '{
 		"action": "read",
 	    "auth": {
-	        "username": "John",
-	        "password": "123456"
+	        "username": "Neo",
+	        "password": "8a98a0ecd5"
 	    },
 	    "data": {
 	    	"type":"profile",
@@ -116,8 +116,8 @@ function generateNewQr()
 	$buffer = '{
 		"action": "read",
 	    "auth": {
-	        "username": "John",
-	        "password": "123456"
+	        "username": "Leo",
+	        "password": "c360007aed"
 	    },
 	    "data": {
 	    	"type":"department",
@@ -126,6 +126,7 @@ function generateNewQr()
 	    }
 	}';
 	$departmentInfoe = db_query($buffer)["data"];
+	print_r($departmentInfoe);
 	echo $departmentInfoe[0]["name"];
 		echo "</br>";
 	echo $departmentInfoe[0]["phone"];
@@ -138,8 +139,8 @@ function generateNewQr()
 	$buffer = '{
 		"action": "read",
 	    "auth": {
-	        "username": "John",
-	        "password": "123456"
+	        "username": "Leo",
+	        "password": "c360007aed"
 	    },
 	    "data": {
 	    	"type":"department",

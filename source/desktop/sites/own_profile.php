@@ -386,6 +386,12 @@ function child()
 function department()
 {
 	global $DEPARTMENT_STRINGS;
+	global $PROFILE_STRINGS;
+	global $departmentInfo;
+	global $profileInfo;
+	$dpHead = "";
+	if ($departmentInfo[0]["update"] == 1){$dpHead .= $profileInfo[0]["name"];}
+	else {$dpHead .= "Not You";}
 	$content = '
 	<div class="breadcrump">'.$DEPARTMENT_STRINGS["breadCrump"].'</div>
 		<div class="row">
@@ -395,27 +401,22 @@ function department()
 					<table class="table table-profile">
 						<tr>
 							<td>'.$DEPARTMENT_STRINGS["name"].'</td>
-							<td>Birken</td>
+							<td>'.$departmentInfo[0]["name"].'</td>
 							<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$DEPARTMENT_STRINGS["btnEdit"].'</button></td>
 						</tr>
 						<tr>
 							<td>'.$DEPARTMENT_STRINGS["phoneNr"].'</td>
-							<td>29 69 59 70</td>
-							<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$DEPARTMENT_STRINGS["btnEdit"].'</button></td>
-						</tr>
-						<tr>
-							<td>'.$DEPARTMENT_STRINGS["mobilePhoneNr"].'</td>
-							<td>99 69 59 80</td>
+							<td>'.$departmentInfo[0]["phone"].'</td>
 							<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$DEPARTMENT_STRINGS["btnEdit"].'</button></td>
 						</tr>
 						<tr>
 							<td>'.$DEPARTMENT_STRINGS["address"].'</td>
-							<td>Birkegade 1, 9000 Aalborg</td>
+							<td>'.$departmentInfo[0]["address"].'</td>
 							<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$DEPARTMENT_STRINGS["btnEdit"].'</button></td>
 						</tr>
 						<tr>
 							<td>'.$DEPARTMENT_STRINGS["dpHead"].'</td>
-							<td>Hans Jensen</td>
+							<td>'.$dpHead.'</td>
 							<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$DEPARTMENT_STRINGS["btnEdit"].'</button></td>
 						</tr>
 					</table>

@@ -163,6 +163,22 @@ function db_insertNewQrCode($id,$newQr)
 	}
 }
 
+/* 
+	Creates a new user based on input
+	--inputs--
+	type should be type of user to create (0 = pedagouge; 1 = parrent; 2 = child)
+	data should be array containing relevant information
+
+	--returns--
+	if succesful, returns an associative array of id, password and certificate
+	if failure, returns FALSE
+ */
+
+
+
+
+
+
 function db_getProfiles(){
 	global $session,$username,$password;
 	$data = '{

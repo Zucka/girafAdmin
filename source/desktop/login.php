@@ -145,7 +145,7 @@
 		else {
 			$_SESSION['session_id'] = session_id();
 			$_SESSION['username'] = $username;
-			$_SESSION['userId'] = $result['user'];
+			$_SESSION['userId'] = $result['profile'];
 			$_SESSION['lang'] = $lang;
 			$_SESSION['dbsess'] = $result['session'];
 			$_SESSION['password'] = $password;
