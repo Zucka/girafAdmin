@@ -204,6 +204,31 @@ function db_getProfiles(){
 	}
 }
 
+function db_getUsers(){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+		"data": {
+	    	"type":"user",
+	    	"view":"list",
+	    	"ids":null
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
 function db_getProfileInfo($id){
 	global $session,$username,$password;
 	$data = '{
