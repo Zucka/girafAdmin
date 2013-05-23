@@ -7,6 +7,7 @@ if (isset($_SESSION['dbsess'])) {$session = $_SESSION['dbsess'];} else {$session
 if (isset($_SESSION['username'])) {$username = $_SESSION['username'];} else {$username = '';}
 if (isset($_SESSION['dbsess'])) {$password = $_SESSION['password'];} else {$password = '';}
 if (isset($_SESSION['userId'])) {$userId = $_SESSION['userId'];} else {$userId = '';}
+if (isset($_SESSION['profileId'])) {$profileId = $_SESSION['profileId'];} else {$profileId = '';}
 
 
 function db_query($json)
@@ -240,6 +241,31 @@ function db_getDepartmentInfo($departmentId){
 	    "data": {
 	    	"type":"department",
 	    	"view":"details",
+	    	"ids":['.$departmentId.']
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function db_getAdminRight($departmentId){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+	    "data": {
+	    	"type":"department",
+	    	"view":"list",
 	    	"ids":['.$departmentId.']
 	    }
 	}';
