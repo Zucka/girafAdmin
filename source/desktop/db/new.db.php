@@ -15,7 +15,7 @@ function db_query($json)
 	$address = '130.225.196.27';
 	$port = 2468;
 	$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-	socket_connect($socket, '130.225.196.27',2468);
+	socket_connect($socket, $address,$port);
 	socket_write($socket, $json, strlen($json));
 	//sleep(0.1);
 	$buf = '';
