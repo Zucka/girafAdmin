@@ -145,7 +145,7 @@
 		else {
 			$role   = db_getProfileInfo($result['profile']);
 			$rights = db_getRights($result['profile']);
-			$dpInfo = db_getAdminRight($role[0]["department"]);
+			$dpInfo = db_getAdminRight();
 			$_SESSION['session_id'] = session_id();
 			$_SESSION['username'] = $username;
 			$_SESSION['userId'] = $result['user'];

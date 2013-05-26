@@ -255,7 +255,7 @@ function db_getDepartmentInfo($departmentId){
 	}
 }
 
-function db_getAdminRight($departmentId){
+function db_getAdminRight(){
 	global $session,$username,$password;
 	$data = '{
 		"action": "read",
@@ -266,7 +266,7 @@ function db_getAdminRight($departmentId){
 	    "data": {
 	    	"type":"department",
 	    	"view":"list",
-	    	"ids":['.$departmentId.']
+	    	"ids":null
 	    }
 	}';
 	$result = db_query($data);

@@ -42,7 +42,7 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 		$profileInfo = db_getProfileInfo($viewingUserId);
 	}
 	else {
-		$profileInfo = db_getProfileInfo($_SESSION["userId"]);
+		$profileInfo = db_getProfileInfo($_SESSION["profileId"]);
 	}
 	$departmentInfo = db_getDepartmentInfo($profileInfo[0]["department"]);
 	if ($action == '') {
@@ -234,12 +234,22 @@ function contentBlock3()
 {
 	global $PROFILE_STRINGS;	
 	global $profileInfo;
-	$contentBlock3 ='
-					<div>
-						<img class="profile_picture" src="data:image/jpeg;base64,'.$profileInfo[0]["picture"].'">
-						<button class="btn profile-btn" type="button" onclick="changeProfilePicturePopup()"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["pictureEdit"].'</button>
-					</div>
-					';
+
+	if ($profileInfo[0]["picture"]){
+		$contentBlock3 ='
+						<div>
+							<img class="profile_picture" src="data:image/jpeg;base64,'.$profileInfo[0]["picture"].'">
+							<button class="btn profile-btn" type="button" onclick="changeProfilePicturePopup()"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["pictureEdit"].'</button>
+						</div>
+						';}
+	else {
+		$contentBlock3 ='
+						<div>
+							<img class="profile_picture" src="/assets/img/anonymous.svg">
+							<button class="btn profile-btn" type="button" onclick="changeProfilePicturePopup()"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["pictureEdit"].'</button>
+						</div>
+						';
+	};
 	return $contentBlock3;
 }
 

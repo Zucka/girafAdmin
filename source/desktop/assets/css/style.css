@@ -271,6 +271,7 @@ a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLin
   
   margin-left:auto;
   margin-right:auto;
+  margin-top: 15px;
   
   text-decoration:none;
 }
@@ -280,6 +281,7 @@ a.menuLastLink:link, a.menuLastLink:visited, a.menuLastLink:hover, a.menuLastLin
   width:60%;
   margin-left:auto;
   margin-right:auto;
+  margin-top: 15px;
 }
 
 #content{

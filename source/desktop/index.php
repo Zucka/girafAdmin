@@ -37,7 +37,7 @@ if ($_SESSION['session_id'] != session_id())
 				<a href="#ownProfile" class="menuLink menuLastLink"><?php echo $NAVIGATION_STRINGS['ownProfile'];?></a>
 					<hr class="menuLinkSplitter">
 				<?php
-					//if($_SESSION['delete']){
+					if($_SESSION['isAdmin']){
 				?>
 				<a href="#profiles" class="menuLink deptOnly"><?php echo $NAVIGATION_STRINGS['profiles'];?></a>
 					<hr class="menuSubLinkSplitter">
@@ -46,7 +46,7 @@ if ($_SESSION['session_id'] != session_id())
 				<a href="#addRelation" class="menuLink menuSubLink deptOnly menuLastLink"><?php echo $NAVIGATION_STRINGS['addRelation'];?></a>
 					<hr class="menuLinkSplitter">
 				<?php
-					//}
+					}
 				?>
 				<a href="#picsManager" class="menuLink"><?php echo $NAVIGATION_STRINGS['picsManager']; ?></a>
 					<hr class="menuSubLinkSplitter">
@@ -61,7 +61,7 @@ if ($_SESSION['session_id'] != session_id())
 				<a href="#deletePic" class="menuLink menuSubLink menuLastLink"><?php echo $NAVIGATION_STRINGS['deletePic'];?></a>
 					<hr class="menuLinkSplitter">
 				<?php
-					//if($_SESSION['delete']){
+					if($_SESSION['isAdmin']){
 				?>
 				<a href="#depManager/action=department" class="menuLink deptOnly"><?php echo $NAVIGATION_STRINGS['depManager'];?></a>
 					<hr class="menuSubLinkSplitter">
@@ -70,7 +70,7 @@ if ($_SESSION['session_id'] != session_id())
 				<a href="#qrManager" class="menuLink menuSubLink deptOnly menuLastLink"><?php echo $NAVIGATION_STRINGS['qrManager'];?></a>
 					<hr class="menuLinkSplitter">
 				<?php
-					//}
+					}
 				?>
 				<a href="#appManager" class="menuLink menuLastLink"><?php echo $NAVIGATION_STRINGS['appManager'];?></a>
 					<hr class="menuLinkSplitter">

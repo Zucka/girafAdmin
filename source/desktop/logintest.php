@@ -80,6 +80,8 @@ function generateNewQr()
 	$return = db_query($buffer);
 	echo $return["session"]["profile"];
 	echo "</br>";
+	print_r($return);
+	echo "</br>";
 
 	// GET PROFILE
 
@@ -99,6 +101,9 @@ function generateNewQr()
 	}';
 	$profileInfo = db_query($buffer)["data"];
 
+
+	print_r($profileInfo);
+	echo "</br>";
 	echo $profileInfo[0]["name"];
 		echo "</br>";
 	echo $profileInfo[0]["phone"];
