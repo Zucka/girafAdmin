@@ -131,7 +131,7 @@ function contentStart($role){
 	if ($role == 1 || $role == 0 || $role == 2){
 			global $PROFILE_STRINGS;
 	$contentStart = '
-	<div class="breadcrump">'.$PROFILE_STRINGS["breadCrump"].'</div>
+	<div class="breadcrump"><h3>'.$PROFILE_STRINGS["breadCrump"].'<h3></div>
 		<div class="row">
 			<div class="span6">
 				<div class="container-fluid">
@@ -141,7 +141,7 @@ function contentStart($role){
 	elseif ($role == 4){
 	global $DEPARTMENT_STRINGS;
 	$contentStart = '
-	<div class="breadcrump">'.$DEPARTMENT_STRINGS["breadCrump"].'</div>
+	<div class="breadcrump"><h3>'.$DEPARTMENT_STRINGS["breadCrump"].' <h3></div>
 		<div class="row">
 			<div class="span6">
 				<div class="container-fluid">

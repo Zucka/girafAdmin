@@ -38,7 +38,7 @@
 <meta charset="utf-8">
 <div class="breadcrump">
 	<br>
-	<h4><a href="/#profiles"><?php echo $CREATEPROFILE_STRINGS['profiles']; ?></a> → <?php echo $CREATEPROFILE_STRINGS['createProfile']; ?></h4>
+	<h3><a href="/#profiles"><?php echo $CREATEPROFILE_STRINGS['profiles']; ?></a> → <?php echo $CREATEPROFILE_STRINGS['createProfile']; ?></h3>
 </div>
 
 <!--JavaScript-->
