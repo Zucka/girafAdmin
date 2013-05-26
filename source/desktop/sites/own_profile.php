@@ -42,7 +42,7 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 		$profileInfo = db_getProfileInfo($viewingUserId);
 	}
 	else {
-		$profileInfo = db_getProfileInfo($_SESSION["userId"]);
+		$profileInfo = db_getProfileInfo($_SESSION["profileId"]);
 	}
 	$departmentInfo = db_getDepartmentInfo($profileInfo[0]["department"]);
 	if ($action == '') {
@@ -131,7 +131,7 @@ function contentStart($role){
 	if ($role == 1 || $role == 0 || $role == 2){
 			global $PROFILE_STRINGS;
 	$contentStart = '
-	<div class="breadcrump">'.$PROFILE_STRINGS["breadCrump"].'</div>
+	<div class="breadcrump"><h3>'.$PROFILE_STRINGS["breadCrump"].'<h3></div>
 		<div class="row">
 			<div class="span6">
 				<div class="container-fluid">
@@ -141,7 +141,7 @@ function contentStart($role){
 	elseif ($role == 4){
 	global $DEPARTMENT_STRINGS;
 	$contentStart = '
-	<div class="breadcrump">'.$DEPARTMENT_STRINGS["breadCrump"].'</div>
+	<div class="breadcrump"><h3>'.$DEPARTMENT_STRINGS["breadCrump"].' <h3></div>
 		<div class="row">
 			<div class="span6">
 				<div class="container-fluid">
@@ -234,12 +234,22 @@ function contentBlock3()
 {
 	global $PROFILE_STRINGS;	
 	global $profileInfo;
-	$contentBlock3 ='
-					<div>
-						<img class="profile_picture" src="data:image/jpeg;base64,'.$profileInfo[0]["picture"].'">
-						<button class="btn profile-btn" type="button" onclick="changeProfilePicturePopup()"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["pictureEdit"].'</button>
-					</div>
-					';
+
+	if ($profileInfo[0]["picture"]){
+		$contentBlock3 ='
+						<div>
+							<img class="profile_picture" src="data:image/jpeg;base64,'.$profileInfo[0]["picture"].'">
+							<button class="btn profile-btn" type="button" onclick="changeProfilePicturePopup()"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["pictureEdit"].'</button>
+						</div>
+						';}
+	else {
+		$contentBlock3 ='
+						<div>
+							<img class="profile_picture" src="/assets/img/anonymous.svg">
+							<button class="btn profile-btn" type="button" onclick="changeProfilePicturePopup()"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["pictureEdit"].'</button>
+						</div>
+						';
+	};
 	return $contentBlock3;
 }
 
@@ -386,6 +396,12 @@ function child()
 function department()
 {
 	global $DEPARTMENT_STRINGS;
+	global $PROFILE_STRINGS;
+	global $departmentInfo;
+	global $profileInfo;
+	$dpHead = "";
+	if ($departmentInfo[0]["update"] == 1){$dpHead .= $profileInfo[0]["name"];}
+	else {$dpHead .= "Not You";}
 	$content = '
 	<div class="breadcrump">'.$DEPARTMENT_STRINGS["breadCrump"].'</div>
 		<div class="row">
@@ -395,27 +411,22 @@ function department()
 					<table class="table table-profile">
 						<tr>
 							<td>'.$DEPARTMENT_STRINGS["name"].'</td>
-							<td>Birken</td>
+							<td>'.$departmentInfo[0]["name"].'</td>
 							<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$DEPARTMENT_STRINGS["btnEdit"].'</button></td>
 						</tr>
 						<tr>
 							<td>'.$DEPARTMENT_STRINGS["phoneNr"].'</td>
-							<td>29 69 59 70</td>
-							<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$DEPARTMENT_STRINGS["btnEdit"].'</button></td>
-						</tr>
-						<tr>
-							<td>'.$DEPARTMENT_STRINGS["mobilePhoneNr"].'</td>
-							<td>99 69 59 80</td>
+							<td>'.$departmentInfo[0]["phone"].'</td>
 							<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$DEPARTMENT_STRINGS["btnEdit"].'</button></td>
 						</tr>
 						<tr>
 							<td>'.$DEPARTMENT_STRINGS["address"].'</td>
-							<td>Birkegade 1, 9000 Aalborg</td>
+							<td>'.$departmentInfo[0]["address"].'</td>
 							<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$DEPARTMENT_STRINGS["btnEdit"].'</button></td>
 						</tr>
 						<tr>
 							<td>'.$DEPARTMENT_STRINGS["dpHead"].'</td>
-							<td>Hans Jensen</td>
+							<td>'.$dpHead.'</td>
 							<td><button class="btn btn-mini buttonEdit" type="button"><i class="icon-wrench"></i>'.$DEPARTMENT_STRINGS["btnEdit"].'</button></td>
 						</tr>
 					</table>

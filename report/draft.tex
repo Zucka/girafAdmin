@@ -15,38 +15,51 @@
 	\input{layout/emptypage.tex}
 	\setcounter{page}{2}
 	\input{layout/titelblad.tex}
+	\input{layout/emptypage.tex}
+	\setcounter{page}{4}
 	\input{layout/signatures.tex}
+	\input{layout/emptypage.tex}
+	\setcounter{page}{6}
 	\tableofcontents	
 	\addcontentsline{toc}{chapter}{Contents}
 	\newpage
 	\input{text/introduction.tex}
 	\input{tex/commonReport/commonReport}
-	\input{text/problemstatement.tex}
-	\input{text/problemformulation.tex}
+	
 	
 	% Part Analysis
 	\part{Analysis}
+	\label{skipToMe}
+	\input{text/weeklyProgress.tex}
+	\input{text/problemstatement.tex}
+	
 	
 	% Part Solution
 	\part{Solution}
+	
 	\input{text/systemOverview.tex}
 	\input{text/chapterImplementation.tex}
 	\input{text/implementationNavigation.tex}
 	\input{text/qr.tex}
 	\input{text/implementationProfilePicChange.tex}
+	\input{text/multiplelanguage.tex}
+	\input{text/implementationPicsManagerMake.tex}
+
+	\input{text/usabilityTesting.tex}
 
 	%Part Perspective
 	\part{Perspective}
 	
-	\part{Appendix}
-	\appendix{}
-
+	
 	\bibliographystyle{plain}
-	\bibliography{kilder}
+	\bibliography{kilder,tex/commonReport/bib/commonReport}
 	\addcontentsline{toc}{chapter}{Bibliography}
 	\newpage
 	\appendix
 		\addtocounter{page}{-1}	%S�tter pagecounter til at passe med det reelle sidetal!
 	\input{layout/emptypage.tex}
+	
+	\part{Appendix}
+	\appendix{}
 
 \end{document}

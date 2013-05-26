@@ -7,6 +7,7 @@ if (isset($_SESSION['dbsess'])) {$session = $_SESSION['dbsess'];} else {$session
 if (isset($_SESSION['username'])) {$username = $_SESSION['username'];} else {$username = '';}
 if (isset($_SESSION['dbsess'])) {$password = $_SESSION['password'];} else {$password = '';}
 if (isset($_SESSION['userId'])) {$userId = $_SESSION['userId'];} else {$userId = '';}
+if (isset($_SESSION['profileId'])) {$profileId = $_SESSION['profileId'];} else {$profileId = '';}
 
 
 function db_query($json)
@@ -14,7 +15,7 @@ function db_query($json)
 	$address = '130.225.196.27';
 	$port = 2468;
 	$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-	socket_connect($socket, '130.225.196.27',2468);
+	socket_connect($socket, $address,$port);
 	socket_write($socket, $json, strlen($json));
 	//sleep(0.1);
 	$buf = '';
@@ -163,6 +164,22 @@ function db_insertNewQrCode($id,$newQr)
 	}
 }
 
+/* 
+	Creates a new user based on input
+	--inputs--
+	type should be type of user to create (0 = pedagouge; 1 = parrent; 2 = child)
+	data should be array containing relevant information
+
+	--returns--
+	if succesful, returns an associative array of id, password and certificate
+	if failure, returns FALSE
+ */
+
+
+
+
+
+
 function db_getProfiles(){
 	global $session,$username,$password;
 	$data = '{
@@ -173,6 +190,31 @@ function db_getProfiles(){
 		},
 		"data": {
 	    	"type":"profile",
+	    	"view":"list",
+	    	"ids":null
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function db_getUsers(){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+		"data": {
+	    	"type":"user",
 	    	"view":"list",
 	    	"ids":null
 	    }
@@ -225,6 +267,31 @@ function db_getDepartmentInfo($departmentId){
 	    	"type":"department",
 	    	"view":"details",
 	    	"ids":['.$departmentId.']
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function db_getAdminRight(){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+	    "data": {
+	    	"type":"department",
+	    	"view":"list",
+	    	"ids":null
 	    }
 	}';
 	$result = db_query($data);

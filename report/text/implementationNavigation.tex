@@ -1,4 +1,5 @@
 \section{Navigation}
+\label{sec:navigation}
 %Why do we explain this?
 The navigation system that we have implemented in our system is based on JavaScript and the event \texttt{window.onhashchange}, with the addition of Ajax.
 We use Ajax to fetch the sites without ever navigating away from the index site. This is done because we wanted to minimize the amount of data transfer from the server that the site is made on. However this do present itself with a few challenges. For example we have had to come up with a special solution in order to send the PHP \texttt{\$\_POST} and \texttt{\$\_GET} data around, in this section we will explain how this is implemented and how it should be used in the future.\\
