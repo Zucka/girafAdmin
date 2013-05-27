@@ -2,12 +2,20 @@
 The general purpose for this project has been explained both in this reports introduction and in the GIRAF introduction, see \ref{chap:introduction} and \ref{sec:admin}.
 
 The first GIRAF Admin project was started in 2011, then in 2012 it was split into two projects, called Savanah and Oasis. These two last named projects was focused on constructing Database systems as well as user interfaces to use these. Savanah was focused on an internet version and Oasis on a tablet version. When these two projects was finished, the databases could not communicate and had no chance to do so, because of different database schemes.\\
-Now in 2013 we have split the assignments into constructing an Admin interface and constructing a proper synchronizable database. The database project this year is called WASTELAND \citep{wasteland}.
+Now in 2013 we have split the assignments into constructing an Admin interface and constructing a proper synchronizable database. The database project this year is called WASTELAND \citep{wasteland}.\\
+\\
+%Dette års fokus
+Since the database has been redesigned in order to accommodate the use on several platforms it was a logical choice to also redesign the admin interface, so that it also could be used on several platforms, and keep it in one code base for higher maintainability.\\
+In order to ensure that the Admin project does not have to be discarded again, we want to make sure that this system is properly designed, for maximal user friendliness.\\
+Also in order to fulfill the need of user creation that the GIRAF system as a whole has, we will have to focus on creating all the profile management tools first. This means that if we are unable to construct the whole system that we had designed in chapter \fxfatal{Indsæt refference til System Design}. We will at least have to construct the user management interface. This will leave the management of pictograms to the tablet projects.
 
-
-The problem statement:
+This have lead us to this problem statement:
 \begin{verse}
 \textit{''Currently there are two different administration interfaces for the GIRAF system.
 This results in a problem with maintainability and user friendliness.
-How can we make a single user friendly administration interface for the GIRAF system?''}
+How can we make a \underline{single} user friendly administration interface for the GIRAF system?''}
 \end{verse}
+
+%Glidende overgang til System Overview
+In order to verify if we have successfully completed the user friendliness part of the problem statement, we have completed a usability test that can be found at chapter \vref{chap:usabilityTesting}.
+%Refference til Usability Testing
