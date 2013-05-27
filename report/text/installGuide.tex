@@ -1,6 +1,6 @@
-\section{Installation Guide and Configuration}
+\chapter{Installation Guide and Configuration}
 This section will describe how to install and configure the GIRAF Admin system. 
-\subsection{Requirements}
+\section{Requirements}
 \begin{itemize}
 \item A suitable operating system (Ubuntu, Windows and OSX was used during development)
 \item Apache (Not tested on nginx)
@@ -9,13 +9,13 @@ This section will describe how to install and configure the GIRAF Admin system.
 \item GIT (The project is hosted on GIT)
 \item Python if auto update is used
 \end{itemize}
-\subsection{Installation}
+\section{Installation}
 \begin{itemize}
 \item Install Apache, PHP5, GIT and Python
 \item Pull the most current version from https://github.com/Zucka/girafAdmin (although forking the project is advised)
 \item Copy the contents of source/desktop into the www root of Apache (usually /var/www/ on UNIX systems)
 \end{itemize}
-\subsection{Configuration}
+\section{Configuration}
 \begin{itemize}
 \item Enable the socket module of PHP5 if not already enabled
 \item Enable the header module of Apache if not already enabled
@@ -29,9 +29,9 @@ This section will describe how to install and configure the GIRAF Admin system.
 \caption{The configuration fragment to add to httpd.conf}
 \label{lst:apacheheader}
 \end{figure}
-\end{itemize}
 \item Change the variables address and port in source/desktop/db/new.db.php to reflect the IP address and port of the server that hosts the database API
-\subsection{Auto Update}
+\end{itemize}
+\section{Auto Update}
 A python script was made to auto update the server from a GIT. It can be used to auto pull new changes from a GIT and then move the contents of a folder ínto another folder. To get it to work you need either Python 2.X or 3.
 \begin{itemize}
 \item Copy autoupdate.py from source/scripts/autoupdate.py to a seperate folder, to be used as an intermediate folder
