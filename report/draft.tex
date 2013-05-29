@@ -26,10 +26,14 @@
 	\input{text/introduction.tex}
 	\input{tex/commonReport/commonReport}
 	
+	%\part{Design}
+	
+
 	
 	% Part Analysis
 	\part{Analysis}
 	\label{skipToMe}
+	\input{text/systemDesign.tex}
 	\input{text/weeklyProgress.tex}
 	\input{text/problemstatement.tex}
 	
@@ -38,6 +42,7 @@
 	\part{Solution}
 	
 	\input{text/systemOverview.tex}
+	\input{text/design.tex} %Design står her i vores opsætning
 	\input{text/chapterImplementation.tex}
 	\input{text/implementationNavigation.tex}
 	\input{text/qr.tex}
@@ -68,6 +73,13 @@
 	\begin{appendices}
 	\input{text/installGuide.tex}
 	\input{text/mockups.tex}
+	\input{text/interviewMette.tex}
+	\input{text/usabilityTestingAppendix.tex}
+	\input{text/colorTheme.tex}
 	\end{appendices}
+	
+	%Denne komando lister alle fixme's
+	\part{Fixme}
+	\listoffixmes
 
 \end{document}

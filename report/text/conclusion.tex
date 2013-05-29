@@ -1,3 +1,58 @@
 \chapter{Conclusion}
 \label{chap:conclusion}
-\fixme{TO BE MADE...}
+This projects focus was on making an administrative interface for the GIRAF system on both a desktop and an android platform. Although the developed system was never deployed on an android platform the system is running on a server and is accessible through common web-browsers.\\
+As it was already shown in chapter \vref{chap:systemOverview} we did not complete all the features of the system. This was due both to trouble with the WASTELAND API as well as unforeseen trouble with different aspects of the already created system.\\
+However we did not set out to make a 100\% complete system, but rather a system that, which parts that was complete, would not have to be worked on again. But also with mind to that the most important features for the Admin system to complete would be user management, since the pictogram features would be implemented on the tablet as well.\\
+\\
+But we regret to inform that we did not manage to do this either. As can be seen of chapter \vref{chap:usabilityTesting}, there is errors and bugs in our system, and even missing parts.\\
+\\
+
+\begin{table}[htbp]
+	\centering
+		\begin{tabularx}{\linewidth}{| X | c |}
+			\hline
+			Description & Severity\\\hline\hline
+			It is not possible to create new categories of Pictos & Critical \\\hline
+			Profile - Restrict QR editing to department manager & Critical \\\hline 
+			DB Problem - Not possible for all pedagogs to fix pictos for all department children & Critical \\\hline
+			Navigation - The site ''Profiles'' should link to each profile & Critical \\\hline
+			Missing - Unable to remove relations & Critical \\\hline
+			Profile Pic - Accept button is hard to find & Serious \\\hline
+			Profile Pic - Word ''change'' is misleading & Serious \\\hline
+			Navigation - ''Add'' and ''Make'' under Pics Manager is confusing & Serious \\\hline
+			Missing - No Danish language support on the site ''Profiles''& Serious \\\hline
+			Profile - Department should be a link, not editable & Serious \\\hline
+			Profile - Links from Own Profile relations is missing & Serious \\\hline
+			Profile Pic - Word ''Edit'' is not informative & Cosmetic \\\hline
+			DB Problem - Own Profile takes too long to load & Cosmetic   \\\hline
+			Standardize button names & Cosmetic \\\hline
+			Logout - Can navigate in system without session & Cosmetic \\\hline
+	\end{tabularx}
+	\caption{Bugs/Errors Found Under Usability Testing without the fixed bugs}
+	\label{tab:Bugs/ErrorsMinusTheDone}
+\end{table}
+
+By looking at table \ref{tab:Bugs/ErrorsMinusTheDone}, it can be seen which features that still need implementation in order for the system to be useable. The table displays all the errors and bugs we found under the usability test described in chapter \vref{chap:usabilityTesting}, with exception to the errors that we already fixed.\\
+In order for the system to be usable the critical errors must be rectified. In order for it to work desirably, both critical and serious errors must be rectified.\\
+4 out of 5, of the critical errors can be fixed by a couple of days hard work, but the last error regarding the DB Problem, can not be fixed within the Admin system. It did not get fixed this semester because of the very late discovery of this error. We did go to the WASTELAND project group when it was discovered, but with only two weeks left, reserved for report writing, neither did they or we have the time to find and fix the problem.\\
+\\
+But if we look away from what is lacking and instead turn our attention to the other aspects of our problem statement. Displayed here below to refresh memory.
+
+\begin{verse}
+\textit{''Currently there are two different administration interfaces for the GIRAF system.
+This results in a problem with maintainability and user friendliness.
+How can we make a \underline{single} user friendly administration interface for the GIRAF system?''}
+\end{verse}
+
+The system is actually quite user friendly. If the problems in table \ref{tab:Bugs/ErrorsMinusTheDone} was to be fixed the system should be free of slowing effects in the matter of daily use. Multiple of our test persons did actually praise the system on the simple structure during the interview after the test.\\
+\\
+The system only have \underline{one} codebase and the maintainability for the new system should therefore be quite a lot higher than that of the former two systems. Also we have made an effort to both comment on our code, and also in this report describe some of the more complex solutions, especially in chapter \vref{chap:systemOverview}. Also this report comes with an install guide in the appendix, see chapter \vref{chap:installGuide}, so that this project should be as pain free to continue on, as possible.\\
+\\
+With this said, we did not complete what we set out to do. But we did everything we could to ensure that this project is possible to continue on for whomever is to take over after us. A goal we thought higher then simply completing the system.\\
+In the next sections we will evaluate on the multi-project itself and after that make a note of what could be done in the future to improve on this system as well as the GIRAF system as a whole.
+
+
+
+
+
+

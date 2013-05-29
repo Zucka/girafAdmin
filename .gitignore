@@ -8,6 +8,7 @@
 *.synctex.gz
 *.class
 *.tps
+*.lox
 
 
 # OS generated files #
