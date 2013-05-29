@@ -1,33 +1,33 @@
 \chapter{System Design}
 \label{chap:systemDesign}
 %Intro to project
-As explained in section \vref{sec:admin}, the Admin system is based on a single code base running on a LAMP stack. Which means we use Apache, MySQL and PHP for the system to operate. However the MySQL part is handled by another group, the WASTELAND group. The Admin system simply interface with it through an API.\\
+As explained in section \vref{sec:admin}, the Admin system is based on a single code base running on a LAMP stack. Which means we use Apache, MySQL and PHP for the system to operate. However the MySQL part is handled by another group, the WASTELAND group. The Admin system simply interface with the database through the API that the WASTELAND group makes. A description of the WASTELAND project can be read in section \vref{sub:wasteland}.\\
 Given that the system is written in PHP, the product of this project will be a website. Which has the ability to manage users, pictograms and applications.\\
 \\
-This chapter will give an insight into the initial choices made by the Admin group at the very beginning of the project. Choices such as, starting the project from scratch for the 3rd time, how we intend to make PHP code run on a Android device, and how we organize the source code.
+This chapter will give an insight into the initial choices made by the Admin group at the beginning of the project. Choices such as, starting the project from scratch for the 3rd time, how to run PHP code on a Android device, and how we organize the source code.
 
 
 \section{Starting from scratch}
 %Why did we skip the old codebase
 %What are we using now
-As just mentioned, we chose to start the admin project from scratch. Even though there have been 3 admin projects before this one, in the GIRAF project as a whole.\\
-This choice was made based on several problems with the 2 admin projects from the GIRAF project year 2012. The projects was named Oasis and Savannah.\\
+Though there have been 3 \ac{giraf} administration projects before this one, the decission to create a completely new one came fairly easy.\\
+The choice was made based on several problems with the two admin projects from the \ac{giraf} project year 2012. The projects was named Oasis and Savannah.\\
 \\
 Oasis was a system mainly concerned with constructing a database for the tablet, and every application run on the tablet. The administration part of this project did therefor not get far. It could more or less only display the information about users in the local database that it was constructed with.\\
 \\
-The Savannah admin interface got a little further then Oasis. However they too were also concerned with constructing a database, this time for the website version. It was supposed to be able to match that of the Oasis project. However this was not the case when the two projects was done. The database schemes did not match, which lead to the start of the WASTELAND project.\\
+The Savannah admin interface got a little further than Oasis. However they too were also concerned with constructing a database, this time for the website version. It was supposed to be able to match that of the Oasis project. However this was not the case when the two projects was done. The database schemes did not match and was not able to syncronize. This lead to the start of the WASTELAND project.\\
 The WASTELAND project was supposed to have been mainly about the synchronization of the two databases, but ended up having to start the database project from scratch because the available code from the Savannah project was outdated and that of Oasis was unusable as a central database setup.\\
-By the same two reasons could the Admin project not be continued on from the Savannah or Oasis project. If we had chosen to continue on the Savannah and Oasis project, we would first of all have to get the Savannah code back up to date and then make both the Savannah and Oasis project complete, while making both ready for a new database implementation. This would also mean that it would be more difficult then necessary to maintain the Admin system when the project was finished, then it would have to be. Since this would result in two entirely different code bases, one in Java and another in Java Servlet.\\
+By the same two reasons could the Admin project not be continued on from the Savannah or Oasis project. If we had chosen to continue on the Savannah and Oasis project, we would first of all have to get the Savannah code back up to date and then make both the Savannah and Oasis project complete, while making both ready for a new database implementation. This would also mean that it would be more difficult then necessary to maintain the Admin system when the project was finished. Since this would result in two entirely different code bases, one in Java and another in Java Servlet.\\
 \\
-For these reasons we decided to start this project from scratch. Developing the system in PHP, since this would make it possible to keep a single code base. And the time it would have taken to fix Savannah and Oasis up to a state where they could both be worked on properly, both with a new DB and with their original features, would approximately take the same time it would to rewrite the system in a single code base.\\
+All these reasons made the decision to start this project from scratch easy. Developing the system in PHP would make it possible to keep a single code base. And the time it would have taken to take Savannah and Oasis up to a state where they could both be worked on properly, both with a new DB and with their original features, would take at least the same time as it would to rewrite the system in a single code base.\\
 \\
-The next problem that this presents is that, PHP code is not normally something Android systems can compile on their own. How we intend to solve this problem is what the next section is about.
+The next problem that this presents is that, PHP code is not normally something Android systems can interpret on their own. How we intend to solve this problem is what the next section is about.
 
 \section{PHP on Android}
 %PAW and why it didn't become anything
-PAW! Is the answer.\\
+%PAW! Is the answer.\\
 %PAW is an open source project
-PAW stands for Pro Active Webfilter and is an application that makes it possible to run a website, written in PHP code on an Android device. This makes it possible, in combination with a web-browser for the user to use the Admin system without being online, which in most cases is the way the target group will be using the GIRAF system.\\
+PAW stands for Pro Active Webfilter and is an application that makes it possible to run a website, written in PHP code on an Android device. This makes it possible, in combination with a web-browser for the user to use the Admin system without being online, which can be the case for the target group to use the \ac{giraf} system.\\
 However we did not have the chance to implement this ourselves, since halfway through the project our tablet went haywire and was not fixed before the end of the project. This also meant that nearly nothing was finished in regard of this feature. Instead we focused on finishing the code base.
 
 \section{Folder structure and other practical issues}
@@ -39,17 +39,17 @@ When designing a system that is supposed to come with a high maintainability it 
 \\
 
 \begin{figure}[htbp]
-	\centering
-		\includegraphics[width=0.25\textwidth]{images/folderStructure.png}
-	\caption{The Code Folder Structure}
-	\label{fig:folderStructure}
+        \centering
+                \includegraphics[width=0.3\textwidth]{images/folderStructure.png}
+        \caption{The Code Folder Structure}
+        \label{fig:folderStructure}
 \end{figure}
 
-\textbf{desktop:} Is simply the main directory for the dekstop version, since there might come some small variations between the desktop and the Android version of the system.\\
+\noindent{\textbf{desktop:} This is the main directory for the dekstop version. The reason for not having a single root directory is that there might be some variations between the desktop and the Android version of the system.}\\
 \\
-\textbf{api:} Is intended to contain API's that is not JavaScript or PHP code. And is empty as the end of this project.\\
+\textbf{api:} Is intended to contain API's that is not JavaScript or PHP code. And is empty as of the end of this project.\\
 \\
-\textbf{assets:} Contains every asset in the system. Images, JavaScript, sound, fonts, css and language files.\\
+\textbf{assets:} Contains every asset in the system. Images, JavaScript, sound, fonts, CSS and language files.\\
 \\
 \textbf{assets - css:} Contains the CSS files for the system.\\
 \\
@@ -63,11 +63,11 @@ When designing a system that is supposed to come with a high maintainability it 
 \\
 \textbf{assets - js:} Contains all JavaScript in the system, files are named as they fit to PHP files, as far as this is possible.\\
 \\
-\textbf{assets - lang:} Contains all language files for the system. Each webpage and some JavaScripts, have their own folder where these are in. Right now they contain English and Danish language files.\\
+\textbf{assets - lang:} Contains all language files for the system. Each webpage and some JavaScripts, have their own language sub-folder . Right now they contain English and Danish language files.\\
 \\
 \textbf{assets - sound:} Contains all static sound files for the system. Sounds for Pictograms are loaded from the database.\\
 \\
-\textbf{db:} Contains the database files. As of now, all active database functions is stored in the file ''new.db.php''\\
+\textbf{db:} Contains the database files. All active database functions is stored in the file ``new.db.php''\\
 \\
 \textbf{include:} Contains any JavaScript or PHP code that is not developed by the Admin project, that is included in the system.\\
 \\
@@ -83,13 +83,12 @@ As already mentioned in this chapter we chose to use PHP as the backend language
 We chose to use PHP because most of the Admin group already had experience with the language, and also because we found PAW that would make it possible to execute the PHP code on the tablet.\\
 Also another bonus, that was not considered much when we made the choice, is that PHP is natively able to work with JSON objects which is how we communicate with the database API.\\
 \\
-We chose JavaScript, HTML and CSS as frontend because we are writing a website. And there is no real alternative to this.
+JavaScript, HTML and CSS was chosen as frontend because of the product being a website, for which there is no real alternative.
 
 \subsection{Language Support}
 %Language Support
-It was in the beginning of the project suggested that the system could be operated in multiple languages, as a start in Danish and English. This was suggested by the semester coordinator. The admin group though, if this was to implemented at any point, it should be in the start of the system, which meant we would have to implement it into our system.\\
-The way it is implemented is much like it is in Android applications, and can be read in further depth in \vref{sec:languageSupport}.\\
+It was in the beginning of the project suggested that the system could be operated in multiple languages, as a start in Danish and English. This was suggested by the semester coordinator. The admin group thought, if this was to implemented at any point, it should be in the start of the system, which meant we would have to implement it into our system.\\
+The way it is implemented is much like it is in Android applications, and can be read in further detail in \vref{sec:languageSupport}.\\
 \\
 The reader should now have an understanding of the most basic decisions of the Admin project, and be able to navigate in our system.\\
 The next chapter will go through the project progress, followed by the project's problem statement.
-
