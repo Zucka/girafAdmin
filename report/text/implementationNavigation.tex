@@ -1,17 +1,15 @@
 \section{Navigation}
 \label{sec:navigation}
 %Why do we explain this?
-The navigation system that we have implemented in our system is based on JavaScript and the event \texttt{window.onhashchange}, with the addition of Ajax.
-We use Ajax to fetch the sites without ever navigating away from the index site. This is done because we wanted to minimize the amount of data transfer from the server that the site is made on. However this do present itself with a few challenges. For example we have had to come up with a special solution in order to send the PHP \texttt{\$\_POST} and \texttt{\$\_GET} data around, in this section we will explain how this is implemented and how it should be used in the future.\\
+The navigation system that is implemented in the system is based on JavaScript and the event \texttt{window.onhashchange}, with the addition of Ajax.
+Ajax is used to fetch the sites without ever navigating away from the index site. This is done to minimize the amount of data transfer from the server. However this do present itself with a few challenges. In order to handle this, a special solution had to be made for sending the PHP \texttt{\$\_POST} and \texttt{\$\_GET} data around, in this section it will be explained how this is implemented and how it should be used in the future.\\
 \\
 %Why did we make it so complex?
 	%Alternative solutions
-But first we will elaborate on the alternatives that was available to us.\\
-There is at least two other solutions that could have been implemented with different advantages. First we could have implemented the old HTML method, which means that the user would have to navigate directly to the files name. This would be an easy way to build the website, but would leave it very hard to maintain, since the design of the website would have to be written more than one place, or at least use an include in the top and bottom of each page.\\
+There is at least two other solutions that could have been implemented with different advantages. The old HTML method could be implemented, which means that the user would have to navigate directly to the file names. This would be an easy way to build the website, but would leave it very hard to maintain, since the design of the website would have to be written more than one place, or at least use an include in the top and bottom of each page.\\
 Another alternative would have been the use of a PHP based switch. The method is commonly used in larger website systems, because it makes for easy design and maintainability.
 \lstset{language=PHP}
-\begin{figure}[htbp]
-\begin{lstlisting}[firstline=1]
+\begin{lstlisting}[firstline=1,caption={A PHP switch Example},label=lst:phpSwitch]
 	$site = $_GET['site'];
 	switch ($site) {
     case "ownProfile":
@@ -26,17 +24,13 @@ Another alternative would have been the use of a PHP based switch. The method is
         break;
 	}
 \end{lstlisting}
-\caption{A PHP switch Example}
-\label{lst:phpSwitch}
-\end{figure}
 
 As seen in listing \ref{lst:phpSwitch} it is easy to create the switch method, and maintain it, since all that is needed is to add another case when a new site is made.\\
 What listing \ref{lst:phpSwitch} contains has to be included in the index.php file, and the links, or hyperlinks, will have to set the \texttt{\$\_GET} variable \texttt{site} to a fitting name for the site, and it will then include the content of that site.\\
 \\
 However this PHP switch solution has one downside to it. It still sends the data of the index file from the server to the user each time the user presses a link. This might not be much data, but it becomes so in the long run. We therefore went with a third alternative, which is much like the PHP switch method. We simply took the same idea and wrote it in JavaScript, this however means that we must use Ajax to perform the fetching of new data.\\
 \lstset{language=Java}
-\begin{figure}[htbp]
-\begin{lstlisting}[firstline=1]
+\begin{lstlisting}[firstline=1,caption={The JavaScript switch},label=lst:javascriptSwitch]
 switch(destination)
 	{
 		case "":
@@ -68,42 +62,32 @@ switch(destination)
 		}
 	});
 \end{lstlisting}
-\caption{The JavaScript switch}
-\label{lst:javascriptSwitch}
-\end{figure}
 
 %POST Transfer
-Listing \ref{lst:javascriptSwitch} contains the main contents of the JavaScript switch that we created. \texttt{destination} is the variable that we use for storing the actual hash value\footnote{Hash value is the value followed by the hash symbol \# in hyperlinks.} and the \texttt{postData} is created in a unique way, so that we can send the PHP \texttt{\$\_POST} data on to the site that the JavaScript is Ajax'ing to.\\
+Listing \ref{lst:javascriptSwitch} contains the main contents of the JavaScript switch that we created. \texttt{destination} is the variable that we use for storing the actual hash value\footnote{Hash value is what JavaScript interprets as the value followed by the hash symbol \# in hyperlinks.} and the \texttt{postData} is created in a unique way, so that we can send the PHP \texttt{\$\_POST} data on to the site that the JavaScript is Ajax'ing to.\\
 %File list
 \lstset{language=PHP}
-\begin{figure}[htbp]
-\begin{lstlisting}[firstline=1]
+\begin{lstlisting}[firstline=1,caption={The POST transform code},label=lst:postTransform]
 	echo "<script>
 		var postData = ";
 		echo json_encode($_POST);
 	echo "</script>";
 \end{lstlisting}
-\caption{The POST transform code}
-\label{lst:postTransform}
-\end{figure}
 
 As seen in listing \ref{lst:postTransform} we convert the \texttt{\$\_POST} data from PHP into a JavaScript variable that then again is send on to the next PHP site as seen in listing \ref{lst:javascriptSwitch}.\\
 \\
 %Syntax
 However we also wanted to be able to use the \texttt{\$\_GET} variable from PHP on other sites that we call with Ajax. In order to do this we created a rule as can be seen in listing \ref{lst:getData}, the rule says that instead of using the usual syntax of ''?'' after the hyperlink, there needs to be a ''/'' instead. We do this because we think it gives a better look on the link itself.\\
+And the PHP site called with Ajax would not be able to read the \texttt{\$\_GET} variables without the script parsing it through the Ajax call.
 
 \lstset{language=Java}
-\begin{figure}[htbp]
-\begin{lstlisting}[firstline=1]
+\begin{lstlisting}[firstline=1,caption={The GET transform code},label=lst:getData]
     var hashInfo = location.hash;    
 	var hashArray = hashInfo.split("/"); // We use / instead of ? in our URL's (for $_GET), they do the exact same, but gives a different look
 	var destination = hashArray[0];
 	var info = hashArray[1];
 	var destinationPath = "";
 \end{lstlisting}
-\caption{The GET transform code}
-\label{lst:getData}
-\end{figure}
 
 Then when the code in listing \ref{lst:getData} and the switch in \ref{lst:javascriptSwitch} has been executed we append \texttt{info} to \texttt{destinationPath} with the normal syntax. Then the Ajax call does the rest.\\
 \\
@@ -111,16 +95,12 @@ But this method also has a bad side. It requires a more complex way of calling s
 As seen in listing \ref{lst:largePost} which is a cutout of the \texttt{headInclude.php} file, which is always included in our \texttt{index.php} file, we include the script directly into the index file instead of using our special Ajax JavaScript function. If we did not do this, the user would have to send the data to the server twice. First in order to send it to the index file, then the user will receive it again, and then call the Ajax function with the same data.\\
 
 \lstset{language=PHP}
-\begin{figure}[htbp]
-\begin{lstlisting}[firstline=1]
+\begin{lstlisting}[firstline=1,caption={The handling of big PHP POSTs},label=lst:largePost]
 	if(isset($_POST['picsManagerMakeSubmit'])){
 		//Call upload script
 		require "script/picsManagerMakeUpload.php";
 	}
 \end{lstlisting}
-\caption{The handling of big PHP POSTs}
-\label{lst:largePost}
-\end{figure}
 
 And then the upload script must always make sure to use a PHP \texttt{header} call to navigate the user to the right site, depending on whether he got an error or not.\\
 \\

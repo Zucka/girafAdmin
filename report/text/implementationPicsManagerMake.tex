@@ -1,17 +1,17 @@
 \section{Pics Manager - Make}
 %The similarities with Profile Pics Changer
 The way the Pics Manager - Make feature is implemented is very similar to how the Profile Picture Changer is implemented, see section \ref{sec:profilePicChange}.\\
-They both get called the same way and both relay on the HTML Form Element to receive their data. They also give back their error message in the same way.\\
+They both get called the same way and both rely on the HTML Form Element to receive their data. They also give back their error message in the same way.\\
 \\
 %The special user interface
-But what is more interesting is their differences. Looking at figure \ref{fig:picsManagerMake} it can been seen how the user interface is designed. The top left part is for entering the general data, and the left side is for the image and the sound file.\\
+But what is more interesting is their differences. Looking at figure \ref{fig:picsManagerMake} it can be seen how the user interface is designed. The top left part is for entering the general data, and the right side is for the image and the sound file.\\
 \\
 We have designed it so that when a user chooses a sound file, or an image file, they can hear, or see, a preview of it before uploading. We also did this so that the design could be reused for the editing feature.\\
 The preview is possible because of a JavaScript function called \texttt{FileReader}. Which simply loads the file into the browser, and makes it possible to work with it without uploading the file. But this is only available in some of the newer browsers. Which means we have had to disregard the use of IE9 \citep{canIUse}. In doing so we have created a warning on our login screen that checks if the \texttt{FileReader} is available, and if not the user will be meet with a warning, telling them some features will not function for them.\\
 \\
 \begin{figure}[htbp]
 	\centering
-		\includegraphics[width=0.80\textwidth]{images/picsManagerMake.png}
+		\includegraphics[width=1\textwidth]{images/picsManagerMake.png}
 	\caption{The user interface for the Pics Manager - Make}
 	\label{fig:picsManagerMake}
 \end{figure}
