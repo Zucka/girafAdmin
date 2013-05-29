@@ -1,24 +1,28 @@
 \section{PHP Session Variables Overview}
+\label{sec:phpSesion}
 The login system of the GIRAF Admin system uses PHP sessions to check if a user is logged in. The PHP session is also populated with various variables that help the rest of the GIRAF Admin system. An overview of the different variables can be seen in \autoref{tbl:phpsession}
 \begin{table}[h]
 \begin{tabularx}{\linewidth}{| l | X |}
 \hline
 Session Variable & Description \\ \hline
-session\_id & Stores the PHP session id of the user \\ \hline
-username & Stores the username of the logged in user, {\color{red} Temporary variable until WASTELAND implements API session, should be removed before deploying anywhere!} \\ \hline
-password & Stores the password of the logged in user, {\color{red} Temporary variable until WASTELAND implements API session, should be removed before deploying anywhere!} \\ \hline
-userId & Stores the user id of the logged in user, and is used for database calls \\ \hline
-profileId & Stores the profile id of the logged in user, and is used to reduce database calls (you can get profileId from userId) \\ \hline
-lang & Stores the chosen language (chosen at login) of the logged in user, and is used on all sub-sites to determine what language file should be used \\ \hline
-dbsess & Stores the database API session, which is used to make database calls after the initial login, {\color{red} this is here for future use and does not contain anything at the moment, as the database API have not implemented session yet} \\ \hline
-department & Stores the department id that the logged in user is attached to, and is used to reduce database calls \\ \hline
-role & Stores the role of the logged in user, and is used to determine what pages to show \\ \hline
-update & Stores the update value of the logged in user, and is used to determine rights \\ \hline
-delete & Stores the delete value of the logged in user, and is used to determine rights \\ \hline
-isAdmin & Stores whether the logged in user is an admin or not, which determines what menu items should be available \\
+\texttt{session\_id} & Stores the PHP session id of the user \\ \hline
+\texttt{username} & Stores the username of the logged in user, {\color{red} Temporary variable until WASTELAND implements API session, should be removed before deploying anywhere!} \\ \hline
+\texttt{password} & Stores the password of the logged in user, {\color{red} Temporary variable until WASTELAND implements API session, should be removed before deploying anywhere!} \\ \hline
+\texttt{userId} & Stores the user id of the logged in user, and is used for database calls \\ \hline
+\texttt{profileId} & Stores the profile id of the logged in user, and is used to reduce database calls (you can get profileId from userId) \\ \hline
+\texttt{lang} & Stores the chosen language (chosen at login) of the logged in user, and is used on all sub-sites to determine what language file should be used \\ \hline
+\texttt{dbsess} & Stores the database API session, which is used to make database calls after the initial login, {\color{red} this is here for future use and does not contain anything at the moment, as the database API have not implemented session yet} \\ \hline
+\texttt{department} & Stores the department id that the logged in user is attached to, and is used to reduce database calls \\ \hline
+\texttt{role} & Stores the role of the logged in user, and is used to determine what pages to show \\ \hline
+\texttt{update} & Stores the update value of the logged in user, and is used to determine rights \\ \hline
+\texttt{delete} & Stores the delete value of the logged in user, and is used to determine rights \\ \hline
+\texttt{isAdmin} & Stores whether the logged in user is an admin or not, which determines what menu items should be available \\
 \hline
 \end{tabularx}
 \caption{PHP Session Variables}
 \label{tbl:phpsession}
 \end{table}
-Many of the variables stored in the session is used to reduce database calls, which could help the system scale better if that would be necessary. Because API session is not yet implemented by WASTELAND, it has been necessary to store the username and password of the logged in user, and is then used to make database calls instead of the session. When API session is implemented the username and password variables should be removed from PHP session and the authentication method in \texttt{new.db.php} should be replaced with API session in all calls except \texttt{db\_getSession}. At this moment it is not clear what exactly the update and delete variables signify, and the reader should refer to the WASTELAND report or source code for more details.
+Many of the variables stored in the session is used to reduce database calls, which could help the system scale better if that would be necessary. Because API session is not yet implemented by WASTELAND, it has been necessary to store the username and password of the logged in user, and is then used to make database calls instead of the session. When API session is implemented the username and password variables should be removed from PHP session and the authentication method in \texttt{new.db.php} should be replaced with API session in all calls except \texttt{db\_getSession}. At this moment it is not clear what exactly the update and delete variables signify, and the reader should refer to the WASTELAND report or source code for more details.\\
+\\
+%Rounding off the implementation chapter
+This is the end of all the advanced and complicated solutions we have managed to complete, the next chapter will focus on the results of our usability testing of the somewhat finished system.
