@@ -13,17 +13,18 @@
 	\input{layout/frontpage.tex}
 	\addtocounter{page}{1}
 	\input{layout/emptypage.tex}
-	\setcounter{page}{2}
+%	\setcounter{page}{2}
 	\input{layout/titelblad.tex}
 	\input{layout/emptypage.tex}
-	\setcounter{page}{4}
+	\input{layout/preface.tex}
+%	\setcounter{page}{4}
 	\input{layout/signatures.tex}
 	\input{layout/emptypage.tex}
-	\setcounter{page}{6}
+%	\setcounter{page}{6}
 	\tableofcontents	
 	\addcontentsline{toc}{chapter}{Contents}
 	\newpage
-	\input{text/DanishSummary.tex}
+	%\input{text/DanishSummary.tex}
 	\input{text/introduction.tex}
 	\input{tex/commonReport/commonReport}
 	
@@ -57,6 +58,7 @@
 	\part{Perspective}
 	
 	\input{text/conclusion.tex}
+	\input{text/multiEval.tex}
 	\input{text/futureWork.tex}
 	\input{text/projectproposals.tex}
 	\input{text/references.tex}
@@ -80,7 +82,7 @@
 	\end{appendices}
 	
 	%Denne komando lister alle fixme's
-	\part{Fixme}
-	\listoffixmes
+	%\part{Fixme}
+	%\listoffixmes
 
 \end{document}
