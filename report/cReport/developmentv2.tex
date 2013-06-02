@@ -1,0 +1,118 @@
+\section{Group and Work Structure}
+%% This section describes bla bla bla \todo{Write the intro}
+%% This section includes a description of the development methods and tools implemented during the spring semester of 2013.
+%% The section includes a description of the development methods used during the spring semester of 2013,
+This section describes the development methods used during the spring semester of 2013, including stories and project management tools.
+
+The section is rounded off by a description of the development tools used, including Redmine, Git, and Jenkins.
+
+\subsection{Development Method}
+\label{sec:development}
+Having a development method is one of the main ways to structure the work process of a project.
+A development method is a collection of methods and structures, from the way to have meetings, gathering requirements and structuring the development.
+There are many development methods, each is structured and handles issues differently,
+%But talking about implementing a development method is often not a 1:1 implementation. Even though there exist many development methods,
+however, it is rare that one fits a development problem perfectly.
+Different methods are often combined and customized to fit the problem at hand.
+%Therefore it is often the case, that different methods are merged together to structure a more specific method for a given project. For this project, most of the methods used come from the agile paradigm, which is an iterative development method.
+
+\subsubsection{Implemented Development Methods}
+\label{subsub:implementedDevelopmentMethods}
+%This project with it's alteration of teams, working on, for many, new platform, team cooperation and focus on a finished product i all things that talk for at agile development.
+This project's nature calls for agile development, due to team collaboration, user feedback, product focus, and continuous integration.
+Agile development focuses on a flexible but structured work progress suited for projects with many unknown variables.
+%Many agile development methods also focus on having a shippable product throughout the project period.
+The agile development method has the ability to adapt to changing requirements throughout the project and focuses on having a shippable product at the end of each iteration. %secures a firm and safe development.
+
+\subsubsection{Stories}
+\label{subsub:stories}
+%An agile develop method and a team structure with many team and few members with high interaction between team requires a high level of management.
+%To ensure cooperation between teams and reaching deadlines with shippable products are many SCRUM method tools implemented.
+User stories is one of the tools that helps streamline the work process, keeps focus on a shippable product and is the main component for management of the project. First of all the product story works as a common problem statement for all work groups. A product story is the agreement on what is necessary for the product to be finished. From product story each group can extract what is required of them to complete the story.
+
+\subsubsection{Management}
+\label{subsub:management}
+The semester coordinator, Ulrik Nyman, has supervised the project since its beginning. Ulrik Nyman himself has a child with autism and will continue being a part of the project for the time to come, conveying his knowledge of the development process and the product.
+%The product has focus on helping children with autism but mostly in a kindergarten in context with guardians.
+%He does not have much/any expertise in this area therefore is a number of guardians used as clients/consultants to test and comment on the requirements and design of the product.
+To help fit the product to the needs of guardians, for whom the product is intended, a number of representatives are included for more detailed feedback on the process and the product.
+
+%A critical problem of a product story is to ensure that work is not forgotten or one assignment is made and specialized by more teams.
+
+%SCRUM uses a product manager and SCRUM masters to ensure all requirements are met and any conflicts are resolved. %To extract one person for a team of four to function as SCRUM master is an inefficient solution.
+%The SCRUM master uses most of his resources on gathering and transferring information leaving little to develop.
+To keep as many work hours in development and to keep a good overall management, common meetings were held weekly.
+The common meetings had focus on sprints and team cooperation. Problems that needed further discussion and/or development were discussed by a committee consisting of a few representatives from each group.
+
+%The story committee is the main committee to make the SCRUM work.
+%The story committee had a meeting at the end of each sprint, often 3-5 days before common meeting, where the next sprint story is discussed so each group is firm on their assignment for the sprint. Before the meeting is there feature freeze so the committee can discuss the former sprint without further development.
+%In the feature freeze the teams is to write documentation of their sprint and assemble their product.
+%Lastly the common meeting has the function of booting the next sprint to the groups at the common meeting.
+The common meeting and committee meeting are further specified in sections \secref{sub:theweeklymeeting} and \secref{subsub:importantcommittees}.
+
+\subsection{Development Tools}
+\label{sub:devtools}
+A number of tools were used in order to optimize team collaboration and to make the projects more accessible. These tools will be further explained in the following sections.
+
+A dedicated Linux server was commissioned for the entire \ac{giraf} project and several services installed to facilitate collaboration and agile development. Common to all current services are their free, open-source nature and support of LDAP authentication, allowing all students and supervisors to log in using their AAU credentials.
+%A number of tools are used to ensure a shippable product and a well documented work progress.
+%For the tools and big solution agreed on, either from a common meeting or committee, is a person set as controller, maintainer or/and guide.
+%This person is often are person that have a high knowledge level of the tool or was in close development of the solution.
+
+\subsubsection{Redmine}
+\label{subsub:redmine}
+Several tools were audited for use in the project management aspect of development, including Trac, PivotalTracker and Github. Redmine, a Ruby-On-Rails web application, was selected owing primarily to its support of multiple projects and support features such as wikis, forums, milestones and various charts. The features most broadly used will briefly be described here.
+% of the project was Redmine. Redmine includes many functions but only the ones used in the multi-project will be described.
+%Redmine was chosen because of the ability to divide form to bottom.
+\begin{description}
+	\item[Projects] All projects live in a shared project space, and can be placed in a hierarchy under a super project. In this regard, the primary multi project served as the base of each of the eight groups' underlying projects.
+	\item[Issue handling] Redmine's primary feature is its issue handling. Project members can create and react to issues within custom-defined domains. For \ac{giraf}, this was primarily development tasks, but could just as well be used for report-related tasks or general maintenance in an attempt to manage time usage.
+	\item[Burndown Charts] Redmine does not have native support for burndowns, but does support it through a \ac{foss} third-party plugin. Burndowns are a visual aid of each subproject's progress throughout a sprint, giving quick summary of development speed and whether proactive action may need to be taken.
+	\item[Milestones] A generic milestone feature in Redmine is Versions. Versions are simply markers with a set date, and can be open or closed for attachment of issues. The burndown plugin couples a version's end date with attached issues and their progress to generate the related charts.
+	\item[Wiki] A per-project wiki module exists in Redmine. The basic wiki markup has been expanded to allow referencing of almost any other element in the project hierarchy, such as projects, issues, files and VCS revision.
+\end{description}
+
+Redmine has many more features not directly applied during this project period. However, many could be applied to create a more centralised and structured development experience in future projects. Examples include file and document hosting, advanced issue workflows, permission management and VCS integration. Future multiprojects may consider expanding into these fields if they feel proficient in Redmine's basic usage.
+
+% Redmine arranges the multi-project in a hierarchy, ordered in terms of teams, sprints, and issues.
+%The multi-project is levelled from the main project to teams, sprints and lastly issues.
+%Each issue can be specified with description, estimated time, progress, and more. An issue can be assigned to a team member. This provides an overview of each team member's workload. A sprint consists of multiple issues that are presented in an issue table. %The issues can be unmanageable to estimate whether the sprint is on time.
+%A burndown chart is a graphical representation of remaining work versus estimated time.
+%A burndown chart visualizes the estimated need be done each day to reach the deadline, the current workload and with the current speed the sprint is estimated done.
+%The burndown chart is a key tool to manage sprints. At the start of each sprint the workload is estimated, from the burndown chart one can assess whether the workload is too large or small for the sprint. %Through out the sprint can the estimated finish time with current work speed be analyzed against the needed work speed to meet the deadline.This can help correct the work progress before it is too late.
+%A burndown chart can also be used on a higher level in the development hierarchy, providing an overview of the overall progress of the multi-project.
+%The burndown chart is also implemented in the higher levels to keep the overview of each team and the overall project.
+%Redmine also includes a wiki which is useful for gathering information in one place.
+
+\subsubsection{Version Control System}
+\label{subsub:git}
+\label{subsub:vcs}
+The university's IT services offers only a single version control system, Subversion. Although centrally supported and backed up regularly, Subversion's shortcomings were challenged before main development had begun. Most notably, the system's centralised workflow and high operation cost. Many of SVN's actions require access to the central server. Two alternatives without these issues were suggested: Git and Mercurial (Hg). The former was chosen as a general question of broad platform support and popularity. A primary strength of these systems is their support of separate branches of development without the constant need to connect to a central server. This allows developers of each project to synchronize with a main branch while maintaining several development branches on their own workstation.
+
+Most groups used Github as hosting solution for development of their projects, as a git hosting solution was not immediately forthcoming (contrary to Subversion and Mercurial, Git does not have a default server implementation). At the conclusion of the project period, a solution was configured using Apache-based LDAP authentication, deferring authorisation and repository management to Gitolite, a low-footprint open-source offering.
+
+In the interest of easier cross-project code contribution and inspection, an improved web solution may prove a better choice. Due to time constraints, a few solutions were briefly audited but ultimately discarded in preference of Gitolite. Gitlab should be mentioned as it featured an interface and features very close to those of Github itself, but proved difficult to install and maintain.
+
+% Git was used for version control in the multi-project. Git benefits from being distributed which makes it possible for each developer to have personal branches, for working on features and bugs without have to synchronize with a central server.
+  % Git is distributed version control solution, making the need for a central server non-critical. %% \todo{cite this}
+
+\subsubsection{Jenkins}
+\label{subsub:jenkins}
+A principal element of agile development is continuous integration, the automated concurrent building of new code as it is pushed to central repositories which ensure constant availability of newest binary packages while catching coding errors before pushing them to the public. Jenkins, a fork of Oracle's Hudson, was suggested early and, given no proponents, was implemented. Build jobs were set up for each project, polling their origin repositories for new Git builds to main branches. If a repository has new code, it is downloaded and built. In case of build errors, the project developers are notified by email. To facilitate the deployment phase of each sprint, all projects are rebuilt every Thursday night and pushed to a public FTP server as well as making them publicly available by HTTP.
+
+Git support is not part of Jenkins' core feature set, but is available as a plugin. During development, unhandled exceptions in the plugin code resulted in thousands of superfluous builds as a failed build due to unexpected circumstances was not marked as failed.
+
+% Jenkins is a build script used to build all projects from the Git-hosting server, deploying a shippable product. If the build fails, the responsible individuals are notified of the situation so it can be corrected. Jenkins helps make sure that all sub-projects of the \ac{giraf} system can co-exist on the same platform and ``work together''.
+%To secure the development of the project is the vision control system Git used.
+%Git also support a multiple persons working same files or extract multiple branches to merge after.
+%Git secures the all material can be restored if errors i committed with the vision control.
+%With common base in Git is Jenkins use to assemble the project at the end of each week.
+%This means that there is functional product each week and test each week of bugs and errors.
+
+%\subsection{Project Development Overview}
+%Using an agile development method helps structure the project with multiple to work in synchronization.
+%Redmine is the management system to take advantage of the methods given by SCRUM.
+%The work progress, issue management and information sharing is some of the key functions for Redmine.
+%Git is the version control system that support different development methods for the preference of the team.
+%A version control system of the product secures that errors not undermine the project.
+%Jenkins assembles the project to a functional and shippable product each week.
