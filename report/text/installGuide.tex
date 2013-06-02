@@ -21,15 +21,13 @@ This section will describe how to install and configure the GIRAF Admin system.
 \item Enable the socket module of PHP5 if not already enabled
 \item Enable the header module of Apache if not already enabled
 \item Modify the Apache configuration file (httpd.conf) to auto-inject a meta tag into every header (used to force Internet Explorer into standards mode). The configuration fragment to be added is listed in \autoref{lst:apacheheader}. 
-\begin{figure}[htbp]
-\begin{lstlisting}
+\vspace{-5mm}
+\begin{lstlisting}[firstline=1,caption={The configuration fragment to add to httpd.conf},label=lst:apacheheader]
 <IfModule headers_module>
    Header set X-UA-Compatible: IE=Edge
 </IfModule>
 \end{lstlisting}
-\caption{The configuration fragment to add to httpd.conf}
-\label{lst:apacheheader}
-\end{figure}
+\vspace{-2mm}
 \item Change the variables address and port in source/desktop/db/new.db.php to reflect the IP address and port of the server that hosts the database API
 \end{itemize}
 \section{Auto Update}

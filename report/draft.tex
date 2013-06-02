@@ -17,6 +17,7 @@
 	\input{layout/titelblad.tex}
 	\input{layout/emptypage.tex}
 	\input{layout/preface.tex}
+	\input{layout/emptypage.tex}
 %	\setcounter{page}{4}
 	\input{layout/signatures.tex}
 	\input{layout/emptypage.tex}
@@ -26,6 +27,7 @@
 	\newpage
 	\input{text/DanishMiniRepport.tex}
 	\input{text/introduction.tex}
+	\input{layout/emptypage.tex}
 	\input{tex/commonReport/commonReport}
 	
 	%\part{Design}
@@ -38,6 +40,7 @@
 	\input{text/systemDesign.tex}
 	\input{text/weeklyProgress.tex}
 	\input{text/problemstatement.tex}
+	\input{layout/emptypage.tex}
 	
 	
 	% Part Solution
@@ -67,10 +70,10 @@
 	\bibliographystyle{plain}
 	\bibliography{kilder,tex/commonReport/bib/commonReport}
 	\addcontentsline{toc}{chapter}{Bibliography}
-	\newpage
+	%\newpage
 	\appendix
-		\addtocounter{page}{-1}	%S�tter pagecounter til at passe med det reelle sidetal!
-	\input{layout/emptypage.tex}
+	%	\addtocounter{page}{-1}	%S�tter pagecounter til at passe med det reelle sidetal!
+	%\input{layout/emptypage.tex}
 	
 	\part{Appendix}
 	\begin{appendices}
