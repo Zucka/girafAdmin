@@ -3,6 +3,8 @@ $(window).ready(function() {
 		editProfileInfo($(this));
 	});
 	
+
+
 	$(".profilePictureButton").click(function(){
 		changeProfilePicturePopup();
 	});
@@ -15,7 +17,44 @@ $(window).ready(function() {
 		closeModal();
 		closeImageAreaSelect();
 	});
+		
+	if(profilePicUploadError.length == 1){
+		//Write the Error message from the profilePicUpload
+		
+		var errorString = "";
+		var actualError = "";
+		
+		switch(profilePicUploadError){
+			case "1":
+				actualError = own_profile_js_actualError1;
+			break;
+			
+			case "2":
+				actualError = own_profile_js_actualError2;
+			break;
+			
+			case "3":
+				actualError = own_profile_js_actualError3;
+			break;
+			
+			case "4":
+				actualError = own_profile_js_actualError4;
+			break;
+			
+			default:
+				actualError = own_profile_js_actualError5;
+		}
+		
+		errorString = 
+		'        '+own_profile_js_errorStringPart1+': '+"\n\n"+
+		'        <span class="red">' + actualError + '...</span>'+"\n\n";
+		
+		changeModalInner(own_profile_js_errorStringHeader,errorString);
+		openModal();
+	}
 });
+
+
 
 function closeImageAreaSelect(){
 	$('.imgareaselect-outer').animate({
@@ -53,7 +92,7 @@ function closeImageAreaSelect(){
 function editProfileInfo(element){
 	//Edit Button
 	//TODO: Remmember to add Language Specific
-	element.html('<i class=\"icon-hdd\"></i> Gem');
+	element.html('<i class=\"icon-hdd\"></i> '+own_profile_js_editInfoButtonSave);
 	element.unbind(); //Clear Event Handler
 	element.click(function () {  //Set new Event Handler
 		submitEditProfileInfo(element);
@@ -72,7 +111,7 @@ function submitEditProfileInfo(element){
 		editProfileInfo(element);
 	});
 	//TODO: Remmember to add Language Specific
-	element.html("<i class=\"icon-wrench\"></i> Ret");
+	element.html("<i class=\"icon-wrench\"></i> "+own_profile_js_editInfoButtonEdit);
 	var textElement = element.parent().prev();
 	var newText = textElement.children().val();
 	
@@ -84,40 +123,36 @@ function submitEditProfileInfo(element){
 
 function changeProfilePicturePopup(){
 	//Request picture
-	changeModalInner('Change Profile Picture',
-					'<form id="profilePictureUpload" method="post" enctype="multipart/form-data" action="profilePicTempUpload.php">'+
+	changeModalInner(own_profile_js_changeProfilePicHeader,
+					'<form id="profilePictureUpload" method="post" enctype="multipart/form-data" action="#profilePicUpload">'+
 						'Select image-file: <input type="file" name="newProfilePic" id="newProfilePic" />'+
 						'<input name="x1" id="x1" type="hidden" value="NULL">'+
 						'<input name="y1" id="y1" type="hidden" value="NULL">'+
 						'<input name="x2" id="x2" type="hidden" value="NULL">'+
 						'<input name="y2" id="y2" type="hidden" value="NULL">'+
-					'</form>'+
-					'<img src="#" alt="Editorial Profile Picture" id="profileCropImage">');
+						'<input name="profileURL" type="hidden" value="'+document.URL+'">'+ //This means we know where it was called from.
+						'<input name="currentWidth" id="currentWidth" type="hidden" value="NULL">'+
+						'<center><img src="#" alt="'+own_profile_js_changeProfilePicImgAlt+'" id="profileCropImage"></center>'+
+						'<input type="submit" name="submit" value="'+own_profile_js_changeProfilePicSubmit+'" class="btn">'+
+					'</form>'
+					);
 	openModal();
 	
 	//On upload file
-	//Call function to change to next modal window
 	$('#newProfilePic').on('change', function(){
 		readURL(this);
 		
+		$('img#profileCropImage').imgAreaSelect({
+			onInit: function(img, selection){
+				var editPic = $('img#profileCropImage').imgAreaSelect({ instance: true });
+				editPic.setSelection(100,100,200,200, true);
+				editPic.setOptions({ show: true });
+				editPic.update();
+			}
+		});
+		
 	});
 	
-}
-
-function changeProfilePicture(){
-	//Change Modal window to contain the Requested picture
-
-	
-	//Display picture only in certain height and width, but remmember real height and width
-	//Wait for rezise cutting
-	
-	//Calculate the real cutting values
-	
-	//Cut and store profile picture
-	
-	//Change profile picture on site to new profilepicture
-	
-	//Close modal window and background
 }
 
 function readURL(input) {
@@ -132,17 +167,14 @@ function readURL(input) {
 		
 		$('img#profileCropImage').imgAreaSelect({
 			handles: true,
-			aspectRatio: '4:3',
+			aspectRatio: '1:1',
 			onSelectEnd: function (img, selection) {
 				document.getElementById("x1").value = selection.x1;
 				document.getElementById("y1").value = selection.y1;
 				document.getElementById("x2").value = selection.x2;
 				document.getElementById("y2").value = selection.y2;
+				document.getElementById("currentWidth").value = $("#profileCropImage").width();
 			}
-		});
-		
-		var editPic = $('img#profileCropImage').imgAreaSelect({ instance: true });
-		editPic.setSelection(0,0,100,100, true);
-		editPic.update();
+		});		
 	}
 }

@@ -10,6 +10,5 @@
 		$LOGIN_STRINGS["formRememberMe"] = "Husk mig";
 		$LOGIN_STRINGS["formSignIn"] = "Log ind";
 
-		$LOGIN_STRINGS["errorUsernameNotFound"] = "Brugernavnet blev ikke fundet";
-		$LOGIN_STRINGS["errorWrongPassword"] = "Forkert kodeord";
+		$LOGIN_STRINGS["errorWrongPassword"] = "Forkert login";
 ?>

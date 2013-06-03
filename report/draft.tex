@@ -13,35 +13,79 @@
 	\input{layout/frontpage.tex}
 	\addtocounter{page}{1}
 	\input{layout/emptypage.tex}
-	\setcounter{page}{2}
+%	\setcounter{page}{2}
 	\input{layout/titelblad.tex}
+	\input{layout/emptypage.tex}
+	\input{layout/preface.tex}
+	\input{layout/emptypage.tex}
+%	\setcounter{page}{4}
 	\input{layout/signatures.tex}
+	\input{layout/emptypage.tex}
+%	\setcounter{page}{6}
 	\tableofcontents	
 	\addcontentsline{toc}{chapter}{Contents}
 	\newpage
+	\input{text/DanishMiniRepport.tex}
 	\input{text/introduction.tex}
-	\input{text/problemstatement.tex}
-	\input{text/problemformulation.tex}
+	\input{layout/emptypage.tex}
+	\input{cReport/commonReport}
+	
+	%\part{Design}
+	
+
 	
 	% Part Analysis
 	\part{Analysis}
+	\label{skipToMe}
+	\input{text/systemDesign.tex}
+	\input{text/weeklyProgress.tex}
+	\input{text/problemstatement.tex}
+	\input{layout/emptypage.tex}
+	
 	
 	% Part Solution
 	\part{Solution}
 	
+	\input{text/systemOverview.tex}
+	\input{text/design.tex} %Design står her i vores opsætning
+	\input{text/chapterImplementation.tex}
+	\input{text/implementationNavigation.tex}
+	\input{text/qr.tex}
+	\input{text/implementationProfilePicChange.tex}
+	\input{text/multiplelanguage.tex}
+	\input{text/implementationPicsManagerMake.tex}
+	\input{text/session.tex}
+	\input{text/usabilityTesting.tex}
 
 	%Part Perspective
 	\part{Perspective}
 	
-	\part{Appendix}
-	\appendix{}
-
+	\input{text/conclusion.tex}
+	\input{text/multiEval.tex}
+	\input{text/futureWork.tex}
+	\input{text/projectproposals.tex}
+	\input{text/references.tex}
+	
+	
 	\bibliographystyle{plain}
-	\bibliography{kilder}
+	\bibliography{kilder,cReport/bib/commonReport}
 	\addcontentsline{toc}{chapter}{Bibliography}
-	\newpage
+	%\newpage
 	\appendix
-		\addtocounter{page}{-1}	%S�tter pagecounter til at passe med det reelle sidetal!
-	\input{layout/emptypage.tex}
+	%	\addtocounter{page}{-1}	%S�tter pagecounter til at passe med det reelle sidetal!
+	%\input{layout/emptypage.tex}
+	
+	\part{Appendix}
+	\begin{appendices}
+	\input{text/installGuide.tex}
+	\input{text/mockups.tex}
+	\input{text/interviewMette.tex}
+	\input{text/usabilityTestingAppendix.tex}
+	\input{text/colorTheme.tex}
+	\end{appendices}
+	
+	%Denne komando lister alle fixme's
+	%\part{Fixme}
+	%\listoffixmes
 
 \end{document}

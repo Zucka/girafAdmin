@@ -1,0 +1,16 @@
+  <handler status="active">
+    <name>PHP CGI  Handler</name>
+    <description>PHP CGI  Handler</description>
+    <removable>true</removable>
+    <id>phpCgiHandler</id>
+    <files />
+    <params>
+      <param name="phpCgiHandler.class" value="org.paw.handler.AndroidCgiHandler" />
+      <param name="phpCgiHandler.root" value="[HTML_PATH]" />
+      <param name="phpCgiHandler.suffix" value=".php" />
+      <param name="phpCgiHandler.runwith" value="[PHP_CGI] -c [INCLUDE_PATH]" />
+      <param name="phpCgiHandler.sl4a" value="true" />
+      <param name="phpCgiHandler.ENV_TMPDIR" value="[TMP_DIR]" />
+      <param name="phpCgiHandler.ENV_REDIRECT_STATUS" value="200" />
+    </params>
+  </handler>

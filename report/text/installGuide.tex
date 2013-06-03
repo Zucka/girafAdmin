@@ -1,0 +1,44 @@
+\chapter{Installation Guide and Configuration}
+\label{chap:installGuide}
+This section will describe how to install and configure the GIRAF Admin system. 
+\section{Requirements}
+\begin{itemize}
+\item A suitable operating system (Ubuntu, Windows and OSX was used during development)
+\item Apache (Not tested on nginx)
+\item PHP5 with the socket module enabled
+\item A suitable browser (Chrome,Firefox,Safari,IE10+ is recommended)
+\item GIT (The project is hosted on GIT)
+\item Python if auto update is used
+\end{itemize}
+\section{Installation}
+\begin{itemize}
+\item Install Apache, PHP5, GIT and Python
+\item Pull the most current version from https://github.com/Zucka/girafAdmin (although forking the project is advised)
+\item Copy the contents of source/desktop into the www root of Apache (usually /var/www/ on UNIX systems)
+\end{itemize}
+\section{Configuration}
+\begin{itemize}
+\item Enable the socket module of PHP5 if not already enabled
+\item Enable the header module of Apache if not already enabled
+\item Modify the Apache configuration file (httpd.conf) to auto-inject a meta tag into every header (used to force Internet Explorer into standards mode). The configuration fragment to be added is listed in \autoref{lst:apacheheader}. 
+\vspace{-5mm}
+\begin{lstlisting}[firstline=1,caption={The configuration fragment to add to httpd.conf},label=lst:apacheheader]
+<IfModule headers_module>
+   Header set X-UA-Compatible: IE=Edge
+</IfModule>
+\end{lstlisting}
+\vspace{-2mm}
+\item Change the variables address and port in source/desktop/db/new.db.php to reflect the IP address and port of the server that hosts the database API
+\end{itemize}
+\section{Auto Update}
+A python script was made to auto update the server from a GIT. It can be used to auto pull new changes from a GIT and then move the contents of a folder ínto another folder. To get it to work you need either Python 2.X or 3.
+\begin{itemize}
+\item Copy autoupdate.py from source/scripts/autoupdate.py to a seperate folder, to be used as an intermediate folder
+\item Change all references to \texttt{/home/neo/autoupdate} to point to the seperate folder created for auto update
+\item Change all references to \texttt{https://github.com/Zucka/girafAdmin.git} to point to the new GIT for the project (the GIT installed on the system needs to have read rights for the GIT repository)
+\item Give autoupdate.py execute rights (sudo chmod +x autoupdate.py)
+\item Make sure that the www folder and all subfolders have the same owner
+\item Start autoupdate.py as the user that owns the www folder (example: \texttt{sudo -u www-data python autoupdate.py})
+\item Alternatively start autoupdate.py in a screen (the UNIX program) instance so that auto update keeps running after the ssh connection has been terminated
+\item The www folder will now be updated every 60 seconds with the newest changes from the specified GIT
+\end{itemize}

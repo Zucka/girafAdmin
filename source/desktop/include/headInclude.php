@@ -1,24 +1,37 @@
 <?php
 	//This file includes every important script, or other file in the headder.
-	if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'en';}
-	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
+	if (isset($_SESSION['lang'])) {$lang = $_SESSION['lang'];} else {$lang = 'en';}
 	switch ($lang) {
 		case 'en':
 			include('assets/lang/navigation/navigation.en.php');
 			break;
 		case 'dk':
+		default:
 			include('assets/lang/navigation/navigation.dk.php');
 			break;
-		default:
-			include('assets/lang/navigation/navigation.en.php');
-			break;
 	}
+	
+	//Include the database file
+	require_once "db/new.db.php";
+	
+	//Parse the $_POST array onto the navigation.js script
 	echo "<script>
-		var postData = ";
-		
+			var postData = ";
 			echo json_encode($_POST);
-		
 	echo "</script>";
+	
+	if(isset($_FILES['newProfilePic']['tmp_name'])){
+		//Call croping and upload script
+		require "script/profilePicUpload.php";
+	}
+	if(isset($_POST['picsManagerMakeSubmit'])){
+		//Call upload script
+		require "script/picsManagerMakeUpload.php";
+	}
+	if(isset($_POST['createProfileSubmit'])){
+		//Call upload script
+		require "script/createProfileSubmit.php";
+	}
 ?>
 	<html lang="en">
 	<meta charset="utf-8">

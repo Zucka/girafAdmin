@@ -7,6 +7,7 @@
 		
 		$NAVIGATION_STRINGS['profiles'] = "<strong>P</strong>rofiles";
 		$NAVIGATION_STRINGS['addRelation'] = "Add Relation";
+		$NAVIGATION_STRINGS['createProfile'] = "Create Profile";
 		
 		$NAVIGATION_STRINGS['picsManager'] = "<strong>P</strong>ics Manager";
 		$NAVIGATION_STRINGS['makePic'] = "Make";
@@ -22,5 +23,7 @@
 		$NAVIGATION_STRINGS['appManager'] = "<strong>A</strong>pp Manager";
 		
 		$NAVIGATION_STRINGS['logOut'] = "Log Out";
+		
+		$NAVIGATION_STRINGS['modalClose'] = "Close";
 
 ?>

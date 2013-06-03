@@ -1,0 +1,27 @@
+/**
+    Enable/disable fullscreen mode
+    Paremeters: enable Enable true/false
+*/
+
+bsh.help.fullscreen = "usage: fullscreen(enable)";
+
+import de.fun2code.android.pawserver.*;
+import android.view.WindowManager;
+
+fullscreen(boolean enable) {
+	service = server.props.get("serviceContext");
+	activity = service.getActivity();
+	webview = activity.findViewById(de.fun2code.android.pawruntime.R.id.webview);
+
+	webview.post(new Runnable() {
+		public void run(){
+			if(enable) {
+				activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+			}
+			else {
+				activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+			}
+	
+		}
+	});
+}

@@ -15,9 +15,24 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 -->
+<?php
+	session_start();
+	if (isset($_SESSION['lang'])) {$lang = $_SESSION['lang'];} else {$lang = 'en';}
+	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
+	switch ($lang) {
+		case 'dk':
+			include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/profiles/profiles.dk.php');
+			break;
+		case 'en':
+		default:
+			include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/profiles/profiles.en.php');
+			break;
+	}
+?>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<?php echo '<title>'.$PROFILES_STRINGS["headerTitle"].'</title>' ?>
 	<title>Profiles &middot; GIRAF</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
@@ -41,14 +56,39 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 		<h1> Profil Oversigt</h1>
 	</div>
 	
-	<table class="tableStyle">
+	<table class=" table table-bordered table-striped qrmanager-table">
 		<tr>
 			<th>Pædagoger</th>
 			<th>Børn</th>
 			<th>Forældre</th>
 		</tr>
+			
 		<tr>
-			<td class="gaurdien" rowspan="2">Patrick Kronsmed</td>
+			<td rowspan="2">Patrick Kronsmed</td>
+			<td>Tommi Guldmund</td>
+			<td>Hans Guldmund,<br>Heidi Guldmund</td>
+			<tr>
+				<td>Nicklas Jørgensen</td>
+				<td>Mikkel Jørgensen,<br> Maiken Jørgensen</td>
+			</tr>
+		</tr>
+		<tr>
+			<td rowspan="1">Anne Nielsen</td>
+			<td>Louis Mikkelsen</td>
+			<td>John Mikkelsen,<br>Lene Mikkelsen</td>
+		</tr>
+		<tr>
+			<td rowspan="1">Mette Guldbrand</td>
+			<td>Tobeias Olesen</td>
+			<td>Nicolaj Olesen,<br>Ida Olesen</td>
+		</tr>
+			<tr>
+			<td class="gaurdien" rowspan="1">Mette Guldbrand</td>
+			<td>Tobeias Olesen</td>
+			<td>Nicolaj Olesen,<br>Ida Olesen</td>
+		</tr>
+			<tr>
+			<td class="gaurdien1" rowspan="2">Mette Guldbrand</td>
 			<td>Tommi Guldmund</td>
 			<td class="collumParant">Hans Guldmund,<br>Heidi Guldmund</td>
 			<tr>
@@ -56,10 +96,10 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 				<td>Mikkel Jørgensen,<br> Maiken Jørgensen</td>
 			</tr>
 		</tr>
-		<tr>
-			<td class="gaurdien" rowspan="1">Anne Nielsen</td>
-			<td>Louis Mikkelsen</td>
-			<td>John Mikkelsen,<br>Lene Mikkelsen</td>
+			<tr>
+			<td class="gaurdien" rowspan="1">Mette Guldbrand</td>
+			<td>Tobeias Olesen</td>
+			<td>Nicolaj Olesen,<br>Ida Olesen</td>
 		</tr>
 	</table>
 		
@@ -68,7 +108,7 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 		<button class="btn btn-mini" type="button"><i class="icon-wrench" ></i> Opret Ny Profil</button>
 		</div>
 		
-		<script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/bootstrap.min.js"></script>
+		<!-- <script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/bootstrap.min.js"></script> -->
 </body>
 </html>

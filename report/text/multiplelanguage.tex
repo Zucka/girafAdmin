@@ -1,0 +1,42 @@
+\section{Multi-language Support}
+\label{sec:languageSupport}
+Android has simple multi-language support, which means that in order for GIRAF Admin to stay consistent with the GIRAF suite of apps, it should also support multiple languages easily. In order to make it as easy for developers to add support for more languages in GIRAF Admin a simple language system was developed. The system consists of separate PHP files for each sub-site and language. Each sub-site has a sub-folder in \texttt{assets/lang} in which all of the language files should be. Each language has a separate file with the format \texttt{sub-site.language.php}. These files then contain an associative array of strings which contains all of the static strings of the given sub-site. The language of the site is chosen when the user first logins. Each language currently has a flag below the login box on the login site, and so to change language the user just has to click on the flag of the given language. The chosen language is set in the users PHP session, and so all sub-sites has to do is check the session variable and then include the language file for that language. This can be read in detail in section \vref{sec:phpSesion}. \\
+
+\subsection{Adding a new language}
+Described here is the procedure for adding new languages into the multi-language system
+\begin{enumerate}
+\item For each folder(sub-site) in \texttt{assets/lang} a new file should be created with the format \texttt{sub-site.language.fileext} where fileext is either \texttt{php} or \texttt{js} depending on if the language file is for PHP or Javascript.
+\item Copy all of the variables from an existing language file into the new language file and translate all of the strings into the new language
+\item In \texttt{login.php} add the new flag for the new language and give it a link to \texttt{login.php?lang=language} where language is the ISO 3166-1 alpha-2 code of the given languages country (although \texttt{en} is used to designate English). When the number of flags increase to a number that can no longer be shown visually pleasing, the selection should switch an alternative selecting method more suited for large amounts of languages
+\item For each sub-site's PHP file (\texttt{sub-site.php}) add the new language to the switch statement and include the language files for the new language for that given sub-site
+\end{enumerate}
+
+\subsection{Adding a new sub-site}
+Described here is the procedure for adding a new sub-site to the multi-language system
+\begin{enumerate}
+\item On the new sub-site locate all of the static strings, and replace them with references to an associative array like this \texttt{\$SUB-SITE\_STRINGS['STATIC-STRING-NAME'] }
+\item Add code to get the current language from session and a switch case statement to include the language files at the top of the PHP file in the format shown in \autoref{lst:languageswitchcase}.
+\item Create a folder for the new sub-site in \texttt{assets/lang}
+\item Create a new file for each of the currently supported languages in the format \texttt{sub-site.language.php}.
+\item In each of the new language files create the associative array referenced earlier and add all of the strings with their translation
+\end{enumerate}
+\begin{figure}[htbp]
+\begin{lstlisting}
+session_start();
+if (isset($_SESSION['lang'])) {$lang = $_SESSION['lang'];} else {$lang = 'en';}
+
+switch ($lang) {
+	case 'en':
+		include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/sub-site/sub-site.en.php');
+		break;
+	case 'dk':
+		include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/sub-site/sub-site.dk.php');
+		break;
+	default:
+		include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/sub-site/sub-site.en.php');
+		break;
+}
+\end{lstlisting}
+\caption{Including language support on a sub-site}
+\label{lst:languageswitchcase}
+\end{figure}

@@ -1,28 +1,66 @@
 \documentclass[english,twoside,openright]{report}
 
-\usepackage[latin1,ansinew]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} 
 \usepackage{babel}
 
+\usepackage{xcolor}% provides \colorlet
+\usepackage{fixme}
+\fxsetup{
+    status=draft,
+    author=,
+    layout=inline,
+    theme=color
+}
+
+\definecolor{fxnote}{rgb}{0.8000,0.0000,0.0000}
+%define the background colour:
+\colorlet{fxnotebg}{yellow}
+\definecolor{fxfatalbg}{rgb}{0,0,100}
+
+% refedine the layout macro:
+\makeatletter
+\renewcommand*\FXLayoutInline[3]{%
+  \@fxdocolon {#3}{%
+    \@fxuseface {inline}%
+    \colorbox{fx#1bg}{\color {fx#1}\ignorespaces #3\@fxcolon #2}}}
+\makeatother
+
 \usepackage{rotating}
-\usepackage[ansinew]{inputenc}
+
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{appendix}
 \usepackage{float}
 \usepackage{lipsum}
 \usepackage{lastpage}
 \usepackage{fancyhdr}
+\usepackage{varioref}
 \usepackage{hyperref}    % Creates links in the PDF
 \usepackage{listings}
 %\usepackage{algorithmic}
 \usepackage{listings}
+\usepackage{tabularx}
 \usepackage{subfig} %til resize af billeder
-\usepackage[usenames,dvipsnames]{color}
+%\usepackage[usenames,dvipsnames]{color}
 \definecolor{lightgray}{RGB}{232,232,232}
 \usepackage{spverbatim} %Bruges til at indfÃ¸re wrapping i kodemiljÃ¸er, ellers er den magen til {verbatim}
-\usepackage{bussproofs} %Bruges til at indføre derivationstræer
+\usepackage{bussproofs} %Bruges til at indfï¿½re derivationstrï¿½er
 \usepackage[ final ]{pdfpages}
 \usepackage{epstopdf}
+\usepackage[section]{placeins}
+
+%Acronymer for P6 Giraf Projekt
+\newcommand{\secref}[1]{Section \ref{#1}}
+\usepackage{acronym}
+\acrodef{api}[API]{Application Programming Interface}
+\acrodef{cat}[CAT]{Category Administration Tool}
+\acrodef{lamp}[LAMP]{Linux, Apache2, MySql and PHP}
+\acrodef{giraf}[GIRAF]{Graphical Interface Resources for Autistic Folk}
+\acrodef{oha}[OHA]{Open Handset Alliance}
+\acrodef{gui}[GUI]{Graphical User Interface}
+\acrodef{json}[JSON]{JavaScript Object Notation}
+\acrodef{foss}[FOSS]{Free and Open-Source Software}
 
 \lstdefinelanguage{cs}
   {morekeywords={abstract,event,new,struct,as,explicit,null,switch
@@ -73,8 +111,12 @@
   	columns=fixed,
   	upquote=true,
  	extendedchars=true,
+escapeinside={(*@}{@*)},         % if you want to add a comment within your code
 }
 
+
+% Bibtex %
+\usepackage{natbib}
 
 % URL %
 \usepackage{url}

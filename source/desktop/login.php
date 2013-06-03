@@ -1,8 +1,8 @@
 <?php
 	session_start();
-	require_once('db/db.php');
+	require_once('db/new.db.php');
 	if (isset($_GET['action'])) {$action = $_GET['action'];} else {$action = '';}
-	if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'en';}
+	if (isset($_GET['lang'])) {$lang = $_GET['lang'];} else {$lang = 'dk';}
 	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
 	switch ($lang) {
 		case 'en':
@@ -27,13 +27,10 @@
 			$errorStartUsername = '	<div class="control-group error">
 										<div class="controls">
 								';
-			$errorEndUsername	= '			<span class="help-inline">'.$LOGIN_STRINGS["errorUsernameNotFound"].'</span>
+			$errorEndUsername	= '	
 										</div> <!-- controls -->
 									</div> <!-- control-group error -->
 								';
-		}
-		elseif ($error == '2')
-		{
 			$errorStartPassword = '	<div class="control-group error">
 										<div class="controls">
 								';
@@ -63,10 +60,14 @@
 						<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
 						<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 						<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+
+						<script src="assets/js/jquery.min.js"></script>
+						<!-- Modernizr -->
+						<script src="assets/js/modernizr.js"></script>
 					</head>
 					<body>
 					<div class="container">
-						<form class="form-signin" action="?action=login" method="post">
+						<form class="form-signin" action="?action=login&lang='.$lang.'" method="post">
 							<div class="logo">
 								<object width="100%" height="100%" data="assets/img/girafAdminLogo-01.svg" type="image/svg+xml"> </object>
 							</div>
@@ -81,15 +82,26 @@
 								<input type="checkbox" value="remember-me"> '.$LOGIN_STRINGS["formRememberMe"].'
 							</label> -->
 							<button class="btn btn-large btn-primary" type="submit">'.$LOGIN_STRINGS["formSignIn"].'</button>
+							<div>
+								<a href="login.php?lang=en">
+									<img style="height:2em;width:2em;display:block;float:left;" src="../assets/img/flags/en.png">
+								</a>
+								<a href="login.php?lang=dk">
+									<img style="height:2em;width:2em;display:block;float:left;" src="../assets/img/flags/dk.png">
+								</a>
+							</div>
 						</form>
+						<div id="compatwarning">
+
+						</div>
 					</div> <!-- /container -->
 
-					<script src="assets/js/jquery.min.js"></script>
 					<script src="assets/js/bootstrap.min.js"></script>
 					</body>
 				</html>
 		';
 	}
+	/*
 	elseif ($action == 'login') {
 		if (isset($_POST['username'])) {$username = $connection->real_escape_string($_POST['username']);} else {header('location:login.php');}
 		if (isset($_POST['password'])) {$password = $connection->real_escape_string($_POST['password']);} else {header('location:login.php');}
@@ -107,13 +119,47 @@
 				//Login success!
 				$_SESSION['session_id'] = session_id();
 				$_SESSION['username'] = $row['username'];
+				$_SESSION['userId'] = $row['idUser'];
+				$_SESSION['lang'] = $lang;
 				session_write_close();
-				header('location:index.php');
+				header('location:/#ownProfile');
 			}
 			else
 			{
 				header('location:login.php?error=2'); //Error: Password was wrong
 			}
+		}
+
+	}
+	*/
+	elseif ($action = 'login')
+	{
+		if (isset($_POST['username'])) {$username = $_POST['username'];} else {header('location:login.php');}
+		if (isset($_POST['password'])) {$password = $_POST['password'];} else {header('location:login.php');}
+
+		$result = db_getSession($username,$password);
+		if ($result == false) {
+			header('location:login.php?error=1');
+			exit();
+		}
+		else {
+			$role   = db_getProfileInfo($result['profile']);
+			$rights = db_getRights($result['profile']);
+			$dpInfo = db_getAdminRight();
+			$_SESSION['session_id'] = session_id();
+			$_SESSION['username'] = $username;
+			$_SESSION['userId'] = $result['user'];
+			$_SESSION['profileId'] = $result['profile'];
+			$_SESSION['lang'] = $lang;
+			$_SESSION['dbsess'] = $result['session'];
+			$_SESSION['password'] = $password;
+			$_SESSION['department'] = $role[0]["department"];
+			$_SESSION['role'] = $role[0]['role'];
+			$_SESSION['update'] = $rights['update'];
+			$_SESSION['delete'] = $rights['delete'];
+			$_SESSION['isAdmin'] = $dpInfo[0]["update"];
+			session_write_close();
+			header('location:/#ownProfile');
 		}
 	}
 ?>

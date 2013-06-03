@@ -1,0 +1,7 @@
+JAR File Versions
+----------------------
+
+
+brazil.jar 					Based on Brazil 2.3 + a patch concerning chunking
+commons-codec.jar			Apache Commons Codec version 1.3
+jdom-android.jar					Modified JDOM 1.1.1 Android version see: http://www.jdom.org/pipermail/jdom-interest/2009-July/016346.html

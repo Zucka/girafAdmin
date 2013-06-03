@@ -28,7 +28,7 @@ window.onhashchange = function(){
 	 */
 
     var hashInfo = location.hash;    
-	var hashArray = hashInfo.split("/");
+	var hashArray = hashInfo.split("/"); // We use / instead of ? in our URL's (for $_GET), they do the exact same, but gives a different look
 	var destination = hashArray[0];
 	var info = hashArray[1];
 	var destinationPath = "";
@@ -37,23 +37,36 @@ window.onhashchange = function(){
 	{
 		case "":
 		case "#ownProfile":
+		case "#otherProfiles":
 			destinationPath = "sites/own_profile.php";
 		break;
 		
 		case "#profiles":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "sites/profiles.php";
+		break;
+		
+		case "#profilePicUpload":
+			destinationPath = "script/profilePicUpload.php";
 		break;
 		
 		case "#addRelation":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "sites/relations.php";
+		break;
+		
+		case "#createProfile":
+			destinationPath = "sites/createProfile.php";
 		break;
 		
 		case "#picsManager":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "sites/picsManager.php";
 		break;
 		
 		case "#makePic":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "sites/picsManagerMake.php";
+		break;
+		
+		case "#makePicUpload":
+			destinationPath = "script/picsManagerMakeUpload.php";
 		break;
 		
 		case "#addPic":
@@ -73,11 +86,11 @@ window.onhashchange = function(){
 		break;
 		
 		case "#depManager":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "sites/own_profile.php";
 		break;
 		
 		case "#depInfo":
-			destinationPath = "sites/placeholder.html";
+			destinationPath = "sites/own_profile.php";
 		break;
 		
 		case "#qrManager":
@@ -104,7 +117,6 @@ window.onhashchange = function(){
 		url: destinationPath,
 		data: postData,
 		success: function(result) { // result is the content that the php file 'ECHO's.
-			//var obj = jQuery.parseJSON(result); // Parsing JSON for easy Data Acces
 			$("#content").html(result);
 		}
 	});

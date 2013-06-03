@@ -1,46 +1,44 @@
 <?php
-$db_api_url = ''; //URL to the db api
+if( ! $_SESSION)
+{
+	session_start();
+}
+if (isset($_SESSION['dbsess'])) {$session = $_SESSION['dbsess'];} else {$session = '';}
+if (isset($_SESSION['username'])) {$username = $_SESSION['username'];} else {$username = '';}
+if (isset($_SESSION['dbsess'])) {$password = $_SESSION['password'];} else {$password = '';}
+if (isset($_SESSION['userId'])) {$userId = $_SESSION['userId'];} else {$userId = '';}
+if (isset($_SESSION['profileId'])) {$profileId = $_SESSION['profileId'];} else {$profileId = '';}
 
-/* 
-	$json should be the json to be sent NOT ENCODED, i.e. it should be an associative array
-	Returns the JSON response NOT ENCODED, i.e. it is an associative array
- */
+
 function db_query($json)
 {
-	global $db_api_url;
-    $content = json_encode($json);
+	$address = '130.225.196.27';
+	$port = 2468;
+	$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+	socket_connect($socket, $address,$port);
+	socket_write($socket, $json, strlen($json));
+	//sleep(0.1);
+	$buf = '';
+	$ret = '';
+	if (false !== ($bytes = socket_recv($socket, $buf, 2048000, MSG_WAITALL))) {
+		$ret .= utf8_encode($buf);
+	}
+	// echo $ret;
+	// echo "</br>";
 
-    $curl = curl_init($db_api_url);
-    curl_setopt($curl, CURLOPT_HEADER, false);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_HTTPHEADER,
-            array("Content-type: application/json"));
-    curl_setopt($curl, CURLOPT_POST, true);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $content);
-
-    $json_response = curl_exec($curl);
-
-    $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-    if ( $status != 201 ) {
-        die("Error: call to URL $url failed with status $status, response $json_response, curl_error " . curl_error($curl) . ", curl_errno " . curl_errno($curl));
-    }
-
-
-    curl_close($curl);
-
-    return json_decode($json_response, true);
+	return json_decode($ret,true);
 }
-
-/* Returns a session if authentication was succesful, FALSE otherwise */
+/* Returns an array with session and user(userid) if authentication was succesful, FALSE otherwise */
 function db_getSession($username,$password)
 {
-	$data = array(
-		'auth' => array(
-			'username' => $username,
-			'password' => $password	
-		)
-	);
+	$data = '{
+		"action": null,
+	    "auth": {
+	        "username": "'.$username.'",
+	        "password": "'.$password.'"
+	    },
+	    "data": null
+	}';
 
 	$result = db_query($data);
 	if ($result['status'] != 'OK')
@@ -49,7 +47,8 @@ function db_getSession($username,$password)
 	}
 	else
 	{
-		return $result['data']['session']; 
+		return array('session' => 'asdf','user' => $result['session']['user'], 'profile' => $result['session']['profile']); //temporary session
+		//return $result['session']['session']; //Uncomment when session is implemented
 	}
 
 }
@@ -66,6 +65,7 @@ function db_getSession($username,$password)
  */
 function db_getCertificatesFromIds($session,$ids)
 {
+	global $session;
 	$dataUser = array(
 		'auth' => array(
 			'session' => $session
@@ -77,7 +77,6 @@ function db_getCertificatesFromIds($session,$ids)
 			'ids' => $ids
 		)
 	);
-
 	$resultUser = db_query($dataUser);
 	if ($resultUser['status'] != 'OK')
 	{
@@ -121,4 +120,308 @@ function db_getCertificatesFromIds($session,$ids)
 
 	return $result;
 }
+/*
+	Inserts a new qr code for a user
+
+	--Inputs--
+	$session should be a valid DB session
+	$userId should be the user to be updated
+	$newQr should be a 512 character unique string 
+
+*/
+function db_insertNewQrCode($id,$newQr)
+{
+	global $session,$username,$password;
+	$data = '{
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+		"action": "update",
+		"data": {
+			"type": "user",
+			"values": [
+				{
+					"id": '.$id.',
+					"value": {
+						"certificate": "'.$newQr.'",
+						"id":'.$id.'
+					}
+				}
+			]
+		}
+	}
+	';
+	$result = db_query($data);
+	error_log($result['status']);
+	if ($result['status'] == 'OK')
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+/* 
+	Creates a new user based on input
+	--inputs--
+	type should be type of user to create (0 = pedagouge; 1 = parrent; 2 = child)
+	data should be array containing relevant information
+
+	--returns--
+	if succesful, returns an associative array of id, password and certificate
+	if failure, returns FALSE
+ */
+
+
+
+
+
+
+function db_getProfiles(){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+		"data": {
+	    	"type":"profile",
+	    	"view":"list",
+	    	"ids":null
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function db_getUsers(){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+		"data": {
+	    	"type":"user",
+	    	"view":"list",
+	    	"ids":null
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function db_getProfileInfo($id){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+		"data": {
+	    	"type":"profile",
+	    	"view":"details",
+	    	"ids":['.$id.']
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function db_getDepartmentInfo($departmentId){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+	    "data": {
+	    	"type":"department",
+	    	"view":"details",
+	    	"ids":['.$departmentId.']
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function db_getAdminRight(){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+	    "data": {
+	    	"type":"department",
+	    	"view":"list",
+	    	"ids":null
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function db_getGuardian_of($guardian_of){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+	    "data": {
+	    	"type":"profile",
+	    	"view":"details",
+	    	"ids":['.$guardian_of.']
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function db_getRights($id)
+{
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+	    "data": {
+	    	"type":"profile",
+	    	"view":"list",
+	    	"ids":null
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] != 'OK')
+	{
+		return false;
+	}
+	foreach ($result['data'] as $value) {
+		if ($value['id'] == $id)
+		{
+			return array("update" => $value['update'],"delete" => $value['delete']);
+		}
+	}
+}
+
+/* picsManagerMake */
+
+function db_uploadePictogram($jsonPictogram){
+	global $session,$username,$password;
+	$data = '{
+		"action": "create",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+	    "data": {
+	    	"type":"pictogram",
+	    	"values":['.$jsonPictogram.']
+	    }
+	}';
+	
+	$result = db_query($data);
+
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function makeJsonPictogram($title,$privacy,$imageString,$soundString,$inlineText,$tagString){
+	if($privacy == "0"){
+		$privacyBool = "false";
+	}else if($privacy == "1"){
+		$privacyBool = "false";
+	}
+	else{//$privacy == "2"
+		$privacyBool = "true";
+	}
+	
+	//Handle Tag Array with various splits
+	$regex = "/[\t\s,.;:]+/";
+	$tagArray = preg_split($regex,$tagString);
+	if($tagArray[0]=="")
+		$tagPrint = "";
+	else
+		$tagPrint = '["'.implode('","',$tagArray).'"]';
+
+	$returnVar = '{ 
+		"name": "'.$title.'", 
+		"public": '.$privacyBool;
+		
+	//If any of these are empty, don't include them in the JSON
+	if($imageString != "")	
+		$returnVar .= ',"image": "'.$imageString.'"';
+	if($soundString != "")
+		$returnVar .= ',"sound": "'.$soundString.'"';
+	if($inlineText != "")
+		$returnVar .= ',"text": "'.$inlineText.'"';
+	if($tagPrint != "")
+		$returnVar .= ',"tags": '.$tagPrint;
+	$returnVar .='}';
+	
+	return $returnVar;
+}
+
 ?>
+
+

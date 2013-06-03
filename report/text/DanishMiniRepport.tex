@@ -1,0 +1,34 @@
+\chapter*{Danish Summary}
+Projektet Admin er et underproject af GIRAF sytemet der har været under udvikling siden 2011. Admin har til fokus at udvikle administrations interface til GIRAF systemet til håndtering af bruger, pictogramer og applikationer.\\
+For forårssemesteret 2013 havde Admin projektet fokus på at omdesign interfacet til et system der er nemmer at vedligeholde på tablet og desktop samt mere brugervenligt.\\
+For at skabe et projekt der samtidig også er optimal at arbejde videre på, i årene der kommer var der først fokus på at få indentifiseret alle funtionaliteter. Som der er krav på og designed disse i et samhængende system.\\
+Hovedfunktionaliteten der skulle være functionel efter projektets afslutning ved sommeren 2013 er bruger håndtering.   
+Bruger håndtering er vigtigst da dette ikke kan håndteres andre steder i GIRAF systemet.\\
+\\
+Problemfoumulering for projektet var: 
+\begin{verse}
+\textit{``Currently there are two different administration interfaces for the GIRAF system.
+This results in a problem with maintainability and user friendliness.
+How can we make a \underline{single} user friendly administration interface for the GIRAF system?''}
+\end{verse}
+
+og på dansk: 
+\begin{verse}
+\textit{``På nuværende tidspunkt er der to forskellige adminstrations interface for GIRAF systemet.
+Dette skaber problemer med vedligeholdelse og brugervenlighed. 
+Hvordan er det multigt at skabe et \underline{enkelt} brugervenligt adminstrations interface for GIRAF systemet?''}
+\end{verse}
+
+
+Systemet er bygget i PHP,  og Apache. Målet med projektet var også at lave et system som både kunne køre på en PC, men også på en Android tablet. Et forslag på en løsning er at bruge PAW, som gør det muligt at eksekverer PHP på en Android tablet. \\ 
+\\
+En stor del af fokusen i projektet har også været at gøre det så nemt som muligt for den gruppe som tager over, at fortsætte med projektet. Rapporten består af flere dele der beskriver projektets udvikling. Det samlede admin system består af et login- , et profil- , et pics (billede)- , et QR kode- og et app-system. \\ 
+\\
+Designet af systemets front er bygget ovenpå Twitters Bootstrap, som hjælper med hurtigt at udvikle hjemmesider. Det overordnet design er baseret på GIRAF design guidelines. Login systemet er opbygget ved hjælp af PHPs session. Der er også udviklet et multi-sprog system som er bygget til at efterligne Android's sprog system. Dette gør at det er nemt at tilføje nye sprog til systemet, samt at folk som er bekendt med Android's system hurtigt vil blive bekendt med systemet.\\
+Profil systemet fungere som informations oversigt, samtidig med at den gør det muligt at holde styr på hvilke brugere der kan modifisere andre brugere.\\
+Pics systemet er lavet sådan at man nemt fra sin PC kan tilføje nye pics til systemet, samt tilknytte pics til et barn, da det tidligere har været svært at tilføje allerede eksiterende pics til GIRAF systemet.\\
+QR kode systemet er lavet til at hvis man taber sin QR kode, så er det muligt at få lavet en ny. QR kode systemet bruger et bibliotek kaldet phpqrcode, som gør det muligt at tage en tekststreng og lave det til et billede som viser QR koden.\\
+App systemet er designet sådan at man kan bestemme hvilke apps et barn har mulighed for at gå ind i. \\ 
+\\
+Under projektet er der desuden lavet en brugervenlighedstest, hvor testpersoner blev inviteret til at afprøve systemet. Ved hjælp af brugervenlighedstesten blev der fundet en del fejl og mangler, hvor nogle af dem nåede at blive rettet. På grund af problemer med en anden gruppe nåede alle funktioner i systemet ikke at blive færdig, og disse er beskrevet i rapporten. \\
+For at konkludere så er projektet ikke færdigt, men der er sat et godt grundlag for den næste gruppe der skal arbejde videre med projektet. Yderligere er der også givet forslag til hvad den næste gruppe kan lave videre på, for at gøre systemet bedre.

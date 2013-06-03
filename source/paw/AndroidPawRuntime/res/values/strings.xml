@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PAW Runtime</string>
+    <string name="menu_home">Menu</string>
+    <string name="menu_screenshot">Screenshot</string>
+    <string name="dialog_info">Information</string>
+    <string name="extracting">Extracting content...</string>
+    <string name="javascript_dialog_title">Dialog</string>
+    <string name="screenshot_ok">Screenshot saved to /sdcard...</string>
+    <string name="screenshot_error">Screenshot failed!</string>
+</resources>
