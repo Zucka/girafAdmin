@@ -6,8 +6,8 @@ The login system of the GIRAF Admin system uses PHP sessions to check if a user 
 \hline
 Session Variable & Description \\ \hline
 \texttt{session\_id} & Stores the PHP session id of the user \\ \hline
-\texttt{username} & Stores the username of the logged in user, {\color{red} Temporary variable until WASTELAND implements API session, should be removed before deploying anywhere!} \\ \hline
-\texttt{password} & Stores the password of the logged in user, {\color{red} Temporary variable until WASTELAND implements API session, should be removed before deploying anywhere!} \\ \hline
+\texttt{username} & Stores the username of the logged in user, {\color{red} Temporary variable until Wasteland implements API session, should be removed before deploying anywhere!} \\ \hline
+\texttt{password} & Stores the password of the logged in user, {\color{red} Temporary variable until Wasteland implements API session, should be removed before deploying anywhere!} \\ \hline
 \texttt{userId} & Stores the user id of the logged in user, and is used for database calls \\ \hline
 \texttt{profileId} & Stores the profile id of the logged in user, and is used to reduce database calls (you can get profileId from userId) \\ \hline
 \texttt{lang} & Stores the chosen language (chosen at login) of the logged in user, and is used on all sub-sites to determine what language file should be used \\ \hline
@@ -22,7 +22,7 @@ Session Variable & Description \\ \hline
 \caption{PHP Session Variables}
 \label{tbl:phpsession}
 \end{table}
-Many of the variables stored in the session is used to reduce database calls, which could help the system scale better if that would be necessary. Because API session is not yet implemented by WASTELAND, it has been necessary to store the username and password of the logged in user, and is then used to make database calls instead of the session. When API session is implemented the username and password variables should be removed from PHP session and the authentication method in \texttt{new.db.php} should be replaced with API session in all calls except \texttt{db\_getSession}. At this moment it is not clear what exactly the update and delete variables signify, and the reader should refer to the WASTELAND report or source code for more details.\\
+Many of the variables stored in the session is used to reduce database calls, which could help the system scale better if that would be necessary. Because API session is not yet implemented by Wasteland, it has been necessary to store the username and password of the logged in user, and is then used to make database calls instead of the session. When API session is implemented the username and password variables should be removed from PHP session and the authentication method in \texttt{new.db.php} should be replaced with API session in all calls except \texttt{db\_getSession}. At this moment it is not clear what exactly the update and delete variables signify, and the reader should refer to the WASTELAND report or source code for more details.\\
 \\
 %Rounding off the implementation chapter
 This is the end of all the advanced and complicated solutions we have managed to complete, the next chapter will focus on the results of our usability testing of the somewhat finished system.

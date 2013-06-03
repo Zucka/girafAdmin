@@ -47,7 +47,7 @@ Then when that is handled, the script will load the image into PHP and will tran
 
 The function seen in listing \ref{lst:croppingProfile} is what we use for reshaping the image into a more manageable size. What it does is first to create a new fully white image (L. 2-4), because it is called with the RGB value 255,255,255. Then it proceeds to copy the selected area, which the user selected before onto this white image (L. 5), in a 300 x 300 pixel area, which is the size we decided a profile picture always will be. Finally it stores itself in its own class (L. 7).\\
 \\
-As for implementing the database query, we have actually designed it and according to the WASTELAND API \citep{wastelandApi} it should work. But when we try to update the image it only returns an SQL error in the console. We have asked the WASTELAND group why this is so, but they are as clueless as we are. So when the WASTELAND group manages to find the error, this feature will be fully implemented.\\
+As for implementing the database query, we have actually designed it and according to the Wasteland API \citep{wastelandApi} it should work. But when we try to update the image it only returns an SQL error in the console. We have asked the Wasteland group why this is so, but they are as clueless as we are. So when the Wasteland group manages to find the error, this feature will be fully implemented.\\
 \\
 This concludes the explanation of the Profile Picture Changer, if the reader wants to learn more about the Profile Picture Changer the files used for this feature is: \texttt{/include/SimpleImage.php} , \texttt{/assets/js/profileEdit.js} and \texttt{script/profilePicUpload.php} .
 
