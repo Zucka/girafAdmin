@@ -22,20 +22,16 @@ The assignments as well as the introduction given to all participants can be fou
 	\label{fig:usabilitylab}
 \end{figure}
 
-The usability test was performed with four test persons. Even though that number is not very high the actual number of people that will be using the advanced features of the system such as creating profiles will not be much higher when the system is deployed. One of test persons, which job include daily leadership of aXXXXXXXXX was before the test considered for one of those who will actual work with the advanced features but during the follow-up questions it became clear that this was not the case.. Therefore the 
 	%Picking the candidates
-This test was performed on 4 persons, this might not sound as many. But there is only a few persons in Denmark that will use the administration features of this project. We only had one person available that we thought would use the main system, but this person who is responsibly for a kinder garden, is not even high enough up in their system to be using most of the admin features. But this is all we had to go on, as we had no way of contacting the persons who is in a high enough position to be the intended user.\\
-So the test was carried out with the one person to be the actual test person, and the 3 others be confirmation test, so that we did not draw conclusions from one test, that could be a result of lacking computer skills or other variables of the same sort.\\
-3 out of the 4 test persons is working with kids with autism everyday, and is educated pedagogues, and is therefore very close to the intended user for the administration system, but is in fact the intended user for some of the sub-functionality of the system. The last test person is an educated computer scientist from Aalborg University, whom has a child with autism, this last test persons use of the system was regarded with respect to that of his education and was mainly used for catching really serious bugs and suggestions for new features.\\
-\\
+The usability test was performed with four test persons. Even though that number is not very high the actual number of people that will be using the advanced features of the system such as creating profiles will not be much higher when the system is deployed. One of test persons, which job include daily leadership of a kindergarten, was before the test considered one of those who will actually work with the advanced features upon eventual release but during the follow-up questions it became clear that this might not be the case. The test can therefore be seen as a little biased as to having test persons with the appropriate level of technological knowledge. As one of the persons might work with advanced features in the future this person is viewed as a proper user and the other three as confirmation subjects. Two of these confirmation subjects work with kids with autism every day and the last is an educated computer scientist as well as a parent to a child with autism. The latter person is considered to have a higher level of technological knowledge than the eventual users of the advanced features and was mainly used for catching non-critical bugs and suggestions for new features.\\. Upon eventual release all of the test persons would work with the non-advanced features, if not on a daily then on a weekly basis.
 
 	%The old version
-Lastly, this test was performed on, at the time, older version of the system. Because of some instabilities in the, at the time, current system. The version that was used for the test can be found on GitHub \citep{testBranch}.\\
+As the developed system at the time of the test was not in a state were it was stable enough to test on, an older version of the administrative interface was used during the test. The version that was used during the test can be collected from GitHub \citep{testBranch}.\\
 \\
 
 \section{Result of the test}
-Table \ref{tab:Bugs/Errors} displays the errors or bugs, that was found by the help of the usability test. They are described by first a category, if any, and then by the error itself.\\
-They have been sorted by the severity of the error, and we here use 3 categories, critical, serious and cosmetic. Critical depicts an error that either makes a general task impossible or made the user stop all together. Serious depicts an error that made the user stop for some time, or seemed to be unnecessarily distracting. Cosmetic depicts an error of low calibre, that even the users informed us was minor issues that did not affect the flow much more then a few seconds.\\
+Table \ref{tab:Bugs/Errors} displays the errors or bugs, that was found during the usability test. They are described by a category, the error itself, its severity and lastly if it is corrected in the final version before hand-in.\\
+They have been sorted by the severity of the error, and here we use three categories, critical, serious and cosmetic. Critical depicts an error that either makes a general task impossible or made the user stop altogether. Serious depicts an error that made the user stop for some time, or seemed to be unnecessarily distracting. Cosmetic depicts an error of low calibre, which even some of the users informed us was minor issues that did not affect the flow.\\
 \\
 
 %Result of the test
@@ -45,8 +41,8 @@ They have been sorted by the severity of the error, and we here use 3 categories
 	\centering
 		\begin{tabularx}{\textwidth}{|X|l|l|}
 			\hline
-			Description & Severity & Done\\\hline\hline
-			It is not possible to create new categories of Pictos & Critical &\\\hline
+			Description & Severity & Corrected\\\hline\hline
+			Pictograms - It is not possible to create new categories of Pictos & Critical &\\\hline
 			Profile - Restrict QR editing to department manager & Critical &  \\\hline 
 			DB Problem - Not possible for all pedagogues to fix Pictos for all department children & Critical & \\\hline
 			Navigation - The site ''Profiles'' should link to each profile & Critical &\\\hline
@@ -54,15 +50,15 @@ They have been sorted by the severity of the error, and we here use 3 categories
 			Profile Pic - Accept button is hard to find & Serious &\\\hline
 			Profile Pic - Word ''change'' is misleading & Serious &\\\hline
 			Navigation - ''Add'' and ''Make'' under Pics Manager is confusing & Serious & \\\hline
-			Navigation - Language Support on navigation did not change to Danish & Serious & Done\\\hline
-			Missing - No Danish language support on the site ''Profiles''& Serious & Done\\\hline
-			Profile - Department should be a link, not editable & Serious & (Done)\\\hline
+			Navigation - Language Support on navigation did not change to Danish & Serious & X\\\hline
+			Missing - No Danish language support on the site ''Profiles''& Serious & X\\\hline
+			Profile - Department should be a link, not editable & Serious & (X)\\\hline
 			Profile - Links from Own Profile relations is missing & Serious & \\\hline
-			Profile Pic - GIRAF Logo as Place holder is misleading  & Cosmetic & Done\\\hline
+			Profile Pic - GIRAF Logo as Place holder is misleading  & Cosmetic & X\\\hline
 			Profile Pic - Word ''Edit'' is not informative & Cosmetic &\\\hline
 			DB Problem - Own Profile takes too long to load & Cosmetic &  \\\hline
-			Navigation - ''Add Relation''  is before ''Create Profile'' & Cosmetic & Done \\\hline
-			Standardize button names & Cosmetic & \\\hline
+			Navigation - ''Add Relation''  is before ''Create Profile'' & Cosmetic & X \\\hline
+			Design - Standardize button names & Cosmetic & \\\hline
 			Logout - Can navigate in system without session & Cosmetic & \\\hline
 	\end{tabularx}
 	\caption{Bugs/Errors Found Under Usability Testing}
@@ -70,36 +66,36 @@ They have been sorted by the severity of the error, and we here use 3 categories
 \end{table}
 
 %What have we already fixed
-Some of these errors was nearly immediately rectified, or had already been solved in the system that was up to date. These can be seen in table \ref{tab:Bugs/Errors} as ''Done''. If the done, is marked with parentheses, it is because the problem have been partially solved.\\
+Some of these errors was nearly immediately rectified, or had already been solved in the system which was up to date. These can be seen in table \ref{tab:Bugs/Errors} as ''X''. If the X, is marked with parentheses, it is because the problem have been partially solved.\\
 \\
 %What MUST be fixed
-As mentioned before there is errors marked critical, as can be seen by the first 5 entries in table \ref{tab:Bugs/Errors}. These are errors that must be fixed for the system to be able to use the implemented features, as listed in chapter \vref{chap:systemOverview}.\\
-We will here take a moment to explain the critical problems, and in short how they can be rectified.\\
+As mentioned before there is errors marked critical, as can be seen by the first 5 entries in the table. These are errors that must be fixed for the system to be able to use the implemented feature set, as listed in chapter \vref{chap:systemOverview}.\\
+Next an explanation of the critical problems, and in short how they can be rectified.\\
 \\
-\textbf{It is not possible to create new categories of Pictos}\\
-This error arose because we had not thought the creation of categories through. This is one feature that we had overlooked, even after having had a meeting with our contact person, and showing all the features we had intended to create.\\
-The way to solve this is to create a minor tool that makes it possible to create and assign categories, that can be created by a simple entry of a text string. For navigation purposes this tool should be put under the Pics Manager category in the navigation menu.\\
+\textbf{Pictograms - It is not possible to create new categories of Pictos}\\
+This error arose because the task of creating categories was not thought through. This is one feature that was overlooked, even after having had a meeting with the contact person, and showing the intended feature set.\\
+Solving this error requires the creation of a minor tool which makes it possible to create and assign categories by a simple entry of a text string. For navigation purposes this tool should be under the Pics Manager category in the navigation menu.\\
 \\
 \textbf{Profile - Restrict QR editing to department manager}\\
-After having our first test, we were made aware how highly they think of the QR code that they are given for the system. It is supposed to be as important as your house key, and should therefore not be something that can easily be reprinted.\\
-therefore to accommodate this request the QR changer should not be available from the Own Profile site. Instead the procedure will be to contact the admin of the system and have him generate a new key with the QR Manager tool and then send this out.\\
+After the first test person, it was made clear that the test person thought very high of QR code which they are given for the system. It is supposed to be as important as your house key, and should therefore not be something that can easily be changed.\\
+To accommodate for this request the QR changer should not be available from the Own Profile site. Instead the procedure will be to contact the administrator of the system and have him generate a new key with the QR Manager tool and then send this out.\\
 \\
 \textbf{DB Problem - Not possible for all pedagogues to fix pictos for all department children}\\
 This problem most likely erupted from a misunderstanding between the DB group, WASTELAND, and ourselves. The problem is that in order for a pedagogue to edit anything about a child in its department they need to have a relation between them. But this is not how the user intends to use the system. The relation should only be thought of as a responsibility link, and only adds the feature to change this child's profile data.\\
-There is no easy way to rectify this problem from the admin projects side. This has to be fixed inside the database, because of its security mechanisms. For a solution to this we would like the reader to check out the database project, WASTELAND \citep{wasteland}.\\
+There is no easy way to rectify this problem from the admin projects side. This has to be fixed inside the database, because of its security mechanisms. For a solution to this it is suggested to look at the database project, WASTELAND \citep{wasteland}.\\
 \\
 \textbf{Navigation - The site ''Profiles'' should link to each profile}\\
-This is simply a matter of a feature that have not yet been implemented, but it is shown here as an error, because it is necessary for the system to be operated correctly.\\
+This is simply a matter of a feature which has not yet been implemented. It is shown here as an error, because it is necessary for the system to be operated correctly.\\
 It can be fixed by adding normal HTML anchor links to each name in the tables.\\
 \\
 \textbf{Missing - Unable to remove relations}\\
 This is again a matter of a feature that have not yet been implemented.\\
-We have thought this feature to be usable only for the department manager and the admin of the system. And should be used directly from each users profile. This means that the admin or department manager, navigates to the user's profile, and find the person he or she is related to and clicks the button to remove this relation.\\
+This feature is thought to be usable only for the department manager and the administrator of the system and it should be used directly from each users profile. This means that the administrator or department manager, navigates to the user's profile, find the person he or she is related to and clicks the button to remove the relation.\\
 \\
-The rest of the errors is not of a nearly as urgent calibre, and should be easy enough to solve, we will therefore not discuss these further in this report.\\
+The rest of the errors is not of a nearly as urgent calibre, and will therefore not be discussed further in this report.\\
 
 \section{New Features}
-Instead we turn our attention to the possible extra features found during the test, both inspired by the way the users used the system, and their commentary afterwards.\\
+Instead the attention is turned to the possible extra features found during the test, both inspired by the way the users used the system, and their commentary afterwards.\\
 \\
 
 	%Features
@@ -121,17 +117,17 @@ Instead we turn our attention to the possible extra features found during the te
 \end{table}	
 
 %What could be added later - Maybe a refference to Future Work instead?
-As seen from table \ref{tab:NewFeature} there is a few features that could improve the system. We will here go through some of the features that might be a bit hard to understand without having been on the development team.\\
+As seen from table \ref{tab:NewFeature} there is a few features that could improve the system. Some of the features that might be a bit hard to understand without having been on the development team is explained in detail in the following text.\\
 \\
 \textbf{Make the modal window customizable}\\
-We have during this project designed our own modal window, because of some issues with the bootstrap library. It seemed that the user sometimes found it confusing with the many cancel options that is offered for closing the modal window, even though it follows the way bootstrap displays their modal windows.\\
+During this project a modal window was designed because of some issues with the bootstrap library. It seemed that the user sometimes found it confusing with the many cancel options that is offered for closing the modal window, even though it follows the way bootstrap displays their modal windows.\\
 But also in the long run it could be useful to have the ability to customize the modal window with more than a title and a text.\\
 \\
 \textbf{Input forms - Automatic first letter upper case for name and address}\\
-While watching the users work in the system, we multiple times witnessed them deleting a full text string because they entered the first letter of an address or a name in lower-case. therefore to save the user time, we thought that making each word in the address and name field automatically convert to upper-case. Since that is the custom with all names and addresses.\\
+While watching the users work in the system, multiple times it was witnessed that they deleted a full text string because they entered the first letter of an address or a name in lower-case. therefore to save the user time, making each word in the address and name field automatically convert to upper-case since that is the custom with all names and addresses.\\
 \\
 \textbf{Navigation - Add link to ''add relations'' and ''create profile'' in Profiles}\\
-Some of the users in our test meant that the most meaningful way to handle profiles, would be directly from the menu point ''Profiles'', and did not bother to look just below this menu point, where these options lay. This behaviour was seen in 3 out of 4 cases, and should therefore be considered.\\
+Some of the users in the test meant that the most meaningful way to handle profiles, would be directly from the menu point ''Profiles'', and did not bother to look just below this menu point, where these options lay. This behaviour was seen in 3 out of 4 cases, and should therefore be considered.\\
 It is a simple addition and does not hinder the system in any way. So if it even only helps a few people in the beginning of the learning of the system, this is feature worth having.\\
 \\
 \textbf{Pics Manager Make - Directly create Picto for child from profile page}\\
