@@ -28,7 +28,7 @@
 			$PROFILE_STRINGS["tblEditChild"] = "Edit Child";
 			$PROFILE_STRINGS["tblEditProfile"] = " Edit";
 
-		$PROFILE_STRINGS["pictureEdit"] = " Edit";
+		$PROFILE_STRINGS["pictureEdit"] = " Edit Profile Image";
 		$PROFILE_STRINGS["security"] = "Security";
 		$PROFILE_STRINGS["changePassword"] = "Change Password";
 		$PROFILE_STRINGS["placeholderPassword"] = "Password";

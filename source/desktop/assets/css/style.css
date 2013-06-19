@@ -338,7 +338,7 @@ background-color:#dd9639;
 }
 
 #profileCropImage{
-	width:700px; /* This is important, to make sure we keep the right ratio in the upload script */
+	max-width:70%; /* You can change width here freely. But the aspect ratio of the image MUST be kept. This means only width OR height may be set. The script in profileEdit.js and profilePicUpload.php takes care of the ratio'ing */
 	margin-bottom:10px;
 }
 

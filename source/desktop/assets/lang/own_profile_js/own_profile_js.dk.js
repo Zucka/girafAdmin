@@ -14,6 +14,6 @@ var own_profile_js_editInfoButtonEdit = "Ret";
 
 var own_profile_js_changeProfilePicHeader = "Ændre Profil Billede";
 var own_profile_js_changeProfilePicImgAlt = "Venter på fil valg";
-var own_profile_js_changeProfilePicSubmit = "Ændre";
+var own_profile_js_changeProfilePicSubmit = "Foretag Ændring";
 
 

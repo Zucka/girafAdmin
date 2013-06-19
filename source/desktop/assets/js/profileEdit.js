@@ -125,7 +125,8 @@ function changeProfilePicturePopup(){
 	//Request picture
 	changeModalInner(own_profile_js_changeProfilePicHeader,
 					'<form id="profilePictureUpload" method="post" enctype="multipart/form-data" action="#profilePicUpload">'+
-						'Select image-file: <input type="file" name="newProfilePic" id="newProfilePic" />'+
+						'Select image-file: <input type="file" name="newProfilePic" id="newProfilePic" /><br/>'+
+						'<input type="submit" name="submit" value="'+own_profile_js_changeProfilePicSubmit+'" class="btn">'+
 						'<input name="x1" id="x1" type="hidden" value="NULL">'+
 						'<input name="y1" id="y1" type="hidden" value="NULL">'+
 						'<input name="x2" id="x2" type="hidden" value="NULL">'+
@@ -133,23 +134,25 @@ function changeProfilePicturePopup(){
 						'<input name="profileURL" type="hidden" value="'+document.URL+'">'+ //This means we know where it was called from.
 						'<input name="currentWidth" id="currentWidth" type="hidden" value="NULL">'+
 						'<center><img src="#" alt="'+own_profile_js_changeProfilePicImgAlt+'" id="profileCropImage"></center>'+
-						'<input type="submit" name="submit" value="'+own_profile_js_changeProfilePicSubmit+'" class="btn">'+
 					'</form>'
 					);
 	openModal();
 	
 	//On upload file
 	$('#newProfilePic').on('change', function(){
-		readURL(this);
-		
 		$('img#profileCropImage').imgAreaSelect({
-			onInit: function(img, selection){
-				var editPic = $('img#profileCropImage').imgAreaSelect({ instance: true });
-				editPic.setSelection(100,100,200,200, true);
-				editPic.setOptions({ show: true });
-				editPic.update();
+			handles: true,
+			aspectRatio: '1:1',
+			onSelectEnd: function (img, selection) {
+				document.getElementById("x1").value = selection.x1;
+				document.getElementById("y1").value = selection.y1;
+				document.getElementById("x2").value = selection.x2;
+				document.getElementById("y2").value = selection.y2;
+				document.getElementById("currentWidth").value = $("#profileCropImage").width();
 			}
-		});
+		});	
+	
+		readURL(this);
 		
 	});
 	
@@ -161,20 +164,28 @@ function readURL(input) {
 
 		reader.onload = function (e) {
 			$('#profileCropImage').attr('src', e.target.result);
+			
+			//Change Width and Height so the Image is displayed without going over borders.
+			if($("#profileCropImage").height() > ($(window).height()-40)){
+				//alert("True"+$("#profileCropImage").height()+ ">"+ ($(window).height()-40));
+				$('img#profileCropImage').width("");
+				$('img#profileCropImage').height("640%"); //This absurd number is because of the small container profileCropImage is in.
+			}
+			else{
+				//alert("False"+$("#profileCropImage").height()+ ">"+ ($(window).height()-40));
+				$('img#profileCropImage').width("50%");
+				$('img#profileCropImage').height("");
+			}
+			
+			var editPic = $('img#profileCropImage').imgAreaSelect({ instance: true });
+			editPic.setSelection(100,100,200,200, true);
+			editPic.setOptions({ show: true });
+			editPic.update();
+			
 		}
 
 		reader.readAsDataURL(input.files[0]);
 		
-		$('img#profileCropImage').imgAreaSelect({
-			handles: true,
-			aspectRatio: '1:1',
-			onSelectEnd: function (img, selection) {
-				document.getElementById("x1").value = selection.x1;
-				document.getElementById("y1").value = selection.y1;
-				document.getElementById("x2").value = selection.x2;
-				document.getElementById("y2").value = selection.y2;
-				document.getElementById("currentWidth").value = $("#profileCropImage").width();
-			}
-		});		
+			
 	}
 }

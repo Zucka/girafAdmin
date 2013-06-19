@@ -28,7 +28,7 @@
 			$PROFILE_STRINGS["tblEditChild"] = "Ret barns profil";
 			$PROFILE_STRINGS["tblEditProfile"] = " Ret profil";
 
-		$PROFILE_STRINGS["pictureEdit"] = " Ændre";
+		$PROFILE_STRINGS["pictureEdit"] = " Ændre Profil Billede";
 		$PROFILE_STRINGS["security"] = "Sikkerhed";
 		$PROFILE_STRINGS["changePassword"] = "Skift kodeord";
 		$PROFILE_STRINGS["placeholderPassword"] = "Kodeord";

@@ -14,6 +14,6 @@ var own_profile_js_editInfoButtonEdit = "Edit";
 
 var own_profile_js_changeProfilePicHeader = "Change Profile Picture";
 var own_profile_js_changeProfilePicImgAlt = "Waiting for file select";
-var own_profile_js_changeProfilePicSubmit = "Change";
+var own_profile_js_changeProfilePicSubmit = "Change to this Image";
 
 

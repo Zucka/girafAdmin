@@ -67,6 +67,7 @@
 		
 		$image->resizeCordsColor($finalWidth,$finalHeight,intval($x1*$ratio),intval($y1*$ratio),intval($x2*$ratio),intval($y2*$ratio),255,255,255);
 		$outPutImage = $image->output();
+		//Currently the Image is simply put into the variable $outPutImage, since there is problems with the database when updating profiles
 		
 		header('Location: '.$_POST['profileURL']);
 	}
