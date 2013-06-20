@@ -159,10 +159,14 @@ function contentBlock2($role)
 	$parents = "";
 	$listinfo = db_getProfiles();
 	$listOfUsersAvailable = array();
-	foreach ($listinfo as $user) {
+	/*foreach ($listinfo as $user) {
 		array_push($listOfUsersAvailable, db_getProfileInfo($user["id"]));
+	}*/
+	$ids = array();
+	foreach ($listinfo as $user){
+		array_push($ids,$user["id"]);
 	}
-
+	$listOfUsersAvailable = db_getProfileInfoMultiple($ids);
 	if ($role == 0 || $role == 1 ){
 		$attachedChildren = '
 							<h3>'.$PROFILE_STRINGS["h_attachedChildren"].'</h3>
@@ -175,8 +179,8 @@ function contentBlock2($role)
 							';
 		foreach($profileInfo[0]["guardian_of"] as $guardian_of) {
 			foreach ($listOfUsersAvailable as $user) {
-					if ($user[0]["role"] == 1 && $user[0]["guardian_of"] == $guardian_of) {
-						$parents .= $user[0]["name"].';';
+					if ($user["role"] == 1 && $user["guardian_of"] == $guardian_of) {
+						$parents .= $user["name"].';';
 					}
 				}
 				$guardian_ofInfo = db_getProfileInfo($guardian_of);

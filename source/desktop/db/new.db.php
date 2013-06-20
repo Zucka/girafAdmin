@@ -255,6 +255,31 @@ function db_getProfileInfo($id){
 	}
 }
 
+function db_getProfileInfoMultiple($idArray){
+	global $session,$username,$password;
+	$data = '{
+		"action": "read",
+		"auth": {
+			"username": "'.$username.'",
+			"password": "'.$password.'"
+		},
+		"data": {
+	    	"type":"profile",
+	    	"view":"details",
+	    	"ids":['.implode(',',$idArray).']
+	    }
+	}';
+	$result = db_query($data);
+	if ($result['status'] == 'OK')
+	{
+		return $result['data'];
+	}
+	else
+	{
+		return false;
+	}
+}
+
 function db_getDepartmentInfo($departmentId){
 	global $session,$username,$password;
 	$data = '{
