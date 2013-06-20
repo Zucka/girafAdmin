@@ -10,8 +10,8 @@
 		$NAVIGATION_STRINGS['createProfile'] = "Create Profile";
 		
 		$NAVIGATION_STRINGS['picsManager'] = "<strong>P</strong>ics Manager";
-		$NAVIGATION_STRINGS['makePic'] = "Make";
-		$NAVIGATION_STRINGS['addPic'] = "Add";
+		$NAVIGATION_STRINGS['makePic'] = "Create";
+		$NAVIGATION_STRINGS['addPic'] = "Assign";
 		$NAVIGATION_STRINGS['removePic'] = "Remove";
 		$NAVIGATION_STRINGS['editPic'] = "Edit";
 		$NAVIGATION_STRINGS['deletePic'] = "Delete";
