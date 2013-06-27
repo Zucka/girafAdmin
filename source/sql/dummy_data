@@ -1,0 +1,69 @@
+USE `giraf`;
+
+INSERT INTO `department` (`name`, `address`, `phone`, `email`)
+        VALUES ("Cassiopeia", "Selma Lagerløfs Vej 300", 12345678, "test@test.com");
+
+INSERT INTO `user` (`username`, `password`, `certificate`)
+    VALUES ('john', '123456', '123456');
+
+INSERT INTO `profile` (`name`, `role`, `address`, `department_id`, `phone` , `email`)
+        VALUES 
+			("John Smith",1,"9696 Tellus Ave, 5573, Épinal",1,"725502","lectus@vitae.net"),
+			("Hector King",1,"1851 Ac Street, 9397, Neuwied",1,"468842","amet.lorem@aliquetsem.net"),
+			("Guinevere Puckett",0,"9820 Massa. Avenue,3447,Angoulême",1,"397694","Mauris@dapibus.com"),
+			("Chiquita Roman",2,"3122 Mauris Avenue,3571,Holywell",1,"749126","Sed.neque@massaInteger.edu"),
+			("Chaim Henson",2,"Ap #363-3770 Egestas. Rd.,3037,Orp-le-Grand",1,"600324","orci@pedenonummy.co.uk"),
+			("Myra Byers",1,"102-6657 Felis Street,3127,Camrose",1,"604988","in.cursus@magnamalesuadavel.edu"),
+			("Tamekah Quinn",2,"7843 Arcu. Rd.,8460,Lac-Serent",1,"669796","eget@justoPraesentluctus.org"),
+			("Irma Allen",1,"766-7658 Velit Av.,2588,Houtave",1,"669266","urna.Vivamus.molestie@temporarcu.com"),
+			("Michael Stephens",2,"Ap #693-3661 Non Road,8023,Cache Creek",1,"953838","nec.urna@acmetusvitae.net"),
+			("Lillian Benjamin",0,"854-2569 Enim Road,4058,Ajaccio",1,"977104","ligula@sapienNuncpulvinar.co.uk"),
+			("Lana Donaldson",1,"Ap #806-5969 Lobortis Street,3390,Rochester",1,"761804","purus.sapien.gravida@veliteget.edu"),
+			("William Logan",2,"P.O. Box 491, 1519 In, Avenue,5340,Porirua",1,"135931","diam.Pellentesque.habitant@augue.edu"),
+			("Kessie Bonner",1,"542-7396 Dictum St.,2361,Mattersburg",1,"861263","dolor@faucibusMorbivehicula.org"),
+			("Jacqueline Holder",0,"P.O. Box 249, 5851 Augue Rd.,4777,Barrhead",1,"585103","euismod.est.arcu@euodio.org"),
+			("Jessica Guthrie",2,"7585 Suspendisse Ave,2136,Lochristi",1,"526204","eleifend.non@dolor.net"),
+			("Flynn Merrill",0,"731-2846 Tempor Av.,8405,Zutendaal",1,"864136","Duis.cursus.diam@elit.ca"),
+			("Helen Collier",2,"740-5059 Quisque Av.,4527,Deurne",1,"657609","Donec.luctus@Duisdignissim.edu"),
+			("Dustin Ratliff",1,"P.O. Box 673, 5897 Dolor Road,1044,Solre-sur-Sambre",1,"972255","Cras.pellentesque.Sed@felis.com");
+
+
+UPDATE `profile`
+    SET `user_id`=1
+    WHERE `id`=1;
+
+INSERT INTO `guardian_of` (`guardian_id`, `child_id`)
+        VALUES (1, 4),
+               (1, 5),
+               (1, 17),
+               (3, 7),
+               (3, 9),
+               (10, 12),
+               (10, 15),
+               (2, 4),
+               (6, 4),
+               (8, 5),
+               (11, 5),
+               (13, 7),
+               (14, 7),
+               (16, 9),
+               (18, 9),
+               (2, 12),
+               (6, 12),
+               (8, 15),
+               (11, 15),
+               (13, 17),
+               (14, 17);
+
+
+INSERT INTO `pictogram` (`name`, `public`) VALUES ('bil', false), ('hus', true);
+
+INSERT INTO `profile_pictogram` (`profile_id`, `pictogram_id`) VALUES (1, 1), (1, 2);
+
+INSERT INTO `application` (`name`, `version`, `icon`, `package`, `activity`, `description`)
+        VALUES ('Tog', '1.0', 'Herp', 'deeerp', 'ANDERS', 'hurr durr');
+
+INSERT INTO `profile_application` (`profile_id`, `application_id`) VALUES (1, 1);
+
+INSERT INTO `admin_of` (`user_id`, `department_id`) VALUES (1, 1);
+

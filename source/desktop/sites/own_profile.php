@@ -124,7 +124,6 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 </body>
 <iframe name="print_frame" id="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
 </html>
-';
 
 <?php
 function contentStart($role){
@@ -156,7 +155,6 @@ function contentBlock2($role)
 	global $profileInfo;
 	global $departmentInfo;
 	global $btnEditVar;
-	$parents = "";
 	$listinfo = db_getProfiles();
 	$listOfUsersAvailable = array();
 	/*foreach ($listinfo as $user) {
@@ -174,30 +172,41 @@ function contentBlock2($role)
 								<tr>
 									<th>'.$PROFILE_STRINGS["tblName"].'</th>
 									<th>'.$PROFILE_STRINGS["tbParents"].'</th>
-									<th>'.$PROFILE_STRINGS["tblEditChild"].'</th>
+									<th></th>
 								</tr>
 							';
 		foreach($profileInfo[0]["guardian_of"] as $guardian_of) {
+			$parents = array();
+			$child = "";
 			foreach ($listOfUsersAvailable as $user) {
-					if ($user["role"] == 1 && $user["guardian_of"] == $guardian_of) {
-						$parents .= $user["name"].';';
+				if ($user["id"] == $guardian_of) {
+					$child .= $user["name"];
+				};
+				foreach ($user["guardian_of"] as $key) {
+					if ($user["role"] == 1 && $key == $guardian_of) {
+						array_push($parents,$user);
 					}
 				}
-				$guardian_ofInfo = db_getProfileInfo($guardian_of);
-			
+			}
 			$attachedChildren .= '
 								<tr>
-									<td>'.$guardian_ofInfo[0]["name"].'</td>
-									<td>'.$parents.'</td>
-									<td><button class="btn btn-mini btnEditChild" type="button"><i class="icon-wrench"></i>'.$PROFILE_STRINGS["tblEditProfile"].'</button></td>
-								</tr>';}
+									<td><a href="#ownProfile/user='.$guardian_of.'">'.$child.'</td>
+								' ;
+			foreach ($parents as $parent) {
+				$attachedChildren .= '<td><a href="#ownProfile/user='.$parent["id"].'">'.$parent["name"].'</td>
+								';
+			}
+									
+		}
 			$attachedChildren .= '
+									</tr>
 								</table>
 								';
 
 		return $attachedChildren;
 	}
 	elseif ($role == 2){
+		## STATIC DATA
 		$contentBlock2 = '
 					<h3>'.$PROFILE_STRINGS["tbParents"].'</h3>
 					<table class="table table-striped">
@@ -283,7 +292,7 @@ function contentPersonalInfo($role)
 						</tr>
 						<tr>
 							<td>'.$PROFILE_STRINGS["department"].'</td>
-							<td>'.$departmentInfo[0]["name"].'</td>
+							<td><a href="#depInfo/action=department">'.$departmentInfo[0]["name"].'</td>
 							<td> </td>
 						</tr>
 					</table>
@@ -312,7 +321,7 @@ function contentPersonalInfo($role)
 							'.$btnEditVar.'
 						</tr>
 						<tr>
-							<td>'.$PROFILE_STRINGS["department"].'</td>
+							<td><a href="#depInfo/action=department">'.$PROFILE_STRINGS["department"].'</td>
 							<td>'.$departmentInfo[0]["name"].'</td>
 							'.$btnEditVar.'
 						</tr>
@@ -407,7 +416,7 @@ function department()
 	if ($departmentInfo[0]["update"] == 1){$dpHead .= $profileInfo[0]["name"];}
 	else {$dpHead .= "Not You";}
 	$content = '
-	<div class="breadcrump">'.$DEPARTMENT_STRINGS["breadCrump"].'</div>
+	<div class="breadcrump"><h3>'.$DEPARTMENT_STRINGS["breadCrump"].'</h3></div>
 		<div class="row">
 			<div class="span6">
 				<div class="container-fluid">
