@@ -17,6 +17,7 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <?php
 	session_start();
+	require_once($_SERVER['DOCUMENT_ROOT']."/db/new.db.php");
 	if (isset($_SESSION['lang'])) {$lang = $_SESSION['lang'];} else {$lang = 'en';}
 	//INCLUDE LANG FILES (GET PARAMETER FOR NOW, ADD AUTOMATIC?)
 	switch ($lang) {
@@ -27,6 +28,60 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 		default:
 			include($_SERVER['DOCUMENT_ROOT'].'/assets/lang/profiles/profiles.en.php');
 			break;
+	}
+
+					
+	$content = '';
+	$listinfo = db_getProfiles();
+	$listOfUsersAvailable = array();
+	$ids = array();
+	foreach ($listinfo as $user){
+		array_push($ids,$user["id"]);
+	}
+	$listOfUsersAvailable = db_getProfileInfoMultiple($ids);
+
+	foreach ($listOfUsersAvailable as $person) {
+		if ($person["role"] == 0 ){
+			$numberOfChilds = count($person["guardian_of"]);
+			$content .= '
+			<tr>
+				<td rowspan="'.$numberOfChilds.'">'.$person["name"].'</td>';
+			foreach ($person["guardian_of"] as $childOuter) {
+				$childs = 0;
+				foreach ($listOfUsersAvailable as $childInner) {
+					if ($childInner["id"] == $childOuter) {
+						$childs ++;
+						if ($childs > 0) {
+							$content .= '
+							<tr>';
+						}
+						$content .= '
+						<td>'.$childInner["name"].'</td>';
+						$parentToEcho = array();
+						foreach ($listOfUsersAvailable as $parent) {
+							foreach ($parent["guardian_of"] as $key) {
+								if ($parent["role"] == 1 && $key == $childOuter) {
+									$parentEchoArray = [$parent["id"],$parent["name"]];
+									array_push($parentToEcho, $parentEchoArray);
+								}
+							}
+						}
+						$content .= '
+						<td>';
+						foreach ($parentToEcho as $parentEcho) {
+							$content .= '<a href="#ownProfile/user='.$parentEcho[0].'">'.$parentEcho[1].';';
+						}
+						$content .= '</td>';
+						if ($childs > 0) {
+							$content .= '
+							</tr>';
+						}
+					}
+				}
+			}
+			$content .= '
+			</tr>';
+		}
 	}
 ?>
 <html lang="en">
@@ -53,7 +108,8 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<?php echo $content; ?>
+<!-- 				<tr>
 					<td rowspan="2">Patrick Kronsmed</td>
 					<td>Tommi Guldmund</td>
 					<td>Hans Guldmund,<br>Heidi Guldmund</td>
@@ -90,7 +146,7 @@ along with GIRAF.  If not, see <http://www.gnu.org/licenses/>.
 					<td rowspan="1">Mette Guldbrand</td>
 					<td>Tobeias Olesen</td>
 					<td>Nicolaj Olesen,<br>Ida Olesen</td>
-				</tr>
+				</tr> -->
 			</tbody>
 		</table>
 		
